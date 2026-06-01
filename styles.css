@@ -875,6 +875,11 @@ body::after {
     background: rgba(255,255,255,0.01);
 }
 
+.system-icon i {
+    width: 20px;
+    height: 20px;
+}
+
 .system-badge {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.65rem;
@@ -2205,19 +2210,6 @@ body::after {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-}
-
-.contact-link-btn {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: var(--white);
-    transition: opacity 0.3s ease;
-}
-
-.contact-link-btn:hover {
-    opacity: 0.7;
 }
 
 .contact-detail-text {

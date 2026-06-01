@@ -4,10 +4,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Initialize Lucide Icons
+    // Initialize Lucide Icons (fallback if inline script missed)
     if (typeof lucide !== "undefined") {
         lucide.createIcons();
     }
+
+    // Also watch for dynamically added icons (e.g., after form submission)
+    document.addEventListener("lucide-update", () => {
+        if (typeof lucide !== "undefined") lucide.createIcons();
+    });
 
     /* --------------------------------------------------------------------------
        1. Smooth Scrolling (Lenis) & GSAP ScrollTrigger Integration
@@ -841,7 +846,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" class="icon-small"></i>`;
+                submitBtn.innerHTML = `<span>Send Inquiry</span><i data-lucide="send" class="icon-small"></i>`;
                 lucide.createIcons();
             });
         };

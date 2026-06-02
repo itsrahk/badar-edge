@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         y: 0,
                         scale: 1,
                         duration: 0.7,
-                        stagger: { each: 0.08, from: "start", grid: [2, 3] },
+                        stagger: { each: 0.08, from: "start", grid: [2, 4] },
                         ease: "power4.out",
                         scrollTrigger: {
                             trigger: ".db-grid",
@@ -345,22 +345,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
             });
         }
-
-        // Dashboard header entrance
-        gsap.fromTo(".db-dash-header",
-            { opacity: 0, y: -12 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: "#dashboard",
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
 
         // Count-up + ring fill animation (loops every 5s)
         counterCards.forEach((card) => {

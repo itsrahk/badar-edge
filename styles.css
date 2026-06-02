@@ -468,7 +468,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: calc(var(--nav-height) + 60px);
+    padding-top: calc(var(--nav-height) + 100px);
     position: relative;
 }
 

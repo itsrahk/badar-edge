@@ -128,8 +128,158 @@ body::after {
 }
 
 /* --------------------------------------------------------------------------
-   3. Background Networks & Animated Glow Blobs
-   -------------------------------------------------------------------------- */
+    3. Voice Guide Agent
+    -------------------------------------------------------------------------- */
+.guide-agent {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: guideIn 0.6s ease-out 0.5s forwards;
+    pointer-events: none;
+}
+
+@keyframes guideIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.guide-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 24px rgba(99, 102, 241, 0.3);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.guide-avatar-svg {
+    width: 28px;
+    height: 28px;
+}
+
+.guide-wave {
+    position: absolute;
+    inset: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide-wave span {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(99, 102, 241, 0.3);
+    animation: guidePulse 2s ease-out infinite;
+}
+
+.guide-wave span:nth-child(2) { animation-delay: 0.4s; }
+.guide-wave span:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes guidePulse {
+    0% { transform: scale(0.8); opacity: 0.6; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.guide-bubble {
+    position: relative;
+    background: rgba(6, 4, 24, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px 16px 16px 4px;
+    padding: 12px 18px 34px 18px;
+    max-width: 280px;
+    pointer-events: auto;
+    box-shadow: 0 12px 40px -8px rgba(0,0,0,0.7);
+}
+
+.guide-bubble-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    padding-right: 18px;
+}
+
+.guide-play-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--accent-indigo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.guide-play-btn:hover {
+    background: rgba(99, 102, 241, 0.35);
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    transform: scale(1.1);
+}
+
+.guide-bubble-text::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    margin-left: 2px;
+    background: var(--accent-cyan);
+    animation: guideBlink 0.8s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes guideBlink {
+    50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .guide-agent {
+        bottom: 16px;
+        right: 16px;
+    }
+    .guide-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    .guide-avatar-svg {
+        width: 22px;
+        height: 22px;
+    }
+    .guide-bubble {
+        max-width: 220px;
+        padding: 10px 14px;
+    }
+    .guide-bubble-text {
+        font-size: 0.72rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+    4. Background Networks & Animated Glow Blobs
+    -------------------------------------------------------------------------- */
 #neural-canvas {
     position: fixed;
     top: 0;
@@ -396,21 +546,6 @@ body::after {
 }
 
 /* Centered logo text in nav */
-.nav-logo-center {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
-    font-weight: 800;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    pointer-events: none;
-    user-select: none;
-    color: var(--white);
-}
-
-.nav-logo-center .char {
-    display: inline-block;
-}
-
 /* Book Call button in navbar (compact) */
 .nav-book-call {
     padding: 8px 16px !important;
@@ -599,21 +734,29 @@ body::after {
     padding: 0 20px;
 }
 
-.hero-mobile-brand {
-    display: none;
+.hero-brand {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 800;
-    letter-spacing: 3.5px;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--white);
-    background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-purple) 100%);
-    padding: 8px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    margin-bottom: 28px;
-    box-shadow: 0 8px 30px -6px rgba(139, 92, 246, 0.35);
-    display: none;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    position: relative;
+    display: inline-block;
+    padding: 0 4px 10px 4px;
+}
+
+.hero-brand::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--accent-indigo), var(--accent-purple), transparent);
+    border-radius: 2px;
 }
 
 /* Hero brand logo (top center) */
@@ -4222,10 +4365,6 @@ body::after {
         margin-bottom: 36px;
     }
     
-    .hero-mobile-brand {
-        display: block;
-    }
-
     .hero-actions {
         flex-direction: column;
         width: 100%;

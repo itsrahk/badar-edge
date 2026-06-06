@@ -14,6 +14,86 @@ document.addEventListener("DOMContentLoaded", () => {
         if (typeof lucide !== "undefined") lucide.createIcons();
     });
 
+    // Voice Guide Agent — speech synthesis welcome
+    const guideAgent = document.getElementById("guideAgent");
+    const guideText = document.getElementById("guideText");
+    if (guideAgent && guideText && window.speechSynthesis) {
+        (function() {
+            const messages = [
+                "Welcome to Badar Edge.",
+                "Click the menu icon to open the sidebar and jump to any section.",
+                "We are a problem-first AI solutions company. We build three types of solutions. Packaged systems like our Speed-to-Lead system for real estate, custom builds, and AI services.",
+                "Our systems increase revenue, eliminate bottlenecks, and reduce manual work. We have served over 50 clients and deployed more than 20 AI systems across multiple industries.",
+                "Explore our solutions, check our pricing, or book a free strategy call to get started."
+            ];
+            let msgIndex = 0;
+            let started = false;
+            let speaking = false;
+
+            function getFemaleVoice() {
+                const voices = speechSynthesis.getVoices();
+                return voices.find(v =>
+                    /female|woman|samantha|google uk english female|microsoft(.*)female|zira|natural/i.test(v.name)
+                ) || voices.find(v => /english/i.test(v.name) && /female|woman/i.test(v.name)) || null;
+            }
+
+            function speakNext() {
+                if (msgIndex >= messages.length || speaking) return;
+                speaking = true;
+                const utterance = new SpeechSynthesisUtterance(messages[msgIndex]);
+                utterance.rate = 0.88;
+                utterance.pitch = 1.2;
+                utterance.volume = 1;
+                utterance.lang = 'en-US';
+                const fv = getFemaleVoice();
+                if (fv) utterance.voice = fv;
+                guideText.textContent = messages[msgIndex];
+                utterance.onend = function() {
+                    speaking = false;
+                    msgIndex++;
+                    setTimeout(speakNext, 600);
+                };
+                utterance.onerror = function() {
+                    speaking = false;
+                };
+                speechSynthesis.speak(utterance);
+            }
+
+            function start() {
+                if (started) return;
+                started = true;
+                document.removeEventListener('click', start);
+                document.removeEventListener('touchstart', start);
+                // Prime voices
+                speechSynthesis.getVoices();
+                if (speechSynthesis.getVoices().length === 0) {
+                    speechSynthesis.onvoiceschanged = function() {
+                        setTimeout(speakNext, 400);
+                    };
+                } else {
+                    setTimeout(speakNext, 400);
+                }
+            }
+
+            // Try immediately (works on some browsers like Safari, Edge)
+            setTimeout(start, 1500);
+
+            // Try on first user gesture (required by Chrome)
+            document.addEventListener('click', start);
+            document.addEventListener('touchstart', start);
+
+            // Click avatar or bubble to replay from beginning
+            guideAgent.addEventListener('click', function(e) {
+                e.stopPropagation();
+                speechSynthesis.cancel();
+                msgIndex = 0;
+                speaking = false;
+                if (!started) { start(); return; }
+                setTimeout(speakNext, 300);
+            });
+        })();
+    }
+
     /* --------------------------------------------------------------------------
        1. Smooth Scrolling (Lenis) & GSAP ScrollTrigger Integration
        -------------------------------------------------------------------------- */
@@ -283,26 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     .from(".hero-subtext", { y: 25, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.65")
                     .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55");
 
-        // Nav logo typewriter: write in 2s, hold 10s, remove backward, repeat
-        const navLogo = document.getElementById("navLogo");
-        if (navLogo) {
-            const text = navLogo.textContent;
-            navLogo.textContent = '';
-            text.split('').forEach((char) => {
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char;
-                span.className = 'char';
-                span.style.opacity = '0';
-                navLogo.appendChild(span);
-            });
-            const chars = Array.from(navLogo.querySelectorAll('.char'));
-            function startLoop() {
-                const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(0.3, startLoop) });
-                tl.to(chars, { opacity: 1, duration: 0.08, stagger: 0.2, ease: 'none' });
-                tl.to({}, { duration: 10 });
-                tl.to([...chars].reverse(), { opacity: 0, duration: 0.06, stagger: 0.04, ease: 'none' });
-            }
-            gsap.delayedCall(0.5, startLoop);
+        // Hero brand entrance
+        const heroBrand = document.querySelector(".hero-brand");
+        if (heroBrand) {
+            gsap.from(heroBrand, { opacity: 0, y: -15, duration: 1, ease: "power3.out" });
         }
 
         // Universal Title/Subtitle ScrollTrigger reveal
@@ -366,35 +430,58 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Count-up animation — smooth count-up once on scroll
+        // Count-up animation — all cards perfectly synced
+        const cardData = [];
         counterCards.forEach((card) => {
-            const counterElement = card.querySelector(".counter");
-            if (!counterElement) return;
-            const targetVal = parseFloat(card.getAttribute("data-metric")) || 0;
-            const ringFill = card.querySelector(".ring-fill");
-
-            const valObj = { val: 0 };
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#impact",
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                }
-            });
-
-            tl.to(valObj, {
-                val: targetVal,
-                duration: 2,
-                ease: "power2.out",
-                onUpdate: () => {
-                    counterElement.textContent = Math.floor(valObj.val);
-                }
-            });
-
-            if (ringFill) {
-                tl.to(ringFill, { strokeDashoffset: 0, duration: 2, ease: "power2.out" }, 0);
-            }
+            const el = card.querySelector(".counter");
+            const fill = card.querySelector(".ring-fill");
+            const target = parseFloat(card.getAttribute("data-metric")) || 0;
+            if (el && target > 0) cardData.push({ el, fill, target });
         });
+
+        if (cardData.length > 0) {
+            ScrollTrigger.create({
+                trigger: "#impact",
+                start: "top 80%",
+                once: true,
+                onEnter() {
+                    const countDuration = 2200;
+                    const holdDuration = 5000;
+                    let phaseTime = performance.now();
+                    let phase = 'count';
+
+                    function tick() {
+                        const elapsed = performance.now() - phaseTime;
+
+                        if (phase === 'count') {
+                            const p = Math.min(elapsed / countDuration, 1);
+                            const e = 1 - Math.pow(1 - p, 3);
+                            for (const { el, fill, target } of cardData) {
+                                const range = target - 1;
+                                el.textContent = Math.floor(1 + range * e);
+                                if (fill) fill.setAttribute("stroke-dashoffset", Math.round(301.59 * (1 - e)));
+                            }
+                            if (p >= 1) {
+                                for (const { el, target } of cardData) el.textContent = target;
+                                phase = 'hold';
+                                phaseTime = performance.now();
+                            }
+                        }
+
+                        if (phase === 'hold' && elapsed >= holdDuration) {
+                            for (const { fill } of cardData) {
+                                if (fill) fill.setAttribute("stroke-dashoffset", "301.59");
+                            }
+                            phase = 'count';
+                            phaseTime = performance.now();
+                        }
+
+                        requestAnimationFrame(tick);
+                    }
+                    tick();
+                }
+            });
+        }
 
         // Benchmark count-up animation (loops every 5s)
         const benchmarkCounts = document.querySelectorAll(".bm-count");

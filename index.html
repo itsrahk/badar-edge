@@ -32,6 +32,25 @@
 </head>
 <body class="cyber-theme">
     
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
     <canvas id="neural-canvas"></canvas>
     
@@ -48,7 +67,6 @@
                 <span></span>
                 <span></span>
             </button>
-            <span class="nav-logo-center" id="navLogo">BADAR EDGE</span>
             <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
                 <span>Book Call</span>
                 <i data-lucide="arrow-up-right" class="icon-small"></i>
@@ -95,7 +113,7 @@
         <!-- HERO SECTION -->
         <section id="hero" class="section hero-section">
             <div class="hero-content">
-                <div class="hero-mobile-brand">BADAR EDGE</div>
+                <div class="hero-brand">BADAR EDGE</div>
                 <h1 class="hero-headline">
                     <span class="hero-headline-pre"></span>
                     We build systems that <span class="headline-gradient">increase revenue</span> and <span class="headline-gradient">eliminate bottlenecks</span>

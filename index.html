@@ -48,7 +48,7 @@
                 <span></span>
                 <span></span>
             </button>
-            <span class="nav-logo-center">BADAR EDGE</span>
+            <span class="nav-logo-center" id="navLogo">BADAR EDGE</span>
             <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
                 <span>Book Call</span>
                 <i data-lucide="arrow-up-right" class="icon-small"></i>
@@ -61,27 +61,33 @@
 
     <!-- Sidebar Panel -->
     <aside class="sidebar" id="sidebar">
-        <button class="sidebar-close" id="sidebar-close">&times;</button>
-        <ul class="sidebar-links">
-            <li><a href="#hero" class="sidebar-link">Home</a></li>
-            <li><a href="#problem" class="sidebar-link">Problem</a></li>
-            <li><a href="#solutions" class="sidebar-link">Solutions</a></li>
-            <li><a href="#workflow" class="sidebar-link">Workflow</a></li>
-            <li><a href="#impact" class="sidebar-link">Impact</a></li>
-            <li><a href="#why-badar" class="sidebar-link">Why Badar</a></li>
-            <li><a href="#roi-calculator" class="sidebar-link">ROI</a></li>
-            <li><a href="#testimonials" class="sidebar-link">Testimonials</a></li>
-            <li><a href="#pricing" class="sidebar-link">Pricing</a></li>
-            <li><a href="#process" class="sidebar-link">Process</a></li>
-            <li><a href="#about" class="sidebar-link">About</a></li>
-            <li><a href="#contact" class="sidebar-link">Contact</a></li>
-        </ul>
-        <div class="sidebar-book-call-wrapper">
-            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow sidebar-book-call">
-                <span>Book Call</span>
-                <i data-lucide="arrow-up-right" class="icon-small"></i>
-            </a>
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
         </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="#hero" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="#problem" class="sidebar-link"><span class="link-dot"></span>Problem</a></li>
+                <li><a href="#solutions" class="sidebar-link"><span class="link-dot"></span>Solutions</a></li>
+                <li><a href="#workflow" class="sidebar-link"><span class="link-dot"></span>Workflow</a></li>
+                <li><a href="#impact" class="sidebar-link"><span class="link-dot"></span>Impact</a></li>
+                <li><a href="#why-badar" class="sidebar-link"><span class="link-dot"></span>Why Badar</a></li>
+                <li><a href="#roi-calculator" class="sidebar-link"><span class="link-dot"></span>ROI</a></li>
+                <li><a href="#testimonials" class="sidebar-link"><span class="link-dot"></span>Testimonials</a></li>
+                <li><a href="#pricing" class="sidebar-link"><span class="link-dot"></span>Pricing</a></li>
+                <li><a href="#process" class="sidebar-link"><span class="link-dot"></span>Process</a></li>
+                <li><a href="#about" class="sidebar-link"><span class="link-dot"></span>About</a></li>
+                <li><a href="#contact" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+            </ul>
+        </nav>
     </aside>
 
     <main class="page-container">
@@ -89,6 +95,7 @@
         <!-- HERO SECTION -->
         <section id="hero" class="section hero-section">
             <div class="hero-content">
+                <div class="hero-mobile-brand">BADAR EDGE</div>
                 <h1 class="hero-headline">
                     <span class="hero-headline-pre"></span>
                     We build systems that <span class="headline-gradient">increase revenue</span> and <span class="headline-gradient">eliminate bottlenecks</span>

@@ -395,49 +395,20 @@ body::after {
     background: var(--white);
 }
 
-/* Centered logo in nav */
+/* Centered logo text in nav */
 .nav-logo-center {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(0.95rem, 1.6vw, 1.2rem);
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     pointer-events: none;
     user-select: none;
-    position: relative;
-    background: linear-gradient(90deg, var(--white) 0%, var(--accent-cyan) 30%, var(--white) 60%);
-    background-size: 300% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: logoShimmer 5s ease-in-out infinite;
+    color: var(--white);
 }
 
-.nav-logo-center::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--accent-cyan);
-    border-radius: 2px;
-    transform: translateX(-50%);
-    animation: logoUnderline 5s ease-in-out infinite;
-    box-shadow: 0 0 8px var(--accent-cyan);
-}
-
-@keyframes logoShimmer {
-    0% { background-position: 300% center; }
-    40% { background-position: -100% center; }
-    100% { background-position: -100% center; }
-}
-
-@keyframes logoUnderline {
-    0% { width: 0; opacity: 0; }
-    35% { width: 60%; opacity: 1; }
-    65% { width: 60%; opacity: 1; }
-    100% { width: 0; opacity: 0; }
+.nav-logo-center .char {
+    display: inline-block;
 }
 
 /* Book Call button in navbar (compact) */
@@ -470,94 +441,140 @@ body::after {
     left: 0;
     width: 280px;
     height: 100vh;
-    background: rgba(8, 6, 28, 0.96);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: rgba(3, 2, 16, 0.98);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
     z-index: 1000;
-    transform: translateX(-100%);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    padding: 24px 20px 20px;
-    border-right: 1px solid rgba(255,255,255,0.04);
+    padding: 0;
+    border-right: 1px solid rgba(255,255,255,0.03);
     overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-100%);
 }
 
-.sidebar::-webkit-scrollbar {
-    width: 4px;
+.sidebar::-webkit-scrollbar { width: 2px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.04); border-radius: 4px; }
+.sidebar.open { opacity: 1; pointer-events: all; transform: translateX(0); }
+
+/* ── Header ── */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 24px 0;
 }
-.sidebar::-webkit-scrollbar-track {
-    background: transparent;
+
+.sidebar-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-purple) 100%);
+    color: var(--white);
+    box-shadow: 0 4px 16px -3px rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.sidebar::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.1);
-    border-radius: 4px;
-}
-.sidebar.open {
-    transform: translateX(0);
-}
+
 
 .sidebar-close {
-    align-self: flex-end;
     background: none;
     border: none;
-    color: var(--text-secondary);
-    font-size: 1.6rem;
+    color: rgba(255,255,255,0.25);
     cursor: pointer;
-    padding: 4px 8px;
+    padding: 6px;
     line-height: 1;
-    transition: color 0.3s ease;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .sidebar-close:hover {
     color: var(--white);
+    background: rgba(255,255,255,0.04);
+}
+
+/* ── CTA ── */
+/* ── Divider ── */
+.sidebar-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+    margin: 16px 24px;
+    flex-shrink: 0;
+}
+
+/* ── Navigation ── */
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px 16px;
 }
 
 .sidebar-links {
     list-style: none;
     padding: 0;
-    margin: 16px 0 0;
-    flex: 1;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
 .sidebar-links li a {
-    display: block;
-    padding: 12px 16px;
-    color: rgba(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: rgba(255,255,255,0.35);
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 10px;
-    transition: color 0.2s ease, background 0.2s ease, padding-left 0.2s ease;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
 }
 
 .sidebar-links li a:hover {
-    color: var(--white);
-    background: rgba(255,255,255,0.04);
-    padding-left: 20px;
+    color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.02);
 }
 
 .sidebar-links li a.active {
-    color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.06);
-    border-left: 3px solid var(--accent-cyan);
-    padding-left: 13px;
+    color: var(--white);
+    background: rgba(0, 242, 254, 0.03);
 }
 
-.sidebar-book-call-wrapper {
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: auto;
+/* ── Link dot indicator ── */
+.link-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.sidebar-book-call {
-    width: 100%;
-    text-align: center;
-    padding: 12px 16px !important;
-    font-size: 0.85rem !important;
+.sidebar-links li a:hover .link-dot {
+    background: rgba(0, 242, 254, 0.25);
+    transform: scale(1.3);
+}
+
+.sidebar-links li a.active .link-dot {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+    transform: scale(1.2);
 }
 
 /* --------------------------------------------------------------------------
@@ -580,6 +597,23 @@ body::after {
     align-items: center;
     z-index: 10;
     padding: 0 20px;
+}
+
+.hero-mobile-brand {
+    display: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-purple) 100%);
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 30px -6px rgba(139, 92, 246, 0.35);
+    display: none;
 }
 
 /* Hero brand logo (top center) */
@@ -2591,6 +2625,10 @@ body::after {
         flex-wrap: wrap;
         gap: 15px;
     }
+
+    #navLogo {
+        display: none;
+    }
 }
 
 /* Mobile Screens */
@@ -4188,6 +4226,10 @@ body::after {
         margin-bottom: 36px;
     }
     
+    .hero-mobile-brand {
+        display: block;
+    }
+
     .hero-actions {
         flex-direction: column;
         width: 100%;
@@ -4252,6 +4294,35 @@ body::after {
     .btn {
         padding: 14px 24px;
         font-size: 0.9rem;
+    }
+
+    #navLogo {
+        display: none;
+    }
+
+    .hero-mobile-brand {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100vw;
+    }
+
+    .sidebar-header {
+        padding: 28px 20px 0;
+    }
+
+    .sidebar-divider {
+        margin: 14px 20px;
+    }
+
+    .sidebar-nav {
+        padding: 0 8px 16px;
+    }
+
+    .sidebar-links li a {
+        padding: 14px 12px;
+        font-size: 0.95rem;
     }
 }
 

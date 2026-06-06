@@ -279,10 +279,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hero Entrance Sequencing Timeline
         const heroTimeline = gsap.timeline();
-        heroTimeline.from(".hero-brand", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" })
-                    .from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" }, "-=0.55")
+        heroTimeline.from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" })
                     .from(".hero-subtext", { y: 25, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.65")
                     .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55");
+
+        // Nav logo typewriter: write in 2s, hold 10s, remove backward, repeat
+        const navLogo = document.getElementById("navLogo");
+        if (navLogo) {
+            const text = navLogo.textContent;
+            navLogo.textContent = '';
+            text.split('').forEach((char) => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.className = 'char';
+                span.style.opacity = '0';
+                navLogo.appendChild(span);
+            });
+            const chars = Array.from(navLogo.querySelectorAll('.char'));
+            function startLoop() {
+                const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(0.3, startLoop) });
+                tl.to(chars, { opacity: 1, duration: 0.08, stagger: 0.2, ease: 'none' });
+                tl.to({}, { duration: 10 });
+                tl.to([...chars].reverse(), { opacity: 0, duration: 0.06, stagger: 0.04, ease: 'none' });
+            }
+            gsap.delayedCall(0.5, startLoop);
+        }
 
         // Universal Title/Subtitle ScrollTrigger reveal
         gsap.utils.toArray(".section-header").forEach(header => {

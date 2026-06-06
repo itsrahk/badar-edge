@@ -2625,10 +2625,6 @@ body::after {
         flex-wrap: wrap;
         gap: 15px;
     }
-
-    #navLogo {
-        display: none;
-    }
 }
 
 /* Mobile Screens */
@@ -4296,13 +4292,7 @@ body::after {
         font-size: 0.9rem;
     }
 
-    #navLogo {
-        display: none;
-    }
 
-    .hero-mobile-brand {
-        display: block;
-    }
 
 }
 

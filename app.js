@@ -601,9 +601,14 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
-        // Problem stats strip number highlight
+        // Problem stats strip — entrance + count-up
         const stlStats = document.querySelectorAll(".stl-problem-stat");
         if (stlStats.length > 0) {
+            const stlST = {
+                trigger: ".stl-problem-strip",
+                start: "top 82%",
+                toggleActions: "play none none none"
+            };
             gsap.fromTo(stlStats, 
                 { opacity: 0, y: 20 },
                 {
@@ -612,13 +617,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     duration: 0.6,
                     stagger: 0.15,
                     ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: ".stl-problem-strip",
-                        start: "top 82%",
-                        toggleActions: "play none none none"
-                    }
+                    scrollTrigger: stlST
                 }
             );
+            stlStats.forEach(stat => {
+                const target = parseInt(stat.dataset.target) || 0;
+                const prefix = stat.dataset.prefix || '';
+                const suffix = stat.dataset.suffix || '';
+                const numEl = stat.querySelector(".stl-stat-num");
+                if (!numEl) return;
+                const valObj = { val: 0 };
+                gsap.to(valObj, {
+                    val: target,
+                    duration: 1.8,
+                    ease: "power3.out",
+                    scrollTrigger: stlST,
+                    onUpdate: () => {
+                        numEl.textContent = prefix + Math.floor(valObj.val) + suffix;
+                    }
+                });
+            });
         }
 
         // Benefit items staggered

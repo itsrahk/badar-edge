@@ -366,39 +366,44 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Count-up + ring fill animation (loops every 5s)
+        // Count-up animation — once on scroll into view with smooth loop
         counterCards.forEach((card) => {
             const counterElement = card.querySelector(".counter");
             if (!counterElement) return;
             const targetVal = parseFloat(card.getAttribute("data-metric")) || 0;
             const ringFill = card.querySelector(".ring-fill");
 
+            const valObj = { val: 0 };
             const tl = gsap.timeline({
                 repeat: -1,
-                repeatDelay: 2.6,
+                repeatDelay: 3,
                 scrollTrigger: {
-                    trigger: "#about",
-                    start: "top 75%",
+                    trigger: "#impact",
+                    start: "top 80%",
                     toggleActions: "play none none none"
                 }
             });
 
-            const valObj = { val: 0 };
             tl.to(valObj, {
                 val: targetVal,
-                duration: 2.4,
-                ease: "power3.out",
+                duration: 2,
+                ease: "power2.out",
                 onUpdate: () => {
                     counterElement.textContent = Math.floor(valObj.val);
                 }
-            }, 0);
+            });
+            tl.to(valObj, {
+                val: 0,
+                duration: 1.2,
+                ease: "power2.in",
+                onUpdate: () => {
+                    counterElement.textContent = Math.floor(valObj.val);
+                }
+            });
 
             if (ringFill) {
-                tl.to(ringFill, {
-                    strokeDashoffset: 0,
-                    duration: 2.4,
-                    ease: "power3.out"
-                }, 0);
+                tl.to(ringFill, { strokeDashoffset: 0, duration: 2, ease: "power2.out" }, 0);
+                tl.to(ringFill, { strokeDashoffset: 301.59, duration: 1.2, ease: "power2.in" });
             }
         });
 

@@ -4304,26 +4304,6 @@ body::after {
         display: block;
     }
 
-    .sidebar {
-        width: 100vw;
-    }
-
-    .sidebar-header {
-        padding: 28px 20px 0;
-    }
-
-    .sidebar-divider {
-        margin: 14px 20px;
-    }
-
-    .sidebar-nav {
-        padding: 0 8px 16px;
-    }
-
-    .sidebar-links li a {
-        padding: 14px 12px;
-        font-size: 0.95rem;
-    }
 }
 
 @media (max-width: 480px) {

@@ -241,9 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* --------------------------------------------------------------------------
-       3. Dynamic Magnetic Hover Glow (System Cards)
-       -------------------------------------------------------------------------- */
-    const cards = document.querySelectorAll(".system-card");
+        3. Dynamic Magnetic Hover Glow (Solution Cards)
+        -------------------------------------------------------------------------- */
+    const cards = document.querySelectorAll(".solution-card");
     cards.forEach((card) => {
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
@@ -279,11 +279,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hero Entrance Sequencing Timeline
         const heroTimeline = gsap.timeline();
-        heroTimeline.from(".hero-badge", { y: -30, opacity: 0, duration: 0.9, ease: "power4.out" })
-                    .from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" }, "-=0.55")
+        heroTimeline.from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" })
                     .from(".hero-subtext", { y: 25, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.65")
-                    .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55")
-                    .from(".scroll-indicator", { opacity: 0, duration: 0.6 }, "-=0.2");
+                    .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55");
 
         // Universal Title/Subtitle ScrollTrigger reveal
         gsap.utils.toArray(".section-header").forEach(header => {
@@ -317,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         y: 0,
                         scale: 1,
                         duration: 0.7,
-                        stagger: { each: 0.08, from: "start", grid: [2, 4] },
+                        stagger: { each: 0.08, from: "start" },
                         ease: "power4.out",
                         scrollTrigger: {
                             trigger: ".db-grid",
@@ -357,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 repeat: -1,
                 repeatDelay: 2.6,
                 scrollTrigger: {
-                    trigger: "#dashboard",
+                    trigger: "#about",
                     start: "top 75%",
                     toggleActions: "play none none none"
                 }
@@ -382,10 +380,125 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Staggered entry for main Systems Cards
-        const systemsGrid = document.querySelector(".systems-grid");
-        if (systemsGrid) {
-            gsap.fromTo(".system-card", 
+        // Benchmark count-up animation (loops every 5s)
+        const benchmarkCounts = document.querySelectorAll(".bm-count");
+        if (benchmarkCounts.length > 0) {
+            const benchmarkTrigger = document.querySelector(".benchmarks-grid") || document.querySelector("#solutions");
+            benchmarkCounts.forEach((el) => {
+                const target = parseInt(el.getAttribute("data-target")) || 0;
+                const valObj = { val: 0 };
+                const tl = gsap.timeline({
+                    repeat: -1,
+                    repeatDelay: 2.6,
+                    paused: true,
+                    scrollTrigger: {
+                        trigger: benchmarkTrigger,
+                        start: "top 75%",
+                        toggleActions: "play none none none"
+                    }
+                });
+                tl.to(valObj, {
+                    val: target,
+                    duration: 2.2,
+                    ease: "power3.out",
+                    onUpdate: () => {
+                        el.textContent = Math.floor(valObj.val);
+                    }
+                });
+                tl.to(valObj, {
+                    val: 0,
+                    duration: 0.01,
+                    ease: "none",
+                    onUpdate: () => {
+                        el.textContent = "0";
+                    }
+                }, "+=2.6");
+            });
+        }
+
+        // Solutions section header entry
+        const solutionsHeader = document.querySelector("#solutions .section-header");
+        if (solutionsHeader) {
+            gsap.fromTo(solutionsHeader,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: solutionsHeader,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Enhanced solutions hub — premium staggered entry
+        const solutionsHub = document.querySelector(".solutions-hub");
+        if (solutionsHub) {
+            gsap.fromTo(solutionsHub.querySelector(".hub-node"),
+                { opacity: 0, y: 30, scale: 0.95, filter: "blur(4px)" },
+                {
+                    opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
+                    duration: 0.8, ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: solutionsHub,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+            gsap.fromTo(solutionsHub.querySelectorAll(".hub-branch-line"),
+                { scaleY: 0, opacity: 0 },
+                {
+                    scaleY: 1, opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: solutionsHub,
+                        start: "top 75%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+            gsap.fromTo(solutionsHub.querySelectorAll(".hub-branch-card"),
+                { opacity: 0, y: 30, scale: 0.95, filter: "blur(3px)" },
+                {
+                    opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
+                    duration: 0.9,
+                    stagger: 0.2,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: solutionsHub,
+                        start: "top 75%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Hub WhatsApp CTA entry
+        const hubWA = document.querySelector(".hub-whatsapp-cta");
+        if (hubWA) {
+            gsap.fromTo(hubWA,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1, y: 0, duration: 0.7, ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: hubWA,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Staggered entry for Solution Cards
+
+        // Staggered entry for Solution Cards
+        const solutionCards = document.querySelectorAll(".solution-card-grid");
+        solutionCards.forEach(grid => {
+            gsap.fromTo(grid.querySelectorAll(".solution-card"), 
                 { opacity: 0, y: 50, scale: 0.95 },
                 {
                     opacity: 1,
@@ -395,8 +508,223 @@ document.addEventListener("DOMContentLoaded", () => {
                     stagger: 0.15,
                     ease: "power4.out",
                     scrollTrigger: {
-                        trigger: systemsGrid,
+                        trigger: grid,
                         start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        // Problem section cards entry
+        const problemGrid = document.querySelector(".problem-grid");
+        if (problemGrid) {
+            gsap.fromTo(".problem-card", 
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: problemGrid,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Problem outcome line animation
+        const outcomeLine = document.querySelector(".problem-outcome");
+        if (outcomeLine) {
+            gsap.fromTo(outcomeLine, 
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: outcomeLine,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Speed-to-Lead deep dive entry
+        const stlDeepdive = document.querySelector(".stl-deepdive");
+        if (stlDeepdive) {
+            gsap.fromTo(stlDeepdive, 
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: stlDeepdive,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Problem stats strip number highlight
+        const stlStats = document.querySelectorAll(".stl-problem-stat");
+        if (stlStats.length > 0) {
+            gsap.fromTo(stlStats, 
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".stl-problem-strip",
+                        start: "top 82%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Benefit items staggered
+        const benefitGrid = document.querySelector(".stl-benefit-grid");
+        if (benefitGrid) {
+            gsap.fromTo(".stl-benefit-item", 
+                { opacity: 0, x: -20 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: benefitGrid,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Custom interactive entry
+        const customInteractive = document.querySelector(".custom-interactive");
+        if (customInteractive) {
+            gsap.fromTo(customInteractive, 
+                { opacity: 0, y: 30, scale: 0.98 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: customInteractive,
+                        start: "top 82%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // More systems card entry
+        const moreSystems = document.querySelector(".more-systems-card");
+        if (moreSystems) {
+            gsap.fromTo(moreSystems,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.7,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: moreSystems,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Category badges hover glow (subtle entrance)
+        gsap.utils.toArray(".cat-badge").forEach(badge => {
+            gsap.fromTo(badge,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.5,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: badge,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        // Workflow steps staggered entry
+        const workflowContainer = document.querySelector(".workflow-container");
+        if (workflowContainer) {
+            gsap.fromTo(".workflow-step", 
+                { opacity: 0, x: -30 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.7,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: workflowContainer,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // ROI Scenario cards entry
+        const roiScenarios = document.querySelector(".roi-scenarios");
+        if (roiScenarios) {
+            gsap.fromTo(".roi-scenario-card", 
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: roiScenarios,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Founding client callout entry
+        const foundingCallout = document.querySelector(".founding-callout");
+        if (foundingCallout) {
+            gsap.fromTo(foundingCallout, 
+                { opacity: 0, y: 30, scale: 0.98 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: foundingCallout,
+                        start: "top 85%",
                         toggleActions: "play none none none"
                     }
                 }
@@ -487,126 +815,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --------------------------------------------------------------------------
-       5. The Impact Engine (Interactive Tabs Panel with GSAP Counter Parsing)
-       -------------------------------------------------------------------------- */
-    const tabBtns = document.querySelectorAll(".impact-tab-btn");
-    const tabPanels = document.querySelectorAll(".impact-panel");
-
-    // Dynamic numeric parser and smooth GSAP counter animator
-    function animatePanelNumbers(panel) {
-        // Query potential metrics, gauge labels, and graphics percentages in current active panel
-        const numericSpans = panel.querySelectorAll(".metric-value, .gauge-value, .stage-bar span, .bar-pill span");
-        
-        numericSpans.forEach(span => {
-            // Retrieve or cache initial state configurations
-            const originalText = span.getAttribute("data-orig-text") || span.textContent.trim();
-            if (!span.getAttribute("data-orig-text")) {
-                span.setAttribute("data-orig-text", originalText);
-            }
-
-            // Regular expression to parse integer or float formats
-            const numberMatch = originalText.match(/(-?[0-9.]+)/);
-            if (numberMatch) {
-                const targetValue = parseFloat(numberMatch[1]);
-                const isDecimal = numberMatch[1].includes(".");
-                const numIndex = originalText.indexOf(numberMatch[1]);
-                
-                const prefix = originalText.substring(0, numIndex);
-                const suffix = originalText.substring(numIndex + numberMatch[1].length);
-
-                const tweenVal = { val: 0 };
-                
-                // Count up to matching value
-                gsap.fromTo(tweenVal, 
-                    { val: 0 },
-                    {
-                        val: targetValue,
-                        duration: 1.5,
-                        ease: "power3.out",
-                        onUpdate: () => {
-                            let valueFormatted = isDecimal ? tweenVal.val.toFixed(1) : Math.round(tweenVal.val);
-                            span.textContent = prefix + valueFormatted + suffix;
-                        }
-                    }
-                );
-            }
-        });
-    }
-
-    window.switchImpactTab = function(index) {
-        if (!tabBtns[index] || !tabPanels[index]) return;
-
-        // Toggle active states
-        tabBtns.forEach(btn => btn.classList.remove("active"));
-        tabPanels.forEach(panel => panel.classList.remove("active"));
-
-        tabBtns[index].classList.add("active");
-        tabPanels[index].classList.add("active");
-
-        // Smooth panel entry transition
-        gsap.fromTo(tabPanels[index], 
-            { opacity: 0, y: 15 },
-            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-        );
-
-        // Reset and re-run active metric progress bar animations
-        const activeProgressBar = tabPanels[index].querySelectorAll(".metric-progress-bar");
-        activeProgressBar.forEach(bar => {
-            const finalWidth = bar.style.width || "100%";
-            gsap.fromTo(bar, 
-                { width: "0%" }, 
-                { width: finalWidth, duration: 1.4, ease: "power3.out" }
-            );
-        });
-
-        // Reset and re-run active funnel stage layouts
-        const activeStageBars = tabPanels[index].querySelectorAll(".stage-bar");
-        activeStageBars.forEach(bar => {
-            const finalWidth = bar.style.width || "100%";
-            gsap.fromTo(bar, 
-                { width: "0%" }, 
-                { width: finalWidth, duration: 1.4, ease: "power3.out" }
-            );
-        });
-
-        // Reset and re-run active column comparison metrics
-        const activeComparisonPills = tabPanels[index].querySelectorAll(".bar-pill");
-        activeComparisonPills.forEach(pill => {
-            const finalHeight = pill.style.height || "100%";
-            gsap.fromTo(pill, 
-                { height: "0%" }, 
-                { height: finalHeight, duration: 1.4, ease: "power3.out" }
-            );
-        });
-
-        // Reset and re-run active speedometer gauges
-        const activeGauge = tabPanels[index].querySelector(".gauge-progress");
-        if (activeGauge) {
-            gsap.fromTo(activeGauge,
-                { strokeDashoffset: 126 },
-                { strokeDashoffset: 25, duration: 1.8, ease: "power2.out" }
-            );
-        }
-
-        // Run the dynamic numerical count-up systems
-        animatePanelNumbers(tabPanels[index]);
-    };
-
-    // System cards redirect links
-    window.activateImpactTab = function(index) {
-        // Switch tab immediately
-        switchImpactTab(index);
-
-        // Smoothly scroll to the Impact Engine section
-        const targetSection = document.getElementById("impact");
-        if (targetSection && lenis) {
-            lenis.scrollTo(targetSection, { offset: -80, duration: 1.2 });
-        } else if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     // Pricing tier cards scroll entrance
     const allPricingTiers = document.querySelectorAll(".pricing-tier");
     if (allPricingTiers.length > 0 && typeof gsap !== "undefined") {
@@ -625,102 +833,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         );
-    }
-
-    /* --------------------------------------------------------------------------
-       6. Dynamic ROI & Pricing Calculator with smooth GSAP Counter state
-       -------------------------------------------------------------------------- */
-    const hoursSlider = document.getElementById("hours-slider");
-    const laborSlider = document.getElementById("labor-slider");
-    const swarmsSlider = document.getElementById("swarms-slider");
-
-    const hoursVal = document.getElementById("hours-val");
-    const laborVal = document.getElementById("labor-val");
-    const swarmsVal = document.getElementById("swarms-val");
-
-    const savingsVal = document.getElementById("savings-val");
-    const roiFillBar = document.getElementById("roi-fill-bar");
-    const roiPercentLabel = document.getElementById("roi-percent-label");
-    const annualSavings = document.getElementById("annual-savings");
-    const timeFreed = document.getElementById("time-freed");
-
-    // Hold calculator numeric state internally for smooth transition tweens
-    const calculatorState = {
-        savings: 0,
-        annualSavings: 0,
-        timeFreed: 0,
-        roiPercent: 0
-    };
-
-    function calculateROI(isFirstLoad = false) {
-        if (!hoursSlider || !laborSlider || !swarmsSlider) return;
-
-        const hours = parseInt(hoursSlider.value);
-        const labor = parseInt(laborSlider.value);
-        const swarms = parseInt(swarmsSlider.value);
-
-        // Update active labels instant values
-        hoursVal.textContent = hours;
-        laborVal.textContent = labor;
-        swarmsVal.textContent = swarms;
-
-        // ROI Formula Calculations
-        const targetSavings = (hours * labor) + (swarms * 450); // Labor saved + system-driven speed efficiency
-        const targetCost = swarms * 950; // Custom deploy subscription model estimate
-        const targetAnnualSavings = targetSavings * 12;
-        const targetTimeFreed = hours * 12;
-        const targetRoiPercent = Math.max(0, Math.ceil(((targetSavings - targetCost) / (targetCost || 1)) * 100));
-
-        // Kill any previous calculator animations to avoid conflicts
-        if (window.calculatorTween) window.calculatorTween.kill();
-
-        if (isFirstLoad) {
-            // Instant load alignment
-            calculatorState.savings = targetSavings;
-            calculatorState.annualSavings = targetAnnualSavings;
-            calculatorState.timeFreed = targetTimeFreed;
-            calculatorState.roiPercent = targetRoiPercent;
-
-            savingsVal.textContent = targetSavings.toLocaleString();
-            annualSavings.textContent = `$${targetAnnualSavings.toLocaleString()}`;
-            timeFreed.textContent = `${targetTimeFreed.toLocaleString()} hrs`;
-            roiPercentLabel.textContent = `ROI: +${targetRoiPercent}%`;
-            
-            const maxPercentWidth = Math.min(100, Math.max(10, targetRoiPercent / 5));
-            roiFillBar.style.width = `${maxPercentWidth}%`;
-        } else {
-            // Smoothly tween calculator numbers using GSAP (financial-terminal counts)
-            window.calculatorTween = gsap.to(calculatorState, {
-                savings: targetSavings,
-                annualSavings: targetAnnualSavings,
-                timeFreed: targetTimeFreed,
-                roiPercent: targetRoiPercent,
-                duration: 0.65,
-                ease: "power2.out",
-                onUpdate: () => {
-                    savingsVal.textContent = Math.round(calculatorState.savings).toLocaleString();
-                    annualSavings.textContent = `$${Math.round(calculatorState.annualSavings).toLocaleString()}`;
-                    timeFreed.textContent = `${Math.round(calculatorState.timeFreed).toLocaleString()} hrs`;
-                    
-                    const sign = calculatorState.roiPercent > 0 ? '+' : '';
-                    roiPercentLabel.textContent = `ROI: ${sign}${Math.round(calculatorState.roiPercent)}%`;
-
-                    // Animate the progress bar width nicely
-                    const currentPercentWidth = Math.min(100, Math.max(10, calculatorState.roiPercent / 5));
-                    gsap.set(roiFillBar, { width: `${currentPercentWidth}%` });
-                }
-            });
-        }
-    }
-
-    // Bind slider listeners
-    if (hoursSlider) {
-        hoursSlider.addEventListener("input", () => calculateROI(false));
-        laborSlider.addEventListener("input", () => calculateROI(false));
-        swarmsSlider.addEventListener("input", () => calculateROI(false));
-        
-        // Initial setup run
-        calculateROI(true);
     }
 
     /* --------------------------------------------------------------------------

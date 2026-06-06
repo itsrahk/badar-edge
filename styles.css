@@ -2722,8 +2722,9 @@ body::after {
     }
     
     .nav-book-call {
-        padding: 6px 12px !important;
-        font-size: 0.7rem !important;
+        padding: 4px 10px !important;
+        font-size: 0.65rem !important;
+        margin-right: -4px;
     }
     
     .db-grid {

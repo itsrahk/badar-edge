@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 end: "220px top",
                 scrub: true,
             },
-            maxWidth: "760px",
+            maxWidth: "640px",
             y: 10,
             borderRadius: "30px",
             background: "rgba(4, 2, 12, 0.88)",
@@ -279,7 +279,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hero Entrance Sequencing Timeline
         const heroTimeline = gsap.timeline();
-        heroTimeline.from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" })
+        heroTimeline.from(".hero-brand", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" })
+                    .from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" }, "-=0.55")
                     .from(".hero-subtext", { y: 25, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.65")
                     .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55");
 
@@ -614,45 +615,6 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
-        // Custom interactive entry
-        const customInteractive = document.querySelector(".custom-interactive");
-        if (customInteractive) {
-            gsap.fromTo(customInteractive, 
-                { opacity: 0, y: 30, scale: 0.98 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: customInteractive,
-                        start: "top 82%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-
-        // More systems card entry
-        const moreSystems = document.querySelector(".more-systems-card");
-        if (moreSystems) {
-            gsap.fromTo(moreSystems,
-                { opacity: 0, y: 20 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.7,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: moreSystems,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-
         // Category badges hover glow (subtle entrance)
         gsap.utils.toArray(".cat-badge").forEach(badge => {
             gsap.fromTo(badge,
@@ -705,26 +667,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     scrollTrigger: {
                         trigger: roiScenarios,
                         start: "top 80%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-
-        // Founding client callout entry
-        const foundingCallout = document.querySelector(".founding-callout");
-        if (foundingCallout) {
-            gsap.fromTo(foundingCallout, 
-                { opacity: 0, y: 30, scale: 0.98 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: foundingCallout,
-                        start: "top 85%",
                         toggleActions: "play none none none"
                     }
                 }
@@ -793,26 +735,138 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Universal link navigation active state highlights based on scrolling position
-        const navLinks = document.querySelectorAll(".nav-link");
-        const sections = document.querySelectorAll("section[id]");
+        // Sidebar link active state highlights based on scrolling position
+        const sidebarLinks = document.querySelectorAll(".sidebar-link");
+        const sidebarSections = document.querySelectorAll("section[id]");
 
         window.addEventListener("scroll", () => {
             let currentSec = "";
-            sections.forEach((sec) => {
+            sidebarSections.forEach((sec) => {
                 const sectionTop = sec.offsetTop - 150;
                 if (window.scrollY >= sectionTop) {
                     currentSec = sec.getAttribute("id");
                 }
             });
 
-            navLinks.forEach((link) => {
+            sidebarLinks.forEach((link) => {
                 link.classList.remove("active");
                 if (link.getAttribute("href") === `#${currentSec}`) {
                     link.classList.add("active");
                 }
             });
         });
+
+        // Sidebar toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+
+        if (menuToggle && sidebar && overlay && sidebarClose) {
+            function openSidebar() {
+                sidebar.classList.add('open');
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            // Close sidebar on link click
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+        }
+    }
+
+    // ROI bar width animation on scroll
+    const roiBars = document.querySelectorAll(".roi-bar[data-width]");
+    if (roiBars.length > 0) {
+        roiBars.forEach(bar => {
+            gsap.to(bar, {
+                width: bar.dataset.width,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: bar.closest(".roi-scenario-card"),
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+    }
+
+    // ROI counter animation on scroll
+    const roiCounters = document.querySelectorAll(".roi-counter");
+    if (roiCounters.length > 0) {
+        roiCounters.forEach(counter => {
+            const target = parseFloat(counter.dataset.target);
+            if (isNaN(target)) return;
+            gsap.fromTo(counter,
+                { textContent: 0 },
+                {
+                    textContent: target,
+                    duration: 2,
+                    ease: "power2.out",
+                    snap: { textContent: 1 },
+                    scrollTrigger: {
+                        trigger: counter.closest(".roi-scenario-card"),
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+    }
+
+    // ROI magnetic hover effect
+    document.querySelectorAll(".roi-scenario-card").forEach(card => {
+        const glow = card.querySelector(".roi-scenario-card-glow");
+        if (!glow) return;
+        card.addEventListener("mousemove", e => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            glow.style.setProperty("--mx", x + "%");
+            glow.style.setProperty("--my", y + "%");
+        });
+    });
+
+    // ROI card click highlight + auto-rotate
+    const roiCards = document.querySelectorAll(".roi-scenario-card");
+    let roiRotateTimer = null;
+    let roiActiveIdx = -1;
+
+    function activateROICard(index) {
+        roiCards.forEach((c, i) => c.classList.toggle("active", i === index));
+        roiActiveIdx = index;
+        resetROIRotateTimer();
+    }
+
+    function resetROIRotateTimer() {
+        if (roiRotateTimer) clearTimeout(roiRotateTimer);
+        roiRotateTimer = setTimeout(() => {
+            const next = (roiActiveIdx + 1) % roiCards.length;
+            activateROICard(next);
+        }, 4000);
+    }
+
+    if (roiCards.length > 0) {
+        roiCards.forEach((card, idx) => {
+            card.addEventListener("click", () => activateROICard(idx));
+        });
+        // Start auto-rotate with first card active
+        activateROICard(0);
     }
 
     // Pricing tier cards scroll entrance

@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Count-up animation — once on scroll into view with smooth loop
+        // Count-up animation — smooth count-up once on scroll
         counterCards.forEach((card) => {
             const counterElement = card.querySelector(".counter");
             if (!counterElement) return;
@@ -375,8 +375,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const valObj = { val: 0 };
             const tl = gsap.timeline({
-                repeat: -1,
-                repeatDelay: 3,
                 scrollTrigger: {
                     trigger: "#impact",
                     start: "top 80%",
@@ -392,18 +390,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     counterElement.textContent = Math.floor(valObj.val);
                 }
             });
-            tl.to(valObj, {
-                val: 0,
-                duration: 1.2,
-                ease: "power2.in",
-                onUpdate: () => {
-                    counterElement.textContent = Math.floor(valObj.val);
-                }
-            });
 
             if (ringFill) {
                 tl.to(ringFill, { strokeDashoffset: 0, duration: 2, ease: "power2.out" }, 0);
-                tl.to(ringFill, { strokeDashoffset: 301.59, duration: 1.2, ease: "power2.in" });
             }
         });
 

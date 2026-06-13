@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itsrahk.github.io/badar-edge/sitemap.xml

@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* --------------------------------------------------------------------------
         3. Dynamic Magnetic Hover Glow (Solution Cards)
         -------------------------------------------------------------------------- */
-    const cards = document.querySelectorAll(".solution-card");
+    const cards = document.querySelectorAll(".hub-branch-card");
     cards.forEach((card) => {
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
@@ -580,28 +580,10 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
-        // Hub WhatsApp CTA entry
-        const hubWA = document.querySelector(".hub-whatsapp-cta");
-        if (hubWA) {
-            gsap.fromTo(hubWA,
-                { opacity: 0, y: 20 },
-                {
-                    opacity: 1, y: 0, duration: 0.7, ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: hubWA,
-                        start: "top 90%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-
-        // Staggered entry for Solution Cards
-
-        // Staggered entry for Solution Cards
-        const solutionCards = document.querySelectorAll(".solution-card-grid");
+        // Staggered entry for hub branch cards
+        const solutionCards = document.querySelectorAll(".hub-branches");
         solutionCards.forEach(grid => {
-            gsap.fromTo(grid.querySelectorAll(".solution-card"), 
+            gsap.fromTo(grid.querySelectorAll(".hub-branch-card"), 
                 { opacity: 0, y: 50, scale: 0.95 },
                 {
                     opacity: 1,

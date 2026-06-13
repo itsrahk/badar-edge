@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6J277LPKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W6J277LPKK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badar Edge | AI Solutions Company</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Badar Edge is a problem-first AI solutions company. We build packaged systems, custom solutions, and AI service implementations that increase revenue, eliminate bottlenecks, and reduce manual work for businesses that want outcomes, not just tools.">
+    <meta name="keywords" content="AI solutions, business automation, speed to lead, custom AI systems, real estate AI, workflow automation">
+    <meta name="author" content="Badar Edge">
+    <meta property="og:title" content="Badar Edge | AI Solutions Company">
+    <meta property="og:description" content="Badar Edge is a problem-first AI solutions company. We build packaged systems, custom solutions, and AI implementations that increase revenue and eliminate bottlenecks for businesses that want outcomes, not just tools.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Syne (Headings) & Outfit (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-theme">
+    
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
+    <canvas id="neural-canvas"></canvas>
+    
+    <!-- Dynamic Glowing Ambient Blobs -->
+    <div class="ambient-glow blob-violet"></div>
+    <div class="ambient-glow blob-blue"></div>
+    <div class="ambient-glow blob-cyan"></div>
+
+    <!-- Floating Cyber Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="floating-dock">
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
+                <span>Book Call</span>
+                <i data-lucide="arrow-up-right" class="icon-small"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="#hero" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="#problem" class="sidebar-link"><span class="link-dot"></span>Problem</a></li>
+                <li><a href="#solutions" class="sidebar-link"><span class="link-dot"></span>Solutions</a></li>
+                <li><a href="#workflow" class="sidebar-link"><span class="link-dot"></span>Workflow</a></li>
+                <li><a href="#benchmarks" class="sidebar-link"><span class="link-dot"></span>Impact</a></li>
+                <li><a href="#why-badar" class="sidebar-link"><span class="link-dot"></span>Why Badar</a></li>
+                <li><a href="#roi-calculator" class="sidebar-link"><span class="link-dot"></span>ROI</a></li>
+                <li><a href="#testimonials" class="sidebar-link"><span class="link-dot"></span>Testimonials</a></li>
+                <li><a href="#pricing" class="sidebar-link"><span class="link-dot"></span>Pricing</a></li>
+                <li><a href="#process" class="sidebar-link"><span class="link-dot"></span>Process</a></li>
+                <li><a href="#about" class="sidebar-link"><span class="link-dot"></span>About</a></li>
+                <li><a href="#contact" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="page-container">
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <svg class="hero-logo-icon" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="gf-outer" x1="32" y1="5" x2="59" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#a5b4fc"/>
+                                <stop offset="1" stop-color="#6366f1"/>
+                            </linearGradient>
+                            <linearGradient id="gs-outer" x1="32" y1="59" x2="34" y2="61" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4338ca"/>
+                                <stop offset="1" stop-color="#312e81"/>
+                            </linearGradient>
+                            <linearGradient id="gf-mid" x1="32" y1="12" x2="52" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#e9d5ff"/>
+                                <stop offset="1" stop-color="#c084fc"/>
+                            </linearGradient>
+                            <linearGradient id="gs-mid" x1="32" y1="52" x2="34" y2="54" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#9333ea"/>
+                                <stop offset="1" stop-color="#6b21a8"/>
+                            </linearGradient>
+                            <linearGradient id="gf-inner" x1="32" y1="19" x2="45" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#a5f3fc"/>
+                                <stop offset="1" stop-color="#00f2fe"/>
+                            </linearGradient>
+                            <linearGradient id="gs-inner" x1="32" y1="45" x2="34" y2="47" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#0891b2"/>
+                                <stop offset="1" stop-color="#155e75"/>
+                            </linearGradient>
+                            <filter id="glow3d">
+                                <feGaussianBlur stdDeviation="1" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+
+                        <!-- Outer box -->
+                        <path class="diamond-side outer-side" d="M 5,32 L 32,59 L 34,61 L 7,34 Z" fill="url(#gs-outer)"/>
+                        <path class="diamond-side outer-side" d="M 32,59 L 59,32 L 61,34 L 34,61 Z" fill="url(#gs-outer)" opacity="0.6"/>
+                        <path class="diamond diamond-outer" d="M 32,5 L 59,32 L 32,59 L 5,32 Z" stroke="url(#gf-outer)" filter="url(#glow3d)"/>
+
+                        <!-- Mid box -->
+                        <path class="diamond-side mid-side" d="M 12,32 L 32,52 L 34,54 L 14,34 Z" fill="url(#gs-mid)"/>
+                        <path class="diamond-side mid-side" d="M 32,52 L 52,32 L 54,34 L 34,54 Z" fill="url(#gs-mid)" opacity="0.6"/>
+                        <path class="diamond diamond-mid" d="M 32,12 L 52,32 L 32,52 L 12,32 Z" stroke="url(#gf-mid)" filter="url(#glow3d)"/>
+
+                        <!-- Inner box -->
+                        <path class="diamond-side inner-side" d="M 19,32 L 32,45 L 34,47 L 21,34 Z" fill="url(#gs-inner)"/>
+                        <path class="diamond-side inner-side" d="M 32,45 L 45,32 L 47,34 L 34,47 Z" fill="url(#gs-inner)" opacity="0.6"/>
+                        <path class="diamond diamond-inner" d="M 32,19 L 45,32 L 32,45 L 19,32 Z" stroke="url(#gf-inner)" filter="url(#glow3d)"/>
+                    </svg>
+                    <div class="hero-brand-text">BADAR EDGE</div>
+                </div>
+                <h1 class="hero-headline">
+                    <span class="hero-headline-pre"></span>
+                    We build systems that <span class="headline-gradient">increase revenue</span> and <span class="headline-gradient">eliminate bottlenecks</span>
+                </h1>
+                
+                <p class="hero-subtext">
+                    Badar Edge is a problem-first AI solutions company. We build packaged systems, custom solutions, and AI service implementations that increase revenue, eliminate bottlenecks, and reduce manual work for businesses that want outcomes, not just tools.
+                </p>
+                
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-large">
+                        <span>Book Free Strategy Call</span>
+                        <i data-lucide="phone-call"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS — THE PROBLEM -->
+        <section id="problem" class="section problem-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">The problem with most AI services</h2>
+                <p class="section-subtitle">Most providers sell you tools. We sell outcomes. Here is the difference.</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card glass-panel">
+                    <div class="problem-icon-wrap icon-red">
+                        <i data-lucide="package-open"></i>
+                    </div>
+                    <h3 class="problem-title">You get a tool, not a system</h3>
+                    <p class="problem-text">A chatbot, a script, or a prompt template dropped into your workflow with no integration, no training, and no follow-through.</p>
+                </div>
+                
+                <div class="problem-card glass-panel">
+                    <div class="problem-icon-wrap icon-red">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <h3 class="problem-title">It breaks the moment you look away</h3>
+                    <p class="problem-text">Fragile setups that require constant manual maintenance. One API change, one platform update, and your "automation" stops working.</p>
+                </div>
+                
+                <div class="problem-card glass-panel">
+                    <div class="problem-icon-wrap icon-red">
+                        <i data-lucide="trending-down"></i>
+                    </div>
+                    <h3 class="problem-title">No measurable business impact</h3>
+                    <p class="problem-text">Fancy dashboards with vanity metrics. No connection to actual revenue, lead conversion, or time saved on the ground.</p>
+                </div>
+            </div>
+            
+            <div class="problem-outcome">
+                <p class="outcome-line">We start with your problem, then build the <span class="headline-gradient">right system</span> to solve it. Packaged, custom, or advisory. Results first, technology second.</p>
+            </div>
+        </section>
+
+        <!-- SYSTEM PERFORMANCE BENCHMARKS -->
+        <section id="impact" class="section impact-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">By the Numbers</h2>
+                <p class="section-subtitle">Real results from real deployments.</p>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="db-grid db-grid-compact">
+                    <div class="db-card stat-card" data-metric="50">
+                        <div class="db-card-glow"></div>
+                        <div class="stat-icon-wrap icon-cyan">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <div class="stat-ring-wrap">
+                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
+                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
+                            </svg>
+                            <h3 class="stat-number"><span class="counter">0</span>+</h3>
+                        </div>
+                        <p class="stat-label">Clients Served</p>
+                    </div>
+                    
+                    <div class="db-card stat-card" data-metric="20">
+                        <div class="db-card-glow"></div>
+                        <div class="stat-icon-wrap icon-purple">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <div class="stat-ring-wrap">
+                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
+                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
+                            </svg>
+                            <h3 class="stat-number"><span class="counter">0</span>+</h3>
+                        </div>
+                        <p class="stat-label">AI Systems Deployed</p>
+                    </div>
+                    
+                    <div class="db-card stat-card" data-metric="8">
+                        <div class="db-card-glow"></div>
+                        <div class="stat-icon-wrap icon-indigo">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <div class="stat-ring-wrap">
+                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
+                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
+                            </svg>
+                            <h3 class="stat-number"><span class="counter">0</span>+</h3>
+                        </div>
+                        <p class="stat-label">Industries Served</p>
+                    </div>
+                    
+                    <div class="db-card stat-card" data-metric="100">
+                        <div class="db-card-glow"></div>
+                        <div class="stat-icon-wrap icon-violet">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <div class="stat-ring-wrap">
+                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
+                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
+                            </svg>
+                            <h3 class="stat-number"><span class="counter">0</span>+</h3>
+                        </div>
+                        <p class="stat-label">Workflows Automated</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTIONS SECTION -->
+        <section id="solutions" class="section solutions-section">
+            <div class="section-header">
+                <h2 class="section-title">What we build</h2>
+                <p class="section-subtitle">Three types of solutions. One mission: solve business problems through AI.</p>
+            </div>
+
+            <!-- Infographic hub + 3 branches -->
+            <div class="solutions-hub">
+                <div class="hub-node glass-panel">
+                    <div class="hub-node-glow"></div>
+                    <div class="hub-node-icon"><i data-lucide="sparkles"></i></div>
+                    <h3 class="hub-node-title">Solutions</h3>
+                    <p class="hub-node-desc">Three ways to solve your problem</p>
+                </div>
+                <div class="hub-branches">
+                    <div class="hub-branch">
+                        <div class="hub-branch-line"></div>
+                        <div class="hub-branch-card glass-panel">
+                            <div class="hub-branch-number">01</div>
+                            <div class="hub-branch-icon icon-cyan"><i data-lucide="package"></i></div>
+                            <h4 class="hub-branch-title">System Solutions</h4>
+                            <p class="hub-branch-desc">Pre-built AI systems. Fixed scope, fixed price, predictable outcomes.</p>
+                        </div>
+                    </div>
+                    <div class="hub-branch">
+                        <div class="hub-branch-line"></div>
+                        <div class="hub-branch-card glass-panel" style="position: relative;">
+                            <div class="hub-branch-number">02</div>
+                            <span class="solution-badge badge-shiny" style="position: absolute; top: 10px; right: 10px; font-size: 0.5rem; padding: 2px 8px;">Coming Soon</span>
+                            <div class="hub-branch-icon icon-purple"><i data-lucide="compass"></i></div>
+                            <h4 class="hub-branch-title">Custom Solutions</h4>
+                            <p class="hub-branch-desc">Bespoke builds. You bring the challenge, we design the system.</p>
+                        </div>
+                    </div>
+                    <div class="hub-branch">
+                        <div class="hub-branch-line"></div>
+                        <div class="hub-branch-card glass-panel">
+                            <div class="hub-branch-number">03</div>
+                            <div class="hub-branch-icon icon-indigo"><i data-lucide="layers"></i></div>
+                            <h4 class="hub-branch-title">AI Services</h4>
+                            <p class="hub-branch-desc">We offer Traditional AI services like AI Automation, workflows, content creation, and more. Just WhatsApp us what you want.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Category 1: System Solutions -->
+            <div class="solution-category">
+                <div class="solution-category-header">
+                    <h3 class="solution-cat-title solution-cat-title-accent">System Solutions</h3>
+                    <p class="solution-cat-desc">Packaged AI systems built around specific business problems.</p>
+                </div>
+
+                <!-- Speed-to-Lead deep dive -->
+                <div class="stl-deepdive glass-panel" id="stl-deepdive">
+                    <div class="stl-deepdive-glow"></div>
+                    <div class="stl-deepdive-top">
+                        <div class="stl-deepdive-badges">
+                            <span class="solution-badge badge-cyan">LIVE</span>
+                            <span class="stl-badge-re">Real Estate</span>
+                        </div>
+                        <h3 class="stl-deepdive-name">Speed-to-Lead System</h3>
+                        <p class="stl-deepdive-tagline">Never lose a deal to slow follow-up again.</p>
+                    </div>
+
+                    <!-- Problem stats strip -->
+                    <div class="stl-problem-strip">
+                        <div class="stl-problem-stat" data-target="78" data-suffix="%">
+                            <span class="stl-stat-num">0%</span>
+                            <span class="stl-stat-label">of buyers choose the first agent who responds</span>
+                        </div>
+                        <div class="stl-problem-stat" data-target="80" data-prefix=">" data-suffix="%">
+                            <span class="stl-stat-num stl-stat-bad">&gt;0%</span>
+                            <span class="stl-stat-label">drop in conversion when response exceeds 5 minutes</span>
+                        </div>
+                        <div class="stl-problem-stat" data-target="60" data-suffix="s">
+                            <span class="stl-stat-num stl-stat-good">0s</span>
+                            <span class="stl-stat-label">our system's guaranteed response time</span>
+                        </div>
+                    </div>
+
+                    <div class="stl-deepdive-body">
+                        <div class="stl-why-section">
+                            <h4 class="stl-subhead">Why your agency needs this</h4>
+                            <p class="stl-text">Most real estate agencies respond to leads hours — sometimes days — after the inquiry arrives. By then, the buyer has already contacted three other agents. The Speed-to-Lead system changes this at the infrastructure level. Every inquiry from every channel is captured, responded to, and nurtured within 60 seconds. No manual work. No missed opportunities.</p>
+                        </div>
+
+                        <div class="stl-why-section">
+                            <h4 class="stl-subhead stl-subhead-red">Why existing solutions fail</h4>
+                            <p class="stl-text">CRAs and property portals offer basic auto-responders, but they are generic, disconnected from your pipeline, and incapable of qualification. Freelance setups break when the developer moves on. Off-the-shelf chatbots answer questions but do not book viewings. The Speed-to-Lead system is not a tool — it is an end-to-end lead response infrastructure that owns the outcome.</p>
+                        </div>
+
+                        <div class="stl-benefit-grid">
+                            <div class="stl-benefit-item">
+                                <i data-lucide="globe" class="icon-cyan icon-tiny"></i>
+                                <span>Captures leads from Facebook, WhatsApp, website, and property portals</span>
+                            </div>
+                            <div class="stl-benefit-item">
+                                <i data-lucide="zap" class="icon-cyan icon-tiny"></i>
+                                <span>Responds to every inquiry within 60 seconds automatically</span>
+                            </div>
+                            <div class="stl-benefit-item">
+                                <i data-lucide="calendar" class="icon-cyan icon-tiny"></i>
+                                <span>7-day automated viewing nurture sequence</span>
+                            </div>
+                            <div class="stl-benefit-item">
+                                <i data-lucide="database" class="icon-cyan icon-tiny"></i>
+                                <span>HubSpot CRM pipeline — fully configured</span>
+                            </div>
+                            <div class="stl-benefit-item">
+                                <i data-lucide="bar-chart-3" class="icon-cyan icon-tiny"></i>
+                                <span>Looker Studio reporting dashboard</span>
+                            </div>
+                            <div class="stl-benefit-item">
+                                <i data-lucide="refresh-cw" class="icon-cyan icon-tiny"></i>
+                                <span>Monthly optimization included</span>
+                            </div>
+                        </div>
+
+                        <div class="stl-cta-row">
+                            <a href="#pricing" class="btn btn-primary btn-glow btn-large">
+                                <span>See Pricing</span>
+                                <i data-lucide="arrow-down" class="icon-small"></i>
+                            </a>
+                            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call%20about%20Speed-to-Lead" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                                <span>Book a Call</span>
+                                <i data-lucide="phone-call" class="icon-small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#pricing" class="btn btn-primary btn-glow btn-large">
+                    <span>See Complete Pricing</span>
+                    <i data-lucide="arrow-right" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SPEED-TO-LEAD WORKFLOW — 6-STEP PROCESS -->
+        <section id="workflow" class="section workflow-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">How Speed-to-Lead works</h2>
+                <p class="section-subtitle">From inquiry to booked appointment — six steps, fully automated, under 60 seconds total.</p>
+            </div>
+            
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="workflow-step-number">01</div>
+                    <div class="workflow-step-content">
+                        <h4>Lead arrives</h4>
+                        <p>Inquiry comes in via website form, WhatsApp, Facebook, Google Ads, or landing page.</p>
+                    </div>
+                </div>
+                <div class="workflow-connector"></div>
+                
+                <div class="workflow-step">
+                    <div class="workflow-step-number">02</div>
+                    <div class="workflow-step-content">
+                        <h4>AI captures & enriches</h4>
+                        <p>Lead details are extracted, enriched with property/listing context, and scored for priority.</p>
+                    </div>
+                </div>
+                <div class="workflow-connector"></div>
+                
+                <div class="workflow-step">
+                    <div class="workflow-step-number">03</div>
+                    <div class="workflow-step-content">
+                        <h4>Instant response sent</h4>
+                        <p>Personalized SMS, email, or WhatsApp reply fires within seconds — with relevant property or service info.</p>
+                    </div>
+                </div>
+                <div class="workflow-connector"></div>
+                
+                <div class="workflow-step">
+                    <div class="workflow-step-number">04</div>
+                    <div class="workflow-step-content">
+                        <h4>Qualification begins</h4>
+                        <p>AI conducts a natural conversation to qualify budget, timeline, and requirements — no human needed.</p>
+                    </div>
+                </div>
+                <div class="workflow-connector"></div>
+                
+                <div class="workflow-step">
+                    <div class="workflow-step-number">05</div>
+                    <div class="workflow-step-content">
+                        <h4>CRM updated & routed</h4>
+                        <p>Lead is created in your CRM with full conversation history, enrichment data, and priority score.</p>
+                    </div>
+                </div>
+                <div class="workflow-connector"></div>
+                
+                <div class="workflow-step">
+                    <div class="workflow-step-number">06</div>
+                    <div class="workflow-step-content">
+                        <h4>Appointment booked</h4>
+                        <p>Qualified leads are offered a calendar slot. Booking is confirmed and synced to your calendar automatically.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20see%20a%20demo%20of%20Speed-to-Lead" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-large">
+                    <span>See a Live Demo</span>
+                    <i data-lucide="play-circle" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SYSTEM PERFORMANCE BENCHMARKS -->
+        <section id="benchmarks" class="section impact-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">System performance benchmarks</h2>
+                <p class="section-subtitle">Real numbers from real deployments. Not projections. Not estimates.</p>
+            </div>
+            
+            <div class="benchmarks-container glass-panel">
+                <div class="benchmarks-grid">
+                    <div class="benchmark-card">
+                        <div class="benchmark-icon icon-cyan">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3 class="benchmark-value font-cyan">&lt; <span class="bm-count" data-target="60">0</span>s</h3>
+                        <p class="benchmark-label">Lead Response Time</p>
+                        <p class="benchmark-desc">From inquiry to first contact. Industry average is 4-12 hours.</p>
+                    </div>
+                    
+                    <div class="benchmark-card">
+                        <div class="benchmark-icon icon-purple">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <h3 class="benchmark-value font-purple">+<span class="bm-count" data-target="45">0</span>%</h3>
+                        <p class="benchmark-label">Conversion Uplift</p>
+                        <p class="benchmark-desc">Average increase in lead-to-appointment conversion after deployment.</p>
+                    </div>
+                    
+                    <div class="benchmark-card">
+                        <div class="benchmark-icon icon-indigo">
+                            <i data-lucide="percent"></i>
+                        </div>
+                        <h3 class="benchmark-value font-indigo"><span class="bm-count" data-target="100">0</span>%</h3>
+                        <p class="benchmark-label">Lead Capture Automation</p>
+                        <p class="benchmark-desc">Every lead captured, enriched, and entered into CRM — zero manual work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY BADAR EDGE (THE DIFFERENCE) -->
+        <section id="why-badar" class="section why-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Badar Edge</h2>
+                <p class="section-subtitle">Outcome-focused vs. tool-focused. The difference is in the results you actually get.</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card glass-panel text-left">
+                    <h3 class="why-card-title title-grey">Typical AI Providers</h3>
+                    <ul class="why-list list-red">
+                        <li>
+                            <i data-lucide="x-circle" class="icon-red"></i>
+                            <span>Sell one-off tools with no integration</span>
+                        </li>
+                        <li>
+                            <i data-lucide="x-circle" class="icon-red"></i>
+                            <span>No post-deployment support or monitoring</span>
+                        </li>
+                        <li>
+                            <i data-lucide="x-circle" class="icon-red"></i>
+                            <span>Vague outcomes with no tracking</span>
+                        </li>
+                        <li>
+                            <i data-lucide="x-circle" class="icon-red"></i>
+                            <span>Generic solutions not built for your workflow</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="why-card glass-panel text-left active-why-card">
+                    <div class="why-badge">BADAR EDGE APPROACH</div>
+                    <h3 class="why-card-title title-glowing">Packaged Systems Architecture</h3>
+                    <ul class="why-list list-green">
+                        <li>
+                            <i data-lucide="check-circle-2" class="icon-green"></i>
+                            <span>End-to-end systems that integrate with your existing stack</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle-2" class="icon-green"></i>
+                            <span>Ongoing monitoring, maintenance, and optimization</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle-2" class="icon-green"></i>
+                            <span>Trackable metrics tied to revenue, not vanity</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle-2" class="icon-green"></i>
+                            <span>Built for your specific industry and process</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI SCENARIO CARDS -->
+        <section id="roi-calculator" class="section calculator-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">What Speed-to-Lead means for your business</h2>
+                <p class="section-subtitle">Three real scenarios. Pick the one that looks like your business.</p>
+            </div>
+            
+            <div class="roi-scenarios">
+                <div class="roi-scenario-card glass-panel">
+                    <div class="roi-scenario-card-glow"></div>
+                    <div class="roi-scenario-header">
+                        <span class="roi-scenario-badge">Residential Agency</span>
+                        <h3 class="roi-scenario-title">5-10 agents, high inbound volume</h3>
+                    </div>
+                    <div class="roi-scenario-body">
+                        <div class="roi-bar-group">
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">Current</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-before" data-width="80%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-bad">4-8 hrs</span>
+                            </div>
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">System</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-after" data-width="3%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-good">&lt;60s</span>
+                            </div>
+                        </div>
+                        <div class="roi-highlight roi-highlight-modern">
+                            <span class="roi-highlight-number"><span class="roi-counter" data-target="15">0</span></span>
+                            <span class="roi-highlight-label">extra deals per month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roi-scenario-card glass-panel">
+                    <div class="roi-scenario-card-glow"></div>
+                    <div class="roi-scenario-header">
+                        <span class="roi-scenario-badge">Luxury Consultant</span>
+                        <h3 class="roi-scenario-title">Solo agent, high-value listings</h3>
+                    </div>
+                    <div class="roi-scenario-body">
+                        <div class="roi-bar-group">
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">Current</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-before" data-width="60%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-bad">2-6 hrs</span>
+                            </div>
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">System</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-after" data-width="3%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-good">&lt;60s</span>
+                            </div>
+                        </div>
+                        <div class="roi-highlight roi-highlight-modern">
+                            <span class="roi-highlight-number">$<span class="roi-counter" data-target="20">0</span>K</span>
+                            <span class="roi-highlight-label">commissions saved per month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roi-scenario-card glass-panel">
+                    <div class="roi-scenario-card-glow"></div>
+                    <div class="roi-scenario-header">
+                        <span class="roi-scenario-badge">Investment Firm</span>
+                        <h3 class="roi-scenario-title">Multi-location, team of 10+</h3>
+                    </div>
+                    <div class="roi-scenario-body">
+                        <div class="roi-bar-group">
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">Current</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-before" data-width="95%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-bad">12-24 hrs</span>
+                            </div>
+                            <div class="roi-bar-row">
+                                <span class="roi-bar-label">System</span>
+                                <div class="roi-bar-track">
+                                    <div class="roi-bar roi-bar-after" data-width="3%"></div>
+                                </div>
+                                <span class="roi-bar-value roi-good">&lt;60s</span>
+                            </div>
+                        </div>
+                        <div class="roi-highlight roi-highlight-modern">
+                            <span class="roi-highlight-number">$<span class="roi-counter" data-target="30">0</span>K</span>
+                            <span class="roi-highlight-label">saved per month in operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENT TESTIMONIALS -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Trusted by <span class="headline-gradient">real estate</span> professionals</h2>
+                <p class="section-subtitle">Agents, brokers, and teams who switched from tools to outcomes.</p>
+            </div>
+            
+            <div class="testimonials-track">
+                <div class="testimonials-grid">
+
+                    <!-- Global 1 — Real Estate -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-global">Global · Real Estate</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"We were losing leads because our team couldn't respond fast enough. The Speed-to-Lead system cut response time from hours to seconds. Our conversion rate jumped 38% in the first month."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #f59e0b, #f97316);">JD</div>
+                            <div class="t-meta">
+                                <span class="t-name">James Delaney</span>
+                                <span class="t-role">Broker, Delaney Realty · Florida, USA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global 2 — AI Services -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-global">Global · AI Services</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"The AI audit gave us a clear roadmap for automation. Within 3 weeks, we had custom agents handling customer support tickets — saving 120 hours of team time per month."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">AK</div>
+                            <div class="t-meta">
+                                <span class="t-name">Anna Kovács</span>
+                                <span class="t-role">COO, TechScale · Berlin, Germany</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global 3 — Real Estate -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-global">Global · Real Estate</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"I was skeptical about AI in real estate. But the system handles inbound, qualification, and booking without me lifting a finger. I've closed 4 more deals this quarter because I'm not stuck on the phone with unqualified leads."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">PW</div>
+                            <div class="t-meta">
+                                <span class="t-name">Precious Williams</span>
+                                <span class="t-role">Realtor, Luxe Properties · Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pakistan — AI Services -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-local">Pakistan · AI Services</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"We hired Badar Edge to train our operations team on AI workflows. The hands-on workshop transformed how we approach automation. We built our first internal AI agent within a week of the training."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #a855f7, #d946ef);">FZ</div>
+                            <div class="t-meta">
+                                <span class="t-name">Fatima Zafar</span>
+                                <span class="t-role">Head of Ops, DigiMark Solutions · Karachi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global 4 — Real Estate -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-global">Global · Real Estate</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"We run 4 offices across Sydney. The Speed-to-Lead system unified our lead intake across all branches. Response time dropped from 25 minutes to 12 seconds. Our database grew 3x in 90 days."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #6366f1, #818cf8);">LT</div>
+                            <div class="t-meta">
+                                <span class="t-name">Liam Tran</span>
+                                <span class="t-role">Principal, Harbour Realty · Sydney, Australia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global 5 — AI Services -->
+                    <div class="testimonial-card">
+                        <div class="t-badge t-badge-global">Global · AI Services</div>
+                        <div class="t-stars">★★★★★</div>
+                        <div class="t-quote">
+                            <p>"The CRM automation system transformed how we manage our pipeline. Leads are captured, qualified, and assigned automatically. We went from 12-hour response times to under 2 minutes across the board."</p>
+                        </div>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">SM</div>
+                            <div class="t-meta">
+                                <span class="t-name">Sarah Mitchell</span>
+                                <span class="t-role">Operations Director, CloudBase · London, UK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20get%20similar%20results%20for%20my%20business" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-large">
+                    <span>Get Similar Results</span>
+                    <i data-lucide="trending-up" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="pricing" class="section pricing-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Plans built for how you sell</h2>
+                <p class="section-subtitle">Pick the tier that matches your deal volume. No hidden fees, no lock-in contracts.</p>
+            </div>
+
+            <!-- Speed-to-Lead Pricing -->
+            <div class="pricing-service">
+                <div class="pricing-service-header">
+                    <div>
+                        <h3 class="service-name">Speed-to-Lead System</h3>
+                        <p class="service-desc">Captures, qualifies, and books real estate leads in under 60 seconds. Pick the tier that fits your volume.</p>
+                    </div>
+                </div>
+
+                <!-- Quick-fit guide -->
+                <div class="pricing-fit-guide">
+                    <div class="fit-item">
+                        <span class="fit-label">Starter</span>
+                        <span class="fit-desc">Solo agent or small team</span>
+                    </div>
+                    <div class="fit-item fit-item-rec">
+                        <span class="fit-label fit-label-cy">Growth</span>
+                        <span class="fit-desc">Growing agency, 3 to 10 agents</span>
+                    </div>
+                    <div class="fit-item">
+                        <span class="fit-label">Enterprise</span>
+                        <span class="fit-desc">Multi-location brokerage</span>
+                    </div>
+                </div>
+
+                <div class="pricing-tier-row">
+                    <div class="pricing-tier glass-panel">
+                        <div class="tier-label">Starter</div>
+                        <div class="tier-price"><span class="currency">$</span><span class="amount">497</span><span class="period">/mo</span></div>
+                        <div class="tier-roi">Recovers ~$5,000/mo in lost deals</div>
+                        <ul class="tier-features">
+                            <li>Single lead source (website or WhatsApp)</li>
+                            <li>AI auto-response with property context</li>
+                            <li>Lead capture to Google Sheets or Airtable</li>
+                            <li>Instant SMS & WhatsApp follow-up</li>
+                            <li>Monthly performance review</li>
+                        </ul>
+                        <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call%20about%20Speed-to-Lead%20(Starter%20-%20%24497)" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-full btn-sm">Book a Call</a>
+                    </div>
+                    <div class="pricing-tier glass-panel tier-rec">
+                        <div class="rec-badge">Most Popular</div>
+                        <div class="tier-label">Growth</div>
+                        <div class="tier-price"><span class="currency">$</span><span class="amount">997</span><span class="period">/mo</span></div>
+                        <div class="tier-roi tier-roi-cy">Recovers ~$15,000/mo in lost deals</div>
+                        <ul class="tier-features">
+                            <li>Up to 3 lead sources</li>
+                            <li>AI lead qualification & priority scoring</li>
+                            <li>CRM integration (HubSpot or Salesforce)</li>
+                            <li>Automated calendar booking</li>
+                            <li>Bi-weekly strategy calls</li>
+                        </ul>
+                        <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call%20about%20Speed-to-Lead%20(Growth%20-%20%24997)" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-full btn-sm">Book a Call</a>
+                    </div>
+                    <div class="pricing-tier glass-panel">
+                        <div class="tier-label">Enterprise</div>
+                        <div class="tier-price"><span class="currency">$</span><span class="amount">1,997</span><span class="period">/mo</span></div>
+                        <div class="tier-roi">Recovers $30K to $50K/mo in lost deals</div>
+                        <ul class="tier-features">
+                            <li>Unlimited lead sources</li>
+                            <li>Full pipeline management & dashboards</li>
+                            <li>Custom CRM integration</li>
+                            <li>Dedicated support & weekly reviews</li>
+                            <li>Priority response (24hr SLA)</li>
+                        </ul>
+                        <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%27m%20interested%20in%20Speed-to-Lead%20(Enterprise%20-%20%241%2C997)" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-full btn-sm">Talk to Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS TIMELINE -->
+        <section id="process" class="section process-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">How we deliver your system</h2>
+                <p class="section-subtitle">Four phases from problem discovery to live system. Typically 7-14 days to first results.</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-line">
+                    <div class="timeline-progress-fill" id="timeline-progress"></div>
+                </div>
+                
+                <!-- Step 1 -->
+                <div class="process-step glass-panel" id="step-1">
+                    <div class="step-number-glow">01</div>
+                    <h3 class="step-title">We find the bottleneck</h3>
+                    <p class="step-desc">We audit your current lead process — capture, response time, CRM, and conversion — to identify exactly where deals are slipping through the cracks.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step glass-panel" id="step-2">
+                    <div class="step-number-glow">02</div>
+                    <h3 class="step-title">We build the system around it</h3>
+                    <p class="step-desc">Lead capture, AI qualification, CRM sync, and automated follow-up — configured for your channels and connected to your tools.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step glass-panel" id="step-3">
+                    <div class="step-number-glow">03</div>
+                    <h3 class="step-title">We go live and tune</h3>
+                    <p class="step-desc">Live traffic runs through the system. We monitor, adjust response logic, and refine qualification thresholds based on real behavior — not guesses.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step glass-panel" id="step-4">
+                    <div class="step-number-glow">04</div>
+                    <h3 class="step-title">We keep making it better</h3>
+                    <p class="step-desc">Weekly performance reviews, ongoing optimization, and transparent reporting — so you always know how many leads converted and at what cost per acquisition.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20start%20my%20pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-large">
+                    <span>Start Your Deployment</span>
+                    <i data-lucide="arrow-right" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT — FOUNDER & AI SOLUTIONS ARCHITECT -->
+        <section id="about" class="section dashboard-section">
+            <div class="section-header text-center section-header--compact">
+                <h2 class="section-title">Founder &amp; AI Solutions Architect</h2>
+            </div>
+            
+            <div class="architect-profile glass-panel">
+                <div class="architect-profile-inner">
+                    <h3 class="architect-name-main">Rai Arslan Hussain</h3>
+                    <span class="architect-role-main">AI Solutions Architect</span>
+                    <p class="architect-bio">
+                        I design and deploy AI-driven automation systems that do one thing well — generate real revenue. I train students, professionals, and businesses on how to actually use and deploy AI beyond the hype. My mission is to build AI solutions that don't just look good on a slide deck but drive measurable outcomes for the people who use them.
+                    </p>
+                    <p class="architect-bio architect-bio-re">
+                        In real estate, I specialize in Speed-to-Lead systems that capture inbound inquiries, qualify leads, and book appointments — all within 60 seconds, without a single human touch.
+                    </p>
+                    <div class="architect-quote-block">
+                        <span class="architect-quote-icon">"</span>
+                        <p class="architect-quote-line">The market does not pay for AI knowledge. It pays for AI-driven outcomes delivered reliably.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- CONTACT & ACTION FUNNEL -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-card-container glass-panel">
+                <div class="contact-info-panel">
+                    <h2 class="contact-title">Let's build your system.</h2>
+                    <p class="contact-subtitle">
+                        Prefer WhatsApp? Chat with us directly — we respond in under 5 minutes.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i data-lucide="mail" class="icon-cyan"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">Contact</span>
+                                <a href="mailto:itsraiarslan@gmail.com" class="contact-detail-link">itsraiarslan@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <i data-lucide="user-check" class="icon-indigo"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">LinkedIn</span>
+                                <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="contact-detail-link">Connect on LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="contact-form-panel">
+                    <form id="lead-capture-form" class="cyber-form" onsubmit="handleFormSubmit(event)">
+                        
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Badar" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Work Email <span class="required-star">*</span></label>
+                            <input type="email" id="client-email" name="email" class="form-input" placeholder="badar@edge.com" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-phone" class="form-label">Phone / WhatsApp <span class="optional-tag">optional</span></label>
+                                <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client-service" class="form-label">Tell Us What You Need <span class="required-star">*</span></label>
+                                <textarea id="client-service" name="service" class="form-textarea" rows="3" placeholder="e.g. I want automated lead follow-up for my clinic, I need LinkedIn profile optimization, I'm interested in the Growth content plan, or tell us about your custom requirement..." required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client-background" class="form-label">Your Background / Business Details</label>
+                            <textarea id="client-background" name="background" class="form-textarea" rows="4" placeholder="Tell us about your industry, current challenges, and what you're looking to build..." spellcheck="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-glow btn-full mt-10">
+                            <span>Send Inquiry</span>
+                            <i data-lucide="send" class="icon-small"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Success message layout -->
+                    <div id="form-success" class="form-success-state hide-state">
+                        <i data-lucide="check-circle-2" class="success-icon"></i>
+                        <h3 class="success-title">Request Submitted Successfully!</h3>
+                        <p class="success-text">Your request has been submitted successfully. We will contact you within 1-2 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-logo-side">
+                <div class="nav-logo">
+                    <span class="logo-text">BADAR EDGE<span class="logo-pulse"></span></span>
+                </div>
+                <p class="footer-copy">© 2026 Badar Edge. Problem-first AI solutions company. Built for outcomes, not just tools.</p>
+            </div>
+            
+            <div class="footer-links-side">
+                <a href="#hero" class="footer-link">Home</a>
+                <a href="#problem" class="footer-link">Problem</a>
+                <a href="#solutions" class="footer-link">Solutions</a>
+                <a href="#pricing" class="footer-link">Pricing</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-cta">
+                <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-sm">
+                    <span>Book a Call</span>
+                    <i data-lucide="arrow-up-right" class="icon-small"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: GSAP, ScrollTrigger, Lenis smooth scroll, Lucide icons, Canvas-Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide && lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    
+    <!-- Code script logic -->
+    <script src="app.js"></script>
+</body>
+</html>

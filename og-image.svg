@@ -34,15 +34,16 @@
   <!-- Diamond icon centered around x:340, y:315 -->
   <g transform="translate(340,315)">
     <!-- Outer diamond -->
-    <path d="M 0,-130 L 130,0 L 0,130 L -130,0 Z" stroke="#6366f1" stroke-width="3" fill="none" opacity="0.9"/>
+    <path d="M 0,-130 L 130,0 L 0,130 L -130,0 Z" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/>
     <!-- Mid diamond -->
-    <path d="M 0,-95 L 95,0 L 0,95 L -95,0 Z" stroke="#c084fc" stroke-width="3" fill="none" opacity="0.9"/>
+    <path d="M 0,-95 L 95,0 L 0,95 L -95,0 Z" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/>
     <!-- Inner diamond -->
-    <path d="M 0,-60 L 60,0 L 0,60 L -60,0 Z" stroke="#00f2fe" stroke-width="3" fill="none" opacity="0.9"/>
+    <path d="M 0,-60 L 60,0 L 0,60 L -60,0 Z" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/>
   </g>
 
-  <!-- BADAR EDGE text -->
-  <text x="530" y="295" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="4">BADAR EDGE</text>
+  <!-- BADAR EDGE text stacked -->
+  <text x="530" y="275" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="4">BADAR</text>
+  <text x="530" y="335" font-family="'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="4">EDGE</text>
 
   <!-- Tagline -->
   <text x="530" y="355" font-family="'Inter', Arial, sans-serif" font-size="24" font-weight="400" fill="#94a3b8" letter-spacing="1">Problem-First AI Solutions Company</text>

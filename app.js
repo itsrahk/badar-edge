@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ctx.strokeStyle = `rgba(6, 182, 212, ${alpha * 2})`; // Glowing neon cyan
                             ctx.lineWidth = 1.1;
                         } else {
-                            ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`; // Soft indigo base
+                            ctx.strokeStyle = `rgba(99, 200, 255, ${alpha})`; // Soft indigo base
                             ctx.lineWidth = 0.65;
                         }
                         ctx.stroke();
@@ -352,8 +352,8 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 10,
             borderRadius: "30px",
             background: "rgba(4, 2, 12, 0.88)",
-            borderColor: "rgba(99, 102, 241, 0.22)",
-            boxShadow: "0 12px 35px -12px rgba(99, 102, 241, 0.25)",
+            borderColor: "rgba(99, 200, 255, 0.22)",
+            boxShadow: "0 12px 35px -12px rgba(99, 200, 255, 0.25)",
             ease: "power2.out"
         });
 
@@ -1351,8 +1351,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         const confettiDuration = 3.5 * 1000;
                         const stopTime = Date.now() + confettiDuration;
                         (function burstFrame() {
-                            confetti({ particleCount: 4, angle: 60, spread: 60, origin: { x: 0.05, y: 0.75 }, colors: ['#06b6d4', '#a855f7', '#6366f1'] });
-                            confetti({ particleCount: 4, angle: 120, spread: 60, origin: { x: 0.95, y: 0.75 }, colors: ['#06b6d4', '#a855f7', '#6366f1'] });
+                            confetti({ particleCount: 4, angle: 60, spread: 60, origin: { x: 0.05, y: 0.75 }, colors: ['#06b6d4', '#a855f7', '#63C8FF'] });
+                            confetti({ particleCount: 4, angle: 120, spread: 60, origin: { x: 0.95, y: 0.75 }, colors: ['#06b6d4', '#a855f7', '#63C8FF'] });
                             if (Date.now() < stopTime) requestAnimationFrame(burstFrame);
                         }());
                     }

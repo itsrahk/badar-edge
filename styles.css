@@ -6499,3 +6499,164 @@ body::after {
         flex: 1 1 40%;
     }
 }
+
+/* ==========================================================================
+   V3.2 — UTILITY & SERVICE PAGES (About / Contact / Privacy / Services)
+   ========================================================================== */
+
+/* Readable prose panel for privacy & policy pages */
+.policy-panel {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 56px;
+    border-radius: 24px;
+}
+
+.policy-panel p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.policy-panel h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin: 40px 0 14px;
+}
+
+.policy-panel h2:first-child {
+    margin-top: 0;
+}
+
+.policy-panel h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 26px 0 10px;
+}
+
+.policy-panel ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.policy-panel ul li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 22px;
+    position: relative;
+}
+
+.policy-panel ul li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+.policy-panel a {
+    color: var(--accent-cyan);
+}
+
+.policy-panel .policy-updated {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+/* Service page intro split */
+.service-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 56px;
+    border-radius: 24px;
+}
+
+.service-intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.service-intro-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.service-intro-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.service-intro-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-intro-points li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: #cbd5e1;
+}
+
+.service-intro-points li i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.service-intro-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-intro-badge {
+    font-size: 3.2rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .policy-panel {
+        padding: 36px 24px;
+    }
+
+    .service-intro {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+        text-align: center;
+    }
+
+    .service-intro-points {
+        align-items: center;
+    }
+}

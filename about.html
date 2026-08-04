@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6J277LPKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W6J277LPKK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Badar Edge | The Problem-First AI Solutions Company</title>
+
+    <!-- SEO Optimization -->
+    <meta name="description" content="Badar Edge is a problem-first AI solutions company founded by Rai Arslan Hussain. We build end-to-end AI systems for dental clinics, real estate agencies, and aesthetic clinics.">
+    <meta name="keywords" content="about Badar Edge, Rai Arslan Hussain, problem-first AI, AI solutions company">
+    <meta name="author" content="Badar Edge">
+    <link rel="canonical" href="https://itsrahk.github.io/badar-edge/about.html">
+    <meta property="og:url" content="https://itsrahk.github.io/badar-edge/about.html">
+    <meta property="og:title" content="About Badar Edge | The Problem-First AI Solutions Company">
+    <meta property="og:description" content="We don't start with AI. We start with your revenue bottleneck.">
+    <meta property="og:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Badar Edge">
+    <meta name="twitter:description" content="We don't start with AI. We start with your revenue bottleneck.">
+    <meta name="twitter:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="google-site-verification" content="SqzVAyILZ7Z6uxnX9VeAbgG8auqVOi8GzJKkhMrVYng" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Badar Edge",
+        "url": "https://itsrahk.github.io/badar-edge/",
+        "description": "A problem-first AI solutions company. We deploy end-to-end AI systems for dental clinics, real estate agencies, and aesthetic clinics.",
+        "foundingDate": "2026-01",
+        "founder": {
+            "@type": "Person",
+            "name": "Rai Arslan Hussain"
+        },
+        "sameAs": ["https://pk.linkedin.com/in/raiarslanhussain"]
+    }
+    </script>
+
+    <!-- Google Fonts: Inter (Body) & Plus Jakarta Sans (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-theme">
+
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Dynamic Glowing Ambient Blobs -->
+    <div class="ambient-glow blob-violet"></div>
+    <div class="ambient-glow blob-blue"></div>
+    <div class="ambient-glow blob-cyan"></div>
+
+    <!-- Floating Cyber Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="floating-dock">
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
+                <span>Book Call</span>
+                <i data-lucide="arrow-up-right" class="icon-small"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="index.html" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="#story" class="sidebar-link"><span class="link-dot"></span>Our Story</a></li>
+                <li><a href="#approach" class="sidebar-link"><span class="link-dot"></span>Approach</a></li>
+                <li><a href="#values" class="sidebar-link"><span class="link-dot"></span>Values</a></li>
+                <li><a href="#founder" class="sidebar-link"><span class="link-dot"></span>Founder</a></li>
+                <li><a href="services/traditional.html" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
+                <li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
+                <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
+                <li><a href="aesthetic-clinics.html" class="sidebar-link"><span class="link-dot"></span>Aesthetic Clinics</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="page-container">
+
+        <!-- HERO -->
+        <section id="hero" class="section hero-section vertical-hero">
+            <div class="hero-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i> Back to Badar Edge Home
+                </a>
+                <div class="hero-brand">
+                    <svg class="hero-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                        <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                        <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    </svg>
+                    <div class="hero-brand-text">
+                        <span>BADAR</span>
+                        <span>EDGE</span>
+                    </div>
+                </div>
+                <span class="section-label">ABOUT US</span>
+                <h1 class="hero-headline">
+                    We don't start with AI. We start with <span class="headline-gradient">your problem</span>.
+                </h1>
+
+                <p class="hero-subtext">
+                    Badar Edge is a problem-first AI solutions company. We deploy end-to-end systems for dental clinics, real estate agencies, and aesthetic clinics that want outcomes, not just features.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#story" class="btn btn-primary btn-glow btn-large">
+                        <span>Read Our Story</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section id="story" class="section">
+            <div class="section-header text-center">
+                <span class="section-label">OUR STORY</span>
+                <h2 class="section-title">Built to close the gap between sold and delivered</h2>
+            </div>
+
+            <div class="policy-panel glass-panel">
+                <p>
+                    Badar Edge was founded in January 2026 on a simple observation: businesses were buying "AI solutions" that looked impressive in demos and died in production. The problem wasn't the technology — it was the gap between what was sold and what was actually needed.
+                </p>
+                <p>
+                    Most providers sell tools. They drop a chatbot into your workflow with no integration, no training, no follow-through. When APIs change, the setup breaks — and no one fixes it.
+                </p>
+                <p>
+                    Badar Edge exists to close that gap. We start with your revenue bottleneck. Then we build the system to fix it, monitor it, and optimize it monthly. Results first, technology second.
+                </p>
+            </div>
+        </section>
+
+        <!-- APPROACH -->
+        <section id="approach" class="section verticals-section">
+            <div class="section-header text-center">
+                <span class="section-label">OUR APPROACH</span>
+                <h2 class="section-title">Problem-first, always</h2>
+                <p class="section-subtitle">Three principles guide every project we take on.</p>
+            </div>
+
+            <div class="verticals-grid">
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">Diagnose before you build</h3>
+                    <p class="problem-text">Every engagement starts with mapping your flow and finding where revenue leaks. No feature menus, no assumptions.</p>
+                </div>
+
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">Systems, not tools</h3>
+                    <p class="problem-text">We deploy end-to-end systems — integrated, monitored, and documented. Not isolated gadgets that break.</p>
+                </div>
+
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">Optimize for outcomes</h3>
+                    <p class="problem-text">We measure what matters: response time, bookings, conversions, hours saved, revenue recovered. Not vanity metrics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section id="values" class="section">
+            <div class="section-header text-center">
+                <span class="section-label">OUR VALUES</span>
+                <h2 class="section-title">What we hold ourselves to</h2>
+            </div>
+
+            <div class="verticals-grid">
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🎯</span>
+                    <h3 class="service-title">Outcomes over features</h3>
+                    <p class="service-desc">If it doesn't move a business metric, it doesn't ship.</p>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🔧</span>
+                    <h3 class="service-title">Ownership &amp; uptime</h3>
+                    <p class="service-desc">We monitor what we build and fix what breaks — 24/7, without excuses.</p>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🤝</span>
+                    <h3 class="service-title">Honest scoping</h3>
+                    <p class="service-desc">Fixed scope, fixed price, and honest timelines. No scope creep, no surprises.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOUNDER -->
+        <section id="founder" class="section founder-section">
+            <div class="section-header text-center">
+                <span class="section-label">THE FOUNDER</span>
+                <h2 class="section-title">Built by someone who understands both sides</h2>
+            </div>
+
+            <div class="founder-layout glass-panel">
+                <div class="founder-photo">
+                    <div class="founder-avatar">RA</div>
+                </div>
+                <div class="founder-text">
+                    <h3 class="founder-name">Rai Arslan Hussain</h3>
+                    <span class="founder-role">AI Solutions Architect &amp; Founder</span>
+                    <p class="founder-bio">
+                        I spent years watching businesses buy "AI solutions" that looked impressive in demos and died in production. The problem wasn't the technology — it was the gap between what was sold and what was actually needed.
+                    </p>
+                    <p class="founder-bio">
+                        Badar Edge exists to close that gap. We don't start with AI. We start with your revenue bottleneck. Then we build the system to fix it, monitor it, and optimize it monthly.
+                    </p>
+                    <ul class="founder-credentials">
+                        <li><i data-lucide="check-circle-2" class="icon-green"></i> AI Systems Architect</li>
+                        <li><i data-lucide="check-circle-2" class="icon-green"></i> Trained 500+ professionals on AI implementation</li>
+                        <li><i data-lucide="check-circle-2" class="icon-green"></i> Specialized in high-value service verticals</li>
+                        <li><i data-lucide="check-circle-2" class="icon-green"></i> Serving Pakistan &amp; globally since January 2026</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="cta" class="section cta-section">
+            <div class="cta-panel glass-panel">
+                <h2 class="cta-headline">Let's solve your problem first</h2>
+                <p class="cta-sub">
+                    Book a free 30-minute Growth Audit. We'll map your current flow and show you exactly where revenue is leaking.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-glow btn-large">
+                        <span>📅 Book Your Free Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us Directly</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+                <p class="cta-trust">No credit card required. Audit delivered within 48 hours.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-logo-side">
+                <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <span>BADAR</span>
+                    <span>EDGE</span>
+                </div>
+                <p class="footer-copy">The Problem-First AI Solutions Company. © 2026 Badar Edge. All rights reserved.</p>
+            </div>
+
+            <div class="footer-groups">
+                <div class="footer-group">
+                    <span class="footer-group-title">Verticals</span>
+                    <a href="dental-clinics.html" class="footer-link">Dental Clinics</a>
+                    <a href="real-estate.html" class="footer-link">Real Estate</a>
+                    <a href="aesthetic-clinics.html" class="footer-link">Aesthetic Clinics</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Services</span>
+                    <a href="services/traditional.html" class="footer-link">Traditional</a>
+                    <a href="services/custom.html" class="footer-link">Custom</a>
+                    <a href="services/packages.html" class="footer-link">Packages</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="privacy.html" class="footer-link">Privacy</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Connect</span>
+                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: GSAP, ScrollTrigger, Lenis smooth scroll, Lucide icons, Canvas-Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide && lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Code script logic -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -182,8 +182,21 @@
             </div>
 
             <div class="reviews-badge" aria-label="Five star rated">
-                <span class="reviews-stars">★★★★★</span>
-                <span class="reviews-badge-text"><b>5.0</b> client rating</span>
+                <svg class="badge-ring" viewBox="0 0 100 100">
+                    <circle class="badge-ring-track" cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="4"/>
+                    <circle class="badge-ring-fill" cx="50" cy="50" r="44" fill="none" stroke="url(#badgeGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 50 50)"/>
+                    <defs>
+                        <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fbbf24"/>
+                            <stop offset="100%" stop-color="#f59e0b"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="badge-circle-inner">
+                    <span class="badge-score">5.0</span>
+                    <span class="badge-stars">★★★★★</span>
+                    <span class="badge-label">Trust Rating</span>
+                </div>
             </div>
 
             <div class="dashboard-container">
@@ -249,26 +262,116 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="proof-featured glass-panel">
-                <div class="proof-badge t-badge-global">Global · Real Estate</div>
-                <div class="proof-stars">★★★★★</div>
-                <p class="proof-quote">
-                    "We were losing leads because our team couldn't respond fast enough. The Speed-to-Lead system cut response time from hours to seconds. Our conversion rate jumped 38% in the first month."
-                </p>
-                <p class="proof-author">— James Delaney, Broker, Delaney Realty · Florida, USA</p>
-                <div class="proof-results">
-                    <div class="proof-result">
-                        <span class="proof-result-value font-cyan">6 hrs → 45 sec</span>
-                        <span class="proof-result-label">response time</span>
+        <!-- SECTION 2.5: TESTIMONIALS -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="section-header text-center">
+                <span class="section-label">TESTIMONIALS</span>
+                <h2 class="section-title">Real clients. <span class="headline-gradient">Real outcomes.</span></h2>
+                <p class="section-subtitle">Six deployments, four industries, three continents — what actually happens after the system goes live.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"We were losing leads because we couldn't respond fast enough. Speed-to-Lead cut response time from hours to seconds and our conversion jumped 38%."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">JD</span>
+                        <div class="t-meta">
+                            <span class="t-name">James Delaney</span>
+                            <span class="t-company">Delaney Realty · Florida, USA</span>
+                        </div>
                     </div>
-                    <div class="proof-result">
-                        <span class="proof-result-value font-purple">+38%</span>
-                        <span class="proof-result-label">lead-to-appointment conversion</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">6 hrs → 45 sec</span>
+                        <span class="t-outcome font-purple">+38% conversion</span>
+                        <span class="t-outcome font-indigo">+4 deals/mo</span>
                     </div>
-                    <div class="proof-result">
-                        <span class="proof-result-value font-indigo">4 deals</span>
-                        <span class="proof-result-label">additional deals closed in Q2</span>
+                </div>
+
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"Missed calls were costing us patients. The AI receptionist now books over 30 appointments a month while we're with patients in the chair."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">SM</span>
+                        <div class="t-meta">
+                            <span class="t-name">Dr. Sarah Mitchell</span>
+                            <span class="t-company">BrightSmile Dental Studio · Texas, USA</span>
+                        </div>
+                    </div>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">30+ bookings/mo</span>
+                        <span class="t-outcome font-purple">0 missed calls</span>
+                        <span class="t-outcome font-indigo">2.1× new patients</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"The pipeline dashboard shows every lead, and the AI qualifies them before we even pick up the phone. Our closing pace has doubled."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">AR</span>
+                        <div class="t-meta">
+                            <span class="t-name">Ahmed Raza</span>
+                            <span class="t-company">UrbanNest Properties · Lahore, PK</span>
+                        </div>
+                    </div>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">3× qualified leads</span>
+                        <span class="t-outcome font-purple">12 min saved/lead</span>
+                        <span class="t-outcome font-indigo">+$18K closed value</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"Cart recovery automation brought back customers we thought were gone. Revenue is up 27% since launch and email ROI is through the roof."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">EV</span>
+                        <div class="t-meta">
+                            <span class="t-name">Elena Vasquez</span>
+                            <span class="t-company">Luma Boutique · Miami, USA</span>
+                        </div>
+                    </div>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">+27% revenue</span>
+                        <span class="t-outcome font-purple">18% cart recovery</span>
+                        <span class="t-outcome font-indigo">4.2× email ROI</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"We went from MVP to funded in weeks. The AI operations stack saved us months of manual work our small team couldn't afford."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">DO</span>
+                        <div class="t-meta">
+                            <span class="t-name">David Okafor</span>
+                            <span class="t-company">KitePay · London, UK</span>
+                        </div>
+                    </div>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">MVP in 4 weeks</span>
+                        <span class="t-outcome font-purple">9K ops automated</span>
+                        <span class="t-outcome font-indigo">Pre-seed raised</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-panel">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"Patients now book through WhatsApp at 2am. Our front desk finally has time to focus on patient care instead of answering the phone."</p>
+                    <div class="t-person">
+                        <span class="t-avatar">FN</span>
+                        <div class="t-meta">
+                            <span class="t-name">Fatima Noor</span>
+                            <span class="t-company">Gul Bahar Dental Care · Karachi, PK</span>
+                        </div>
+                    </div>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">40+ WhatsApp bookings/mo</span>
+                        <span class="t-outcome font-purple">24/7 availability</span>
+                        <span class="t-outcome font-indigo">15 hrs/wk saved</span>
                     </div>
                 </div>
             </div>

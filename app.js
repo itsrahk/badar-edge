@@ -503,6 +503,45 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             );
+
+            const badgeRing = reviewsBadge.querySelector(".badge-ring-fill");
+            if (badgeRing) {
+                gsap.fromTo(badgeRing,
+                    { strokeDashoffset: 276.46 },
+                    {
+                        strokeDashoffset: 0,
+                        duration: 1.6,
+                        ease: "power2.inOut",
+                        delay: 0.9,
+                        scrollTrigger: {
+                            trigger: "#results",
+                            start: "top 78%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            }
+        }
+
+        // Testimonials — staggered row reveal
+        const testimonialCards = gsap.utils.toArray(".testimonial-card");
+        if (testimonialCards.length > 0) {
+            gsap.fromTo(testimonialCards,
+                { opacity: 0, y: 50, scale: 0.96 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    stagger: 0.12,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: "#testimonials",
+                        start: "top 78%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
         }
 
         // Solution hierarchy — tree reveal (trunk → branches → cards)

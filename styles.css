@@ -7406,23 +7406,109 @@ body::after {
 
 .reviews-badge {
     position: absolute;
-    top: 48px;
-    right: 12px;
+    top: 52px;
+    right: 16px;
     z-index: 5;
+    width: 112px;
+    height: 112px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 242, 254, 0.22);
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(99, 102, 241, 0.08));
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 30px -12px rgba(0, 242, 254, 0.4);
+    justify-content: center;
+    border-radius: 50%;
+    filter: drop-shadow(0 12px 32px rgba(0, 242, 254, 0.28));
     animation: badge-float 5s ease-in-out infinite;
 }
 
-.reviews-stars {
-    font-size: 0.95rem;
+.badge-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.badge-ring-track {
+    stroke: rgba(255, 255, 255, 0.09);
+}
+
+.badge-circle-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 242, 254, 0.18);
+    background: radial-gradient(circle at 30% 25%, rgba(0, 242, 254, 0.1), rgba(12, 10, 38, 0.92));
+    backdrop-filter: blur(8px);
+}
+
+.badge-score {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--white);
+}
+
+.badge-stars {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+@keyframes badge-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ===== Testimonials grid ===== */
+.testimonials-section {
+    position: relative;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 22px 20px;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+    backdrop-filter: blur(12px);
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.35);
+    box-shadow: 0 0 40px -14px rgba(0, 242, 254, 0.35);
+}
+
+.t-stars {
+    font-size: 0.85rem;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #fbbf24, #f59e0b);
     -webkit-background-clip: text;
@@ -7431,22 +7517,81 @@ body::after {
     -webkit-text-fill-color: transparent;
 }
 
-.reviews-badge-text {
-    font-size: 0.78rem;
-    font-weight: 600;
+.t-quote {
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: var(--text-secondary);
-    letter-spacing: 0.02em;
+    flex: 1;
 }
 
-.reviews-badge-text b {
-    color: var(--white);
+.t-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.t-avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
     font-weight: 800;
+    color: var(--white);
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.16), rgba(99, 102, 241, 0.16));
+    border: 1px solid rgba(0, 242, 254, 0.25);
 }
 
-@keyframes badge-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+.t-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
+
+.t-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.t-company {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+}
+
+.t-outcomes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 4px;
+}
+
+.t-outcome {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.t-outcome.font-cyan { color: var(--accent-cyan); border-color: rgba(0, 242, 254, 0.15); }
+.t-outcome.font-purple { color: var(--accent-purple); border-color: rgba(192, 132, 252, 0.15); }
+.t-outcome.font-indigo { color: var(--accent-indigo); border-color: rgba(99, 102, 241, 0.15); }
+
+/* Testimonials responsive */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 /* ===== Solution hierarchy tree ===== */
 .hierarchy-section {
@@ -7683,6 +7828,10 @@ body::after {
     .reviews-badge {
         position: static;
         margin: 0 auto 20px;
-        width: fit-content;
+        width: 112px;
+        height: 112px;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
 }

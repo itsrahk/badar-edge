@@ -6888,3 +6888,36 @@ body::after {
         text-align: center;
     }
 }
+
+/* ==========================================================
+   V3.4 CLEAN SHOWCASE LANDING (hero trust + merged results)
+   ========================================================== */
+.hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.hero-trust b {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.hero-trust-dot {
+    color: rgba(0, 242, 254, 0.5);
+}
+
+.results-section .dashboard-container {
+    margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
+    .hero-trust {
+        gap: 8px 12px;
+    }
+}

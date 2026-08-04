@@ -361,7 +361,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const heroTimeline = gsap.timeline();
         heroTimeline.from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" })
                     .from(".hero-subtext", { y: 25, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.65")
-                    .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55");
+                    .from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.55")
+                    .from(".hero-trust", { y: 15, opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.4");
 
         // Hero brand entrance
         const heroBrand = document.querySelector(".hero-brand");
@@ -441,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (cardData.length > 0) {
             ScrollTrigger.create({
-                trigger: "#impact",
+                trigger: "#results",
                 start: "top 80%",
                 once: true,
                 onEnter() {

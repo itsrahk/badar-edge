@@ -484,6 +484,50 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        // Reviews badge pop-in on the Results metrics corner
+        const reviewsBadge = document.querySelector(".reviews-badge");
+        if (reviewsBadge) {
+            gsap.fromTo(reviewsBadge,
+                { opacity: 0, scale: 0.6, y: -14 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.8)",
+                    delay: 0.4,
+                    scrollTrigger: {
+                        trigger: "#results",
+                        start: "top 78%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Solution hierarchy — layered pyramid reveal (apex first, then down)
+        const hierarchyTiers = gsap.utils.toArray(".hierarchy-tier");
+        if (hierarchyTiers.length > 0) {
+            const tl = gsap.timeline({
+                defaults: { ease: "power4.out" },
+                scrollTrigger: {
+                    trigger: "#hierarchy",
+                    start: "top 72%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            tl.fromTo(".hierarchy-tier",
+                    { opacity: 0, y: 60, scale: 0.94 },
+                    { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.35 })
+                .fromTo(".hierarchy-connector",
+                    { scaleY: 0, opacity: 0 },
+                    { scaleY: 1, opacity: 0.55, duration: 0.45, stagger: 0.35, ease: "power2.inOut" }, "-=1.0")
+                .fromTo(".hierarchy-foot",
+                    { opacity: 0, y: 16 },
+                    { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+        }
+
         // Benchmark count-up animation (loops every 5s)
         const benchmarkCounts = document.querySelectorAll(".bm-count");
         if (benchmarkCounts.length > 0) {

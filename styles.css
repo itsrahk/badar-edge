@@ -8379,18 +8379,10 @@ body::after {
 .hero-actions .btn-secondary { border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); color: #f8fafc; }
 .hero-actions .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); }
 
-.hero-visual { position: relative; width: 100%; height: 460px; }
-.hero-rings-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 380px; height: auto; mix-blend-mode: screen; filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.3)) drop-shadow(0 0 80px rgba(56, 189, 248, 0.15)); animation: float 6s ease-in-out infinite; }
-.hero-cube { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.25)) drop-shadow(0 0 60px rgba(56, 189, 248, 0.15)); }
-.hero-cube .diamond { fill: none; stroke-width: 1.5; }
-.hero-cube .diamond-outer { stroke: rgba(56, 189, 248, 0.2); stroke-dasharray: 480; animation: diamondSpin 20s linear infinite; }
-.hero-cube .diamond-mid { stroke: rgba(56, 189, 248, 0.4); stroke-dasharray: 320; animation: diamondSpin 15s linear infinite reverse; }
-.hero-cube .diamond-inner { stroke: rgba(56, 189, 248, 0.6); stroke-dasharray: 160; animation: diamondSpin 10s linear infinite; }
-.hero-cube .diamond-core { stroke: #38BDF8; animation: diamondPulse 3s ease-in-out infinite; }
-@keyframes diamondPulse { 0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px rgba(56,189,248,0.4)); } 50% { opacity: 0.8; filter: drop-shadow(0 0 16px rgba(56,189,248,0.6)); } }
-@keyframes diamondSpin { from { stroke-dashoffset: 0; } to { stroke-dashoffset: 480; } }
-
-.hero-stat-card { position: absolute; display: flex; flex-direction: column; gap: 4px; padding: 14px 18px; background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; min-width: 140px; }
+.hero-visual { position: relative; width: 100%; height: 460px; display: flex; align-items: center; justify-content: center; }
+.hero-rings-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 320px; height: auto; mix-blend-mode: screen; filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.4)) drop-shadow(0 0 60px rgba(56, 189, 248, 0.2)) drop-shadow(0 0 100px rgba(56, 189, 248, 0.1)); animation: ringsGlow 4s ease-in-out infinite; z-index: 1; }
+@keyframes ringsGlow { 0%, 100% { filter: drop-shadow(0 0 30px rgba(56,189,248,0.4)) drop-shadow(0 0 60px rgba(56,189,248,0.2)) drop-shadow(0 0 100px rgba(56,189,248,0.1)); } 50% { filter: drop-shadow(0 0 50px rgba(56,189,248,0.6)) drop-shadow(0 0 90px rgba(56,189,248,0.3)) drop-shadow(0 0 140px rgba(56,189,248,0.15)); } }
+.hero-stat-card { position: absolute; display: flex; flex-direction: column; gap: 4px; padding: 14px 18px; background: rgba(30, 41, 59, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 12px; min-width: 140px; z-index: 2; box-shadow: 0 0 20px rgba(56, 189, 248, 0.08); }
 .stat-label { font-size: 0.72rem; color: #64748B; display: flex; align-items: center; gap: 5px; }
 .stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; color: #f8fafc; display: flex; align-items: center; gap: 6px; }
 .stat-sub { font-size: 0.68rem; color: #64748B; }
@@ -8398,12 +8390,12 @@ body::after {
 .stat-status { color: #34d399; }
 .icon-tiny { width: 12px; height: 12px; }
 
-.stat-revenue { top: 10%; left: 5%; animation: float 5s ease-in-out infinite; }
-.stat-crm { top: 5%; right: 5%; animation: float 5s ease-in-out 1s infinite; }
-.stat-ai { top: 40%; left: -5%; animation: float 5s ease-in-out 0.5s infinite; }
-.stat-tasks { top: 30%; right: 0%; animation: float 5s ease-in-out 1.5s infinite; }
-.stat-leads { bottom: 15%; left: 10%; animation: float 5s ease-in-out 2s infinite; }
-.stat-uptime { bottom: 10%; right: 5%; animation: float 5s ease-in-out 0.8s infinite; }
+.stat-revenue { top: 5%; left: 0%; animation: float 5s ease-in-out infinite; }
+.stat-crm { top: 0%; right: 0%; animation: float 5s ease-in-out 1s infinite; }
+.stat-ai { top: 45%; left: -10%; animation: float 5s ease-in-out 0.5s infinite; }
+.stat-tasks { top: 35%; right: -8%; animation: float 5s ease-in-out 1.5s infinite; }
+.stat-leads { bottom: 8%; left: 5%; animation: float 5s ease-in-out 2s infinite; }
+.stat-uptime { bottom: 3%; right: 0%; animation: float 5s ease-in-out 0.8s infinite; }
 
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 

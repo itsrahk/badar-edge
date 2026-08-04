@@ -6685,3 +6685,181 @@ body::after {
         align-items: center;
     }
 }
+
+/* ==========================================================
+   V3.3 REVIEWS / CLUTCH-STYLE CLIENT REVIEWS
+   ========================================================== */
+.reviews-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+}
+
+.reviews-platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.reviews-platform-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.reviews-platform-sep {
+    color: var(--text-secondary);
+}
+
+.reviews-platform-rating {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.reviews-platform-rating b {
+    color: var(--white);
+}
+
+.reviews-summary {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+.reviews-summary .review-stars {
+    margin-right: 8px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(99, 102, 241, 0.45);
+}
+
+.review-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.review-stars {
+    color: #fbbf24;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.review-category {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    border-radius: 999px;
+    padding: 5px 12px;
+    background: rgba(0, 242, 254, 0.06);
+    white-space: nowrap;
+}
+
+.review-quote {
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.review-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(192, 132, 252, 0.35));
+    border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+.review-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.review-author-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.review-author-role {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.review-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.review-verified {
+    color: #34d399;
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .reviews-head {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}

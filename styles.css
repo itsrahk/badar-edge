@@ -7074,3 +7074,95 @@ body::after {
     line-height: 1.6;
     padding: 0 6px;
 }
+
+/* ==========================================================================
+   V3.7 — MARQUEE ROWS (Industries + Payment methods)
+   ========================================================================== */
+.marquee-section {
+    padding: 30px 0 42px;
+}
+
+.marquee-section--payments {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 40px;
+}
+
+.marquee-section--payments .marquee-label {
+    color: var(--accent-cyan);
+}
+
+.marquee-label {
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: marquee-scroll 32s linear infinite;
+    will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 56px;
+    white-space: nowrap;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.marquee-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.02);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marquee-item:hover {
+    color: var(--white);
+}
+
+.marquee-item:hover .marquee-icon {
+    border-color: rgba(0, 242, 254, 0.35);
+    box-shadow: 0 0 20px -6px rgba(0, 242, 254, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}

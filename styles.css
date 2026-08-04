@@ -8401,7 +8401,7 @@ body::after {
 .stat-status { color: #22D27F; }
 .stat-stars { display: flex; gap: 2px; align-items: center; }
 .stat-stars .icon-star { width: 14px; height: 14px; }
-.stat-stars svg { fill: #63C8FF; stroke: #63C8FF; }
+.stat-stars svg { fill: #FFC857; stroke: #FFC857; filter: drop-shadow(0 0 4px rgba(255, 200, 87, 0.5)); }
 .icon-tiny { width: 12px; height: 12px; }
 
 .stat-revenue { top: 5%; left: 0%; animation: float 5s ease-in-out infinite; }

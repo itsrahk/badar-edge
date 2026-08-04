@@ -609,6 +609,60 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        // Hero stat cards — count-up metrics + staggered entry
+        const heroStatCards = document.querySelectorAll(".hero-stat-card");
+        if (heroStatCards.length > 0) {
+            heroStatCards.forEach((card, i) => {
+                gsap.fromTo(card,
+                    { opacity: 0, y: 24, scale: 0.9 },
+                    {
+                        opacity: 1, y: 0, scale: 1, duration: 0.7, delay: 0.15 * i, ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: "#hero",
+                            start: "top 60%",
+                            once: true
+                        }
+                    }
+                );
+            });
+
+            const heroVals = document.querySelectorAll(".hero-stat-card .stat-value");
+            const heroData = [];
+            heroVals.forEach((el) => {
+                const raw = el.textContent.trim();
+                const match = raw.match(/^([^0-9]*?)(\d+(?:\.\d+)?)([^0-9]*)$/);
+                if (!match) return;
+                const target = parseFloat(match[2]);
+                if (!isFinite(target)) return;
+                heroData.push({ el, prefix: match[1], suffix: match[3], target });
+            });
+
+            if (heroData.length > 0) {
+                ScrollTrigger.create({
+                    trigger: "#hero",
+                    start: "top 40%",
+                    once: true,
+                    onEnter() {
+                        heroData.forEach((item) => {
+                            const valObj = { val: 0 };
+                            gsap.to(valObj, {
+                                val: item.target,
+                                duration: 2.2,
+                                ease: "power3.out",
+                                onUpdate: () => {
+                                    const n = Math.floor(valObj.val);
+                                    item.el.textContent = item.prefix + n + item.suffix;
+                                },
+                                onComplete: () => {
+                                    item.el.textContent = item.prefix + item.target + item.suffix;
+                                }
+                            });
+                        });
+                    }
+                });
+            }
+        }
+
         // Solutions section header entry
         const solutionsHeader = document.querySelector("#solutions .section-header");
         if (solutionsHeader) {

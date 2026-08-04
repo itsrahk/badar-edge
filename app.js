@@ -505,9 +505,9 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
-        // Solution hierarchy — layered pyramid reveal (apex first, then down)
-        const hierarchyTiers = gsap.utils.toArray(".hierarchy-tier");
-        if (hierarchyTiers.length > 0) {
+        // Solution hierarchy — tree reveal (trunk → branches → cards)
+        const hierarchyCards = gsap.utils.toArray(".hierarchy-card");
+        if (hierarchyCards.length > 0) {
             const tl = gsap.timeline({
                 defaults: { ease: "power4.out" },
                 scrollTrigger: {
@@ -517,12 +517,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            tl.fromTo(".hierarchy-tier",
-                    { opacity: 0, y: 60, scale: 0.94 },
-                    { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.35 })
-                .fromTo(".hierarchy-connector",
-                    { scaleY: 0, opacity: 0 },
-                    { scaleY: 1, opacity: 0.55, duration: 0.45, stagger: 0.35, ease: "power2.inOut" }, "-=1.0")
+            tl.fromTo(".tree-trunk",
+                    { scaleY: 0 },
+                    { scaleY: 1, duration: 0.45, ease: "power2.inOut" })
+                .fromTo(".tree-crossbar",
+                    { scaleX: 0 },
+                    { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, "-=0.2")
+                .fromTo(".tree-stub",
+                    { scaleY: 0 },
+                    { scaleY: 1, duration: 0.35, stagger: 0.15, ease: "power2.out" }, "-=0.25")
+                .fromTo(".hierarchy-card",
+                    { opacity: 0, y: 45, scale: 0.96 },
+                    { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.12 }, "-=0.15")
                 .fromTo(".hierarchy-foot",
                     { opacity: 0, y: 16 },
                     { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");

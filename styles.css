@@ -7448,7 +7448,7 @@ body::after {
     50% { transform: translateY(-6px); }
 }
 
-/* ===== Solution hierarchy ===== */
+/* ===== Solution hierarchy tree ===== */
 .hierarchy-section {
     position: relative;
     overflow: hidden;
@@ -7467,83 +7467,123 @@ body::after {
     pointer-events: none;
 }
 
-.hierarchy-wrap {
+.hierarchy-tree {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.tree-trunk {
+    display: block;
+    width: 2px;
+    height: 44px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    opacity: 0.6;
+    transform-origin: top;
+}
+
+.tree-crossbar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple), var(--accent-indigo));
+    opacity: 0.55;
+    transform-origin: left;
+}
+
+.hierarchy-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding-top: 24px;
+}
+
+.hierarchy-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree-stub {
+    display: block;
+    width: 2px;
+    height: 22px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
+    opacity: 0.5;
+    transform-origin: top;
+}
+
+.hierarchy-card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 840px;
-    margin: 0 auto;
-    padding: 20px 0 6px;
-}
-
-.hierarchy-tier {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    align-items: center;
-    gap: 20px;
+    text-align: center;
+    gap: 10px;
     width: 100%;
-    padding: 26px 28px;
+    padding: 28px 20px 22px;
     border-radius: 18px;
     border: 1px solid var(--border-color);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
     backdrop-filter: blur(12px);
-    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    text-decoration: none;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.hierarchy-tier:hover {
-    transform: translateY(-3px);
+.hierarchy-card:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
 }
 
-.tier-apex {
-    max-width: 440px;
-    border-color: rgba(192, 132, 252, 0.22);
-    box-shadow: 0 0 40px -14px rgba(192, 132, 252, 0.45);
-}
-
-.tier-apex:hover {
-    border-color: rgba(192, 132, 252, 0.55);
-    box-shadow: 0 0 55px -12px rgba(192, 132, 252, 0.55);
-}
-
-.tier-mid {
-    max-width: 580px;
-    border-color: rgba(99, 102, 241, 0.2);
-}
-
-.tier-mid:hover {
-    border-color: rgba(99, 102, 241, 0.5);
-    box-shadow: 0 0 40px -14px rgba(99, 102, 241, 0.5);
-}
-
-.tier-base {
-    max-width: 740px;
+.hierarchy-card.tier-cyan {
     border-color: rgba(0, 242, 254, 0.2);
 }
 
-.tier-base:hover {
-    border-color: rgba(0, 242, 254, 0.5);
+.hierarchy-card.tier-cyan:hover {
+    border-color: rgba(0, 242, 254, 0.55);
     box-shadow: 0 0 40px -14px rgba(0, 242, 254, 0.5);
 }
 
-.tier-rank {
+.hierarchy-card.tier-indigo {
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.hierarchy-card.tier-indigo:hover {
+    border-color: rgba(99, 102, 241, 0.55);
+    box-shadow: 0 0 40px -14px rgba(99, 102, 241, 0.5);
+}
+
+.hierarchy-card.tier-purple {
+    border-color: rgba(192, 132, 252, 0.2);
+}
+
+.hierarchy-card.tier-purple:hover {
+    border-color: rgba(192, 132, 252, 0.55);
+    box-shadow: 0 0 40px -14px rgba(192, 132, 252, 0.5);
+}
+
+.hierarchy-card-rank {
+    position: absolute;
+    top: 12px;
+    left: 12px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    padding: 8px 10px;
+    border-radius: 9px;
+    padding: 6px 8px;
     line-height: 1;
 }
 
-.tier-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
+.hierarchy-card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7552,117 +7592,44 @@ body::after {
     color: var(--accent-cyan);
 }
 
-.tier-apex .tier-icon { color: var(--accent-purple); }
-.tier-mid .tier-icon { color: var(--accent-indigo); }
+.tier-cyan .hierarchy-card-icon { color: var(--accent-cyan); }
+.tier-indigo .hierarchy-card-icon { color: var(--accent-indigo); }
+.tier-purple .hierarchy-card-icon { color: var(--accent-purple); }
 
-.tier-body {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 0;
-}
-
-.tier-badge {
-    align-self: flex-start;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 999px;
-}
-
-.tier-title {
+.hierarchy-card-name {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--white);
     letter-spacing: -0.01em;
 }
 
-.tier-desc {
-    font-size: 0.86rem;
-    line-height: 1.55;
+.hierarchy-card-tag {
+    font-size: 0.88rem;
     color: var(--text-secondary);
+    line-height: 1.5;
 }
 
-.tier-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.tier-price {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 800;
-    color: var(--accent-cyan);
-    white-space: nowrap;
-}
-
-.tier-apex .tier-price { color: var(--accent-purple); }
-.tier-mid .tier-price { color: var(--accent-indigo); }
-
-.tier-link {
+.hierarchy-card-link {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    margin-top: 4px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text-secondary);
-    text-decoration: none;
+    color: var(--accent-cyan);
     transition: color 0.3s ease;
 }
 
-.tier-link:hover {
-    color: var(--white);
-}
+.tier-indigo .hierarchy-card-link { color: var(--accent-indigo); }
+.tier-purple .hierarchy-card-link { color: var(--accent-purple); }
 
-.tier-link .icon-small {
+.hierarchy-card-link .icon-small {
     transition: transform 0.3s ease;
 }
 
-.tier-link:hover .icon-small {
-    transform: translateY(3px);
-}
-
-.hierarchy-connector {
-    position: relative;
-    width: 2px;
-    height: 46px;
-    margin: 2px 0;
-    background: linear-gradient(to bottom, var(--accent-purple), var(--accent-indigo));
-    opacity: 0.55;
-}
-
-.hierarchy-connector.connector-b {
-    background: linear-gradient(to bottom, var(--accent-indigo), var(--accent-cyan));
-}
-
-.connector-dot {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-cyan);
-    box-shadow: 0 0 10px 2px var(--accent-cyan);
-    animation: connector-flow 2.6s ease-in-out infinite;
-}
-
-.hierarchy-connector.connector-a .connector-dot {
-    background: var(--accent-purple);
-    box-shadow: 0 0 10px 2px var(--accent-purple);
-}
-
-@keyframes connector-flow {
-    0% { top: 0; opacity: 1; }
-    85% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+.hierarchy-card:hover .hierarchy-card-link .icon-small {
+    transform: translateX(3px);
 }
 
 .hierarchy-foot {
@@ -7687,24 +7654,28 @@ body::after {
     color: var(--white);
 }
 
-/* Hierarchy + badge responsive */
-@media (max-width: 768px) {
-    .hierarchy-tier {
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
+/* Hierarchy responsive */
+@media (max-width: 860px) {
+    .hierarchy-cols {
         gap: 14px;
-        padding: 22px 20px;
-        max-width: 100%;
+        padding-top: 18px;
     }
-    .tier-rank {
-        display: none;
+}
+
+@media (max-width: 768px) {
+    .tree-trunk { height: 36px; }
+    .hierarchy-cols {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
-    .tier-meta {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+    .tree-crossbar {
+        width: 2px;
+        height: 34px;
+        margin: 0 auto;
+        background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-indigo));
+    }
+    .tree-stub {
+        height: 16px;
     }
 }
 

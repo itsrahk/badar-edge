@@ -8391,14 +8391,8 @@ body::after {
 .hero-actions .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); }
 
 .hero-visual { position: relative; width: 100%; height: 520px; display: flex; align-items: center; justify-content: center; }
-.hero-rings-wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 430px; height: 430px; display: flex; align-items: center; justify-content: center; z-index: 1; animation: ringsFloat 6s ease-in-out infinite; }
-.hero-rings-img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 20px rgba(30, 144, 255, 0.25)) drop-shadow(0 0 45px rgba(62, 168, 255, 0.20)) drop-shadow(0 0 80px rgba(99, 200, 255, 0.15)); animation: ringsSpin 40s linear infinite; }
-@keyframes ringsSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes ringsFloat { 0%, 100% { transform: translate(-50%, -50%) translateY(0); } 50% { transform: translate(-50%, -50%) translateY(-14px); } }
-.rings-shine { position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(99, 200, 255, 0.12) 40%, rgba(255,255,255,0.28) 50%, rgba(99, 200, 255, 0.12) 60%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); animation: shineSweep 3.5s ease-in-out infinite; pointer-events: none; border-radius: 50%; }
-@keyframes shineSweep { 0% { left: -100%; } 55%, 100% { left: 130%; } }
-.hero-rings-img { animation: ringsSpin 40s linear infinite, ringsGlow 4s ease-in-out infinite; }
-@keyframes ringsGlow { 0%, 100% { filter: drop-shadow(0 0 25px rgba(30,144,255,0.45)) drop-shadow(0 0 55px rgba(62,168,255,0.28)) drop-shadow(0 0 100px rgba(99,200,255,0.18)); } 50% { filter: drop-shadow(0 0 50px rgba(30,144,255,0.65)) drop-shadow(0 0 90px rgba(62,168,255,0.38)) drop-shadow(0 0 150px rgba(99,200,255,0.28)); } }
+.hero-rings-wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 430px; height: 430px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.hero-rings-img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 25px rgba(30, 144, 255, 0.35)) drop-shadow(0 0 60px rgba(62, 168, 255, 0.18)); }
 .hero-stat-card { position: absolute; display: flex; flex-direction: column; gap: 4px; padding: 14px 18px; background: rgba(16, 27, 48, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(30, 144, 255, 0.15); border-radius: 12px; min-width: 140px; z-index: 2; box-shadow: 0 0 20px rgba(30, 144, 255, 0.08); }
 .stat-label { font-size: 0.72rem; color: #A1AEC4; display: flex; align-items: center; gap: 5px; }
 .stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 6px; }
@@ -8613,7 +8607,7 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-rings-wrap, .hero-rings-img, .rings-shine, .hero-stat-card {
+    .hero-stat-card {
         animation: none !important;
     }
 }

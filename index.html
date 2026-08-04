@@ -92,9 +92,16 @@
         <nav class="navbar" id="floating-dock">
             <a href="index.html" class="nav-brand">
                 <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none">
-                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
-                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
-                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    <defs>
+                        <filter id="navGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
+                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(56,189,248,0.45)" stroke-width="1.4" filter="url(#navGlow)"/>
+                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(56,189,248,0.7)" stroke-width="1.6" filter="url(#navGlow)"/>
+                    <path class="diamond diamond-core" d="M 30 22 L 38 30 L 30 38 L 22 30 Z" stroke="#38BDF8" stroke-width="1.8" fill="rgba(56,189,248,0.08)" filter="url(#navGlow)"/>
                 </svg>
                 <span class="nav-brand-text">BADAR<br>EDGE</span>
             </a>
@@ -176,9 +183,32 @@
                 <div class="hero-right">
                     <div class="hero-visual">
                         <svg class="hero-cube" viewBox="0 0 300 300" fill="none">
-                            <path class="diamond diamond-outer" d="M 150 30 L 270 150 L 150 270 L 30 150 Z"/>
-                            <path class="diamond diamond-mid" d="M 150 70 L 230 150 L 150 230 L 70 150 Z"/>
-                            <path class="diamond diamond-inner" d="M 150 110 L 190 150 L 150 190 L 110 150 Z"/>
+                            <defs>
+                                <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="heroGlowStrong" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <linearGradient id="diamondGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(56,189,248,0.15)"/>
+                                    <stop offset="100%" stop-color="rgba(56,189,248,0.05)"/>
+                                </linearGradient>
+                                <linearGradient id="diamondGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(56,189,248,0.3)"/>
+                                    <stop offset="100%" stop-color="rgba(56,189,248,0.1)"/>
+                                </linearGradient>
+                                <linearGradient id="diamondGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(56,189,248,0.5)"/>
+                                    <stop offset="100%" stop-color="rgba(56,189,248,0.2)"/>
+                                </linearGradient>
+                            </defs>
+                            <path class="diamond diamond-outer" d="M 150 30 L 270 150 L 150 270 L 30 150 Z" stroke="rgba(56,189,248,0.2)" stroke-width="1" fill="none"/>
+                            <path class="diamond diamond-mid" d="M 150 70 L 230 150 L 150 230 L 70 150 Z" stroke="rgba(56,189,248,0.4)" stroke-width="1.5" fill="url(#diamondGrad1)" filter="url(#heroGlow)"/>
+                            <path class="diamond diamond-inner" d="M 150 110 L 190 150 L 150 190 L 110 150 Z" stroke="rgba(56,189,248,0.6)" stroke-width="2" fill="url(#diamondGrad2)" filter="url(#heroGlow)"/>
+                            <path class="diamond diamond-core" d="M 150 130 L 170 150 L 150 170 L 130 150 Z" stroke="#38BDF8" stroke-width="2.5" fill="url(#diamondGrad3)" filter="url(#heroGlowStrong)"/>
                         </svg>
                         <div class="hero-stat-card stat-revenue">
                             <span class="stat-label">Revenue Growth</span>
@@ -398,9 +428,16 @@
         <div class="footer-wrap">
             <div class="footer-logo-side">
                 <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none">
-                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
-                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
-                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    <defs>
+                        <filter id="footerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
+                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(56,189,248,0.45)" stroke-width="1.4" filter="url(#footerGlow)"/>
+                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(56,189,248,0.7)" stroke-width="1.6" filter="url(#footerGlow)"/>
+                    <path class="diamond diamond-core" d="M 30 22 L 38 30 L 30 38 L 22 30 Z" stroke="#38BDF8" stroke-width="1.8" fill="rgba(56,189,248,0.08)" filter="url(#footerGlow)"/>
                 </svg>
                 <div class="footer-brand-text">
                     <span>BADAR</span>

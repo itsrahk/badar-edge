@@ -1110,6 +1110,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.addEventListener('click', closeSidebar);
             });
         }
+
+        // Expandable sidebar sub-menus (Solutions / Industries)
+        document.querySelectorAll('.sidebar-haspop > .sidebar-parent').forEach(btn => {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            if (item.classList.contains('active') || item.querySelector('.sidebar-sub .active')) {
+                item.classList.add('open');
+            }
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.sidebar-haspop').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
     }
 
     // ROI bar width animation on scroll

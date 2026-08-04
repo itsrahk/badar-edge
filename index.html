@@ -100,22 +100,31 @@
         <div class="sidebar-divider"></div>
         <nav class="sidebar-nav">
             <ul class="sidebar-links">
-                <li><a href="index.html" class="sidebar-link active"><span class="link-dot"></span>Home</a></li>
-                <li><a href="about.html" class="sidebar-link"><span class="link-dot"></span>About</a></li>
-                <li><a href="services/index.html" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
-                <li><a href="case-studies.html" class="sidebar-link"><span class="link-dot"></span>Case Studies</a></li>
-                <li><a href="founder.html" class="sidebar-link"><span class="link-dot"></span>Founder</a></li>
-                <li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
-                <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
-                <li><a href="ecommerce.html" class="sidebar-link"><span class="link-dot"></span>Ecommerce</a></li>
-                <li><a href="startups.html" class="sidebar-link"><span class="link-dot"></span>Startups</a></li>
-                <li><a href="contact.html" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
-                <li><a href="privacy.html" class="sidebar-link"><span class="link-dot"></span>Privacy</a></li>
-            </ul>
+            <li><a href="index.html" class="sidebar-link active"><span class="link-dot"></span>Home</a></li>
+            <li><a href="about.html" class="sidebar-link"><span class="link-dot"></span>About</a></li>
+            <li><a href="founder.html" class="sidebar-link"><span class="link-dot"></span>Founder</a></li>
+            <li class="sidebar-haspop">
+            <button type="button" class="sidebar-parent"><span>Services</span><i data-lucide="chevron-down" class="icon-tiny"></i></button>
+            <ul class="sidebar-sub"><li><a href="services/traditional.html" class="sidebar-link"><span class="link-dot"></span>Traditional Solutions</a></li>
+            <li><a href="services/custom.html" class="sidebar-link"><span class="link-dot"></span>Custom Solutions</a></li>
+            <li><a href="services/packages.html" class="sidebar-link"><span class="link-dot"></span>Recommended Solutions</a></li></ul>
+        </li>
+            <li class="sidebar-haspop">
+            <button type="button" class="sidebar-parent"><span>Industries</span><i data-lucide="chevron-down" class="icon-tiny"></i></button>
+            <ul class="sidebar-sub"><li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
+            <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
+            <li><a href="ecommerce.html" class="sidebar-link"><span class="link-dot"></span>Ecommerce</a></li>
+            <li><a href="startups.html" class="sidebar-link"><span class="link-dot"></span>Startups</a></li></ul>
+        </li>
+            
+            <li><a href="case-studies.html" class="sidebar-link"><span class="link-dot"></span>Case Studies</a></li>
+            <li><a href="contact.html" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+            <li><a href="privacy.html" class="sidebar-link"><span class="link-dot"></span>Privacy</a></li>
+        </ul>
         </nav>
             <div class="sidebar-divider"></div>
         <div class="sidebar-social"><a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="linkedin.png" alt="Linkedin" class="social-img"></a><a href="#" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="instagram.png" alt="Instagram" class="social-img"></a><a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="whatsapp.png" alt="Whatsapp" class="social-img"></a></div>
-    </aside></aside>
+    </aside>
 
     <main class="page-container">
 
@@ -187,7 +196,40 @@
             </div>
         </section>
 
-        <!-- INDUSTRIES WE WORK WITH -->
+        <!-- TOP 3 TESTIMONIALS -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="section-header text-center">
+                <span class="section-label">CLIENT VOICE</span>
+                <h2 class="section-title">What our clients are saying</h2>
+            </div>
+            <div class="testimonial-grid top3">
+                <div class="testimonial-card glass-panel">
+                    <div class="testimonial-stars"><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i></div>
+                    <p class="testimonial-text">Badar Edge rebuilt our lead flow in 3 weeks. Speed-to-lead dropped from 6 hours to under 1 minute and bookings are up 38%.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Dr. Sarah Imtia</span>
+                        <span class="testimonial-role">Dental Clinic, Lahore</span>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-panel">
+                    <div class="testimonial-stars"><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i></div>
+                    <p class="testimonial-text">The custom workflow they deployed now routes every inquiry to the right rep instantly — we closed 42% more deals in the first quarter.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Omar Hussain</span>
+                        <span class="testimonial-role">Real Estate Group, Islamabad</span>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-panel">
+                    <div class="testimonial-stars"><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i><i data-lucide="star" class="icon-star"></i></div>
+                    <p class="testimonial-text">Outsourced automation replaced 3 tools and cut monthly spend by 55%. Their team monitors it daily so it keeps performing.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Ayesha Malik</span>
+                        <span class="testimonial-role">Ecommerce Startup, Karachi</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section trusted-section">
             <p class="trusted-label">INDUSTRIES WE WORK WITH</p>
             <div class="trusted-marquee">

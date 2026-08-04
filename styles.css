@@ -8059,6 +8059,22 @@ body::after {
     }
 }
 
+.testimonials-more {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.testimonials-more a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    transition: opacity 0.3s ease;
+}
+
+.testimonials-more a:hover {
+    opacity: 0.75;
+}
+
 
 /* ===== Solution hierarchy tree ===== */
 .hierarchy-section {

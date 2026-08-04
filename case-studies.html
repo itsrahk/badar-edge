@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6J277LPKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W6J277LPKK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Real Deployments, Real Results | Badar Edge</title>
+
+    <!-- SEO Optimization -->
+    <meta name="description" content="Real Badar Edge case studies across real estate, dental clinics, ecommerce, and startups. See the problems, the systems we built, and the measured results.">
+    <meta name="keywords" content="Badar Edge case studies, AI results, real estate AI case study, dental clinic AI case study, ecommerce automation, startup AI, speed to lead results">
+    <meta name="author" content="Badar Edge">
+    <link rel="canonical" href="https://itsrahk.github.io/badar-edge/case-studies.html">
+    <meta property="og:url" content="https://itsrahk.github.io/badar-edge/case-studies.html">
+    <meta property="og:title" content="Case Studies | Badar Edge">
+    <meta property="og:description" content="Six deployments, four industries, three continents — the problems, the systems, and the measured results.">
+    <meta property="og:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="google-site-verification" content="SqzVAyILZ7Z6uxnX9VeAbgG8auqVOi8GzJKkhMrVYng" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-theme">
+
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Neural Grid Background -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Dynamic Glowing Ambient Blobs -->
+    <div class="ambient-glow blob-violet"></div>
+    <div class="ambient-glow blob-blue"></div>
+    <div class="ambient-glow blob-cyan"></div>
+
+    <!-- Floating Cyber Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="floating-dock">
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
+                <span>Book Call</span>
+                <i data-lucide="arrow-up-right" class="icon-small"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="index.html" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="services/index.html" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
+                <li><a href="case-studies.html" class="sidebar-link"><span class="link-dot"></span>Case Studies</a></li>
+                <li><a href="about.html" class="sidebar-link"><span class="link-dot"></span>About</a></li>
+                <li><a href="founder.html" class="sidebar-link"><span class="link-dot"></span>Founder</a></li>
+                <li><a href="contact.html" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+                <li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
+                <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
+                <li><a href="ecommerce.html" class="sidebar-link"><span class="link-dot"></span>Ecommerce</a></li>
+                <li><a href="startups.html" class="sidebar-link"><span class="link-dot"></span>Startups</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="page-container">
+
+        <!-- HERO -->
+        <section id="hero" class="section hero-section vertical-hero">
+            <div class="hero-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i> Back to Badar Edge Home
+                </a>
+                <div class="hero-brand">
+                    <svg class="hero-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                        <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                        <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    </svg>
+                    <div class="hero-brand-text">
+                        <span>BADAR</span>
+                        <span>EDGE</span>
+                    </div>
+                </div>
+                <span class="section-label">CASE STUDIES</span>
+                <h1 class="hero-headline">
+                    Real deployments. <span class="headline-gradient">Measured results.</span>
+                </h1>
+
+                <p class="hero-subtext">
+                    Six deployments, four industries, three continents. Every engagement started with a problem — here is what we built and what it actually returned.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary btn-glow btn-large">
+                        <span>Book Your Free Growth Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDIES -->
+        <section class="section case-studies-section" id="studies">
+            <div class="case-study-card glass-panel" id="case-delaney">
+                <div class="cs-top">
+                    <span class="cs-badge badge-cyan">Real Estate</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">Delaney Realty</h3>
+                        <span class="cs-meta">James Delaney · Florida, USA</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"We were losing leads because we couldn't respond fast enough. Speed-to-Lead cut response time from hours to seconds and our conversion jumped 38%."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>Inquiries sat for up to 6 hours before anyone responded. By the time Delaney Realty replied, buyers had already booked showings with faster competitors — deals walked out the door daily.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>A Custom Speed-to-Lead system: instant lead capture, automated first response, and Lead Qualification AI that routes hot buyers straight to the broker.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">6 hrs → 45 sec response</span>
+                        <span class="t-outcome font-purple">+38% lead-to-appointment</span>
+                        <span class="t-outcome font-indigo">+4 deals/mo</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>6-hour response, leads going cold, commission revenue leaking to competitors.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>45-second response, conversion up 38%, four additional deals closed every month.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-card glass-panel" id="case-mitchell">
+                <div class="cs-top">
+                    <span class="cs-badge badge-purple">Dental Clinic</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">BrightSmile Dental Studio</h3>
+                        <span class="cs-meta">Dr. Sarah Mitchell · Texas, USA</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"Missed calls were costing us patients. The AI receptionist now books over 30 appointments a month while we're with patients in the chair."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>Every time a patient called and got no answer, the chair sat empty. With staff in procedures all day, missed calls meant missed appointments and a shrinking schedule.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>An AI Receptionist with Missed-Call Recovery and WhatsApp automation that answers 24/7, books appointments, and never drops a lead.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">30+ bookings/mo</span>
+                        <span class="t-outcome font-purple">0 missed calls</span>
+                        <span class="t-outcome font-indigo">2.1× new patients</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>Patients called, got no answer, booked elsewhere. Front desk drowned in callbacks.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>Every call answered instantly, 30+ appointments a month booked on autopilot, 2.1× new patients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-card glass-panel" id="case-raza">
+                <div class="cs-top">
+                    <span class="cs-badge badge-cyan">Real Estate</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">UrbanNest Properties</h3>
+                        <span class="cs-meta">Ahmed Raza · Lahore, PK</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"The pipeline dashboard shows every lead, and the AI qualifies them before we even pick up the phone. Our closing pace has doubled."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>The sales team spent hours manually triaging low-quality inquiries. High-intent buyers got buried under noise, and the pipeline was never clear.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>A Pipeline Dashboard with Lead Qualification AI and CRM automation that scores every lead and surfaces only the buyers ready to close.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">3× qualified leads</span>
+                        <span class="t-outcome font-purple">12 min saved/lead</span>
+                        <span class="t-outcome font-indigo">+$18K closed value</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>Leads triaged by hand, the pipeline hidden in spreadsheets, hot buyers lost in the noise.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>3× qualified leads, 12 minutes saved per lead, over $18K in additional closed value.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-card glass-panel" id="case-vasquez">
+                <div class="cs-top">
+                    <span class="cs-badge badge-indigo">Ecommerce</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">Luma Boutique</h3>
+                        <span class="cs-meta">Elena Vasquez · Miami, USA</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"Cart recovery automation brought back customers we thought were gone. Revenue is up 27% since launch and email ROI is through the roof."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>Shoppers added to cart, then vanished. With no follow-up, abandoned carts became permanent losses and revenue flatlined.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>Cart Recovery Automation with sequenced email and SMS follow-up, plus an AI chatbot that answers support in seconds instead of days.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">+27% revenue</span>
+                        <span class="t-outcome font-purple">18% cart recovery</span>
+                        <span class="t-outcome font-indigo">4.2× email ROI</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>Silent abandonments, zero follow-up, customers gone for good and revenue stuck.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>18% of abandoned carts recovered, revenue up 27%, email ROI at 4.2×.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-card glass-panel" id="case-okafor">
+                <div class="cs-top">
+                    <span class="cs-badge badge-cyan">Startups</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">FleetWave Logistics</h3>
+                        <span class="cs-meta">Chidi Okafor · Lagos, NG</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"We replaced hours of manual reporting with a live dashboard. Decisions that took a week now happen in minutes."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>Operations data lived in scattered spreadsheets. Every weekly report took hours to build, and by the time it was ready, the numbers were stale.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>An Operations Dashboard with live reporting and automated alerts that turns raw fleet data into decisions in real time.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">8 hrs saved/wk</span>
+                        <span class="t-outcome font-purple">Real-time visibility</span>
+                        <span class="t-outcome font-indigo">Faster decisions</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>Week-old spreadsheets, hours of manual reporting, decisions made on stale data.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>8 hours saved weekly, live visibility across the fleet, decisions made in minutes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-card glass-panel" id="case-noor">
+                <div class="cs-top">
+                    <span class="cs-badge badge-purple">Dental Clinic</span>
+                    <div class="cs-title-block">
+                        <h3 class="cs-company">Maple Dental Care</h3>
+                        <span class="cs-meta">Dr. Ayesha Noor · Vancouver, CA</span>
+                    </div>
+                </div>
+                <p class="cs-quote">"Automated recall campaigns filled our quiet weeks. Patients are back on the calendar and retention has never been higher."</p>
+                <div class="cs-grid">
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Problem</span>
+                        <p>Quiet periods hit hard. Hygiene recalls and follow-ups relied on staff memory, so chairs sat idle between busy bursts.</p>
+                    </div>
+                    <div class="cs-block">
+                        <span class="cs-block-title">The Solution</span>
+                        <p>Automated Recall Campaigns with WhatsApp and SMS nudges that keep patients coming back on a schedule the clinic controls.</p>
+                    </div>
+                </div>
+                <div class="cs-block cs-block--results">
+                    <span class="cs-block-title">Results</span>
+                    <div class="t-outcomes">
+                        <span class="t-outcome font-cyan">22% fewer no-shows</span>
+                        <span class="t-outcome font-purple">+38% recall response</span>
+                        <span class="t-outcome font-indigo">Higher retention</span>
+                    </div>
+                </div>
+                <div class="cs-before-after">
+                    <div class="cs-col cs-col--before">
+                        <span class="cs-col-title">Before</span>
+                        <p>Recalls forgotten, quiet weeks on the calendar, no-shows draining the schedule.</p>
+                    </div>
+                    <div class="cs-col cs-col--after">
+                        <span class="cs-col-title">After</span>
+                        <p>Recall response up 38%, no-shows down 22%, the calendar stays full on autopilot.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="cta" class="section cta-section">
+            <div class="cta-panel glass-panel">
+                <h2 class="cta-headline">Your results could be next.</h2>
+                <p class="cta-sub">
+                    Book a free 30-minute Growth Audit. We'll map your current flow, identify where you're losing money, and show you the system to fix it.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-glow btn-large">
+                        <span>📅 Book Your Free Growth Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us Directly</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+                <p class="cta-trust">No credit card required. Audit delivered within 48 hours.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-logo-side">
+                <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <span>BADAR</span>
+                    <span>EDGE</span>
+                </div>
+                <p class="footer-copy">The Problem-First AI Solutions Company. © 2026 Badar Edge. All rights reserved.</p>
+            </div>
+
+            <div class="footer-groups">
+                <div class="footer-group">
+                    <span class="footer-group-title">Verticals</span>
+                    <a href="dental-clinics.html" class="footer-link">Dental Clinics</a>
+                    <a href="real-estate.html" class="footer-link">Real Estate</a>
+                    <a href="ecommerce.html" class="footer-link">Ecommerce</a>
+                    <a href="startups.html" class="footer-link">Startups</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Services</span>
+                    <a href="services/index.html" class="footer-link">All Services</a>
+                    <a href="services/traditional.html" class="footer-link">Traditional</a>
+                    <a href="services/custom.html" class="footer-link">Custom</a>
+                    <a href="services/packages.html" class="footer-link">Recommended Solutions</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="founder.html" class="footer-link">Founder</a>
+                    <a href="case-studies.html" class="footer-link">Case Studies</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="privacy.html" class="footer-link">Privacy</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Connect</span>
+                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="footer-payments">
+                <span class="footer-payments-label">Accepted Payment Methods</span>
+                <div class="footer-payments-icons">
+                    <span class="payment-badge"><img src="payments/easypaisa.png" alt="Easypaisa"></span>
+                    <span class="payment-badge"><img src="payments/bank-transfer.png" alt="Bank Transfer"></span>
+                    <span class="payment-badge"><img src="payments/binance.png" alt="Binance"></span>
+                    <span class="payment-badge"><img src="payments/nsave.png" alt="Nsave"></span>
+                    <span class="payment-badge"><img src="payments/remitly.png" alt="Remitly"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: GSAP, ScrollTrigger, Lenis smooth scroll, Lucide icons, Canvas-Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide && lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Code script logic -->
+    <script src="app.js"></script>
+</body>
+</html>

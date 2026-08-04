@@ -1058,6 +1058,27 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Case studies — staggered row reveal
+        const caseStudies = gsap.utils.toArray(".case-study-card");
+        if (caseStudies.length > 0) {
+            gsap.fromTo(caseStudies,
+                { opacity: 0, y: 50, scale: 0.96 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    stagger: 0.15,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".case-studies-section",
+                        start: "top 78%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
         // Sidebar link active state highlights based on scrolling position
         const sidebarLinks = document.querySelectorAll(".sidebar-link");
         const sidebarSections = document.querySelectorAll("section[id]");

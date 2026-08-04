@@ -60,25 +60,7 @@
 </head>
 <body class="cyber-theme">
     
-    <!-- Voice Guide Agent -->
-    <div class="guide-agent" id="guideAgent">
-        <div class="guide-avatar">
-            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
-                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
-                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
-            </svg>
-            <div class="guide-wave"><span></span><span></span><span></span></div>
-        </div>
-        <div class="guide-bubble" id="guideBubble">
-            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
-            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-
+    
     <!-- Ambient Neural Grid Background -->
     <canvas id="neural-canvas"></canvas>
     
@@ -198,13 +180,18 @@
                             <span class="stat-value">&lt;1 min</span>
                             <span class="stat-sub">Response time</span>
                         </div>
-                        <div class="hero-stat-card stat-uptime">
-                            <span class="stat-label"><i data-lucide="layout-grid" class="icon-tiny"></i> Industries Served</span>
-                            <span class="stat-value">4</span>
-                            <span class="stat-sub">Specialized verticals</span>
+                            <div class="hero-stat-card stat-uptime">
+                                <span class="stat-label"><i data-lucide="layout-grid" class="icon-tiny"></i> Industries Served</span>
+                                <span class="stat-value">4</span>
+                                <span class="stat-sub">Specialized verticals</span>
+                            </div>
+                        </div>
+                        <div class="hero-solutions">
+                            <a href="services/traditional.html" class="solution-card"><i data-lucide="layout-dashboard" class="icon-tiny"></i>Traditional Solutions</a>
+                            <a href="services/custom.html" class="solution-card"><i data-lucide="brain" class="icon-tiny"></i>Custom Solutions</a>
+                            <a href="services/packages.html" class="solution-card"><i data-lucide="package" class="icon-tiny"></i>Recommended Solutions</a>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
 

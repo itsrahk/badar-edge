@@ -609,22 +609,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Hero stat cards — count-up metrics + staggered entry
+        // Hero stat cards — staggered entry + count-up on load
         const heroStatCards = document.querySelectorAll(".hero-stat-card");
         if (heroStatCards.length > 0) {
-            heroStatCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    { opacity: 0, y: 24, scale: 0.9 },
-                    {
-                        opacity: 1, y: 0, scale: 1, duration: 0.7, delay: 0.15 * i, ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: "#hero",
-                            start: "top 60%",
-                            once: true
-                        }
-                    }
-                );
-            });
+            gsap.fromTo(heroStatCards,
+                { opacity: 0, y: 24, scale: 0.9 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.15, ease: "power3.out" }
+            );
 
             const heroVals = document.querySelectorAll(".hero-stat-card .stat-value");
             const heroData = [];
@@ -637,30 +628,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 heroData.push({ el, prefix: match[1], suffix: match[3], target });
             });
 
-            if (heroData.length > 0) {
-                ScrollTrigger.create({
-                    trigger: "#hero",
-                    start: "top 40%",
-                    once: true,
-                    onEnter() {
-                        heroData.forEach((item) => {
-                            const valObj = { val: 0 };
-                            gsap.to(valObj, {
-                                val: item.target,
-                                duration: 2.2,
-                                ease: "power3.out",
-                                onUpdate: () => {
-                                    const n = Math.floor(valObj.val);
-                                    item.el.textContent = item.prefix + n + item.suffix;
-                                },
-                                onComplete: () => {
-                                    item.el.textContent = item.prefix + item.target + item.suffix;
-                                }
-                            });
-                        });
+            heroData.forEach((item, i) => {
+                const valObj = { val: 0 };
+                gsap.to(valObj, {
+                    val: item.target,
+                    duration: 2.2,
+                    delay: 0.35 + 0.1 * i,
+                    ease: "power3.out",
+                    onUpdate: () => {
+                        const n = Math.floor(valObj.val);
+                        item.el.textContent = item.prefix + n + item.suffix;
+                    },
+                    onComplete: () => {
+                        item.el.textContent = item.prefix + item.target + item.suffix;
                     }
                 });
-            }
+            });
         }
 
         // Solutions section header entry

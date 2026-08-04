@@ -8368,9 +8368,9 @@ body::after {
     .hamburger { display: none; }
     .navbar { padding: 8px 16px; }
     .nav-logo-img { height: 56px; }
+    .navbar-container { display: none; }
     .sidebar { width: 200px; }
     .page-container { margin-left: 200px; }
-    .navbar-container { left: 200px; }
 }
 @media (max-width: 480px) {
     .nav-logo-img { height: 46px; }

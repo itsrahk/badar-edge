@@ -8436,8 +8436,9 @@ body::after {
 .trusted-section { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .trusted-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A1AEC4; text-align: center; margin-bottom: 24px; }
 .trusted-row { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
-.trusted-logo { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+.trusted-logo { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
 .trusted-logo .icon-small { width: 18px; height: 18px; opacity: 0.5; }
+.trusted-logo-icon { width: 36px; height: 36px; object-fit: contain; }
 
 @media (max-width: 600px) {
     .trusted-row { gap: 24px; }

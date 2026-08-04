@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Welcome to Badar Edge.",
                 "Click the menu icon to open the sidebar and jump to any section.",
                 "We are The Problem-First Solutions Company. We don't start by selling websites, ads, or AI. We start by understanding what's preventing your business from growing, then build the right combination of strategy, branding, marketing, technology, and AI to solve it.",
-                "Our systems increase revenue, eliminate bottlenecks, and reduce manual work. We have served over 12 clients, deployed more than 18 AI systems, and automated 45 workflows across 3 industries.",
+                "Our systems increase revenue, eliminate bottlenecks, and reduce manual work. We have served over 12 clients, deployed more than 18 AI systems, and automated 45 workflows across 4 industries.",
                 "Explore our verticals, or book a free growth audit to get started."
             ];
             let msgIndex = 0;

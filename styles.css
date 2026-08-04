@@ -6300,7 +6300,7 @@ body::after {
 }
 
 /* ==========================================================================
-   V3.1 — VERTICAL SUBPAGES (Dental / Real Estate / Aesthetic)
+    V3.1 — VERTICAL SUBPAGES (Dental / Real Estate / Ecommerce / Startups)
    ========================================================================== */
 
 /* Compact hero for subpages */
@@ -7165,4 +7165,226 @@ body::after {
     .marquee-track {
         animation: none;
     }
+}
+
+/* ==========================================================================
+   V3.8 — PAYMENT LOGO CHIPS + THREE-LAYER VERTICAL PAGES
+   ========================================================================== */
+.marquee-icon--img {
+    padding: 7px;
+    background: rgba(255,255,255,0.94);
+    border-color: rgba(255,255,255,0.14);
+}
+
+.marquee-icon--img img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+}
+
+.marquee-item:hover .marquee-icon--img {
+    border-color: rgba(0, 242, 254, 0.6);
+    box-shadow: 0 0 20px -6px rgba(0, 242, 254, 0.45);
+}
+
+.service-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.service-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.02);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.service-chip span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.service-chip:hover {
+    color: var(--white);
+    border-color: rgba(0, 242, 254, 0.35);
+    box-shadow: 0 0 20px -8px rgba(0, 242, 254, 0.4);
+    transform: translateY(-2px);
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .custom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .custom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.custom-card {
+    padding: 28px 24px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.custom-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+.custom-label--problem {
+    background: rgba(244, 63, 94, 0.08);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.custom-label--solution {
+    background: rgba(0, 242, 254, 0.08);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.custom-problem-text {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.custom-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--accent-purple);
+}
+
+.custom-arrow i {
+    width: 16px;
+    height: 16px;
+}
+
+.custom-solution-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin: 0;
+    line-height: 1.35;
+}
+
+.custom-solution-note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+.layer-intro {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+@media (max-width: 1024px) {
+    .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .cat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cat-card {
+    padding: 26px 24px;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.02);
+}
+
+.cat-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.cat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.03);
+    font-size: 1.15rem;
+}
+
+.cat-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--white);
+}
+
+.cat-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cat-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.cat-list li i {
+    flex-shrink: 0;
+    color: var(--accent-cyan);
+    opacity: 0.8;
 }

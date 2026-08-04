@@ -6112,29 +6112,54 @@ body::after {
     animation: guidePulse 3s ease-out infinite;
 }
 
-.founder-avatar-ring {
+.founder-frame {
     position: relative;
+    width: 260px;
+    border-radius: 18px;
+    padding: 12px 12px 10px;
+    background: linear-gradient(160deg, rgba(0, 242, 254, 0.35), rgba(99, 102, 241, 0.35) 45%, rgba(192, 132, 252, 0.4));
+    box-shadow: 0 0 50px -12px rgba(99, 102, 241, 0.45);
 }
 
-.founder-avatar-ring::after {
+.founder-frame::before {
     content: '';
     position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 242, 254, 0.12);
+    inset: 3px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.founder-frame::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 26px;
+    border: 1px solid rgba(0, 242, 254, 0.14);
     animation: guidePulse 3s ease-out infinite;
     pointer-events: none;
 }
 
-.founder-avatar-img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
+.founder-frame-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center top;
-    display: block;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.founder-frame figcaption {
+    padding-top: 12px;
+    padding-bottom: 2px;
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #cbd5e1;
+    text-transform: uppercase;
 }
 
 .founder-text {

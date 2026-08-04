@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const messages = [
                 "Welcome to Badar Edge.",
                 "Click the menu icon to open the sidebar and jump to any section.",
-                "We are a problem-first AI solutions company. We build three types of solutions. Packaged systems like our Speed-to-Lead system for real estate, custom builds, and AI services.",
-                "Our systems increase revenue, eliminate bottlenecks, and reduce manual work. We have served over 50 clients and deployed more than 20 AI systems across multiple industries.",
-                "Explore our solutions, check our pricing, or book a free strategy call to get started."
+                "We are a problem-first AI solutions company. We build end-to-end systems for dental clinics, real estate agencies, and aesthetic clinics.",
+                "Our systems increase revenue, eliminate bottlenecks, and reduce manual work. We have served over 12 clients, deployed more than 18 AI systems, and automated 45 workflows across 3 industries.",
+                "Explore our verticals, check our pricing, or book a free growth audit to get started."
             ];
             let msgIndex = 0;
             let started = false;
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* --------------------------------------------------------------------------
         3. Dynamic Magnetic Hover Glow (Solution Cards)
         -------------------------------------------------------------------------- */
-    const cards = document.querySelectorAll(".hub-branch-card");
+    const cards = document.querySelectorAll(".hub-branch-card, .vertical-card, .hero-vertical-card, .proof-featured");
     cards.forEach((card) => {
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
@@ -634,6 +634,137 @@ document.addEventListener("DOMContentLoaded", () => {
                     scrollTrigger: {
                         trigger: outcomeLine,
                         start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Hero vertical cards entrance
+        const heroVerticals = document.querySelector(".hero-verticals");
+        if (heroVerticals) {
+            gsap.fromTo(heroVerticals,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: heroVerticals,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Verticals grid — staggered card entrance
+        const verticalsGrid = document.querySelector(".verticals-grid");
+        if (verticalsGrid) {
+            gsap.fromTo(".vertical-card",
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    stagger: 0.15,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: verticalsGrid,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Proof featured card entrance
+        const proofFeatured = document.querySelector(".proof-featured");
+        if (proofFeatured) {
+            gsap.fromTo(proofFeatured,
+                { opacity: 0, y: 40, scale: 0.98 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: proofFeatured,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Service ladder entrance
+        const ladder = document.querySelector(".ladder");
+        if (ladder) {
+            gsap.fromTo(".ladder-step",
+                { opacity: 0, x: -30 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.7,
+                    stagger: 0.18,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: ladder,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Founder layout entrance
+        const founderLayout = document.querySelector(".founder-layout");
+        if (founderLayout) {
+            gsap.fromTo(".founder-photo",
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "back.out(1.4)",
+                    scrollTrigger: {
+                        trigger: founderLayout,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+            gsap.fromTo(".founder-text",
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: founderLayout,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        }
+
+        // Final CTA panel entrance
+        const ctaPanel = document.querySelector(".cta-panel");
+        if (ctaPanel) {
+            gsap.fromTo(ctaPanel,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: ctaPanel,
+                        start: "top 80%",
                         toggleActions: "play none none none"
                     }
                 }

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6J277LPKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W6J277LPKK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Clinic AI Systems | Badar Edge</title>
+
+    <!-- SEO Optimization -->
+    <meta name="description" content="AI systems for dental clinics: premium websites, local SEO, AI receptionist, missed-call recovery, and WhatsApp automation. Never lose a patient to slow response again.">
+    <meta name="keywords" content="dental clinic AI, dental practice marketing, AI receptionist dental, dental website design, dental SEO, missed call recovery, WhatsApp automation dental">
+    <meta name="author" content="Badar Edge">
+    <link rel="canonical" href="https://itsrahk.github.io/badar-edge/dental-clinics.html">
+    <meta property="og:url" content="https://itsrahk.github.io/badar-edge/dental-clinics.html">
+    <meta property="og:title" content="Dental Clinic AI Systems | Badar Edge">
+    <meta property="og:description" content="AI systems for dental clinics: never lose a patient to slow response again. Websites, SEO, AI receptionist, and automation.">
+    <meta property="og:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dental Clinic AI Systems | Badar Edge">
+    <meta name="twitter:description" content="AI systems for dental clinics: websites, SEO, AI receptionist, and automation.">
+    <meta name="twitter:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="google-site-verification" content="SqzVAyILZ7Z6uxnX9VeAbgG8auqVOi8GzJKkhMrVYng" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Badar Edge — Dental Clinic AI",
+        "url": "https://itsrahk.github.io/badar-edge/dental-clinics.html",
+        "description": "End-to-end AI systems for dental clinics: websites, local SEO, AI receptionist, missed-call recovery, and WhatsApp automation.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Badar Edge",
+            "url": "https://itsrahk.github.io/badar-edge/"
+        },
+        "areaServed": "Worldwide"
+    }
+    </script>
+
+    <!-- Google Fonts: Inter (Body) & Plus Jakarta Sans (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-theme">
+
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Dynamic Glowing Ambient Blobs -->
+    <div class="ambient-glow blob-violet"></div>
+    <div class="ambient-glow blob-blue"></div>
+    <div class="ambient-glow blob-cyan"></div>
+
+    <!-- Floating Cyber Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="floating-dock">
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20run%20a%20dental%20clinic%20and%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
+                <span>Book Call</span>
+                <i data-lucide="arrow-up-right" class="icon-small"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="index.html" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="#services" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
+                <li><a href="#results" class="sidebar-link"><span class="link-dot"></span>Results</a></li>
+                <li><a href="#pricing" class="sidebar-link"><span class="link-dot"></span>Packages</a></li>
+                <li><a href="#process" class="sidebar-link"><span class="link-dot"></span>Process</a></li>
+                <li><a href="#contact" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+                <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
+                <li><a href="aesthetic-clinics.html" class="sidebar-link"><span class="link-dot"></span>Aesthetic Clinics</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="page-container">
+
+        <!-- VERTICAL HERO -->
+        <section id="hero" class="section hero-section vertical-hero">
+            <div class="hero-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i> Back to Badar Edge Home
+                </a>
+                <div class="hero-brand">
+                    <svg class="hero-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                        <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                        <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    </svg>
+                    <div class="hero-brand-text">
+                        <span>BADAR</span>
+                        <span>EDGE</span>
+                    </div>
+                </div>
+                <span class="section-label">DENTAL CLINICS</span>
+                <h1 class="hero-headline">
+                    Never lose a patient to <span class="headline-gradient">slow response</span> again
+                </h1>
+
+                <p class="hero-subtext">
+                    A complete AI system for your dental practice: premium website, local SEO, AI receptionist, missed-call recovery, and WhatsApp automation — working 24/7 to book more appointments.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-glow btn-large">
+                        <span>Book Your Free Growth Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20run%20a%20dental%20clinic%20and%20want%20a%20growth%20audit" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+
+                <div class="vertical-stats">
+                    <div class="vertical-stat">
+                        <span class="vertical-stat-value font-cyan">&lt;60s</span>
+                        <span class="vertical-stat-label">lead response</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="vertical-stat-value font-purple">+38%</span>
+                        <span class="vertical-stat-label">appointments</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="vertical-stat-value font-indigo">100%</span>
+                        <span class="vertical-stat-label">missed calls recovered</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem" class="section problem-section">
+            <div class="section-header text-center">
+                <span class="section-label">THE PROBLEM</span>
+                <h2 class="section-title">Your practice is losing patients every day</h2>
+                <p class="section-subtitle">Not because your dentistry is weak — because your front desk can't keep up.</p>
+            </div>
+
+            <div class="vertical-pain">
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">Missed calls = lost patients</h3>
+                    <p class="problem-text">Every unanswered call is a patient who books with the practice that picked up first.</p>
+                </div>
+
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">After-hours inquiries go cold</h3>
+                    <p class="problem-text">Patients research at night. By morning, they've already booked elsewhere.</p>
+                </div>
+
+                <div class="problem-card glass-panel problem-card--clean">
+                    <h3 class="problem-title">No system follows up</h3>
+                    <p class="problem-text">Website traffic turns into nothing without speed-to-lead follow-up and recall reminders.</p>
+                </div>
+            </div>
+
+            <div class="problem-outcome">
+                <p class="outcome-line">We build a <span class="headline-gradient">patient-capture system</span> that answers, books, and follows up automatically. Results first, technology second.</p>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section verticals-section">
+            <div class="section-header text-center">
+                <span class="section-label">WHAT WE BUILD</span>
+                <h2 class="section-title">A complete dental clinic system</h2>
+                <p class="section-subtitle">Five integrated services that work together to turn inquiries into booked appointments.</p>
+            </div>
+
+            <div class="verticals-grid">
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🦷</span>
+                    <h3 class="service-title">Premium Websites &amp; Landing Pages</h3>
+                    <p class="service-desc">Fast, conversion-focused design that turns visitors into appointment requests.</p>
+                    <a href="#contact" class="service-link">Start Here <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">📍</span>
+                    <h3 class="service-title">Local SEO &amp; GEO Optimization</h3>
+                    <p class="service-desc">Rank for "dentist near me" searches and appear when patients search for exactly what you offer.</p>
+                    <a href="#contact" class="service-link">Start Here <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🤖</span>
+                    <h3 class="service-title">AI Chatbot &amp; WhatsApp Automation</h3>
+                    <p class="service-desc">Instant answers on your website and WhatsApp — booking appointments around the clock.</p>
+                    <a href="#contact" class="service-link">Start Here <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">📞</span>
+                    <h3 class="service-title">Missed-Call AI Recovery</h3>
+                    <p class="service-desc">Every missed call is automatically called back, qualified, and routed to booking.</p>
+                    <a href="#contact" class="service-link">Start Here <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <span class="service-emoji">🧑‍⚕️</span>
+                    <h3 class="service-title">AI Receptionist</h3>
+                    <p class="service-desc">A voice agent that answers, schedules, and sends recall reminders like your best front-desk hire.</p>
+                    <a href="#contact" class="service-link">Start Here <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="service-cta-card glass-panel">
+                    <span class="service-emoji">🚀</span>
+                    <h3 class="service-title">Not sure where to start?</h3>
+                    <p class="service-desc" style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6;">Get a free audit. We'll map your patient flow and show you exactly where patients are slipping away.</p>
+                    <a href="#contact" class="btn btn-primary btn-glow btn-sm">
+                        <span>Book Free Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section id="results" class="section proof-section">
+            <div class="section-header text-center">
+                <span class="section-label">PROOF</span>
+                <h2 class="section-title">Systems built. Appointments generated.</h2>
+                <p class="section-subtitle">A featured deployment showing exactly what happens when the system runs.</p>
+            </div>
+
+            <div class="proof-featured glass-panel">
+                <div class="proof-badge t-badge-global">Dental · Global</div>
+                <div class="proof-stars">★★★★★</div>
+                <p class="proof-quote">
+                    "We were losing after-hours and missed-call patients to competitors. The AI receptionist now answers every call, books appointments instantly, and sends recall reminders. Our schedule went from 70% to full."
+                </p>
+                <p class="proof-author">— Dr. Amira Khan, Founder, SmileCraft Dental Studio</p>
+                <div class="proof-results">
+                    <div class="proof-result">
+                        <span class="proof-result-value font-cyan">+38%</span>
+                        <span class="proof-result-label">new patient appointments</span>
+                    </div>
+                    <div class="proof-result">
+                        <span class="proof-result-value font-purple">100%</span>
+                        <span class="proof-result-label">missed calls recovered</span>
+                    </div>
+                    <div class="proof-result">
+                        <span class="proof-result-value font-indigo">&lt;60s</span>
+                        <span class="proof-result-label">response time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20similar%20results%20for%20my%20dental%20clinic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                    <span>Get Results Like This</span>
+                    <i data-lucide="arrow-right" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing" class="section pricing-section">
+            <div class="section-header text-center">
+                <span class="section-label">INVESTMENT</span>
+                <h2 class="section-title">Simple packages for dental clinics</h2>
+                <p class="section-subtitle">Start with a foundation. Scale into a fully automated practice.</p>
+            </div>
+
+            <div class="pricing-tier-row" style="margin-top: 20px;">
+                <div class="pricing-tier glass-panel">
+                    <div class="tier-label">Basic · Foundation</div>
+                    <div class="tier-price"><span class="currency">₨</span><span class="amount">100,000</span></div>
+                    <div class="tier-audience">$350 one-time · Setup + first month</div>
+                    <ul class="tier-features">
+                        <li>Premium website</li>
+                        <li>GMB setup &amp; optimization</li>
+                        <li>Basic social setup</li>
+                        <li>24/7 monitoring</li>
+                        <li>Monthly report</li>
+                    </ul>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20the%20Basic%20package%20for%20my%20dental%20clinic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-full btn-sm">Book a Call</a>
+                </div>
+
+                <div class="pricing-tier glass-panel tier-rec">
+                    <div class="rec-badge">Most Popular</div>
+                    <div class="tier-label">Standard · Growth</div>
+                    <div class="tier-price"><span class="currency">₨</span><span class="amount">50,000</span><span class="period">/mo</span></div>
+                    <div class="tier-audience">$180/mo · Everything in Basic +</div>
+                    <ul class="tier-features">
+                        <li>Local SEO &amp; GEO optimization</li>
+                        <li>Social media management</li>
+                        <li>AI chatbot &amp; WhatsApp automation</li>
+                        <li>Missed-call recovery</li>
+                        <li>WhatsApp support</li>
+                    </ul>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20the%20Standard%20package%20for%20my%20dental%20clinic" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-full btn-sm">Book Now</a>
+                </div>
+
+                <div class="pricing-tier glass-panel">
+                    <div class="tier-label">Premium · Scale</div>
+                    <div class="tier-price"><span class="currency">₨</span><span class="amount">150,000</span><span class="period">/mo</span></div>
+                    <div class="tier-audience">$500/mo · Everything in Standard +</div>
+                    <ul class="tier-features">
+                        <li>AI receptionist (voice)</li>
+                        <li>Paid ads management</li>
+                        <li>Custom integrations</li>
+                        <li>Recall &amp; review automation</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20discuss%20the%20Premium%20package%20for%20my%20dental%20clinic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-full btn-sm">Talk to Us</a>
+                </div>
+            </div>
+
+            <p class="pricing-note">
+                All packages include 24/7 monitoring, monthly reports, and direct WhatsApp support. Minimum 3-month commitment for recurring tiers.
+            </p>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process" class="section process-section">
+            <div class="section-header text-center">
+                <span class="section-label">HOW IT WORKS</span>
+                <h2 class="section-title">From first call to live system in 14 days</h2>
+                <p class="section-subtitle">A proven four-step path — no endless scope, no vague timelines.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-line">
+                    <div class="timeline-progress-fill" id="timeline-progress"></div>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="process-step glass-panel" id="step-1">
+                    <div class="step-number-glow">01</div>
+                    <h3 class="step-title">Audit</h3>
+                    <p class="step-desc">30-min call to map your patient flow, identify where calls and leads slip away, and define success metrics.</p>
+                    <span class="step-days">Day 1–2</span>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step glass-panel" id="step-2">
+                    <div class="step-number-glow">02</div>
+                    <h3 class="step-title">Build</h3>
+                    <p class="step-desc">We build your system — website, SEO, AI receptionist, chatbot, and automations.</p>
+                    <span class="step-days">Day 3–10</span>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step glass-panel" id="step-3">
+                    <div class="step-number-glow">03</div>
+                    <h3 class="step-title">Launch</h3>
+                    <p class="step-desc">System goes live. Real patient traffic runs through it. We monitor for 72 hours.</p>
+                    <span class="step-days">Day 11–12</span>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step glass-panel" id="step-4">
+                    <div class="step-number-glow">04</div>
+                    <h3 class="step-title">Optimize</h3>
+                    <p class="step-desc">Monthly reviews. We refine based on real patient behavior, not guesses.</p>
+                    <span class="step-days">Day 13+ · Ongoing</span>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#contact" class="btn btn-primary btn-glow btn-large">
+                    <span>Start Your Deployment</span>
+                    <i data-lucide="arrow-right" class="icon-small"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="cta" class="section cta-section">
+            <div class="cta-panel glass-panel">
+                <h2 class="cta-headline">Ready to fill your schedule?</h2>
+                <p class="cta-sub">
+                    Book a free 30-minute Growth Audit. We'll map your patient flow, identify exactly where you're losing appointments, and show you the system to fix it.
+                </p>
+                <div class="cta-actions">
+                    <a href="#contact" class="btn btn-primary btn-glow btn-large">
+                        <span>📅 Book Your Free Audit — 5 Spots This Week</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20run%20a%20dental%20clinic%20and%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us Directly</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+                <p class="cta-trust">No credit card required. Audit delivered within 48 hours.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT & ACTION FUNNEL -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-card-container glass-panel">
+                <div class="contact-info-panel">
+                    <h2 class="contact-title">Let's build your system.</h2>
+                    <p class="contact-subtitle">
+                        Tell us about your practice and your biggest bottleneck. We'll respond with a clear next step.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i data-lucide="mail" class="icon-cyan"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">Contact</span>
+                                <a href="mailto:itsraiarslan@gmail.com" class="contact-detail-link">itsraiarslan@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <i data-lucide="user-check" class="icon-indigo"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">LinkedIn</span>
+                                <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="contact-detail-link">Connect on LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-panel">
+                    <form id="lead-capture-form" class="cyber-form" onsubmit="handleFormSubmit(event)">
+
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Badar" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Work Email <span class="required-star">*</span></label>
+                            <input type="email" id="client-email" name="email" class="form-input" placeholder="badar@edge.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-phone" class="form-label">Phone / WhatsApp <span class="optional-tag">optional</span></label>
+                                <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+92 300 1234567">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="client-service" class="form-label">What's your bottleneck? <span class="required-star">*</span></label>
+                                <select id="client-service" name="service" class="form-select" required>
+                                    <option value="" disabled selected>Select your vertical...</option>
+                                    <option value="Dental Clinics" selected>Dental Clinics</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Aesthetic Clinics">Aesthetic Clinics</option>
+                                    <option value="Other / Custom">Other / Custom</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-background" class="form-label">Your Background / Business Details</label>
+                            <textarea id="client-background" name="background" class="form-textarea" rows="4" placeholder="Tell us about your practice, current challenges, and what you're looking to build..." spellcheck="true"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-glow btn-full mt-10">
+                            <span>Send Inquiry</span>
+                            <i data-lucide="send" class="icon-small"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success message layout -->
+                    <div id="form-success" class="form-success-state hide-state">
+                        <i data-lucide="check-circle-2" class="success-icon"></i>
+                        <h3 class="success-title">Request Submitted Successfully!</h3>
+                        <p class="success-text">Your request has been submitted successfully. We will contact you within 1-2 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-logo-side">
+                <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <span>BADAR</span>
+                    <span>EDGE</span>
+                </div>
+                <p class="footer-copy">The Problem-First AI Solutions Company. © 2026 Badar Edge. All rights reserved.</p>
+            </div>
+
+            <div class="footer-groups">
+                <div class="footer-group">
+                    <span class="footer-group-title">Verticals</span>
+                    <a href="dental-clinics.html" class="footer-link">Dental Clinics</a>
+                    <a href="real-estate.html" class="footer-link">Real Estate</a>
+                    <a href="aesthetic-clinics.html" class="footer-link">Aesthetic Clinics</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Services</span>
+                    <a href="index.html#pricing" class="footer-link">Traditional</a>
+                    <a href="index.html#pricing" class="footer-link">Custom</a>
+                    <a href="index.html#pricing" class="footer-link">Packages</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <a href="index.html#about" class="footer-link">About</a>
+                    <a href="index.html#contact" class="footer-link">Contact</a>
+                    <a href="index.html#contact" class="footer-link">Privacy</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Connect</span>
+                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: GSAP, ScrollTrigger, Lenis smooth scroll, Lucide icons, Canvas-Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide && lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Code script logic -->
+    <script src="app.js"></script>
+</body>
+</html>

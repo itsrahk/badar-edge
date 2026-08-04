@@ -6250,6 +6250,178 @@ body::after {
 }
 
 /* ==========================================================================
+   V3.1 — VERTICAL SUBPAGES (Dental / Real Estate / Aesthetic)
+   ========================================================================== */
+
+/* Compact hero for subpages */
+.vertical-hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 70px);
+    padding-bottom: 90px;
+}
+
+.vertical-hero .hero-headline {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 22px;
+    transition: color 0.3s ease;
+}
+
+.back-link i {
+    width: 15px;
+    height: 15px;
+}
+
+.back-link:hover {
+    color: var(--accent-cyan);
+}
+
+/* Hero mini stats strip */
+.vertical-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0 6px;
+}
+
+.vertical-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.vertical-stat-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.vertical-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Service cards grid on vertical pages */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 34px 30px;
+    border-radius: 20px;
+}
+
+.service-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+}
+
+.service-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.service-desc {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+}
+
+.service-link i {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-link i {
+    transform: translateX(3px);
+}
+
+/* Inline CTA card inside service grid */
+.service-cta-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    padding: 34px 30px;
+    border-radius: 20px;
+    border: 1px dashed rgba(0, 242, 254, 0.25);
+    background: rgba(0, 242, 254, 0.02);
+}
+
+.service-cta-card .service-title {
+    font-size: 1.05rem;
+}
+
+/* Vertical page two-col split (problem/outcome style) */
+.vertical-pain {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+    .vertical-pain {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .vertical-stats {
+        gap: 28px;
+    }
+
+    .vertical-stat-value {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==========================================================================
    V3.0 — RESPONSIVE (Redesign)
    ========================================================================== */
 @media (max-width: 1024px) {

@@ -6888,3 +6888,202 @@ body::after {
         text-align: center;
     }
 }
+
+/* ==========================================================
+   V3.4 CLEAN SHOWCASE LANDING (hero trust, merged results, signup)
+   ========================================================== */
+.hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.hero-trust b {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.hero-trust-dot {
+    color: rgba(0, 242, 254, 0.5);
+}
+
+.hero-trust span:first-child .hero-trust-dot {
+    margin-left: 12px;
+}
+
+.results-section .dashboard-container {
+    margin-bottom: 48px;
+}
+
+.signup-section {
+    padding-top: 90px;
+}
+
+.signup-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 56px 56px;
+    border-radius: 24px;
+}
+
+.signup-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.signup-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    line-height: 1.15;
+}
+
+.signup-sub {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.signup-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.signup-benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: #cbd5e1;
+}
+
+.signup-benefit i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.signup-info .contact-details {
+    margin-top: 8px;
+}
+
+.signup-form {
+    position: relative;
+    width: 100%;
+}
+
+.signup-form .form-success-state {
+    position: static;
+    transform: none;
+    width: 100%;
+    gap: 18px;
+}
+
+.signup-form .cyber-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.signup-note {
+    margin-top: 2px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.success-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 22px;
+    width: 100%;
+}
+
+.success-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.22);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, background 0.3s ease;
+}
+
+.success-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 242, 254, 0.4);
+    background: rgba(99, 102, 241, 0.16);
+}
+
+.success-link-emoji {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.success-link-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+}
+
+.success-link-text strong {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.success-link-text span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+    .signup-panel {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 44px 28px;
+        text-align: center;
+    }
+
+    .signup-info {
+        align-items: center;
+    }
+
+    .signup-benefits {
+        align-items: center;
+    }
+
+    .signup-benefit {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .signup-info .contact-details {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-trust {
+        gap: 8px 12px;
+    }
+}

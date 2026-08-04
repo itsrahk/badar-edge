@@ -8595,8 +8595,10 @@ body::after {
 .footer-social-icon:hover { background: rgba(30, 144, 255, 0.1); color: #1E90FF; border-color: rgba(30, 144, 255, 0.2); }
 .sidebar-social { display: flex; gap: 10px; justify-content: center; padding: 16px 0; }
 .sidebar-social-icon { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: #A1AEC4; text-decoration: none; transition: all 0.25s ease; }
-.sidebar-social-icon i, .sidebar-social-icon svg { width: 16px; height: 16px; }
+.sidebar-social-icon i, .sidebar-social-icon svg, .sidebar-social-icon img { width: 16px; height: 16px; }
 .sidebar-social-icon:hover { background: rgba(30, 144, 255, 0.12); color: #1E90FF; border-color: rgba(30, 144, 255, 0.4); box-shadow: 0 0 12px rgba(30,144,255,0.25); }
+.social-img { width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); }
+.footer-social-icon .social-img { width: 16px; height: 16px; }
 .footer-groups { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr) 1.5fr; gap: 32px; }
 .footer-group { display: flex; flex-direction: column; gap: 10px; }
 .footer-group-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #FFFFFF; margin-bottom: 4px; }

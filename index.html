@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
+    <!-- Ambient Neural Grid Background -->
     <canvas id="neural-canvas"></canvas>
     
     <!-- Dynamic Glowing Ambient Blobs -->
@@ -87,18 +87,33 @@
     <div class="ambient-glow blob-blue"></div>
     <div class="ambient-glow blob-cyan"></div>
 
-    <!-- Floating Cyber Navigation Bar -->
+    <!-- Navigation Bar -->
     <header class="navbar-container">
         <nav class="navbar" id="floating-dock">
+            <a href="index.html" class="nav-brand">
+                <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none">
+                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                </svg>
+                <span class="nav-brand-text">BADAR<br>EDGE</span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services/index.html" class="nav-link">Services</a>
+                <a href="#verticals" class="nav-link">Industries</a>
+                <a href="case-studies.html" class="nav-link">Case Studies</a>
+                <a href="#approach" class="nav-link">Insights</a>
+            </div>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-book-call">
+                <span>Book Strategy Call</span>
+                <i data-lucide="arrow-right" class="icon-small"></i>
+            </a>
             <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
-                <span>Book Call</span>
-                <i data-lucide="arrow-up-right" class="icon-small"></i>
-            </a>
         </nav>
     </header>
 
@@ -115,18 +130,14 @@
                 </svg>
             </button>
         </div>
-
         <div class="sidebar-divider"></div>
-
         <nav class="sidebar-nav">
             <ul class="sidebar-links">
                 <li><a href="#hero" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="#services" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
+                <li><a href="#verticals" class="sidebar-link"><span class="link-dot"></span>Industries</a></li>
+                <li><a href="#approach" class="sidebar-link"><span class="link-dot"></span>Approach</a></li>
                 <li><a href="#results" class="sidebar-link"><span class="link-dot"></span>Results</a></li>
-                <li><a href="#problem" class="sidebar-link"><span class="link-dot"></span>Problem</a></li>
-                <li><a href="#solutions" class="sidebar-link"><span class="link-dot"></span>Solutions</a></li>
-                <li><a href="#verticals" class="sidebar-link"><span class="link-dot"></span>Verticals</a></li>
-                <li><a href="#testimonials" class="sidebar-link"><span class="link-dot"></span>Testimonials</a></li>
-                <li><a href="services/index.html" class="sidebar-link"><span class="link-dot"></span>Services</a></li>
                 <li><a href="case-studies.html" class="sidebar-link"><span class="link-dot"></span>Case Studies</a></li>
                 <li><a href="about.html" class="sidebar-link"><span class="link-dot"></span>About</a></li>
                 <li><a href="founder.html" class="sidebar-link"><span class="link-dot"></span>Founder</a></li>
@@ -140,478 +151,226 @@
     </aside>
 
     <main class="page-container">
-        
-        <!-- SECTION 1: HERO -->
+
+        <!-- HERO SECTION -->
         <section id="hero" class="section hero-section">
-            <div class="hero-content">
-                <div class="hero-brand">
-                    <svg class="hero-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
-                        <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
-                        <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
-                    </svg>
-                    <div class="hero-brand-text">
-                        <span>BADAR</span>
-                        <span>EDGE</span>
+            <div class="hero-layout">
+                <div class="hero-left">
+                    <h1 class="hero-headline">
+                        We Solve Problems.<br>We Build <span class="headline-gradient">Solutions.</span>
+                    </h1>
+                    <p class="hero-subtext">
+                        Badar Edge helps businesses eliminate bottlenecks, automate operations, improve customer experience, and accelerate growth through AI, automation, software, digital systems, and strategic consulting.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-primary btn-glow btn-large">
+                            <span>Explore Solutions</span>
+                            <i data-lucide="arrow-right" class="icon-small"></i>
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">
+                            <span>Book Consultation</span>
+                            <i data-lucide="arrow-right" class="icon-small"></i>
+                        </a>
                     </div>
                 </div>
-                <h1 class="hero-headline">
-                    Every business has <span class="headline-gradient">problems</span>, We solve the <span class="headline-gradient">right ones</span>.
-                </h1>
-                
-                <p class="hero-subtext">
-                    Badar Edge is The Problem-First Solutions Company. We don't start by selling websites, ads, or AI. We start by understanding what's preventing your business from growing, then build the right combination of strategy, branding, marketing, technology, and AI to solve it.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="contact.html" class="btn btn-primary btn-glow btn-large">
-                        <span>Book Your Free Growth Audit</span>
-                        <i data-lucide="arrow-right" class="icon-small"></i>
-                    </a>
-                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
-                        <span>💬 WhatsApp Us</span>
-                        <i data-lucide="message-circle" class="icon-small"></i>
-                    </a>
+                <div class="hero-right">
+                    <div class="hero-visual">
+                        <svg class="hero-cube" viewBox="0 0 300 300" fill="none">
+                            <path class="diamond diamond-outer" d="M 150 30 L 270 150 L 150 270 L 30 150 Z"/>
+                            <path class="diamond diamond-mid" d="M 150 70 L 230 150 L 150 230 L 70 150 Z"/>
+                            <path class="diamond diamond-inner" d="M 150 110 L 190 150 L 150 190 L 110 150 Z"/>
+                        </svg>
+                        <div class="hero-stat-card stat-revenue">
+                            <span class="stat-label">Revenue Growth</span>
+                            <span class="stat-value"><i data-lucide="trending-up" class="icon-small"></i> ↑ 42%</span>
+                            <span class="stat-sub">vs last month</span>
+                        </div>
+                        <div class="hero-stat-card stat-crm">
+                            <span class="stat-label"><i data-lucide="shield" class="icon-tiny"></i> CRM System</span>
+                            <span class="stat-status"><i data-lucide="check-circle" class="icon-tiny"></i> Connected</span>
+                        </div>
+                        <div class="hero-stat-card stat-ai">
+                            <span class="stat-label"><i data-lucide="brain" class="icon-tiny"></i> AI Automation</span>
+                            <span class="stat-status"><i data-lucide="check-circle" class="icon-tiny"></i> Active</span>
+                        </div>
+                        <div class="hero-stat-card stat-tasks">
+                            <span class="stat-label"><i data-lucide="zap" class="icon-tiny"></i> Tasks Automated</span>
+                            <span class="stat-value">346</span>
+                            <span class="stat-sub">This Month</span>
+                        </div>
+                        <div class="hero-stat-card stat-leads">
+                            <span class="stat-label"><i data-lucide="users" class="icon-tiny"></i> Leads Qualified</span>
+                            <span class="stat-value">128</span>
+                            <span class="stat-sub">This Week</span>
+                        </div>
+                        <div class="hero-stat-card stat-uptime">
+                            <span class="stat-label"><i data-lucide="activity" class="icon-tiny"></i> Uptime</span>
+                            <span class="stat-value">99.9%</span>
+                            <span class="stat-sub">This Month</span>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </section>
 
-        <!-- SECTION 2: RESULTS -->
+        <!-- TRUSTED BY -->
+        <section class="section trusted-section">
+            <p class="trusted-label">TRUSTED BY GROWING BUSINESSES</p>
+            <div class="trusted-row">
+                <div class="trusted-logo"><i data-lucide="building-2" class="icon-small"></i> Realty360</div>
+                <div class="trusted-logo"><i data-lucide="smile" class="icon-small"></i> DENTORA</div>
+                <div class="trusted-logo"><i data-lucide="bar-chart-3" class="icon-small"></i> ELEVATE</div>
+                <div class="trusted-logo"><i data-lucide="hexagon" class="icon-small"></i> NEXORA</div>
+                <div class="trusted-logo"><i data-lucide="circle-dot" class="icon-small"></i> BizFlow</div>
+            </div>
+        </section>
+
+        <!-- SERVICES GRID -->
+        <section id="services" class="section services-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">How We Help Businesses Grow</h2>
+                <div class="section-title-bar"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="brain"></i></div>
+                    <h3 class="service-title">AI Automation</h3>
+                    <p class="service-desc">Automate repetitive tasks, save time and scale faster.</p>
+                    <a href="services/custom.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="monitor"></i></div>
+                    <h3 class="service-title">Web Platforms</h3>
+                    <p class="service-desc">High-performing websites and web applications.</p>
+                    <a href="services/traditional.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="users"></i></div>
+                    <h3 class="service-title">CRM Solutions</h3>
+                    <p class="service-desc">Organize leads, track sales and close more deals.</p>
+                    <a href="services/custom.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="megaphone"></i></div>
+                    <h3 class="service-title">Digital Marketing</h3>
+                    <p class="service-desc">Data-driven marketing that brings real results.</p>
+                    <a href="services/packages.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h3 class="service-title">Business Intelligence</h3>
+                    <p class="service-desc">Make smarter decisions with real-time insights.</p>
+                    <a href="services/custom.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i data-lucide="code-2"></i></div>
+                    <h3 class="service-title">Custom Software</h3>
+                    <p class="service-desc">Scalable software built around your business.</p>
+                    <a href="services/custom.html" class="service-link"><i data-lucide="arrow-right" class="icon-small"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPROACH -->
+        <section id="approach" class="section approach-section">
+            <div class="approach-layout">
+                <div class="approach-left">
+                    <span class="section-label">OUR APPROACH</span>
+                    <h2 class="section-title">Problem First.<br>Solution Always.</h2>
+                    <p class="approach-desc">We start by understanding your business, identifying what's holding you back, and then building the right solution to move you forward.</p>
+                    <a href="about.html" class="btn btn-secondary btn-large">
+                        <span>Our Process</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                </div>
+                <div class="approach-right">
+                    <div class="approach-steps">
+                        <div class="approach-step">
+                            <div class="approach-step-icon"><i data-lucide="search"></i></div>
+                            <h4 class="approach-step-title">Discover</h4>
+                            <p class="approach-step-desc">Understand your business and challenges.</p>
+                        </div>
+                        <div class="approach-step">
+                            <div class="approach-step-icon"><i data-lucide="target"></i></div>
+                            <h4 class="approach-step-title">Strategy</h4>
+                            <p class="approach-step-desc">Create a data-driven solution roadmap.</p>
+                        </div>
+                        <div class="approach-step">
+                            <div class="approach-step-icon"><i data-lucide="code-2"></i></div>
+                            <h4 class="approach-step-title">Build</h4>
+                            <p class="approach-step-desc">Develop and implement the right technology.</p>
+                        </div>
+                        <div class="approach-step">
+                            <div class="approach-step-icon"><i data-lucide="rocket"></i></div>
+                            <h4 class="approach-step-title">Launch</h4>
+                            <p class="approach-step-desc">Deploy with precision and zero guesswork.</p>
+                        </div>
+                        <div class="approach-step">
+                            <div class="approach-step-icon"><i data-lucide="trending-up"></i></div>
+                            <h4 class="approach-step-title">Grow</h4>
+                            <p class="approach-step-desc">Optimize, automate and scale for the long term.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS / CASE STUDIES -->
         <section id="results" class="section results-section">
-            <div class="section-header text-center">
-                <span class="section-label">PROOF</span>
-                <h2 class="section-title">Systems built. Revenue generated.</h2>
-                <p class="section-subtitle">Results from real deployments since January 2026.</p>
+            <div class="results-header">
+                <h2 class="section-title">Real Results. Real Impact.</h2>
+                <a href="case-studies.html" class="results-view-all">View All Case Studies <i data-lucide="arrow-right" class="icon-small"></i></a>
             </div>
-
-            <div class="reviews-badge" aria-label="Five star rated">
-                <svg class="badge-ring" viewBox="0 0 100 100">
-                    <circle class="badge-ring-track" cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="4"/>
-                    <circle class="badge-ring-fill" cx="50" cy="50" r="44" fill="none" stroke="url(#badgeGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 50 50)"/>
-                    <defs>
-                        <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#fbbf24"/>
-                            <stop offset="100%" stop-color="#f59e0b"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="badge-circle-inner">
-                    <span class="badge-score">5.0</span>
-                    <span class="badge-stars">★★★★★</span>
-                    <span class="badge-label">Trust Rating</span>
+            <div class="results-grid">
+                <div class="result-card glass-panel">
+                    <span class="result-badge badge-purple">Dental Clinic</span>
+                    <h3 class="result-title">Increased Appointments by 127%</h3>
+                    <p class="result-desc">We built a full automation and booking system that improved patient flow and increased monthly appointments.</p>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-metric-value">127%</span>
+                            <span class="result-metric-label">More Appointments</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-metric-value">2.4x</span>
+                            <span class="result-metric-label">Revenue Growth</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="dashboard-container">
-                <div class="db-grid db-grid-compact">
-                    <div class="db-card stat-card" data-metric="12">
-                        <div class="db-card-glow"></div>
-                        <div class="stat-icon-wrap icon-cyan">
-                            <i data-lucide="briefcase"></i>
+                <div class="result-card glass-panel">
+                    <span class="result-badge badge-cyan">Real Estate</span>
+                    <h3 class="result-title">Generated 3.6x More Qualified Leads</h3>
+                    <p class="result-desc">Through our AI lead qualification and CRM system, we helped them close more deals with higher quality leads.</p>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-metric-value">3.6x</span>
+                            <span class="result-metric-label">Qualified Leads</span>
                         </div>
-                        <div class="stat-ring-wrap">
-                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
-                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
-                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
-                            </svg>
-                            <h3 class="stat-number"><span class="counter">0</span><span class="stat-plus">+</span></h3>
+                        <div class="result-metric">
+                            <span class="result-metric-value">58%</span>
+                            <span class="result-metric-label">Conversion Increase</span>
                         </div>
-                        <p class="stat-label">Clients Served</p>
                     </div>
-                    
-                    <div class="db-card stat-card" data-metric="18">
-                        <div class="db-card-glow"></div>
-                        <div class="stat-icon-wrap icon-purple">
-                            <i data-lucide="cpu"></i>
+                </div>
+                <div class="result-card glass-panel">
+                    <span class="result-badge badge-indigo">E-Commerce</span>
+                    <h3 class="result-title">Boosted Sales by 184% in 90 Days</h3>
+                    <p class="result-desc">We optimized their store, implemented AI automations and ad systems that scaled their revenue significantly.</p>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-metric-value">184%</span>
+                            <span class="result-metric-label">Sales Increase</span>
                         </div>
-                        <div class="stat-ring-wrap">
-                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
-                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
-                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
-                            </svg>
-                            <h3 class="stat-number"><span class="counter">0</span><span class="stat-plus">+</span></h3>
+                        <div class="result-metric">
+                            <span class="result-metric-value">2.1x</span>
+                            <span class="result-metric-label">ROAS Improvement</span>
                         </div>
-                        <p class="stat-label">AI Systems Deployed</p>
-                    </div>
-                    
-                    <div class="db-card stat-card no-plus" data-metric="3">
-                        <div class="db-card-glow"></div>
-                        <div class="stat-icon-wrap icon-indigo">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <div class="stat-ring-wrap">
-                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
-                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
-                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
-                            </svg>
-                            <h3 class="stat-number"><span class="counter">0</span><span class="stat-plus">+</span></h3>
-                        </div>
-                        <p class="stat-label">Industries Served</p>
-                    </div>
-                    
-                    <div class="db-card stat-card" data-metric="45">
-                        <div class="db-card-glow"></div>
-                        <div class="stat-icon-wrap icon-violet">
-                            <i data-lucide="git-branch"></i>
-                        </div>
-                        <div class="stat-ring-wrap">
-                            <svg class="stat-ring-svg" viewBox="0 0 120 120">
-                                <circle class="ring-track" cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3.5"/>
-                                <circle class="ring-fill" cx="60" cy="60" r="48" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="301.59" stroke-dashoffset="301.59" transform="rotate(-90 60 60)"/>
-                            </svg>
-                            <h3 class="stat-number"><span class="counter">0</span><span class="stat-plus">+</span></h3>
-                        </div>
-                        <p class="stat-label">Workflows Automated</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: THE PROBLEM -->
-        <section id="problem" class="section problem-section">
-            <div class="section-header text-center">
-                <span class="section-label">THE PROBLEM</span>
-                <h2 class="section-title">Why most AI implementations fail within 30 days</h2>
-                <p class="section-subtitle">Most providers sell you tools. We sell outcomes. Here is the difference.</p>
-            </div>
-            
-            <div class="problem-grid">
-                <div class="problem-card glass-panel problem-card--clean">
-                    <h3 class="problem-title">You get a tool, not a system</h3>
-                    <p class="problem-text">A chatbot dropped into your workflow with no integration, no training, no follow-through.</p>
-                </div>
-                
-                <div class="problem-card glass-panel problem-card--clean">
-                    <h3 class="problem-title">It breaks when you look away</h3>
-                    <p class="problem-text">Fragile setups that stop working when APIs change. No one fixes them.</p>
-                </div>
-                
-                <div class="problem-card glass-panel problem-card--clean">
-                    <h3 class="problem-title">No measurable revenue impact</h3>
-                    <p class="problem-text">Fancy dashboards with vanity metrics. No connection to actual revenue or time saved.</p>
-                </div>
-            </div>
-            
-            <div class="problem-outcome">
-                <p class="outcome-line">We start with your problem, then build the <span class="headline-gradient">right system</span> to solve it. Results first, technology second.</p>
-            </div>
-        </section>
-
-        <!-- SECTION 3.5: HOW IT WORKS -->
-        <section id="how-it-works" class="section process-section">
-            <div class="section-header text-center">
-                <span class="section-label">HOW IT WORKS</span>
-                <h2 class="section-title">Audit. Build. <span class="headline-gradient">Optimize.</span></h2>
-                <p class="section-subtitle">Three steps from first call to a system that compounds month after month.</p>
-            </div>
-
-            <div class="process-timeline process-timeline--3">
-                <div class="process-step glass-panel">
-                    <div class="step-number-glow">01</div>
-                    <h3 class="step-title">Audit</h3>
-                    <p class="step-desc">A free 30-minute Growth Audit. We map your current flow and pinpoint exactly where you're losing revenue.</p>
-                    <span class="step-days">Week 1</span>
-                </div>
-
-                <div class="process-step glass-panel">
-                    <div class="step-number-glow">02</div>
-                    <h3 class="step-title">Build</h3>
-                    <p class="step-desc">We build the right system — website, AI agents, automation — scoped to your problem at a fixed price.</p>
-                    <span class="step-days">Week 2–4</span>
-                </div>
-
-                <div class="process-step glass-panel">
-                    <div class="step-number-glow">03</div>
-                    <h3 class="step-title">Optimize</h3>
-                    <p class="step-desc">We monitor, report, and optimize monthly so the system keeps compounding revenue.</p>
-                    <span class="step-days">Ongoing</span>
-                </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 50px;">
-                <a href="contact.html" class="btn btn-primary btn-glow btn-large">
-                    <span>Start With a Free Audit</span>
-                    <i data-lucide="arrow-right" class="icon-small"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- SECTION 4: SOLUTIONS -->
-        <section id="solutions" class="section solutions-section">
-            <div class="section-header text-center">
-                <span class="section-label">SOLUTIONS</span>
-                <h2 class="section-title">Three ways to solve your problem</h2>
-                <p class="section-subtitle">Traditional, Custom, or Recommended — every engagement starts with your problem, not our product. Choose the path that fits where you are today.</p>
-            </div>
-
-            <div class="solution-card-grid solution-grid-3col">
-                <div class="solution-card glass-panel">
-                    <div class="solution-card-glow"></div>
-                    <div class="solution-card-top">
-                        <div class="solution-icon"><i data-lucide="rocket"></i></div>
-                        <span class="solution-badge badge-cyan">Traditional</span>
-                    </div>
-                    <h3 class="solution-card-title">One-Time Foundation Build</h3>
-                    <p class="solution-card-text">Your premium website, Google Business Profile, and basic social setup — launched in days. A solid digital foundation you fully own.</p>
-                    <ul class="solution-card-features">
-                        <li><i data-lucide="check" class="icon-small"></i>Premium website</li>
-                        <li><i data-lucide="check" class="icon-small"></i>GMB setup &amp; optimization</li>
-                        <li><i data-lucide="check" class="icon-small"></i>Basic social setup</li>
-                        <li><i data-lucide="check" class="icon-small"></i>Domain, hosting &amp; analytics</li>
-                    </ul>
-                    <div class="solution-price">
-                        <span class="solution-price-amount">₨100K</span>
-                        <span class="solution-price-note">$350 one-time</span>
-                    </div>
-                    <a href="services/traditional.html" class="solution-card-link">View Traditional <i data-lucide="arrow-right" class="icon-small"></i></a>
-                </div>
-
-                <div class="solution-card glass-panel">
-                    <div class="solution-card-glow"></div>
-                    <div class="solution-card-top">
-                        <div class="solution-icon"><i data-lucide="puzzle"></i></div>
-                        <span class="solution-badge badge-indigo">Custom</span>
-                    </div>
-                    <h3 class="solution-card-title">Bespoke AI Systems</h3>
-                    <p class="solution-card-text">AI agents, voice AI, and workflow automation built around your exact operation. Scoped to your problem, priced before we start.</p>
-                    <ul class="solution-card-features">
-                        <li><i data-lucide="check" class="icon-small"></i>Custom integrations</li>
-                        <li><i data-lucide="check" class="icon-small"></i>AI agents &amp; voice AI</li>
-                        <li><i data-lucide="check" class="icon-small"></i>Workflow automation</li>
-                        <li><i data-lucide="check" class="icon-small"></i>Custom dashboards</li>
-                    </ul>
-                    <div class="solution-price">
-                        <span class="solution-price-amount">Custom quote</span>
-                        <span class="solution-price-note">Most builds start at ₨200K / $650+</span>
-                    </div>
-                    <a href="services/custom.html" class="solution-card-link">View Custom <i data-lucide="arrow-right" class="icon-small"></i></a>
-                </div>
-
-                <div class="solution-card glass-panel">
-                    <div class="solution-card-glow"></div>
-                    <div class="solution-card-top">
-                        <div class="solution-icon"><i data-lucide="sparkles"></i></div>
-                        <span class="solution-badge badge-purple">Recommended</span>
-                    </div>
-                    <h3 class="solution-card-title">Monthly Growth Plans</h3>
-                    <p class="solution-card-text">Ongoing SEO, social, AI chatbot, and CRM automation that compound month over month — with an AI receptionist at the top tier.</p>
-                    <ul class="solution-card-features">
-                        <li><i data-lucide="check" class="icon-small"></i>SEO &amp; GEO optimization</li>
-                        <li><i data-lucide="check" class="icon-small"></i>Social media management</li>
-                        <li><i data-lucide="check" class="icon-small"></i>AI chatbot &amp; CRM automation</li>
-                        <li><i data-lucide="check" class="icon-small"></i>AI receptionist &amp; ads</li>
-                    </ul>
-                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20pricing%20for%20the%20Recommended%20monthly%20plans" target="_blank" rel="noopener noreferrer" class="solution-price-cta">Contact for pricing</a>
-                    <a href="services/packages.html" class="solution-card-link">View Recommended <i data-lucide="arrow-right" class="icon-small"></i></a>
-                </div>
-            </div>
-
-            <div class="solutions-cta">
-                <a href="services/index.html" class="btn btn-primary btn-glow btn-large">
-                    <span>Explore Services</span>
-                    <i data-lucide="arrow-right" class="icon-small"></i>
-                </a>
-                <p class="solutions-trust">Full pricing and complete service lists on every plan.</p>
-            </div>
-        </section>
-
-        <!-- SECTION 5: SOLUTION HIERARCHY -->
-        <section id="hierarchy" class="section hierarchy-section">
-            <div class="section-header text-center">
-                <span class="section-label">THE SOLUTION LAYERS</span>
-                <h2 class="section-title">Three layers. <span class="headline-gradient">Climb as you grow.</span></h2>
-                <p class="section-subtitle">Every engagement starts with your problem. Start at the layer that fits today — the one-time foundation, the bespoke build, or the full growth system.</p>
-            </div>
-
-            <div class="hierarchy-tree">
-                <div class="tree-trunk"></div>
-                <div class="tree-crossbar"></div>
-                <div class="hierarchy-cols">
-                    <div class="hierarchy-col">
-                        <span class="tree-stub"></span>
-                        <a href="services/index.html#traditional" class="hierarchy-card tier-cyan">
-                            <span class="hierarchy-card-rank">01</span>
-                            <span class="hierarchy-card-icon"><i data-lucide="rocket"></i></span>
-                            <h3 class="hierarchy-card-name">Traditional Solutions</h3>
-                            <p class="hierarchy-card-tag">One-time foundation build</p>
-                            <span class="hierarchy-card-link">Explore <i data-lucide="arrow-right" class="icon-small"></i></span>
-                        </a>
-                    </div>
-                    <div class="hierarchy-col">
-                        <span class="tree-stub"></span>
-                        <a href="services/index.html#custom" class="hierarchy-card tier-indigo">
-                            <span class="hierarchy-card-rank">02</span>
-                            <span class="hierarchy-card-icon"><i data-lucide="puzzle"></i></span>
-                            <h3 class="hierarchy-card-name">Custom Solutions</h3>
-                            <p class="hierarchy-card-tag">Bespoke AI systems</p>
-                            <span class="hierarchy-card-link">Explore <i data-lucide="arrow-right" class="icon-small"></i></span>
-                        </a>
-                    </div>
-                    <div class="hierarchy-col">
-                        <span class="tree-stub"></span>
-                        <a href="services/index.html#recommended" class="hierarchy-card tier-purple">
-                            <span class="hierarchy-card-rank">03</span>
-                            <span class="hierarchy-card-icon"><i data-lucide="sparkles"></i></span>
-                            <h3 class="hierarchy-card-name">Recommended Solutions</h3>
-                            <p class="hierarchy-card-tag">Ongoing growth systems</p>
-                            <span class="hierarchy-card-link">Explore <i data-lucide="arrow-right" class="icon-small"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: VERTICALS -->
-        <section id="verticals" class="section verticals-section">
-            <div class="section-header text-center">
-                <span class="section-label">WHO WE SERVE</span>
-                <h2 class="section-title">Built for industries where speed = revenue</h2>
-                <p class="section-subtitle">Four industries. One mission: deploy systems that capture revenue your business is currently missing.</p>
-            </div>
-
-            <div class="verticals-grid">
-                <div class="vertical-card glass-panel">
-                    <span class="vertical-emoji"><img src="industries/dental.png" alt="Dental Clinics icon"></span>
-                    <h3 class="vertical-title">Dental Clinics</h3>
-                    <p class="vertical-tagline">Never lose a patient to slow response again.</p>
-                    <ul class="vertical-services">
-                        <li>Premium Websites &amp; Landing Pages</li>
-                        <li>Local SEO &amp; GEO Optimization</li>
-                        <li>AI Chatbot &amp; WhatsApp Automation</li>
-                    </ul>
-                    <a href="dental-clinics.html" class="btn btn-primary btn-glow btn-full btn-sm">
-                        <span>Explore Dental</span>
-                        <i data-lucide="arrow-right" class="icon-small"></i>
-                    </a>
-                </div>
-
-                <div class="vertical-card glass-panel">
-                    <span class="vertical-emoji"><img src="industries/real-estate.png" alt="Real Estate icon"></span>
-                    <h3 class="vertical-title">Real Estate</h3>
-                    <p class="vertical-tagline">Respond to leads in 60 seconds, not 6 hours.</p>
-                    <ul class="vertical-services">
-                        <li>Speed-to-Lead Systems</li>
-                        <li>Lead Qualification AI</li>
-                        <li>CRM Automation</li>
-                    </ul>
-                    <a href="real-estate.html" class="btn btn-primary btn-glow btn-full btn-sm">
-                        <span>Explore Real Estate</span>
-                        <i data-lucide="arrow-right" class="icon-small"></i>
-                    </a>
-                </div>
-
-                <div class="vertical-card glass-panel">
-                    <span class="vertical-emoji"><img src="industries/ecommerce.png" alt="Ecommerce icon"></span>
-                    <h3 class="vertical-title">Ecommerce</h3>
-                    <p class="vertical-tagline">Turn browsers into buyers with AI.</p>
-                    <ul class="vertical-services">
-                        <li>Shopify &amp; WooCommerce Development</li>
-                        <li>Cart Recovery Automation</li>
-                        <li>AI Chatbot &amp; Support</li>
-                    </ul>
-                    <a href="ecommerce.html" class="btn btn-primary btn-glow btn-full btn-sm">
-                        <span>Explore Ecommerce</span>
-                        <i data-lucide="arrow-right" class="icon-small"></i>
-                    </a>
-                </div>
-
-                <div class="vertical-card glass-panel">
-                    <span class="vertical-emoji"><img src="industries/startups.png" alt="Startups icon"></span>
-                    <h3 class="vertical-title">Startups</h3>
-                    <p class="vertical-tagline">Launch fast, scale without breaking.</p>
-                    <ul class="vertical-services">
-                        <li>MVP Development</li>
-                        <li>Brand Strategy &amp; Identity</li>
-                        <li>AI Operations Automation</li>
-                    </ul>
-                    <a href="startups.html" class="btn btn-primary btn-glow btn-full btn-sm">
-                        <span>Explore Startups</span>
-                        <i data-lucide="arrow-right" class="icon-small"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- INDUSTRIES MARQUEE -->
-        <section class="marquee-section" id="industries">
-            <p class="marquee-label">Industries We Work With</p>
-            <div class="marquee" aria-hidden="true">
-                <div class="marquee-track">
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/dental.png" alt="Dental Clinics"></span>Dental Clinics</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/real-estate.png" alt="Real Estate"></span>Real Estate</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/ecommerce.png" alt="Ecommerce"></span>Ecommerce</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/startups.png" alt="Startups"></span>Startups</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/dental.png" alt="Dental Clinics"></span>Dental Clinics</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/real-estate.png" alt="Real Estate"></span>Real Estate</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/ecommerce.png" alt="Ecommerce"></span>Ecommerce</span>
-                    <span class="marquee-item"><span class="marquee-icon marquee-icon--img"><img src="industries/startups.png" alt="Startups"></span>Startups</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6.5: TESTIMONIALS -->
-        <section id="testimonials" class="section testimonials-section">
-            <h2 class="section-title">Real clients. <span class="headline-gradient">Real outcomes.</span></h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="t-stars">★★★★★</div>
-                    <div class="t-quote">
-                        <p>"Speed-to-Lead cut our response time from hours to seconds. Our conversion jumped 38% and we close four extra deals a month."</p>
-                    </div>
-                    <div class="t-person">
-                        <div class="t-avatar">JD</div>
-                        <div class="t-meta">
-                            <span class="t-name">James Delaney</span>
-                            <span class="t-company">Delaney Realty · Real Estate</span>
-                        </div>
-                    </div>
-                    <div class="t-outcomes">
-                        <span class="t-outcome font-cyan">6 hrs → 45 sec</span>
-                        <span class="t-outcome font-purple">+38% conversion</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="t-stars">★★★★★</div>
-                    <div class="t-quote">
-                        <p>"The AI receptionist answers every call and books 30+ appointments a month while we're with patients in the chair."</p>
-                    </div>
-                    <div class="t-person">
-                        <div class="t-avatar">SM</div>
-                        <div class="t-meta">
-                            <span class="t-name">Dr. Sarah Mitchell</span>
-                            <span class="t-company">BrightSmile Dental Studio · Dental Clinic</span>
-                        </div>
-                    </div>
-                    <div class="t-outcomes">
-                        <span class="t-outcome font-purple">30+ bookings/mo</span>
-                        <span class="t-outcome font-cyan">0 missed calls</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="t-stars">★★★★★</div>
-                    <div class="t-quote">
-                        <p>"Cart recovery automation brought back customers we thought were gone. Revenue is up 27% since launch."</p>
-                    </div>
-                    <div class="t-person">
-                        <div class="t-avatar">EV</div>
-                        <div class="t-meta">
-                            <span class="t-name">Elena Vasquez</span>
-                            <span class="t-company">Luma Boutique · Ecommerce</span>
-                        </div>
-                    </div>
-                    <div class="t-outcomes">
-                        <span class="t-outcome font-cyan">+27% revenue</span>
-                        <span class="t-outcome font-indigo">4.2× email ROI</span>
-                    </div>
-                </div>
-            </div>
-            <p class="testimonials-more">
-                <a href="case-studies.html">See all six deployments with full results →</a>
-            </p>
-        </section>
-
-        <!-- SECTION 7: FINAL CTA -->
+        <!-- FINAL CTA -->
         <section id="cta" class="section cta-section">
             <div class="cta-panel glass-panel">
                 <h2 class="cta-headline">Ready to stop losing revenue?</h2>
@@ -620,11 +379,11 @@
                 </p>
                 <div class="cta-actions">
                     <a href="contact.html" class="btn btn-primary btn-glow btn-large">
-                        <span>📅 Book Your Free Growth Audit</span>
+                        <span>Book Your Free Growth Audit</span>
                         <i data-lucide="arrow-right" class="icon-small"></i>
                     </a>
                     <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
-                        <span>💬 WhatsApp Us Directly</span>
+                        <span>WhatsApp Us Directly</span>
                         <i data-lucide="message-circle" class="icon-small"></i>
                     </a>
                 </div>
@@ -632,63 +391,69 @@
             </div>
         </section>
 
-        </main>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-container">
         <div class="footer-wrap">
-                <div class="footer-logo-side">
-                    <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
-                        <path d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
-                        <path d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
-                    </svg>
-                    <div class="footer-brand-text">
-                        <span>BADAR</span>
-                        <span>EDGE</span>
-                    </div>
-                    <p class="footer-copy">The Problem-First AI Solutions Company. © 2026 Badar Edge. All rights reserved.</p>
+            <div class="footer-logo-side">
+                <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none">
+                    <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                    <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                    <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <span>BADAR</span>
+                    <span>EDGE</span>
                 </div>
-            
+                <p class="footer-copy">Building systems that increase revenue and eliminate bottlenecks.</p>
+                <div class="footer-socials">
+                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-social-icon"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="footer-social-icon"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="footer-social-icon"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i data-lucide="youtube"></i></a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-social-icon"><i data-lucide="message-circle"></i></a>
+                </div>
+            </div>
             <div class="footer-groups">
                 <div class="footer-group">
-                    <span class="footer-group-title">Verticals</span>
-                    <a href="dental-clinics.html" class="footer-link">Dental Clinics</a>
-                    <a href="real-estate.html" class="footer-link">Real Estate</a>
-                    <a href="ecommerce.html" class="footer-link">Ecommerce</a>
-                    <a href="startups.html" class="footer-link">Startups</a>
+                    <span class="footer-group-title">Company</span>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="about.html" class="footer-link">Our Process</a>
+                    <a href="contact.html" class="footer-link">Careers</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
                 </div>
                 <div class="footer-group">
                     <span class="footer-group-title">Services</span>
-                    <a href="services/index.html" class="footer-link">All Services</a>
-                    <a href="services/traditional.html" class="footer-link">Traditional</a>
-                    <a href="services/custom.html" class="footer-link">Custom</a>
-                    <a href="services/packages.html" class="footer-link">Recommended Solutions</a>
+                    <a href="services/custom.html" class="footer-link">AI Automation</a>
+                    <a href="services/traditional.html" class="footer-link">Web Development</a>
+                    <a href="services/custom.html" class="footer-link">CRM Solutions</a>
+                    <a href="services/packages.html" class="footer-link">Digital Marketing</a>
+                    <a href="services/custom.html" class="footer-link">Business Intelligence</a>
                 </div>
                 <div class="footer-group">
-                    <span class="footer-group-title">Company</span>
-                    <a href="about.html" class="footer-link">About</a>
-                    <a href="founder.html" class="footer-link">Founder</a>
-                    <a href="case-studies.html" class="footer-link">Case Studies</a>
-                    <a href="contact.html" class="footer-link">Contact</a>
-                    <a href="privacy.html" class="footer-link">Privacy</a>
+                    <span class="footer-group-title">Industries</span>
+                    <a href="dental-clinics.html" class="footer-link">Dental Clinics</a>
+                    <a href="real-estate.html" class="footer-link">Real Estate</a>
+                    <a href="ecommerce.html" class="footer-link">E-Commerce</a>
+                    <a href="startups.html" class="footer-link">Healthcare</a>
+                    <a href="startups.html" class="footer-link">More Industries</a>
                 </div>
-                <div class="footer-group">
-                    <span class="footer-group-title">Connect</span>
-                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
-                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+                <div class="footer-group footer-cta-group">
+                    <span class="footer-cta-title">Let's Solve Your Biggest<br>Business Problem.</span>
+                    <p class="footer-cta-desc">Book a free strategy session and discover high-impact opportunities for your business.</p>
+                    <a href="contact.html" class="btn btn-primary btn-glow">
+                        <span>Book Strategy Call</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
                 </div>
             </div>
-
-            <div class="footer-payments">
-                <span class="footer-payments-label">Accepted Payment Methods</span>
-                <div class="footer-payments-icons">
-                    <span class="payment-badge"><img src="payments/easypaisa.png" alt="Easypaisa"></span>
-                    <span class="payment-badge"><img src="payments/bank-transfer.png" alt="Bank Transfer"></span>
-                    <span class="payment-badge"><img src="payments/binance.png" alt="Binance"></span>
-                    <span class="payment-badge"><img src="payments/nsave.png" alt="Nsave"></span>
-                    <span class="payment-badge"><img src="payments/remitly.png" alt="Remitly"></span>
-                </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; 2026 Badar Edge. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
             </div>
         </div>
     </footer>

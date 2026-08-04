@@ -1079,6 +1079,28 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
+        // FAQ accordion toggle
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+            const btn = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+            if (!btn || !answer) return;
+            btn.addEventListener("click", () => {
+                const isOpen = btn.getAttribute("aria-expanded") === "true";
+                faqItems.forEach((other) => {
+                    const ob = other.querySelector(".faq-question");
+                    const oa = other.querySelector(".faq-answer");
+                    if (ob) ob.setAttribute("aria-expanded", "false");
+                    if (oa) { oa.style.display = "none"; oa.style.maxHeight = null; }
+                });
+                if (!isOpen) {
+                    btn.setAttribute("aria-expanded", "true");
+                    answer.style.display = "block";
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
         // Sidebar link active state highlights based on scrolling position
         const sidebarLinks = document.querySelectorAll(".sidebar-link");
         const sidebarSections = document.querySelectorAll("section[id]");

@@ -2265,6 +2265,11 @@ body::after {
     margin-top: 40px;
 }
 
+/* 3-step variant (home how-it-works) */
+.process-timeline--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .timeline-line {
     position: absolute;
     top: 30px;

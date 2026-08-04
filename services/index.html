@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6J277LPKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W6J277LPKK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services &amp; Pricing | Traditional, Custom, Recommended | Badar Edge</title>
+
+    <!-- SEO Optimization -->
+    <meta name="description" content="Badar Edge services and pricing: Traditional one-time builds, Custom AI systems, and Recommended monthly growth plans. Full service lists and pricing for every solution.">
+    <meta name="keywords" content="Badar Edge services, service pricing, Traditional setup, Custom AI systems, Recommended monthly plans, AI solutions pricing">
+    <meta name="author" content="Badar Edge">
+    <link rel="canonical" href="https://itsrahk.github.io/badar-edge/services/index.html">
+    <meta property="og:url" content="https://itsrahk.github.io/badar-edge/services/index.html">
+    <meta property="og:title" content="Services &amp; Pricing | Traditional, Custom, Recommended | Badar Edge">
+    <meta property="og:description" content="Three ways to work with Badar Edge: Traditional one-time builds, Custom AI systems, and Recommended monthly growth plans.">
+    <meta property="og:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services &amp; Pricing | Badar Edge">
+    <meta name="twitter:description" content="Traditional, Custom, or Recommended — compare every Badar Edge solution and its pricing.">
+    <meta name="twitter:image" content="https://itsrahk.github.io/badar-edge/og-image.svg">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="google-site-verification" content="SqzVAyILZ7Z6uxnX9VeAbgG8auqVOi8GzJKkhMrVYng" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Badar Edge Services & Pricing",
+        "url": "https://itsrahk.github.io/badar-edge/services/index.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "Badar Edge",
+            "url": "https://itsrahk.github.io/badar-edge/"
+        },
+        "description": "Three solution types: Traditional one-time builds, Custom AI systems, and Recommended monthly growth plans. Every engagement starts with your problem.",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Badar Edge Solutions",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Traditional Setup",
+                    "description": "One-time foundation build: premium website, Google Business Profile, and basic social setup.",
+                    "priceCurrency": "PKR",
+                    "price": "100000"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Custom AI Systems",
+                    "description": "Bespoke systems scoped to your problem, priced before work begins."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Recommended Monthly Plans",
+                    "description": "Ongoing SEO, social, AI chatbot, CRM automation, and AI receptionist. Contact for pricing."
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Google Fonts: Inter (Body) & Plus Jakarta Sans (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="cyber-theme">
+
+    <!-- Voice Guide Agent -->
+    <div class="guide-agent" id="guideAgent">
+        <div class="guide-avatar">
+            <svg viewBox="0 0 40 40" fill="none" class="guide-avatar-svg">
+                <circle cx="20" cy="14" r="7" fill="rgba(255,255,255,0.85)"/>
+                <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.85)"/>
+            </svg>
+            <div class="guide-wave"><span></span><span></span><span></span></div>
+        </div>
+        <div class="guide-bubble" id="guideBubble">
+            <div class="guide-bubble-text" id="guideText">Welcome to Badar Edge</div>
+            <button class="guide-play-btn" id="guidePlayBtn" aria-label="Play voice guide">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Dynamic Glowing Ambient Blobs -->
+    <div class="ambient-glow blob-violet"></div>
+    <div class="ambient-glow blob-blue"></div>
+    <div class="ambient-glow blob-cyan"></div>
+
+    <!-- Floating Cyber Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="floating-dock">
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow nav-book-call">
+                <span>Book Call</span>
+                <i data-lucide="arrow-up-right" class="icon-small"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">BADAR EDGE</span>
+            <button class="sidebar-close" id="sidebar-close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="../index.html" class="sidebar-link"><span class="link-dot"></span>Home</a></li>
+                <li><a href="index.html" class="sidebar-link"><span class="link-dot"></span>All Services</a></li>
+                <li><a href="traditional.html" class="sidebar-link"><span class="link-dot"></span>Traditional</a></li>
+                <li><a href="custom.html" class="sidebar-link"><span class="link-dot"></span>Custom</a></li>
+                <li><a href="packages.html" class="sidebar-link"><span class="link-dot"></span>Recommended Solutions</a></li>
+                <li><a href="#contact" class="sidebar-link"><span class="link-dot"></span>Contact</a></li>
+                <li><a href="../dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
+                <li><a href="../real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
+                <li><a href="../aesthetic-clinics.html" class="sidebar-link"><span class="link-dot"></span>Aesthetic Clinics</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="page-container">
+
+        <!-- HERO -->
+        <section id="hero" class="section hero-section vertical-hero">
+            <div class="hero-content">
+                <a href="../index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i> Back to Badar Edge Home
+                </a>
+                <div class="hero-brand">
+                    <svg class="hero-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="diamond diamond-outer" d="M 30 3 L 57 30 L 30 57 L 3 30 Z"/>
+                        <path class="diamond diamond-mid" d="M 30 10 L 50 30 L 30 50 L 10 30 Z"/>
+                        <path class="diamond diamond-inner" d="M 30 17 L 43 30 L 30 43 L 17 30 Z"/>
+                    </svg>
+                    <div class="hero-brand-text">
+                        <span>BADAR</span>
+                        <span>EDGE</span>
+                    </div>
+                </div>
+                <span class="section-label">SERVICES &amp; PRICING</span>
+                <h1 class="hero-headline">
+                    Three ways to <span class="headline-gradient">solve your business problem</span>
+                </h1>
+
+                <p class="hero-subtext">
+                    Traditional, Custom, or Recommended. Every engagement starts with your problem, not our product — and every path comes with transparent pricing and a clear scope.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#traditional" class="btn btn-primary btn-glow btn-large">
+                        <span>Explore Solutions</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20compare%20services" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 Ask a Question</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO CHOOSE -->
+        <section id="choose" class="section">
+            <div class="section-header text-center">
+                <span class="section-label">HOW TO CHOOSE</span>
+                <h2 class="section-title">Start with your problem, pick your path</h2>
+                <p class="section-subtitle">A foundation when you're starting, a custom system when you're unique, and ongoing growth when you're ready to scale.</p>
+            </div>
+
+            <div class="solution-card-grid solution-grid-3col">
+                <div class="solution-card glass-panel">
+                    <div class="solution-card-glow"></div>
+                    <div class="solution-card-top">
+                        <div class="solution-icon"><i data-lucide="rocket"></i></div>
+                        <span class="solution-badge badge-cyan">Traditional</span>
+                    </div>
+                    <h3 class="solution-card-title">For a strong start</h3>
+                    <p class="solution-card-text">No online presence yet? Get your website, Google Business Profile, and socials done in days — one price, no lock-in.</p>
+                    <a href="#traditional" class="solution-card-link">Jump to Traditional <i data-lucide="arrow-down" class="icon-small"></i></a>
+                </div>
+
+                <div class="solution-card glass-panel">
+                    <div class="solution-card-glow"></div>
+                    <div class="solution-card-top">
+                        <div class="solution-icon"><i data-lucide="puzzle"></i></div>
+                        <span class="solution-badge badge-indigo">Custom</span>
+                    </div>
+                    <h3 class="solution-card-title">For a unique operation</h3>
+                    <p class="solution-card-text">Your workflows don't fit a template. We scope AI agents, integrations, and automation around your exact process.</p>
+                    <a href="#custom" class="solution-card-link">Jump to Custom <i data-lucide="arrow-down" class="icon-small"></i></a>
+                </div>
+
+                <div class="solution-card glass-panel">
+                    <div class="solution-card-glow"></div>
+                    <div class="solution-card-top">
+                        <div class="solution-icon"><i data-lucide="sparkles"></i></div>
+                        <span class="solution-badge badge-purple">Recommended</span>
+                    </div>
+                    <h3 class="solution-card-title">For ongoing growth</h3>
+                    <p class="solution-card-text">SEO, social, AI chatbot, and CRM automation that compound every month — the plan most clients stay on.</p>
+                    <a href="#recommended" class="solution-card-link">Jump to Recommended <i data-lucide="arrow-down" class="icon-small"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRADITIONAL -->
+        <section id="traditional" class="section verticals-section">
+            <div class="section-header text-center">
+                <span class="section-label">SOLUTION 01 · TRADITIONAL</span>
+                <h2 class="section-title">One-time foundation build</h2>
+                <p class="section-subtitle">A complete digital presence in one fixed-price package. You own everything we build.</p>
+            </div>
+
+            <div class="solution-split">
+                <div class="pricing-tier glass-panel">
+                    <div class="tier-label">Traditional Setup</div>
+                    <div class="tier-price"><span class="currency">₨</span><span class="amount">100,000</span></div>
+                    <div class="tier-audience">$350 one-time · Setup + first month</div>
+                    <ul class="tier-features">
+                        <li>Premium website</li>
+                        <li>GMB setup &amp; optimization</li>
+                        <li>Basic social setup</li>
+                        <li>Domain &amp; hosting config</li>
+                        <li>24/7 monitoring</li>
+                        <li>Monthly report</li>
+                    </ul>
+                    <a href="traditional.html" class="btn btn-primary btn-glow btn-full btn-sm">
+                        <span>View Full Package</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <div class="verticals-grid">
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🌐</span>
+                            <h3 class="service-title">Premium Website</h3>
+                            <p class="service-desc">Fast, mobile-first, conversion-focused design that represents your business properly.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">📍</span>
+                            <h3 class="service-title">Google Business Profile</h3>
+                            <p class="service-desc">Full setup and optimization so local customers can find you, call you, and get directions.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">📱</span>
+                            <h3 class="service-title">Basic Social Setup</h3>
+                            <p class="service-desc">Profile creation, branding, and essential pages on the platforms your customers use.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🔐</span>
+                            <h3 class="service-title">Domain &amp; Hosting</h3>
+                            <p class="service-desc">Domain, hosting, and security basics configured. You own everything.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">📞</span>
+                            <h3 class="service-title">Contact &amp; WhatsApp</h3>
+                            <p class="service-desc">Direct contact paths so every visitor can reach you the way they prefer.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">📊</span>
+                            <h3 class="service-title">Analytics Setup</h3>
+                            <p class="service-desc">Tracking installed from day one, so you know where your traffic comes from.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOM -->
+        <section id="custom" class="section verticals-section">
+            <div class="section-header text-center">
+                <span class="section-label">SOLUTION 02 · CUSTOM</span>
+                <h2 class="section-title">Bespoke AI systems</h2>
+                <p class="section-subtitle">Scoped to your problem, priced before we start. No surprises, no templates.</p>
+            </div>
+
+            <div class="solution-split">
+                <div class="pricing-tier glass-panel">
+                    <div class="tier-label">Custom System</div>
+                    <div class="tier-price"><span class="amount">Custom Quote</span></div>
+                    <div class="tier-audience">Most builds start at ₨200K / $650+</div>
+                    <ul class="tier-features">
+                        <li>Free discovery &amp; scope proposal</li>
+                        <li>Fixed price before build starts</li>
+                        <li>Custom integrations &amp; agents</li>
+                        <li>24/7 monitoring</li>
+                        <li>Monthly optimization</li>
+                        <li>You own everything</li>
+                    </ul>
+                    <a href="custom.html" class="btn btn-primary btn-glow btn-full btn-sm">
+                        <span>View Custom Systems</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <div class="verticals-grid">
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🔗</span>
+                            <h3 class="service-title">Custom Integrations</h3>
+                            <p class="service-desc">Connect CRMs, booking tools, portals, payment systems, and legacy software into one workflow.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🤖</span>
+                            <h3 class="service-title">AI Agents</h3>
+                            <p class="service-desc">Autonomous agents that qualify leads, manage follow-ups, and execute workflows without supervision.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🎙️</span>
+                            <h3 class="service-title">Voice AI</h3>
+                            <p class="service-desc">Natural-sounding voice agents that answer calls, book appointments, and route inquiries.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">⚙️</span>
+                            <h3 class="service-title">Workflow Automation</h3>
+                            <p class="service-desc">End-to-end process automation that removes manual work from your operations.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">📊</span>
+                            <h3 class="service-title">Custom Dashboards</h3>
+                            <p class="service-desc">Live dashboards built around the metrics that actually drive your decisions.</p>
+                        </div>
+                        <div class="service-card glass-panel">
+                            <span class="service-emoji">🔐</span>
+                            <h3 class="service-title">Data &amp; Security</h3>
+                            <p class="service-desc">Secure data handling, access controls, and audit trails baked into every build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMMENDED -->
+        <section id="recommended" class="section verticals-section">
+            <div class="section-header text-center">
+                <span class="section-label">SOLUTION 03 · RECOMMENDED</span>
+                <h2 class="section-title">Monthly growth plans</h2>
+                <p class="section-subtitle">The plan most clients stay on — Basic, Standard, or Premium. Contact us for pricing and a recommendation for your business.</p>
+            </div>
+
+            <div class="solution-split">
+                <div class="pricing-tier glass-panel tier-rec">
+                    <div class="rec-badge">Most Popular</div>
+                    <div class="tier-label">Recommended Solutions</div>
+                    <div class="tier-price"><span class="amount">Contact for pricing</span></div>
+                    <div class="tier-audience">Basic · Standard · Premium monthly plans</div>
+                    <ul class="tier-features">
+                        <li>SEO &amp; GEO optimization</li>
+                        <li>Social media management</li>
+                        <li>AI chatbot</li>
+                        <li>CRM automation</li>
+                        <li>AI receptionist / voice</li>
+                        <li>Paid ads management</li>
+                    </ul>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20pricing%20for%20the%20Recommended%20monthly%20plans" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-full btn-sm">
+                        <span>Get Pricing on WhatsApp</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                    <a href="packages.html" class="btn btn-secondary btn-full btn-sm" style="margin-top: 10px;">
+                        <span>See the Monthly Plans</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <div class="rec-tiers">
+                        <div class="rec-tier-row glass-panel">
+                            <div class="rec-tier-name">Basic</div>
+                            <div class="rec-tier-tag">Foundation</div>
+                            <div class="rec-tier-includes">Website · GMB setup</div>
+                        </div>
+                        <div class="rec-tier-row glass-panel">
+                            <div class="rec-tier-name">Standard</div>
+                            <div class="rec-tier-tag">Growth</div>
+                            <div class="rec-tier-includes">+ SEO · Social · Chat</div>
+                        </div>
+                        <div class="rec-tier-row glass-panel">
+                            <div class="rec-tier-name">Premium</div>
+                            <div class="rec-tier-tag">Scale</div>
+                            <div class="rec-tier-includes">+ AI · Voice · Ads</div>
+                        </div>
+                        <div class="rec-tier-row glass-panel">
+                            <div class="rec-tier-name">Custom</div>
+                            <div class="rec-tier-tag">Ops</div>
+                            <div class="rec-tier-includes">+ Bespoke · Multi-location</div>
+                        </div>
+                    </div>
+                    <p class="hub-note">
+                        All plans include 24/7 monitoring, monthly reports, and direct WhatsApp support. Pricing is shared on a quick call so we can recommend the right tier for your business.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="cta" class="section cta-section">
+            <div class="cta-panel glass-panel">
+                <h2 class="cta-headline">Not sure which solution fits?</h2>
+                <p class="cta-sub">
+                    Book a free 30-minute Growth Audit. We'll map your current flow, identify where you're losing money, and recommend the right path — Traditional, Custom, or Recommended.
+                </p>
+                <div class="cta-actions">
+                    <a href="#contact" class="btn btn-primary btn-glow btn-large">
+                        <span>📅 Book Your Free Growth Audit</span>
+                        <i data-lucide="arrow-right" class="icon-small"></i>
+                    </a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <span>💬 WhatsApp Us Directly</span>
+                        <i data-lucide="message-circle" class="icon-small"></i>
+                    </a>
+                </div>
+                <p class="cta-trust">No credit card required. Recommendation delivered within 48 hours.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT & ACTION FUNNEL -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-card-container glass-panel">
+                <div class="contact-info-panel">
+                    <h2 class="contact-title">Let's find your solution.</h2>
+                    <p class="contact-subtitle">
+                        Tell us about your business and what you need. We'll respond with a clear recommendation and next step.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i data-lucide="mail" class="icon-cyan"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">Contact</span>
+                                <a href="mailto:itsraiarslan@gmail.com" class="contact-detail-link">itsraiarslan@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <i data-lucide="user-check" class="icon-indigo"></i>
+                            <div class="contact-detail-text">
+                                <span class="contact-detail-label">LinkedIn</span>
+                                <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="contact-detail-link">Connect on LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-panel">
+                    <form id="lead-capture-form" class="cyber-form" onsubmit="handleFormSubmit(event)">
+
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Badar" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Work Email <span class="required-star">*</span></label>
+                            <input type="email" id="client-email" name="email" class="form-input" placeholder="badar@edge.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-phone" class="form-label">Phone / WhatsApp <span class="optional-tag">optional</span></label>
+                                <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+92 300 1234567">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="client-service" class="form-label">What do you need? <span class="required-star">*</span></label>
+                                <select id="client-service" name="service" class="form-select" required>
+                                    <option value="" disabled selected>Select a solution...</option>
+                                    <option value="Traditional Setup">Traditional Setup</option>
+                                    <option value="Custom AI System">Custom AI System</option>
+                                    <option value="Recommended Solutions">Recommended Solutions</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-background" class="form-label">Your Background / Business Details</label>
+                            <textarea id="client-background" name="background" class="form-textarea" rows="4" placeholder="Tell us about your business, current challenges, and what you're looking to build..." spellcheck="true"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-glow btn-full mt-10">
+                            <span>Send Inquiry</span>
+                            <i data-lucide="send" class="icon-small"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success message layout -->
+                    <div id="form-success" class="form-success-state hide-state">
+                        <i data-lucide="check-circle-2" class="success-icon"></i>
+                        <h3 class="success-title">Request Submitted Successfully!</h3>
+                        <p class="success-text">Your request has been submitted successfully. We will contact you within 1-2 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-logo-side">
+                <svg class="footer-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30 3 L 57 30 L 30 57 L 3 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 10 L 50 30 L 30 50 L 10 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                    <path d="M 30 17 L 43 30 L 30 43 L 17 30 Z" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <span>BADAR</span>
+                    <span>EDGE</span>
+                </div>
+                <p class="footer-copy">The Problem-First AI Solutions Company. © 2026 Badar Edge. All rights reserved.</p>
+            </div>
+
+            <div class="footer-groups">
+                <div class="footer-group">
+                    <span class="footer-group-title">Verticals</span>
+                    <a href="../dental-clinics.html" class="footer-link">Dental Clinics</a>
+                    <a href="../real-estate.html" class="footer-link">Real Estate</a>
+                    <a href="../aesthetic-clinics.html" class="footer-link">Aesthetic Clinics</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Services</span>
+                    <a href="index.html" class="footer-link">All Services</a>
+                    <a href="traditional.html" class="footer-link">Traditional</a>
+                    <a href="custom.html" class="footer-link">Custom</a>
+                    <a href="packages.html" class="footer-link">Recommended Solutions</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
+                    <a href="../privacy.html" class="footer-link">Privacy</a>
+                </div>
+                <div class="footer-group">
+                    <span class="footer-group-title">Connect</span>
+                    <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: GSAP, ScrollTrigger, Lenis smooth scroll, Lucide icons, Canvas-Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide && lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Code script logic -->
+    <script src="../app.js"></script>
+</body>
+</html>

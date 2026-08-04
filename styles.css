@@ -8449,7 +8449,26 @@ body::after {
 
 .hero-visual { position: relative; width: 100%; height: 520px; display: flex; align-items: center; justify-content: center; }
 .hero-rings-wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 430px; height: 430px; display: flex; align-items: center; justify-content: center; z-index: 1; }
-.hero-rings-img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 45px rgba(62, 168, 255, 0.35)) drop-shadow(0 0 90px rgba(99, 200, 255, 0.2)); }
+.hero-rings-svg { width: 100%; height: 100%; }
+.orbit-ring { transition: stroke-width 0.3s ease, filter 0.3s ease; }
+.orbit-ring-1 { stroke-dasharray: 345.5; animation: ring-draw 2s ease-out forwards, ring-rotate 20s linear infinite; }
+.orbit-ring-2 { stroke-dasharray: 691; animation: ring-draw 2s ease-out 0.2s forwards, ring-rotate 25s linear infinite reverse; }
+.orbit-ring-3 { stroke-dasharray: 1036.5; animation: ring-draw 2s ease-out 0.4s forwards, ring-rotate 30s linear infinite; }
+.orbit-ring-4 { stroke-dasharray: 1319; animation: ring-draw 2s ease-out 0.6s forwards, ring-rotate 35s linear infinite reverse; }
+@keyframes ring-draw { from { stroke-dashoffset: 345.5; opacity: 0; } to { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes ring-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.orbit-center { animation: pulse 3s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
+.orbit-connectors { pointer-events: none; }
+.orbit-connector { filter: drop-shadow(0 0 4px rgba(62,168,255,0.5)); }
+.orbit-cards { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+.orbit-card { position: absolute; display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 14px; background: rgba(5, 11, 22, 0.7); border: 1px solid rgba(62, 168, 255, 0.2); border-radius: 50px; color: #3EC70B; font-size: 0.7rem; font-weight: 600; text-decoration: none; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 16px rgba(62,168,255,0.15); pointer-events: all; transition: all 0.3s ease; z-index: 4; white-space: nowrap; min-width: 120px; }
+.orbit-card:hover { color: #4AF54A; border-color: rgba(62,196,13,0.5); box-shadow: 0 0 24px rgba(62,196,13,0.4); transform: translate(-50%, -50%) scale(1.08); }
+.orbit-card:focus { outline: none; box-shadow: 0 0 0 3px rgba(62,168,255,0.5), 0 0 24px rgba(62,196,13,0.4); }
+.orbit-card-icon { width: 16px; height: 16px; color: #3EA8FF; filter: drop-shadow(0 0 4px rgba(62,168,255,0.7)) drop-shadow(0 0 8px rgba(99,200,255,0.5)); transition: color 0.3s ease; }
+.orbit-card:hover .orbit-card-icon { color: #4AF54A; }
+.orbit-card-industry { font-size: 0.58rem; color: #63C8FF; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+.layer-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-family: 'Brush Script MT', 'Comic Sans MS', cursive; font-size: 1.05rem; font-weight: 400; color: #FFFFFF; text-shadow: 0 0 6px rgba(62,168,255,0.7), 0 0 14px rgba(99,200,255,0.5); letter-spacing: 2px; z-index: 5; pointer-events: all; }
 .hero-stat-card { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 14px 18px; background: rgba(16, 27, 48, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(30, 144, 255, 0.15); border-radius: 12px; min-width: 140px; z-index: 4; box-shadow: 0 0 20px rgba(30, 144, 255, 0.08); }
 .hero-stats-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 34px; width: 100%; }
 .stat-label { font-size: 0.72rem; color: #3EA8FF; display: flex; align-items: center; gap: 5px; text-shadow: 0 0 8px rgba(62,168,255,0.7), 0 0 16px rgba(99,200,255,0.5), 0 0 28px rgba(62,168,255,0.35); }
@@ -8461,19 +8480,7 @@ body::after {
 .stat-stars .icon-star { width: 14px; height: 14px; }
 .stat-stars svg { fill: #FFC857; stroke: #FFC857; filter: drop-shadow(0 0 4px rgba(255, 200, 87, 0.5)); }
 .icon-tiny { width: 12px; height: 12px; }
-.ring-solutions { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 .layer-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-family: 'Brush Script MT', 'Comic Sans MS', cursive; font-size: 1.05rem; font-weight: 400; color: #FFFFFF; text-shadow: 0 0 6px rgba(62,168,255,0.7), 0 0 14px rgba(99,200,255,0.5); letter-spacing: 2px; z-index: 5; pointer-events: all; }
-.ring-solution { position: absolute; display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(5, 11, 22, 0.6); border: 1px solid rgba(62, 168, 255, 0.18); border-radius: 50px; color: #3EC70B; font-size: 0.78rem; font-weight: 600; text-decoration: none; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 0 12px rgba(62,168,255,0.1); pointer-events: all; transition: all 0.25s ease; z-index: 3; }
-.ring-solution .icon-tiny { width: 13px; height: 13px; color: #3EA8FF; filter: drop-shadow(0 0 4px rgba(62,168,255,0.7)) drop-shadow(0 0 8px rgba(99,200,255,0.5)); }
-.ring-solution:hover { color: #4AF54A; border-color: rgba(62,196,13,0.45); box-shadow: 0 0 18px rgba(62,196,13,0.4); transform: translateY(-2px); }
-.ring-solution::before { content: none; }
-.ring-connector { position: absolute; top: 50%; left: 50%; width: 72px; height: 2px; background: linear-gradient(90deg, #3EA8FF, #63C8FF); box-shadow: 0 0 6px #3EA8FF; transform-origin: center; z-index: 1; }
-.rc-top { transform: translate(-50%, -50%) rotate(-90deg); }
-.rc-left { transform: translate(-50%, -50%) rotate(-150deg); }
-.rc-right { transform: translate(-50%, -50%) rotate(150deg); }
-.sol-top { top: 3%; left: 50%; transform: translate(-50%, -50%); }
-.sol-left { bottom: 12%; left: 6%; }
-.sol-right { bottom: 12%; right: 6%; }
 .founder-cta { margin-top: 24px; }
 .founder-link { display: inline-flex; align-items: center; gap: 8px; color: #3EA8FF; font-weight: 600; text-decoration: none; background: rgba(16, 27, 48, 0.6); border: 1px solid rgba(30, 144, 255, 0.2); border-radius: 50px; padding: 10px 18px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: all 0.25s ease; }
 .founder-link:hover { color: #FFFFFF; border-color: rgba(62, 168, 255, 0.45); box-shadow: 0 0 16px rgba(62, 168, 255, 0.25); }
@@ -8495,8 +8502,8 @@ body::after {
     .hero-actions { justify-content: center; }
     .hero-visual { height: auto; min-height: 300px; }
     .hero-rings-wrap { position: relative; top: auto; left: auto; transform: none; width: 300px; height: 300px; margin: 0 auto; }
-    .ring-solutions { position: static; display: flex; justify-content: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
-    .ring-solution { position: static; transform: none; margin: 4px; }
+    .orbit-cards { position: static; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; pointer-events: all; }
+    .orbit-card { position: static; transform: none; margin: 0; min-width: auto; font-size: 0.65rem; padding: 8px 12px; }
     .hero-stats-row { gap: 12px; }
     .hero-stat-card { min-width: 120px; padding: 10px 14px; }
     .stat-value { font-size: 1rem; }
@@ -8505,12 +8512,14 @@ body::after {
 @media (max-width: 600px) {
     .hero-layout { padding: 0 20px; }
     .hero-rings-wrap { width: 230px; height: 230px; }
+    .orbit-card { font-size: 0.6rem; padding: 6px 10px; }
     .hero-stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .hero-stat-card { min-width: 0; width: 100%; padding: 10px 12px; text-align: left; }
     .stat-stars { justify-content: flex-start; }
 }
 @media (max-width: 480px) {
     .hero-rings-wrap { width: 200px; height: 200px; }
+    .orbit-card { font-size: 0.55rem; padding: 5px 8px; min-width: 90px; }
     .hero-stat-card { padding: 8px 10px; }
     .stat-label { font-size: 0.68rem; }
     .stat-value { font-size: 0.95rem; }

@@ -148,22 +148,61 @@
                         </a>
                     </div>
                 </div>
-                <div class="hero-right">
+<div class="hero-right">
                     <div class="hero-visual">
-                        <div class="hero-rings-wrap">
-                            <img src="rings.png" alt="Diamond Rings" class="hero-rings-img">
+                        <div class="hero-rings-wrap" id="hero-rings-wrap">
+                            <svg class="hero-rings-svg" viewBox="0 0 430 430" width="430" height="430" aria-hidden="true">
+                                <defs>
+                                    <filter id="ring-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="2" result="blur"/>
+                                        <feMerge>
+                                            <feMergeNode in="blur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                    <linearGradient id="ring-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#3EA8FF"/>
+                                        <stop offset="50%" stop-color="#63C8FF"/>
+                                        <stop offset="100%" stop-color="#3EC70B"/>
+                                    </linearGradient>
+                                    <linearGradient id="ring-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#63C8FF"/>
+                                        <stop offset="50%" stop-color="#3EC70B"/>
+                                        <stop offset="100%" stop-color="#3EA8FF"/>
+                                    </linearGradient>
+                                    <linearGradient id="ring-gradient-3" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#3EC70B"/>
+                                        <stop offset="50%" stop-color="#3EA8FF"/>
+                                        <stop offset="100%" stop-color="#63C8FF"/>
+                                    </linearGradient>
+                                    <linearGradient id="ring-gradient-4" x1="100%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" stop-color="#FFC857"/>
+                                        <stop offset="50%" stop-color="#3EC70B"/>
+                                        <stop offset="100%" stop-color="#3EA8FF"/>
+                                    </linearGradient>
+                                    <linearGradient id="connector-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#3EA8FF" stop-opacity="0.8"/>
+                                        <stop offset="50%" stop-color="#63C8FF" stop-opacity="0.6"/>
+                                        <stop offset="100%" stop-color="#3EC70B" stop-opacity="0.8"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Ring 1: innermost -->
+                                <circle class="orbit-ring orbit-ring-1" cx="215" cy="215" r="55" stroke="url(#ring-gradient-1)" stroke-width="2" fill="none" filter="url(#ring-glow)"/>
+                                <!-- Ring 2 -->
+                                <circle class="orbit-ring orbit-ring-2" cx="215" cy="215" r="110" stroke="url(#ring-gradient-2)" stroke-width="2" fill="none" filter="url(#ring-glow)"/>
+                                <!-- Ring 3 -->
+                                <circle class="orbit-ring orbit-ring-3" cx="215" cy="215" r="165" stroke="url(#ring-gradient-3)" stroke-width="2" fill="none" filter="url(#ring-glow)"/>
+                                <!-- Ring 4: outermost -->
+                                <circle class="orbit-ring orbit-ring-4" cx="215" cy="215" r="210" stroke="url(#ring-gradient-4)" stroke-width="2" fill="none" filter="url(#ring-glow)"/>
+                                <!-- Connectors - will be populated by JS -->
+                                <g class="orbit-connectors" id="orbit-connectors"></g>
+                                <!-- Center glow -->
+                                <circle class="orbit-center" cx="215" cy="215" r="28" fill="radial-gradient(circle at center, rgba(62,168,255,0.3) 0%, rgba(99,200,255,0.1) 50%, transparent 100%)" filter="url(#ring-glow)"/>
+                            </svg>
+                            <div class="layer-badge">03 Layer Solution</div>
+                            <div class="orbit-cards" id="orbit-cards"></div>
                         </div>
-                        <div class="layer-badge">03 Layer Solution</div>
-                        <div class="ring-solutions">
-                            <i class="ring-connector rc-top"></i>
-                            <i class="ring-connector rc-left"></i>
-                            <i class="ring-connector rc-right"></i>
-                            <a href="services/traditional.html" class="ring-solution sol-top"><i data-lucide="layout-dashboard" class="icon-tiny"></i>Traditional Solutions</a>
-                            <a href="services/custom.html" class="ring-solution sol-left"><i data-lucide="brain" class="icon-tiny"></i>Custom Solutions</a>
-                            <a href="services/packages.html" class="ring-solution sol-right"><i data-lucide="package" class="icon-tiny"></i>Recommended Solutions</a>
-                        </div>
-                    </div>
-                    <div class="hero-stats-row">
+                        <div class="hero-stats-row">
                         <div class="hero-stat-card stat-revenue">
                             <span class="stat-label"><i data-lucide="folder-check" class="icon-tiny"></i> Projects Completed</span>
                             <span class="stat-value">45+</span>
@@ -490,6 +529,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     
     <!-- Code script logic -->
+    <script type="module" src="orbit.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

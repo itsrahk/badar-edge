@@ -8399,6 +8399,9 @@ body::after {
 .stat-sub { font-size: 0.68rem; color: #A1AEC4; }
 .stat-status { font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 5px; }
 .stat-status { color: #22D27F; }
+.stat-stars { display: flex; gap: 2px; align-items: center; }
+.stat-stars .icon-star { width: 14px; height: 14px; }
+.stat-stars svg { fill: #63C8FF; stroke: #63C8FF; }
 .icon-tiny { width: 12px; height: 12px; }
 
 .stat-revenue { top: 5%; left: 0%; animation: float 5s ease-in-out infinite; }

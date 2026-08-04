@@ -6112,6 +6112,31 @@ body::after {
     animation: guidePulse 3s ease-out infinite;
 }
 
+.founder-avatar-ring {
+    position: relative;
+}
+
+.founder-avatar-ring::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 242, 254, 0.12);
+    animation: guidePulse 3s ease-out infinite;
+    pointer-events: none;
+}
+
+.founder-avatar-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+}
+
 .founder-text {
     display: flex;
     flex-direction: column;

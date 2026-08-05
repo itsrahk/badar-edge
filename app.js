@@ -260,18 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
        -------------------------------------------------------------------------- */
     if (typeof gsap !== "undefined") {
         
-        // Custom Navbar Floating Dock Morph Trigger
-        gsap.to("#floating-dock", {
-            scrollTrigger: {
-                trigger: "body",
-                start: "100px top",
-                end: "220px top",
-                scrub: true,
-            },
-            y: 10,
-            ease: "power2.out"
-        });
-
         // Hero Entrance Sequencing Timeline
         const heroTimeline = gsap.timeline();
         heroTimeline.from(".hero-headline", { y: 40, opacity: 0, duration: 1.1, ease: "power4.out" })

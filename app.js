@@ -268,12 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 end: "220px top",
                 scrub: true,
             },
-            maxWidth: "640px",
             y: 10,
-            borderRadius: "30px",
-            background: "rgba(4, 2, 12, 0.88)",
-            borderColor: "rgba(99, 200, 255, 0.22)",
-            boxShadow: "0 12px 35px -12px rgba(99, 200, 255, 0.25)",
             ease: "power2.out"
         });
 
@@ -1341,4 +1336,70 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
     }
+
+    /* --------------------------------------------------------------------------
+       13. Site-wide Stat Count-Up (IntersectionObserver, honors reduced motion)
+       -------------------------------------------------------------------------- */
+    (function () {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+        }
+
+        const statSelectors = [
+            ".t-outcome",
+            ".result-metric-value",
+            ".vertical-stat-value",
+            ".founder-credentials .count-up"
+        ].join(",");
+
+        const statEls = document.querySelectorAll(statSelectors);
+        if (!statEls.length) return;
+
+        function parseStat(text) {
+            const m = text.match(/^([^0-9]*?)(\d+(?:\.\d+)?)(.*)$/);
+            if (!m) return null;
+            const target = parseFloat(m[2]);
+            if (!isFinite(target) || target === 0) return null;
+            return { prefix: m[1], target, suffix: m[3], decimals: m[2].includes(".") ? 1 : 0 };
+        }
+
+        function animateStat(el) {
+            const orig = el.getAttribute("data-orig-text") || el.textContent;
+            el.setAttribute("data-orig-text", orig);
+            const parsed = parseStat(orig.trim());
+            if (!parsed) return;
+
+            const start = performance.now();
+            const duration = 2000;
+            const { prefix, suffix, decimals } = parsed;
+            const target = parsed.target;
+
+            function frame(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                const val = target * eased;
+                el.textContent = prefix + (decimals > 0 ? val.toFixed(decimals) : Math.floor(val)) + suffix;
+                if (p < 1) {
+                    requestAnimationFrame(frame);
+                } else {
+                    el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : target) + suffix;
+                }
+            }
+            requestAnimationFrame(frame);
+        }
+
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animateStat(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            statEls.forEach((el) => io.observe(el));
+        } else {
+            statEls.forEach(animateStat);
+        }
+    })();
 });

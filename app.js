@@ -15,18 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* --------------------------------------------------------------------------
-       0. Navbar Compact-on-Scroll (width shrink to ~half on both views)
-       -------------------------------------------------------------------------- */
-    const dockNav = document.getElementById("floating-dock");
-    if (dockNav) {
-        const updateDock = () => {
-            dockNav.classList.toggle("navbar-scrolled", window.scrollY > 60);
-        };
-        window.addEventListener("scroll", updateDock, { passive: true });
-        updateDock();
-    }
-
-    /* --------------------------------------------------------------------------
        1. Smooth Scrolling (Lenis) & GSAP ScrollTrigger Integration
        -------------------------------------------------------------------------- */
     let lenis;

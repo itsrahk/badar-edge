@@ -8813,3 +8813,55 @@ body::after {
 .testimonial-name { font-weight: 600; color: #FFFFFF; }
 .testimonial-role { font-size: 0.78rem; color: #72829D; }
 
+/* --- PORTFOLIO PAGE --- */
+.portfolio-metrics-section { padding: 40px 40px 0; }
+.portfolio-metrics-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.portfolio-metric-card { padding: 24px 16px; text-align: center; border-radius: 14px; }
+.portfolio-metric-value { display: block; font-size: 1.8rem; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #63C8FF, #A855F7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+.portfolio-metric-label { display: block; font-size: 0.78rem; color: #72829D; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.portfolio-filter-section { padding: 24px 40px; }
+.portfolio-filter-bar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 1200px; margin: 0 auto; }
+.filter-btn { padding: 10px 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: #72829D; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); font-family: 'Inter', sans-serif; }
+.filter-btn:hover { border-color: rgba(168, 85, 247, 0.4); color: #C9D3E3; background: rgba(168, 85, 247, 0.08); }
+.filter-btn.active { border-color: rgba(168, 85, 247, 0.6); color: #FFFFFF; background: rgba(168, 85, 247, 0.15); box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
+
+.portfolio-grid-section { padding: 0 40px 72px; }
+.portfolio-category { margin-bottom: 56px; }
+.portfolio-category-header { margin-bottom: 28px; }
+.portfolio-category-title { font-size: 1.5rem; font-weight: 700; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 4px; }
+.portfolio-category-subtitle { font-size: 0.9rem; color: #72829D; }
+
+.portfolio-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.portfolio-card { padding: 24px; border-radius: 14px; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s; }
+.portfolio-card:hover { transform: translateY(-4px); border-color: rgba(168, 85, 247, 0.3); }
+.portfolio-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.portfolio-badge { padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge-cyan { background: rgba(99, 200, 255, 0.12); color: #63C8FF; }
+.badge-purple { background: rgba(168, 85, 247, 0.12); color: #A855F7; }
+.badge-green { background: rgba(52, 211, 153, 0.12); color: #34D399; }
+.badge-orange { background: rgba(251, 146, 60, 0.12); color: #FB923C; }
+.badge-indigo { background: rgba(99, 102, 241, 0.12); color: #6366F1; }
+.badge-red { background: rgba(248, 113, 113, 0.12); color: #F87171; }
+.portfolio-industry { font-size: 0.75rem; color: #72829D; }
+.portfolio-card-title { font-size: 1.05rem; font-weight: 600; color: #FFFFFF; margin-bottom: 8px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.portfolio-card-desc { font-size: 0.85rem; color: #72829D; line-height: 1.55; margin-bottom: 16px; }
+.portfolio-card-metric { display: flex; align-items: baseline; gap: 8px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); }
+.portfolio-metric-num { font-size: 1.2rem; font-weight: 700; color: #63C8FF; font-family: 'Plus Jakarta Sans', sans-serif; }
+.portfolio-metric-text { font-size: 0.78rem; color: #72829D; }
+
+@media (max-width: 1024px) {
+    .portfolio-metrics-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .portfolio-metrics-section { padding: 24px 20px 0; }
+    .portfolio-metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .portfolio-metric-value { font-size: 1.4rem; }
+    .portfolio-filter-section { padding: 16px 20px; }
+    .portfolio-filter-bar { gap: 8px; }
+    .filter-btn { padding: 8px 14px; font-size: 0.78rem; }
+    .portfolio-grid-section { padding: 0 20px 48px; }
+    .portfolio-cards-grid { grid-template-columns: 1fr; }
+    .portfolio-category-title { font-size: 1.2rem; }
+}
+

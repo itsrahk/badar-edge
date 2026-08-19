@@ -1390,4 +1390,65 @@ document.addEventListener("DOMContentLoaded", () => {
             statEls.forEach(animateStat);
         }
     })();
+
+    // PORTFOLIO PAGE: Filter functionality
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const portfolioCategories = document.querySelectorAll(".portfolio-category");
+
+    if (filterBtns.length > 0 && portfolioCategories.length > 0) {
+        filterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                filterBtns.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                const filter = btn.getAttribute("data-filter");
+
+                portfolioCategories.forEach((cat) => {
+                    if (filter === "all" || cat.getAttribute("data-category") === filter) {
+                        cat.style.display = "";
+                        gsap.fromTo(cat.querySelectorAll(".portfolio-card"),
+                            { opacity: 0, y: 30 },
+                            { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "power3.out" }
+                        );
+                    } else {
+                        cat.style.display = "none";
+                    }
+                });
+            });
+        });
+    }
+
+    // PORTFOLIO PAGE: Scroll animations
+    if (portfolioCategories.length > 0) {
+        gsap.fromTo(".portfolio-metric-card",
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
+                scrollTrigger: { trigger: ".portfolio-metrics-grid", start: "top 85%", toggleActions: "play none none none" }
+            }
+        );
+
+        gsap.fromTo(".portfolio-filter-bar",
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1, y: 0, duration: 0.6, ease: "power3.out",
+                scrollTrigger: { trigger: ".portfolio-filter-section", start: "top 85%", toggleActions: "play none none none" }
+            }
+        );
+
+        gsap.fromTo(".portfolio-category-header",
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
+                scrollTrigger: { trigger: ".portfolio-grid-section", start: "top 80%", toggleActions: "play none none none" }
+            }
+        );
+
+        gsap.fromTo(".portfolio-card",
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: "power3.out",
+                scrollTrigger: { trigger: ".portfolio-grid-section", start: "top 75%", toggleActions: "play none none none" }
+            }
+        );
+    }
 });

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+    <linearGradient id="wave5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#A855F7"/>
+      <stop offset="50%" style="stop-color:#63C8FF"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg5)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">VOICE AI — PATIENT CALL SYSTEM</text>
+  <!-- Phone illustration -->
+  <rect x="155" y="35" width="90" height="170" rx="12" fill="#0d1f35" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+  <rect x="185" y="39" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+  <!-- Call UI -->
+  <circle cx="200" cy="75" r="20" fill="none" stroke="url(#wave5)" stroke-width="2">
+    <animate attributeName="r" values="18;22;18" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="75" r="14" fill="rgba(168,85,247,0.1)"/>
+  <text x="193" y="80" fill="#A855F7" font-family="sans-serif" font-size="12">📞</text>
+  <text x="200" y="108" fill="#fff" font-family="sans-serif" font-size="6.5" font-weight="600">Voice AI Active</text>
+  <text x="200" y="118" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4.5">Duration: 1m 47s</text>
+  <!-- Transcript -->
+  <rect x="162" y="128" width="76" height="30" rx="5" fill="rgba(168,85,247,0.08)"/>
+  <text x="168" y="138" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Patient:</text>
+  <text x="168" y="146" fill="#A855F7" font-family="sans-serif" font-size="4.5">"I need to reschedule"</text>
+  <text x="168" y="154" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">AI: "Let me check avail..."</text>
+  <!-- Call controls -->
+  <circle cx="178" cy="180" r="8" fill="rgba(248,113,113,0.15)"/>
+  <text x="175" y="183" fill="#F87171" font-family="sans-serif" font-size="7">📱</text>
+  <circle cx="200" cy="180" r="8" fill="rgba(52,211,153,0.15)"/>
+  <text x="197" y="183" fill="#34D399" font-family="sans-serif" font-size="7">🔊</text>
+  <circle cx="222" cy="180" r="8" fill="rgba(255,255,255,0.06)"/>
+  <text x="219" y="183" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="7">🎤</text>
+  <!-- Left panel - Call log -->
+  <rect x="15" y="40" width="125" height="165" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="25" y="58" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TODAY'S CALLS</text>
+  <text x="25" y="76" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Patient #4821 — Reschedule</text>
+  <text x="25" y="85" fill="#34D399" font-family="sans-serif" font-size="4">✓ Completed · 2m 12s</text>
+  <line x1="25" y1="90" x2="130" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <text x="25" y="102" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Patient #3156 — Insurance Q</text>
+  <text x="25" y="111" fill="#34D399" font-family="sans-serif" font-size="4">✓ Completed · 1m 45s</text>
+  <line x1="25" y1="116" x2="130" y2="116" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <text x="25" y="128" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Patient #2847 — Emergency</text>
+  <text x="25" y="137" fill="#FB923C" font-family="sans-serif" font-size="4">→ Routed to Dr. Ahmed</text>
+  <line x1="25" y1="142" x2="130" y2="142" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <text x="25" y="154" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Patient #5503 — Booking</text>
+  <text x="25" y="163" fill="#34D399" font-family="sans-serif" font-size="4">✓ Booked · 1m 30s</text>
+  <line x1="25" y1="168" x2="130" y2="168" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <text x="25" y="180" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Patient #1923 — Follow-up</text>
+  <text x="25" y="189" fill="#34D399" font-family="sans-serif" font-size="4">✓ Completed · 3m 02s</text>
+  <!-- Right panel - Stats -->
+  <rect x="260" y="40" width="125" height="75" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="270" y="58" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">CALLS TODAY</text>
+  <text x="270" y="78" fill="#A855F7" font-family="sans-serif" font-size="20" font-weight="700">63</text>
+  <text x="300" y="78" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="5">handled</text>
+  <text x="270" y="92" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4.5">100% answered — 0 missed</text>
+  <rect x="260" y="125" width="125" height="80" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="270" y="143" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">OUTCOMES</text>
+  <rect x="270" y="150" width="105" height="12" rx="3" fill="rgba(52,211,153,0.08)"/>
+  <text x="275" y="159" fill="#34D399" font-family="sans-serif" font-size="4.5">41 Appointments Booked</text>
+  <rect x="270" y="165" width="105" height="12" rx="3" fill="rgba(99,200,255,0.08)"/>
+  <text x="275" y="174" fill="#63C8FF" font-family="sans-serif" font-size="4.5">12 Insurance Queries</text>
+  <rect x="270" y="180" width="105" height="12" rx="3" fill="rgba(251,146,60,0.08)"/>
+  <text x="275" y="189" fill="#FB923C" font-family="sans-serif" font-size="4.5">8 Emergency Routes</text>
+  <rect x="270" y="195" width="105" height="12" rx="3" fill="rgba(168,85,247,0.08)"/>
+  <text x="275" y="204" fill="#A855F7" font-family="sans-serif" font-size="4.5">2 Reschedules</text>
+  <!-- Bottom bar -->
+  <rect x="15" y="218" width="370" height="22" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="25" y="232" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">100% Missed Calls Recovered</text>
+  <text x="200" y="232" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4.5">|</text>
+  <text x="215" y="232" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">After-hours coverage active since Day 1</text>
+</svg>

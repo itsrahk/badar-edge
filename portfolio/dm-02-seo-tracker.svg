@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">SEO RANKING TRACKER</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Keywords table -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">KEYWORD RANKINGS</text>
+  <rect x="30" y="76" width="340" height="20" rx="4" fill="rgba(255,255,255,0.03)"/>
+  <text x="40" y="90" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">dental clinic lahore</text>
+  <text x="180" y="90" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">#3</text>
+  <text x="210" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">↑ 5 positions</text>
+  <text x="310" y="90" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5">Vol: 2.4K/mo</text>
+  <rect x="30" y="100" width="340" height="20" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">ai automation pakistan</text>
+  <text x="180" y="114" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">#1</text>
+  <text x="210" y="114" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">↑ 3 positions</text>
+  <text x="310" y="114" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5">Vol: 1.8K/mo</text>
+  <rect x="30" y="124" width="340" height="20" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="138" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">crm software lahore</text>
+  <text x="180" y="138" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">#7</text>
+  <text x="210" y="138" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">↑ 2 positions</text>
+  <text x="310" y="138" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5">Vol: 980/mo</text>
+  <rect x="30" y="148" width="340" height="20" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="162" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">website development karachi</text>
+  <text x="180" y="162" fill="#FB923C" font-family="sans-serif" font-size="4" font-weight="600">#12</text>
+  <text x="210" y="162" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">↓ 1 position</text>
+  <text x="310" y="162" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5">Vol: 3.1K/mo</text>
+  <!-- Domain authority -->
+  <text x="30" y="186" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">DOMAIN METRICS</text>
+  <rect x="30" y="194" width="80" height="36" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="210" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">42</text>
+  <text x="65" y="210" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">DA</text>
+  <text x="40" y="224" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">↑ from 28</text>
+  <rect x="120" y="194" width="80" height="36" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="210" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">156</text>
+  <text x="160" y="210" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">backlinks</text>
+  <text x="130" y="224" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">↑ 34 this month</text>
+  <rect x="210" y="194" width="80" height="36" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="210" fill="#A855F7" font-family="sans-serif" font-size="14" font-weight="700">8.2K</text>
+  <text x="220" y="224" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">organic visits/mo</text>
+  <rect x="300" y="194" width="70" height="36" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="210" fill="#FB923C" font-family="sans-serif" font-size="14" font-weight="700">32</text>
+  <text x="310" y="224" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">indexed pages</text>
+</svg>

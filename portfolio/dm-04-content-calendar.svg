@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CONTENT CALENDAR</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Calendar header -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">AUGUST 2024 CONTENT PLAN</text>
+  <!-- Week headers -->
+  <text x="30" y="86" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Week 1</text>
+  <text x="30" y="118" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Week 2</text>
+  <text x="30" y="150" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Week 3</text>
+  <text x="30" y="182" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Week 4</text>
+  <!-- Content items -->
+  <rect x="60" y="78" width="310" height="26" rx="5" fill="rgba(248,113,113,0.06)" stroke="rgba(248,113,113,0.1)" stroke-width="0.5"/>
+  <text x="70" y="92" fill="#F87171" font-family="sans-serif" font-size="4" font-weight="600">Mon: Blog Post — "AI in Healthcare"</text>
+  <text x="70" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Instagram, LinkedIn, Twitter • Draft ready</text>
+  <rect x="60" y="108" width="310" height="26" rx="5" fill="rgba(99,200,255,0.06)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="70" y="122" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">Wed: Video — Client Testimonial</text>
+  <text x="70" y="130" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">YouTube, Instagram Reels • Editing</text>
+  <rect x="60" y="140" width="310" height="26" rx="5" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.1)" stroke-width="0.5"/>
+  <text x="70" y="154" fill="#A855F7" font-family="sans-serif" font-size="4" font-weight="600">Fri: Infographic — Industry Stats</text>
+  <text x="70" y="162" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">All platforms • Design in progress</text>
+  <rect x="60" y="172" width="310" height="26" rx="5" fill="rgba(52,211,153,0.06)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="70" y="186" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Tue: Newsletter — Monthly Digest</text>
+  <text x="70" y="194" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Email • Scheduled for Aug 15</text>
+  <!-- Status bar -->
+  <text x="30" y="218" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">CONTENT STATUS</text>
+  <rect x="30" y="226" width="100" height="10" rx="5" fill="rgba(52,211,153,0.15)"/>
+  <text x="80" y="234" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5" text-anchor="middle">8 Published</text>
+  <rect x="140" y="226" width="100" height="10" rx="5" fill="rgba(251,146,60,0.15)"/>
+  <text x="190" y="234" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5" text-anchor="middle">5 In Progress</text>
+  <rect x="250" y="226" width="100" height="10" rx="5" fill="rgba(99,200,255,0.15)"/>
+  <text x="300" y="234" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3.5" text-anchor="middle">3 Scheduled</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#142238"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg4)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">AI INVOICE PROCESSOR</text>
+  <!-- Invoice document -->
+  <rect x="25" y="40" width="155" height="195" rx="8" fill="#0f1a2e" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="35" y="50" width="60" height="8" rx="2" fill="rgba(99,200,255,0.2)"/>
+  <text x="35" y="68" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="5">INVOICE #INV-2024-0847</text>
+  <line x1="35" y1="74" x2="170" y2="74" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <!-- Line items -->
+  <text x="35" y="88" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4.5">Item</text>
+  <text x="120" y="88" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4.5">Qty</text>
+  <text x="145" y="88" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4.5">Amount</text>
+  <rect x="35" y="93" width="130" height="12" rx="2" fill="rgba(52,211,153,0.06)"/>
+  <text x="38" y="102" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">Cloud Hosting - Annual</text>
+  <text x="125" y="102" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">1</text>
+  <text x="148" y="102" fill="#34D399" font-family="sans-serif" font-size="4.5" font-weight="600">$2,400</text>
+  <rect x="35" y="108" width="130" height="12" rx="2" fill="rgba(255,255,255,0.02)"/>
+  <text x="38" y="117" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">SSL Certificate</text>
+  <text x="125" y="117" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">3</text>
+  <text x="148" y="117" fill="#34D399" font-family="sans-serif" font-size="4.5" font-weight="600">$297</text>
+  <rect x="35" y="123" width="130" height="12" rx="2" fill="rgba(255,255,255,0.02)"/>
+  <text x="38" y="132" fill="rgba(255,255,255,0.45)" font-family="sans-serif" font-size="4.5">API Calls (overage)</text>
+  <text x="125" y="132" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">50K</text>
+  <text x="148" y="132" fill="#34D399" font-family="sans-serif" font-size="4.5" font-weight="600">$150</text>
+  <line x1="35" y1="140" x2="170" y2="140" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="35" y="152" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5" font-weight="600">TOTAL</text>
+  <text x="140" y="152" fill="#34D399" font-family="sans-serif" font-size="7" font-weight="700">$2,847</text>
+  <!-- AI extracted fields -->
+  <rect x="35" y="162" width="130" height="60" rx="5" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.15)" stroke-width="0.5"/>
+  <text x="42" y="175" fill="#A855F7" font-family="sans-serif" font-size="4.5" font-weight="600">🤖 AI EXTRACTED</text>
+  <text x="42" y="188" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">Vendor: CloudTech Inc.</text>
+  <text x="42" y="197" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">Date: Aug 15, 2024</text>
+  <text x="42" y="206" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">Category: Infrastructure</text>
+  <text x="42" y="215" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">Status: ✓ Matched</text>
+  <!-- Right side - processing pipeline -->
+  <rect x="200" y="40" width="180" height="195" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="215" y="58" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">PROCESSING PIPELINE</text>
+  <!-- Steps -->
+  <circle cx="225" cy="80" r="8" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="1"/>
+  <text x="222" y="83" fill="#34D399" font-family="sans-serif" font-size="7">✓</text>
+  <text x="240" y="78" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5">Scan Document</text>
+  <text x="240" y="87" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">OCR + Layout analysis</text>
+  <line x1="225" y1="88" x2="225" y2="100" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <circle cx="225" cy="108" r="8" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="1"/>
+  <text x="222" y="111" fill="#34D399" font-family="sans-serif" font-size="7">✓</text>
+  <text x="240" y="106" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5">Extract Fields</text>
+  <text x="240" y="115" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">AI reads vendor, amount, date</text>
+  <line x1="225" y1="116" x2="225" y2="128" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <circle cx="225" cy="136" r="8" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="1"/>
+  <text x="222" y="139" fill="#34D399" font-family="sans-serif" font-size="7">✓</text>
+  <text x="240" y="134" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5">Match to PO</text>
+  <text x="240" y="143" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Cross-reference purchase orders</text>
+  <line x1="225" y1="144" x2="225" y2="156" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <circle cx="225" cy="164" r="8" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="1"/>
+  <text x="222" y="167" fill="#34D399" font-family="sans-serif" font-size="7">✓</text>
+  <text x="240" y="162" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5">Sync to QuickBooks</text>
+  <text x="240" y="171" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Auto-create journal entry</text>
+  <line x1="225" y1="172" x2="225" y2="184" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <circle cx="225" cy="192" r="8" fill="rgba(168,85,247,0.15)" stroke="#A855F7" stroke-width="1"/>
+  <text x="221" y="195" fill="#A855F7" font-family="sans-serif" font-size="6">⏱</text>
+  <text x="240" y="190" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5">Notify Team</text>
+  <text x="240" y="199" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Slack + Email alert</text>
+  <!-- Stats -->
+  <rect x="215" y="210" width="80" height="18" rx="5" fill="rgba(52,211,153,0.08)"/>
+  <text x="222" y="222" fill="#34D399" font-family="sans-serif" font-size="8" font-weight="700">15h</text>
+  <text x="248" y="222" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">saved/week</text>
+  <rect x="305" y="210" width="65" height="18" rx="5" fill="rgba(99,200,255,0.08)"/>
+  <text x="312" y="222" fill="#63C8FF" font-family="sans-serif" font-size="8" font-weight="700">99.2%</text>
+  <text x="312" y="222" fill="#63C8FF" font-family="sans-serif" font-size="5" font-weight="700">99.2%</text>
+</svg>

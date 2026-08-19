@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CUSTOM ERP SYSTEM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <rect x="20" y="56" width="55" height="179" fill="rgba(255,255,255,0.02)"/>
+  <text x="28" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📊 Dashboard</text>
+  <text x="28" y="86" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">📦 Inventory</text>
+  <text x="28" y="100" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">💰 Finance</text>
+  <text x="28" y="114" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">👥 HR</text>
+  <text x="28" y="128" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">🛒 Procurement</text>
+  <text x="28" y="142" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📈 Reports</text>
+  <text x="28" y="156" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">⚙️ Settings</text>
+  <text x="85" y="72" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="6" font-weight="600">Inventory Overview</text>
+  <rect x="85" y="80" width="85" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="95" y="96" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">1,247</text>
+  <text x="95" y="106" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Total SKUs</text>
+  <rect x="180" y="80" width="85" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="190" y="96" fill="#63C8FF" font-family="sans-serif" font-size="10" font-weight="700">PKR 18M</text>
+  <text x="190" y="106" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Stock Value</text>
+  <rect x="275" y="80" width="85" height="30" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="285" y="96" fill="#FB923C" font-family="sans-serif" font-size="10" font-weight="700">23</text>
+  <text x="285" y="106" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Low Stock Alerts</text>
+  <text x="85" y="128" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5" font-weight="500">RECENT ORDERS</text>
+  <rect x="85" y="134" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="95" y="146" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">PO-2024-089 — Supplier A — PKR 450K — Processing</text>
+  <rect x="85" y="156" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="95" y="168" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">PO-2024-088 — Supplier B — PKR 280K — Shipped</text>
+  <rect x="85" y="178" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="95" y="190" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">PO-2024-087 — Supplier C — PKR 120K — Delivered</text>
+  <text x="85" y="218" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5" font-weight="500">MODULES</text>
+  <text x="85" y="232" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Inventory • Finance • HR • Procurement • Sales • CRM • Reporting • API Integrations</text>
+  <text x="85" y="244" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Custom-built for manufacturing company • 156 users • 99.9% uptime</text>
+</svg>

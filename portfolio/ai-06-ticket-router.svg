@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#142238"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg6)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">AI SUPPORT TICKET ROUTER</text>
+  <!-- Ticket board -->
+  <rect x="15" y="40" width="110" height="200" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="22" y="56" fill="#FB923C" font-family="sans-serif" font-size="5" font-weight="600">● NEW (12)</text>
+  <rect x="22" y="64" width="96" height="28" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="28" y="75" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4821 — Login issue</text>
+  <text x="28" y="84" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">AI Priority: High · 2min ago</text>
+  <rect x="22" y="96" width="96" height="28" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="28" y="107" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4820 — Billing question</text>
+  <text x="28" y="116" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">AI Priority: Medium · 5min ago</text>
+  <rect x="22" y="128" width="96" height="28" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="28" y="139" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4819 — Feature request</text>
+  <text x="28" y="148" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">AI Priority: Low · 8min ago</text>
+  <!-- In Progress column -->
+  <rect x="140" y="40" width="110" height="200" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="147" y="56" fill="#63C8FF" font-family="sans-serif" font-size="5" font-weight="600">● IN PROGRESS (8)</text>
+  <rect x="147" y="64" width="96" height="28" rx="5" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="153" y="75" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4815 — API integration</text>
+  <text x="153" y="84" fill="#63C8FF" font-family="sans-serif" font-size="4">→ Assigned: Dev Team</text>
+  <rect x="147" y="96" width="96" height="28" rx="5" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="153" y="107" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4812 — Data export</text>
+  <text x="153" y="116" fill="#63C8FF" font-family="sans-serif" font-size="4">→ Assigned: Support</text>
+  <rect x="147" y="128" width="96" height="28" rx="5" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="153" y="139" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4810 — Account access</text>
+  <text x="153" y="148" fill="#63C8FF" font-family="sans-serif" font-size="4">→ Assigned: Security</text>
+  <!-- Resolved column -->
+  <rect x="265" y="40" width="120" height="200" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="272" y="56" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">● RESOLVED (47)</text>
+  <rect x="272" y="64" width="105" height="28" rx="5" fill="rgba(52,211,153,0.04)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="278" y="75" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4808 — Password reset</text>
+  <text x="278" y="84" fill="#34D399" font-family="sans-serif" font-size="4">✓ Auto-resolved · 12min</text>
+  <rect x="272" y="96" width="105" height="28" rx="5" fill="rgba(52,211,153,0.04)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="278" y="107" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4805 — Setup guide</text>
+  <text x="278" y="116" fill="#34D399" font-family="sans-serif" font-size="4">✓ Auto-resolved · 8min</text>
+  <rect x="272" y="128" width="105" height="28" rx="5" fill="rgba(52,211,153,0.04)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="278" y="139" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5">#4802 — Billing dispute</text>
+  <text x="278" y="148" fill="#34D399" font-family="sans-serif" font-size="4">✓ Escalated · 15min</text>
+  <!-- Bottom stats bar -->
+  <rect x="15" y="218" width="370" height="22" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="25" y="232" fill="#A855F7" font-family="sans-serif" font-size="5" font-weight="600">AI Routing Accuracy: 96.8%</text>
+  <text x="180" y="232" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4.5">|</text>
+  <text x="195" y="232" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">Avg First Response: 12 min (was 4 hrs)</text>
+</svg>

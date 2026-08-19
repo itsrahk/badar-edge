@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">LOGISTICS DASHBOARD</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Map area -->
+  <rect x="30" y="64" width="230" height="160" rx="6" fill="rgba(99,200,255,0.04)"/>
+  <!-- Simplified map lines -->
+  <line x1="40" y1="100" x2="150" y2="80" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <line x1="150" y1="80" x2="200" y2="120" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <line x1="200" y1="120" x2="250" y2="100" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <line x1="40" y1="140" x2="100" y2="160" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <line x1="100" y1="160" x2="180" y2="150" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <!-- Route -->
+  <polyline points="60,110 100,90 150,95 200,110 240,90" fill="none" stroke="#63C8FF" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <!-- Vehicle dots -->
+  <circle cx="60" cy="110" r="4" fill="#34D399"/>
+  <circle cx="150" cy="95" r="4" fill="#FB923C"/>
+  <circle cx="240" cy="90" r="4" fill="#63C8FF"/>
+  <text x="68" y="118" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">Truck A</text>
+  <text x="158" y="103" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">Truck B</text>
+  <text x="248" y="98" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">Truck C</text>
+  <!-- Stats panel -->
+  <rect x="275" y="64" width="95" height="160" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="285" y="82" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">FLEET STATUS</text>
+  <text x="285" y="102" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">12</text>
+  <text x="300" y="102" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">active</text>
+  <text x="285" y="120" fill="#FB923C" font-family="sans-serif" font-size="14" font-weight="700">3</text>
+  <text x="298" y="120" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">in transit</text>
+  <text x="285" y="138" fill="#F87171" font-family="sans-serif" font-size="14" font-weight="700">1</text>
+  <text x="298" y="138" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">delayed</text>
+  <text x="285" y="162" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="5">TODAY'S DELIVERIES</text>
+  <text x="285" y="180" fill="#63C8FF" font-family="sans-serif" font-size="16" font-weight="700">48</text>
+  <text x="310" y="180" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">total</text>
+  <text x="285" y="198" fill="rgba(52,211,153,0.8)" font-family="sans-serif" font-size="4">✓ 39 delivered</text>
+  <text x="285" y="210" fill="rgba(251,146,60,0.8)" font-family="sans-serif" font-size="4">🚚 9 in route</text>
+  <text x="285" y="220" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">On-time rate: 96%</text>
+</svg>

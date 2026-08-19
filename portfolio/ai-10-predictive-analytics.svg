@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+    <linearGradient id="line10" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F87171"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg10)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">PREDICTIVE CHURN ANALYTICS</text>
+  <!-- Main chart area -->
+  <rect x="20" y="40" width="240" height="130" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="30" y="58" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">CHURN RISK TREND</text>
+  <!-- Grid lines -->
+  <line x1="40" y1="75" x2="245" y2="75" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <line x1="40" y1="100" x2="245" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <line x1="40" y1="125" x2="245" y2="125" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <line x1="40" y1="150" x2="245" y2="150" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <!-- Risk zones -->
+  <rect x="40" y="68" width="205" height="20" rx="2" fill="rgba(248,113,113,0.06)"/>
+  <rect x="40" y="135" width="205" height="20" rx="2" fill="rgba(52,211,153,0.04)"/>
+  <text x="248" y="78" fill="rgba(248,113,113,0.4)" font-family="sans-serif" font-size="3.5">HIGH</text>
+  <text x="248" y="148" fill="rgba(52,211,153,0.4)" font-family="sans-serif" font-size="3.5">LOW</text>
+  <!-- Churn risk line (declining) -->
+  <polyline points="50,80 75,85 100,90 125,95 150,100 175,110 200,120 225,130 240,138" fill="none" stroke="url(#line10)" stroke-width="2"/>
+  <!-- Data points -->
+  <circle cx="50" cy="80" r="3" fill="#F87171"/>
+  <circle cx="100" cy="90" r="3" fill="#FB923C"/>
+  <circle cx="150" cy="100" r="3" fill="#FB923C"/>
+  <circle cx="200" cy="120" r="3" fill="#34D399"/>
+  <circle cx="240" cy="138" r="3" fill="#34D399"/>
+  <!-- Prediction line (dashed) -->
+  <line x1="240" y1="138" x2="260" y2="145" stroke="#34D399" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <!-- Labels -->
+  <text x="45" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Jan</text>
+  <text x="95" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Mar</text>
+  <text x="145" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">May</text>
+  <text x="195" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Jul</text>
+  <text x="235" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Now</text>
+  <!-- Right panel - Risk segments -->
+  <rect x="275" y="40" width="110" height="130" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="285" y="58" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">RISK SEGMENTS</text>
+  <!-- High risk -->
+  <rect x="285" y="66" width="90" height="18" rx="4" fill="rgba(248,113,113,0.08)"/>
+  <text x="290" y="78" fill="#F87171" font-family="sans-serif" font-size="4.5">🔴 High Risk: 23</text>
+  <rect x="285" y="88" width="90" height="18" rx="4" fill="rgba(251,146,60,0.08)"/>
+  <text x="290" y="100" fill="#FB923C" font-family="sans-serif" font-size="4.5">🟡 Medium: 67</text>
+  <rect x="285" y="110" width="90" height="18" rx="4" fill="rgba(52,211,153,0.08)"/>
+  <text x="290" y="122" fill="#34D399" font-family="sans-serif" font-size="4.5">🟢 Low Risk: 412</text>
+  <rect x="285" y="132" width="90" height="18" rx="4" fill="rgba(99,200,255,0.08)"/>
+  <text x="290" y="144" fill="#63C8FF" font-family="sans-serif" font-size="4.5">🔵 Active: 502</text>
+  <text x="285" y="165" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Total patients tracked</text>
+  <!-- Bottom stats -->
+  <rect x="20" y="185" width="180" height="50" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="30" y="203" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">INTERVENTION RESULTS</text>
+  <text x="30" y="222" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">-31%</text>
+  <text x="65" y="222" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="5">patient attrition</text>
+  <rect x="215" y="185" width="170" height="50" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="225" y="203" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">PREDICTION ACCURACY</text>
+  <text x="225" y="222" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">94.2%</text>
+  <text x="272" y="222" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="5">accuracy</text>
+</svg>

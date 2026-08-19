@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">SAAS PLATFORM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <rect x="30" y="64" width="105" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">2,847</text>
+  <text x="40" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Active Users</text>
+  <rect x="147" y="64" width="105" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="157" y="80" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">PKR 4.2M</text>
+  <text x="157" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">MRR</text>
+  <rect x="264" y="64" width="105" height="30" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="274" y="80" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">94%</text>
+  <text x="274" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Retention</text>
+  <text x="30" y="112" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">SUBSCRIPTION TIERS</text>
+  <rect x="30" y="120" width="105" height="35" rx="6" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.08)" stroke-width="0.5"/>
+  <text x="40" y="134" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">Starter — PKR 5K/mo</text>
+  <text x="40" y="148" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">1,240 users (43%)</text>
+  <rect x="147" y="120" width="105" height="35" rx="6" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.08)" stroke-width="0.5"/>
+  <text x="157" y="134" fill="#A855F7" font-family="sans-serif" font-size="4" font-weight="600">Pro — PKR 15K/mo</text>
+  <text x="157" y="148" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">1,138 users (40%)</text>
+  <rect x="264" y="120" width="105" height="35" rx="6" fill="rgba(251,146,60,0.04)" stroke="rgba(251,146,60,0.08)" stroke-width="0.5"/>
+  <text x="274" y="134" fill="#FB923C" font-family="sans-serif" font-size="4" font-weight="600">Enterprise — PKR 45K</text>
+  <text x="274" y="148" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">469 users (17%)</text>
+  <text x="30" y="178" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">FEATURE USAGE</text>
+  <text x="30" y="194" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Dashboard: 89% • Reports: 76% • API: 54% • Integrations: 42%</text>
+  <text x="30" y="210" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">INFRASTRUCTURE</text>
+  <text x="30" y="226" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">AWS (3 regions) • Docker + Kubernetes • CI/CD: GitHub Actions • Monitoring: Datadog</text>
+  <text x="30" y="240" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Uptime: 99.99% • Avg response: 120ms • SSL: Let's Encrypt • DDoS: Cloudflare</text>
+</svg>

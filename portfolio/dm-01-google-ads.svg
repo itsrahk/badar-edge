@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">GOOGLE ADS CAMPAIGN</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- KPI cards -->
+  <rect x="30" y="64" width="80" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">4.2%</text>
+  <text x="40" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">CTR (↑ from 2.1%)</text>
+  <rect x="120" y="64" width="80" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="80" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">PKR 45</text>
+  <text x="130" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Cost/Click</text>
+  <rect x="210" y="64" width="80" height="30" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="80" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">12.4K</text>
+  <text x="220" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Clicks today</text>
+  <rect x="300" y="64" width="70" height="30" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="80" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">PKR 8.2</text>
+  <text x="310" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Conv. Cost</text>
+  <!-- Ad groups -->
+  <text x="30" y="112" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">AD GROUPS PERFORMANCE</text>
+  <rect x="30" y="120" width="340" height="22" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="135" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Dental Keywords</text>
+  <text x="140" y="135" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">CTR: 5.1% • CPC: PKR 38 • Conv: 45</text>
+  <text x="340" y="135" fill="#34D399" font-family="sans-serif" font-size="3.5" font-weight="600">BEST</text>
+  <rect x="30" y="146" width="340" height="22" rx="4" fill="rgba(99,200,255,0.04)"/>
+  <text x="40" y="161" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">Location Targeting</text>
+  <text x="140" y="161" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">CTR: 3.8% • CPC: PKR 52 • Conv: 28</text>
+  <text x="340" y="161" fill="#63C8FF" font-family="sans-serif" font-size="3.5" font-weight="600">GOOD</text>
+  <rect x="30" y="172" width="340" height="22" rx="4" fill="rgba(251,146,60,0.04)"/>
+  <text x="40" y="187" fill="#FB923C" font-family="sans-serif" font-size="4" font-weight="600">Competitor Keywords</text>
+  <text x="140" y="187" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">CTR: 2.9% • CPC: PKR 68 • Conv: 12</text>
+  <text x="340" y="187" fill="#FB923C" font-family="sans-serif" font-size="3.5" font-weight="600">AVG</text>
+  <!-- Budget -->
+  <text x="30" y="214" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">BUDGET</text>
+  <rect x="30" y="222" width="340" height="10" rx="5" fill="rgba(255,255,255,0.04)"/>
+  <rect x="30" y="222" width="220" height="10" rx="5" fill="rgba(52,211,153,0.3)"/>
+  <text x="260" y="230" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">PKR 220K / PKR 300K (73%)</text>
+</svg>

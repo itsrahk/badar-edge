@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">LEAD SCORING DASHBOARD</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Lead list -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TOP SCORING LEADS</text>
+  <!-- Lead 1 -->
+  <rect x="30" y="76" width="340" height="28" rx="5" fill="rgba(52,211,153,0.06)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="40" y="88" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">RedStone Enterprises</text>
+  <text x="40" y="98" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Visited pricing page 3x • Downloaded whitepaper • Opened 5 emails</text>
+  <text x="330" y="88" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">95</text>
+  <text x="350" y="88" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">/100</text>
+  <!-- Lead 2 -->
+  <rect x="30" y="108" width="340" height="28" rx="5" fill="rgba(52,211,153,0.04)" stroke="rgba(52,211,153,0.08)" stroke-width="0.5"/>
+  <text x="40" y="120" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">TechVenture Pakistan</text>
+  <text x="40" y="130" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Requested demo • Filled contact form • Referred by partner</text>
+  <text x="330" y="120" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">88</text>
+  <text x="350" y="120" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">/100</text>
+  <!-- Lead 3 -->
+  <rect x="30" y="140" width="340" height="28" rx="5" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.08)" stroke-width="0.5"/>
+  <text x="40" y="152" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">GreenLeaf Solutions</text>
+  <text x="40" y="162" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Visited blog 8 times • Subscribed to newsletter</text>
+  <text x="330" y="152" fill="#63C8FF" font-family="sans-serif" font-size="10" font-weight="700">72</text>
+  <text x="350" y="152" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">/100</text>
+  <!-- Lead 4 -->
+  <rect x="30" y="172" width="340" height="28" rx="5" fill="rgba(251,146,60,0.04)" stroke="rgba(251,146,60,0.08)" stroke-width="0.5"/>
+  <text x="40" y="184" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Nova Digital</text>
+  <text x="40" y="194" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Opened 2 emails • Visited homepage</text>
+  <text x="330" y="184" fill="#FB923C" font-family="sans-serif" font-size="10" font-weight="700">45</text>
+  <text x="350" y="184" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">/100</text>
+  <!-- Score breakdown -->
+  <text x="30" y="218" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">SCORING FACTORS</text>
+  <text x="30" y="232" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Page visits (30%) · Form fills (25%) · Email opens (20%) · Referrals (15%) · Downloads (10%)</text>
+</svg>

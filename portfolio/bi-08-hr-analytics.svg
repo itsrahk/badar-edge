@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">HR ANALYTICS DASHBOARD</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <rect x="30" y="64" width="80" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">156</text>
+  <text x="40" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Total Employees</text>
+  <rect x="120" y="64" width="80" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="80" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">92%</text>
+  <text x="130" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Retention Rate</text>
+  <rect x="210" y="64" width="80" height="30" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="80" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">4.2/5</text>
+  <text x="220" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Satisfaction</text>
+  <rect x="300" y="64" width="70" height="30" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="80" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">8</text>
+  <text x="310" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Open Roles</text>
+  <text x="30" y="112" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">DEPARTMENT BREAKDOWN</text>
+  <text x="30" y="130" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Engineering: 45 (29%)</text>
+  <text x="30" y="144" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Sales: 32 (21%)</text>
+  <text x="30" y="158" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Marketing: 24 (15%)</text>
+  <text x="30" y="172" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Support: 28 (18%)</text>
+  <text x="30" y="186" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Operations: 18 (12%)</text>
+  <text x="30" y="200" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Admin: 9 (5%)</text>
+  <text x="220" y="112" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">HEADCOUNT TREND</text>
+  <text x="220" y="130" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Q1: 128 → Q2: 142 → Q3: 156</text>
+  <text x="220" y="148" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">HIRING PIPELINE</text>
+  <text x="220" y="166" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Applicants: 342</text>
+  <text x="220" y="180" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Interviews: 48</text>
+  <text x="220" y="194" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Offers: 12</text>
+  <text x="220" y="208" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Hired: 8 (this quarter)</text>
+  <text x="30" y="235" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Avg time-to-hire: 24 days • Avg salary: PKR 185K/mo • Training hours: 1,240 this quarter</text>
+</svg>

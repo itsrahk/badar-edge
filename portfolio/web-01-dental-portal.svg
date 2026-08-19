@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">DENTAL CLINIC PORTAL</text>
+  <!-- Browser window -->
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="200" y="50" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4" text-anchor="middle">dental-portal.badaredge.com</text>
+  <!-- Sidebar -->
+  <rect x="20" y="56" width="60" height="179" fill="rgba(255,255,255,0.02)"/>
+  <text x="30" y="74" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📋 Dashboard</text>
+  <text x="30" y="88" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">📅 Appointments</text>
+  <text x="30" y="102" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">👥 Patients</text>
+  <text x="30" y="116" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">💊 Treatments</text>
+  <text x="30" y="130" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">💰 Billing</text>
+  <text x="30" y="144" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📊 Reports</text>
+  <text x="30" y="158" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">⚙️ Settings</text>
+  <!-- Main content -->
+  <text x="95" y="76" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="7" font-weight="600">Today's Appointments</text>
+  <!-- Appointment cards -->
+  <rect x="95" y="86" width="275" height="22" rx="5" fill="rgba(99,200,255,0.06)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="102" y="100" fill="#63C8FF" font-family="sans-serif" font-size="4.5" font-weight="600">09:00</text>
+  <text x="132" y="100" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4.5">Sarah Ahmed — Root Canal</text>
+  <text x="340" y="100" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Confirmed</text>
+  <rect x="95" y="114" width="275" height="22" rx="5" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.1)" stroke-width="0.5"/>
+  <text x="102" y="128" fill="#A855F7" font-family="sans-serif" font-size="4.5" font-weight="600">10:30</text>
+  <text x="132" y="128" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4.5">Ali Khan — Teeth Cleaning</text>
+  <text x="340" y="128" fill="#FB923C" font-family="sans-serif" font-size="4" font-weight="600">In Progress</text>
+  <rect x="95" y="142" width="275" height="22" rx="5" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="102" y="156" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5" font-weight="600">11:00</text>
+  <text x="132" y="156" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">Fatima Raza — Consultation</text>
+  <text x="340" y="156" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Scheduled</text>
+  <!-- Quick stats -->
+  <rect x="95" y="172" width="85" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="102" y="184" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">12</text>
+  <text x="120" y="184" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">today</text>
+  <text x="102" y="194" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">8 confirmed, 2 pending</text>
+  <rect x="190" y="172" width="85" height="28" rx="5" fill="rgba(251,146,60,0.06)"/>
+  <text x="197" y="184" fill="#FB923C" font-family="sans-serif" font-size="10" font-weight="700">3</text>
+  <text x="210" y="184" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">waiting</text>
+  <rect x="285" y="172" width="85" height="28" rx="5" fill="rgba(248,113,113,0.06)"/>
+  <text x="292" y="184" fill="#F87171" font-family="sans-serif" font-size="10" font-weight="700">1</text>
+  <text x="305" y="184" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">urgent</text>
+  <!-- Revenue widget -->
+  <rect x="95" y="206" width="180" height="22" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="102" y="220" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Today's revenue:</text>
+  <text x="175" y="220" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 185,000</text>
+</svg>

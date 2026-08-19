@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CRM ANALYTICS DASHBOARD</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- KPI cards -->
+  <rect x="30" y="64" width="80" height="35" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">PKR 45M</text>
+  <text x="40" y="92" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Total Revenue</text>
+  <rect x="120" y="64" width="80" height="35" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="80" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">342</text>
+  <text x="130" y="92" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Active Deals</text>
+  <rect x="210" y="64" width="80" height="35" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="80" fill="#A855F7" font-family="sans-serif" font-size="14" font-weight="700">42%</text>
+  <text x="220" y="92" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Win Rate</text>
+  <rect x="300" y="64" width="70" height="35" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="80" fill="#FB923C" font-family="sans-serif" font-size="14" font-weight="700">18d</text>
+  <text x="310" y="92" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Avg Cycle</text>
+  <!-- Revenue chart -->
+  <rect x="30" y="108" width="220" height="120" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="40" y="124" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">MONTHLY REVENUE</text>
+  <!-- Bars -->
+  <rect x="45" y="190" width="15" height="30" rx="2" fill="rgba(99,200,255,0.3)"/>
+  <rect x="65" y="175" width="15" height="45" rx="2" fill="rgba(99,200,255,0.4)"/>
+  <rect x="85" y="160" width="15" height="60" rx="2" fill="rgba(99,200,255,0.5)"/>
+  <rect x="105" y="170" width="15" height="50" rx="2" fill="rgba(99,200,255,0.45)"/>
+  <rect x="125" y="150" width="15" height="70" rx="2" fill="rgba(99,200,255,0.6)"/>
+  <rect x="145" y="140" width="15" height="80" rx="2" fill="rgba(99,200,255,0.7)"/>
+  <rect x="165" y="155" width="15" height="65" rx="2" fill="rgba(99,200,255,0.55)"/>
+  <rect x="185" y="135" width="15" height="85" rx="2" fill="rgba(99,200,255,0.8)"/>
+  <rect x="205" y="145" width="15" height="75" rx="2" fill="rgba(99,200,255,0.7)"/>
+  <rect x="225" y="130" width="15" height="90" rx="2" fill="rgba(52,211,153,0.8)"/>
+  <!-- Top performers -->
+  <rect x="265" y="108" width="105" height="120" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="275" y="124" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">TOP PERFORMERS</text>
+  <text x="275" y="142" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">1. Ahmed — PKR 12M</text>
+  <text x="275" y="156" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">2. Sara — PKR 9.5M</text>
+  <text x="275" y="170" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">3. Bilal — PKR 8.2M</text>
+  <text x="275" y="184" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">4. Fatima — PKR 7.8M</text>
+  <text x="275" y="198" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">5. Ali — PKR 6.5M</text>
+  <text x="275" y="220" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Total team: PKR 45M</text>
+</svg>

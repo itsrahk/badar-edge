@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">OPERATIONAL KPI TRACKER</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">KEY PERFORMANCE INDICATORS</text>
+  <rect x="30" y="76" width="105" height="40" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="92" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">94%</text>
+  <text x="40" y="104" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">SLA Compliance</text>
+  <rect x="147" y="76" width="105" height="40" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="157" y="92" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">2.4h</text>
+  <text x="157" y="104" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Avg Response Time</text>
+  <rect x="264" y="76" width="105" height="40" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="274" y="92" fill="#A855F7" font-family="sans-serif" font-size="14" font-weight="700">99.2%</text>
+  <text x="274" y="104" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">System Uptime</text>
+  <rect x="30" y="124" width="340" height="105" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="40" y="140" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">DEPARTMENT PERFORMANCE</text>
+  <text x="40" y="158" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Sales</text>
+  <rect x="80" y="151" width="200" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="80" y="151" width="180" height="6" rx="3" fill="rgba(52,211,153,0.4)"/>
+  <text x="290" y="158" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">90%</text>
+  <text x="40" y="173" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Support</text>
+  <rect x="80" y="166" width="200" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="80" y="166" width="188" height="6" rx="3" fill="rgba(99,200,255,0.4)"/>
+  <text x="290" y="173" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">94%</text>
+  <text x="40" y="188" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Dev</text>
+  <rect x="80" y="181" width="200" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="80" y="181" width="176" height="6" rx="3" fill="rgba(168,85,247,0.4)"/>
+  <text x="290" y="188" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">88%</text>
+  <text x="40" y="203" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Marketing</text>
+  <rect x="80" y="196" width="200" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="80" y="196" width="192" height="6" rx="3" fill="rgba(251,146,60,0.4)"/>
+  <text x="290" y="203" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">96%</text>
+  <text x="40" y="218" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Finance</text>
+  <rect x="80" y="211" width="200" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="80" y="211" width="184" height="6" rx="3" fill="rgba(52,211,153,0.4)"/>
+  <text x="290" y="218" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">92%</text>
+  <text x="30" y="240" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Last updated: Real-time • Threshold: 85% minimum</text>
+</svg>

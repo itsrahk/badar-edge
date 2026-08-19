@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">DEVOPS PIPELINE</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">CI/CD PIPELINE</text>
+  <rect x="30" y="76" width="60" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="42" y="90" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Build ✓</text>
+  <text x="42" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">2m 14s</text>
+  <line x1="92" y1="90" x2="108" y2="90" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+  <rect x="110" y="76" width="60" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="122" y="90" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Test ✓</text>
+  <text x="122" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">4m 32s</text>
+  <line x1="172" y1="90" x2="188" y2="90" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+  <rect x="190" y="76" width="60" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="202" y="90" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Stage ✓</text>
+  <text x="202" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">1m 48s</text>
+  <line x1="252" y1="90" x2="268" y2="90" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+  <rect x="270" y="76" width="60" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="282" y="90" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Deploy ✓</text>
+  <text x="282" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">3m 05s</text>
+  <text x="30" y="124" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">DEPLOYMENT HISTORY</text>
+  <rect x="30" y="132" width="340" height="18" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="145" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">v2.14.0 — feat: payment gateway — Merged 2h ago</text>
+  <rect x="30" y="154" width="340" height="18" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="167" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">v2.13.2 — fix: email template — Merged 5h ago</text>
+  <rect x="30" y="176" width="340" height="18" rx="4" fill="rgba(248,113,113,0.04)"/>
+  <text x="40" y="189" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">v2.13.1 — fix: API timeout — Rolled back (test failed)</text>
+  <text x="30" y="212" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">INFRASTRUCTURE</text>
+  <text x="30" y="228" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Servers: 12 • Docker containers: 48 • Uptime: 99.99% • Avg deploy time: 11m</text>
+  <text x="30" y="242" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Cloud: AWS (3 regions) • IaC: Terraform • Monitoring: Grafana + Prometheus</text>
+</svg>

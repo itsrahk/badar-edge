@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">PREDICTIVE FORECASTING</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">REVENUE FORECAST (NEXT 6 MONTHS)</text>
+  <rect x="30" y="76" width="340" height="100" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <line x1="40" y1="170" x2="360" y2="170" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <polyline points="50,150 100,140 150,135 200,125 250,115 300,105 350,95" fill="none" stroke="#34D399" stroke-width="1.5"/>
+  <polyline points="50,150 100,142 150,138 200,130 250,122 300,115 350,108" fill="none" stroke="#63C8FF" stroke-width="1" stroke-dasharray="4,2"/>
+  <circle cx="350" cy="95" r="3" fill="#34D399"/>
+  <circle cx="350" cy="108" r="3" fill="#63C8FF"/>
+  <text x="50" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Sep</text>
+  <text x="100" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Oct</text>
+  <text x="150" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Nov</text>
+  <text x="200" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Dec</text>
+  <text x="250" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Jan</text>
+  <text x="300" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Feb</text>
+  <text x="340" y="184" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Mar</text>
+  <text x="30" y="204" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">FORECAST ACCURACY</text>
+  <rect x="30" y="212" width="105" height="24" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="228" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">94.2%</text>
+  <text x="100" y="228" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">accuracy</text>
+  <rect x="147" y="212" width="105" height="24" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="157" y="228" fill="#63C8FF" font-family="sans-serif" font-size="10" font-weight="700">PKR 58M</text>
+  <text x="215" y="228" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">projected</text>
+  <rect x="264" y="212" width="105" height="24" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="274" y="228" fill="#A855F7" font-family="sans-serif" font-size="10" font-weight="700">+21%</text>
+  <text x="310" y="228" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">growth</text>
+  <text x="30" y="240" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Model: ARIMA + ML ensemble • Confidence interval: 95% • Last trained: Aug 10, 2024</text>
+</svg>

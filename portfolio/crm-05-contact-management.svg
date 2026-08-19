@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CONTACT MANAGEMENT</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Search -->
+  <rect x="30" y="64" width="200" height="16" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <text x="42" y="75" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">🔍 Search contacts...</text>
+  <rect x="240" y="64" width="60" height="16" rx="8" fill="rgba(99,200,255,0.15)"/>
+  <text x="270" y="75" fill="#63C8FF" font-family="sans-serif" font-size="4" text-anchor="middle">+ Add New</text>
+  <!-- Contact cards grid -->
+  <rect x="30" y="88" width="105" height="55" rx="6" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.08)" stroke-width="0.5"/>
+  <circle cx="50" cy="104" r="8" fill="rgba(99,200,255,0.15)"/>
+  <text x="50" y="107" fill="#63C8FF" font-family="sans-serif" font-size="6" text-anchor="middle">AK</text>
+  <text x="64" y="104" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Ali Khan</text>
+  <text x="64" y="114" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">CEO • TechCorp</text>
+  <text x="40" y="130" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">ali@techcorp.com</text>
+  <text x="40" y="138" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">+92 300 1234567</text>
+  <rect x="30" y="148" width="105" height="55" rx="6" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.08)" stroke-width="0.5"/>
+  <circle cx="50" cy="164" r="8" fill="rgba(168,85,247,0.15)"/>
+  <text x="50" y="167" fill="#A855F7" font-family="sans-serif" font-size="6" text-anchor="middle">SR</text>
+  <text x="64" y="164" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Sara Raza</text>
+  <text x="64" y="174" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Marketing • Innova</text>
+  <text x="40" y="190" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">sara@innova.com</text>
+  <text x="40" y="198" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">+92 321 9876543</text>
+  <rect x="147" y="88" width="105" height="55" rx="6" fill="rgba(52,211,153,0.04)" stroke="rgba(52,211,153,0.08)" stroke-width="0.5"/>
+  <circle cx="167" cy="104" r="8" fill="rgba(52,211,153,0.15)"/>
+  <text x="167" y="107" fill="#34D399" font-family="sans-serif" font-size="6" text-anchor="middle">MA</text>
+  <text x="181" y="104" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Momed Ali</text>
+  <text x="181" y="114" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Director • CloudNet</text>
+  <text x="157" y="130" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">ali@cloudnet.com</text>
+  <text x="157" y="138" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">+92 333 5551234</text>
+  <rect x="147" y="148" width="105" height="55" rx="6" fill="rgba(251,146,60,0.04)" stroke="rgba(251,146,60,0.08)" stroke-width="0.5"/>
+  <circle cx="167" cy="164" r="8" fill="rgba(251,146,60,0.15)"/>
+  <text x="167" y="167" fill="#FB923C" font-family="sans-serif" font-size="6" text-anchor="middle">FM</text>
+  <text x="181" y="164" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Fatima Malik</text>
+  <text x="181" y="174" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">CTO • StartUp Hub</text>
+  <text x="157" y="190" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">fatima@startup.com</text>
+  <text x="157" y="198" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">+92 300 7778899</text>
+  <!-- Activity panel -->
+  <rect x="264" y="88" width="105" height="115" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="274" y="104" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5" font-weight="500">RECENT ACTIVITY</text>
+  <text x="274" y="120" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">📧 Email sent to Ali Khan</text>
+  <text x="274" y="132" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">📞 Call with Sara Raza</text>
+  <text x="274" y="144" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">📅 Meeting: Momed Ali</text>
+  <text x="274" y="156" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">✅ Task completed</text>
+  <text x="274" y="168" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">📧 Newsletter opened</text>
+  <text x="274" y="180" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">... and 12 more today</text>
+  <!-- Stats -->
+  <text x="274" y="210" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5" font-weight="500">TOTAL CONTACTS</text>
+  <text x="274" y="228" fill="#63C8FF" font-family="sans-serif" font-size="18" font-weight="700">2,847</text>
+</svg>

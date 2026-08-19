@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">HEALTHCARE CRM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Patient list -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">UPCOMING APPOINTMENTS</text>
+  <rect x="30" y="76" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="91" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">09:00 AM — Sarah Ahmed — Root Canal</text>
+  <text x="340" y="91" fill="#34D399" font-family="sans-serif" font-size="3.5" font-weight="600">Confirmed</text>
+  <rect x="30" y="102" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="117" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">10:30 AM — Ali Khan — Cleaning</text>
+  <text x="340" y="117" fill="#FB923C" font-family="sans-serif" font-size="3.5" font-weight="600">In Progress</text>
+  <rect x="30" y="128" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="143" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">11:00 AM — Fatima Raza — Consultation</text>
+  <text x="340" y="143" fill="#63C8FF" font-family="sans-serif" font-size="3.5" font-weight="600">Scheduled</text>
+  <!-- Patient stats -->
+  <text x="30" y="168" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">PATIENT METRICS</text>
+  <rect x="30" y="176" width="80" height="28" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="40" y="192" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">1,247</text>
+  <text x="40" y="200" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">total patients</text>
+  <rect x="120" y="176" width="80" height="28" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="130" y="192" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">89%</text>
+  <text x="130" y="200" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">return rate</text>
+  <rect x="210" y="176" width="80" height="28" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="192" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">4.9★</text>
+  <text x="220" y="200" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">avg rating</text>
+  <rect x="300" y="176" width="70" height="28" rx="5" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="192" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">23</text>
+  <text x="310" y="200" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">today</text>
+  <!-- Follow-ups -->
+  <text x="30" y="218" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">FOLLOW-UP REMINDERS</text>
+  <rect x="30" y="226" width="340" height="16" rx="4" fill="rgba(248,113,113,0.04)"/>
+  <text x="40" y="237" fill="#F87171" font-family="sans-serif" font-size="4">⚠ 3 patients overdue for checkup • 2 pending test results • 1 treatment review due</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">REAL ESTATE CRM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Property matches -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">CLIENT PROPERTY MATCHES</text>
+  <rect x="30" y="76" width="340" height="28" rx="5" fill="rgba(99,200,255,0.04)" stroke="rgba(99,200,255,0.08)" stroke-width="0.5"/>
+  <text x="40" y="88" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Ali Khan — Looking for 3BR in DHA</text>
+  <text x="40" y="98" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Budget: 3-4 Cr • 5 matches found • Last contact: 2 days ago</text>
+  <text x="340" y="88" fill="#34D399" font-family="sans-serif" font-size="3.5" font-weight="600">HOT</text>
+  <rect x="30" y="108" width="340" height="28" rx="5" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.08)" stroke-width="0.5"/>
+  <text x="40" y="120" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Sara Ahmed — Looking for flat in Gulberg</text>
+  <text x="40" y="130" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Budget: 1.5-2 Cr • 3 matches found • Last contact: 5 days ago</text>
+  <text x="340" y="120" fill="#FB923C" font-family="sans-serif" font-size="3.5" font-weight="600">WARM</text>
+  <rect x="30" y="140" width="340" height="28" rx="5" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="40" y="152" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4.5" font-weight="600">Bilal Raza — Looking for house in Bahria</text>
+  <text x="40" y="162" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Budget: 4-5 Cr • 8 matches found • Last contact: 1 week ago</text>
+  <text x="340" y="152" fill="#63C8FF" font-family="sans-serif" font-size="3.5" font-weight="600">COLD</text>
+  <!-- Stats -->
+  <text x="30" y="188" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">PIPELINE</text>
+  <rect x="30" y="196" width="80" height="32" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="40" y="210" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">34</text>
+  <text x="60" y="210" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">leads</text>
+  <rect x="120" y="196" width="80" height="32" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="130" y="210" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">12</text>
+  <text x="148" y="210" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">visits</text>
+  <rect x="210" y="196" width="80" height="32" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="210" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">5</text>
+  <text x="235" y="210" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">deals</text>
+  <rect x="300" y="196" width="70" height="32" rx="5" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="210" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">PKR 8M</text>
+  <text x="310" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">pipeline value</text>
+</svg>

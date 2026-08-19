@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CUSTOMER SUPPORT CRM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Ticket list -->
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">ACTIVE TICKETS</text>
+  <!-- Ticket 1 -->
+  <rect x="30" y="76" width="340" height="28" rx="5" fill="rgba(248,113,113,0.06)" stroke="rgba(248,113,113,0.1)" stroke-width="0.5"/>
+  <circle cx="42" cy="90" r="4" fill="#F87171"/>
+  <text x="52" y="88" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">#T-1042 — Payment gateway error on checkout</text>
+  <text x="52" y="98" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Customer: Ali Khan • Urgent • Assigned to: Ahmed</text>
+  <text x="340" y="90" fill="#F87171" font-family="sans-serif" font-size="3.5" font-weight="600">OPEN</text>
+  <!-- Ticket 2 -->
+  <rect x="30" y="108" width="340" height="28" rx="5" fill="rgba(251,146,60,0.06)" stroke="rgba(251,146,60,0.1)" stroke-width="0.5"/>
+  <circle cx="42" cy="122" r="4" fill="#FB923C"/>
+  <text x="52" y="120" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">#T-1041 — Cannot update profile picture</text>
+  <text x="52" y="130" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Customer: Sara Raza • Medium • Assigned to: Bilal</text>
+  <text x="340" y="122" fill="#FB923C" font-family="sans-serif" font-size="3.5" font-weight="600">IN PROG</text>
+  <!-- Ticket 3 -->
+  <rect x="30" y="140" width="340" height="28" rx="5" fill="rgba(99,200,255,0.06)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <circle cx="42" cy="154" r="4" fill="#63C8FF"/>
+  <text x="52" y="152" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="4" font-weight="600">#T-1040 — Feature request: Dark mode</text>
+  <text x="52" y="162" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Customer: Ahmed M. • Low • Assigned to: Dev Team</text>
+  <text x="340" y="154" fill="#63C8FF" font-family="sans-serif" font-size="3.5" font-weight="600">PENDING</text>
+  <!-- Stats -->
+  <text x="30" y="188" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TODAY'S METRICS</text>
+  <rect x="30" y="196" width="80" height="32" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="210" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">94%</text>
+  <text x="40" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">resolution rate</text>
+  <rect x="120" y="196" width="80" height="32" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="210" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">2.4h</text>
+  <text x="130" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">avg response</text>
+  <rect x="210" y="196" width="80" height="32" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="210" fill="#A855F7" font-family="sans-serif" font-size="14" font-weight="700">4.7</text>
+  <text x="220" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">CSAT score</text>
+  <rect x="300" y="196" width="70" height="32" rx="5" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="210" fill="#FB923C" font-family="sans-serif" font-size="14" font-weight="700">23</text>
+  <text x="310" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">open tickets</text>
+</svg>

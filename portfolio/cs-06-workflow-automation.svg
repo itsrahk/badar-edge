@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">WORKFLOW AUTOMATION</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">ACTIVE WORKFLOWS</text>
+  <rect x="30" y="76" width="340" height="22" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="91" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Lead → Qualify → Proposal → Close — 89% completion</text>
+  <text x="340" y="91" fill="#34D399" font-family="sans-serif" font-size="3.5" font-weight="600">Active</text>
+  <rect x="30" y="102" width="340" height="22" rx="4" fill="rgba(99,200,255,0.04)"/>
+  <text x="40" y="117" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Invoice → Approve → Send → Follow-up — 76% completion</text>
+  <text x="340" y="117" fill="#63C8FF" font-family="sans-serif" font-size="3.5" font-weight="600">Active</text>
+  <rect x="30" y="128" width="340" height="22" rx="4" fill="rgba(168,85,247,0.04)"/>
+  <text x="40" y="143" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Ticket → Assign → Resolve → Close — 92% completion</text>
+  <text x="340" y="143" fill="#A855F7" font-family="sans-serif" font-size="3.5" font-weight="600">Active</text>
+  <text x="30" y="170" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">AUTOMATION STATS</text>
+  <rect x="30" y="178" width="105" height="28" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="194" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">2,840</text>
+  <text x="40" y="202" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">tasks automated</text>
+  <rect x="147" y="178" width="105" height="28" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="157" y="194" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">840 hrs</text>
+  <text x="157" y="202" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">saved this month</text>
+  <rect x="264" y="178" width="105" height="28" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="274" y="194" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">99.2%</text>
+  <text x="274" y="202" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">success rate</text>
+  <text x="30" y="228" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TRIGGER TYPES</text>
+  <text x="30" y="242" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Time-based (45%) • Event-driven (35%) • Webhook (15%) • Manual (5%)</text>
+</svg>

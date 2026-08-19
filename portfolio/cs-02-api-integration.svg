@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">API INTEGRATION HUB</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <text x="30" y="68" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">ACTIVE INTEGRATIONS</text>
+  <rect x="30" y="76" width="105" height="35" rx="6" fill="rgba(52,211,153,0.06)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="40" y="92" fill="#34D399" font-family="sans-serif" font-size="4" font-weight="600">Stripe Payments</text>
+  <text x="40" y="104" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Active • 1,240 calls/day</text>
+  <rect x="147" y="76" width="105" height="35" rx="6" fill="rgba(99,200,255,0.06)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="157" y="92" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">Salesforce CRM</text>
+  <text x="157" y="104" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Active • 890 calls/day</text>
+  <rect x="264" y="76" width="105" height="35" rx="6" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.1)" stroke-width="0.5"/>
+  <text x="274" y="92" fill="#A855F7" font-family="sans-serif" font-size="4" font-weight="600">Slack Notifications</text>
+  <text x="274" y="104" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Active • 340 calls/day</text>
+  <text x="30" y="128" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">API HEALTH MONITOR</text>
+  <rect x="30" y="136" width="340" height="18" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="149" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Payment Gateway — 99.99% uptime — 45ms avg</text>
+  <rect x="30" y="158" width="340" height="18" rx="4" fill="rgba(52,211,153,0.04)"/>
+  <text x="40" y="171" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">CRM Sync — 99.95% uptime — 120ms avg</text>
+  <rect x="30" y="180" width="340" height="18" rx="4" fill="rgba(251,146,60,0.04)"/>
+  <text x="40" y="193" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Email Service — 98.5% uptime — 280ms avg</text>
+  <text x="30" y="218" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">WEBHOOK LOG</text>
+  <rect x="30" y="226" width="340" height="16" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="237" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">09:15 — payment.completed — Order #1047 — 200 OK</text>
+  <rect x="30" y="244" width="340" height="0" rx="4" fill="rgba(255,255,255,0.02)"/>
+</svg>

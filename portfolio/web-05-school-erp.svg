@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">SCHOOL ERP SYSTEM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Sidebar -->
+  <rect x="20" y="56" width="55" height="179" fill="rgba(255,255,255,0.02)"/>
+  <text x="28" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📊 Dashboard</text>
+  <text x="28" y="86" fill="#63C8FF" font-family="sans-serif" font-size="4" font-weight="600">👨‍🎓 Students</text>
+  <text x="28" y="100" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📚 Classes</text>
+  <text x="28" y="114" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📝 Exams</text>
+  <text x="28" y="128" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">💰 Fees</text>
+  <text x="28" y="142" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">🚌 Transport</text>
+  <text x="28" y="156" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">📅 Events</text>
+  <!-- Main content -->
+  <text x="90" y="72" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="6" font-weight="600">Student Overview</text>
+  <!-- Stats cards -->
+  <rect x="90" y="82" width="85" height="35" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="100" y="98" fill="#63C8FF" font-family="sans-serif" font-size="14" font-weight="700">1,247</text>
+  <text x="100" y="110" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Total Students</text>
+  <rect x="185" y="82" width="85" height="35" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="195" y="98" fill="#34D399" font-family="sans-serif" font-size="14" font-weight="700">96%</text>
+  <text x="195" y="110" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Attendance</text>
+  <rect x="280" y="82" width="85" height="35" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="290" y="98" fill="#A855F7" font-family="sans-serif" font-size="14" font-weight="700">28</text>
+  <text x="290" y="110" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Classes</text>
+  <!-- Student list -->
+  <text x="90" y="136" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5" font-weight="500">RECENT ENROLLMENTS</text>
+  <rect x="90" y="142" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="100" cy="151" r="6" fill="rgba(99,200,255,0.15)"/>
+  <text x="115" y="154" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Ahmed Ali — Grade 8 — Section A</text>
+  <text x="340" y="154" fill="#34D399" font-family="sans-serif" font-size="3.5">Active</text>
+  <rect x="90" y="163" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="100" cy="172" r="6" fill="rgba(168,85,247,0.15)"/>
+  <text x="115" y="175" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Sara Khan — Grade 5 — Section B</text>
+  <text x="340" y="175" fill="#34D399" font-family="sans-serif" font-size="3.5">Active</text>
+  <rect x="90" y="184" width="275" height="18" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="100" cy="193" r="6" fill="rgba(251,146,60,0.15)"/>
+  <text x="115" y="196" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Bilal Raza — Grade 10 — Section A</text>
+  <text x="340" y="196" fill="#FB923C" font-family="sans-serif" font-size="3.5">Pending Fee</text>
+  <!-- Fee summary -->
+  <rect x="90" y="208" width="175" height="22" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="100" y="222" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Fee collection this month:</text>
+  <text x="215" y="222" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 8.2M</text>
+</svg>

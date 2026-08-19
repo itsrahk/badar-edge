@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg3)"/>
+  <!-- Flow diagram -->
+  <text x="20" y="30" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">AUTOMATED LEAD NURTURE FLOW</text>
+  <!-- Step 1 -->
+  <rect x="20" y="45" width="80" height="50" rx="8" fill="rgba(251,146,60,0.08)" stroke="rgba(251,146,60,0.2)" stroke-width="0.5"/>
+  <text x="30" y="62" fill="#FB923C" font-family="sans-serif" font-size="5" font-weight="600">ABANDONED CART</text>
+  <text x="30" y="73" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4.5">Trigger: No checkout</text>
+  <text x="30" y="82" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">in 30 min</text>
+  <line x1="100" y1="70" x2="130" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1" marker-end="url(#arrow)"/>
+  <!-- Step 2 -->
+  <rect x="130" y="45" width="80" height="50" rx="8" fill="rgba(99,200,255,0.08)" stroke="rgba(99,200,255,0.2)" stroke-width="0.5"/>
+  <text x="140" y="62" fill="#63C8FF" font-family="sans-serif" font-size="5" font-weight="600">EMAIL #1</text>
+  <text x="140" y="73" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4.5">"You left something</text>
+  <text x="140" y="82" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">behind..."</text>
+  <line x1="210" y1="70" x2="240" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <!-- Step 3 -->
+  <rect x="240" y="45" width="80" height="50" rx="8" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.2)" stroke-width="0.5"/>
+  <text x="250" y="62" fill="#A855F7" font-family="sans-serif" font-size="5" font-weight="600">WHATSAPP #2</text>
+  <text x="250" y="73" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4.5">"Still interested? Here's</text>
+  <text x="250" y="82" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">10% off..."</text>
+  <line x1="320" y1="70" x2="350" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <!-- Step 4 -->
+  <rect x="350" y="45" width="35" height="50" rx="8" fill="rgba(52,211,153,0.08)" stroke="rgba(52,211,153,0.2)" stroke-width="0.5"/>
+  <text x="355" y="68" fill="#34D399" font-family="sans-serif" font-size="14">✓</text>
+  <text x="355" y="82" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Done</text>
+  <!-- Main dashboard -->
+  <rect x="20" y="110" width="175" height="130" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="30" y="128" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">CONVERSION FUNNEL</text>
+  <!-- Funnel bars -->
+  <text x="30" y="148" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">Cart Abandon</text>
+  <rect x="100" y="141" width="80" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="141" width="80" height="6" rx="3" fill="rgba(251,146,60,0.4)"/>
+  <text x="30" y="162" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">Email Opened</text>
+  <rect x="100" y="155" width="80" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="155" width="62" height="6" rx="3" fill="rgba(99,200,255,0.4)"/>
+  <text x="30" y="176" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">WhatsApp Read</text>
+  <rect x="100" y="169" width="80" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="169" width="52" height="6" rx="3" fill="rgba(168,85,247,0.4)"/>
+  <text x="30" y="190" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4.5">Recovered</text>
+  <rect x="100" y="183" width="80" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="183" width="36" height="6" rx="3" fill="#34D399"/>
+  <!-- Right panel stats -->
+  <rect x="210" y="110" width="170" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="220" y="128" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">RECOVERY RATE</text>
+  <text x="220" y="152" fill="#34D399" font-family="sans-serif" font-size="22" font-weight="700">28%</text>
+  <text x="258" y="152" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="5">↑ from 4%</text>
+  <text x="220" y="165" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4.5">7x improvement with automation</text>
+  <rect x="210" y="180" width="170" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="220" y="198" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5">REVENUE RECOVERED</text>
+  <text x="220" y="222" fill="#FB923C" font-family="sans-serif" font-size="18" font-weight="700">$14,280</text>
+  <text x="220" y="234" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4.5">last 30 days</text>
+  <!-- Live activity -->
+  <circle cx="362" cy="198" r="4" fill="#34D399" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="350" y="210" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">LIVE</text>
+</svg>

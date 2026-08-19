@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#142238"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">RESTAURANT PLATFORM</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Header -->
+  <text x="30" y="70" fill="#FB923C" font-family="sans-serif" font-size="6" font-weight="700">🍔 BiteBox</text>
+  <text x="100" y="70" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Menu</text>
+  <text x="130" y="70" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Orders</text>
+  <text x="165" y="70" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Reservations</text>
+  <text x="345" y="70" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="5">🛒 2</text>
+  <!-- Active orders panel -->
+  <rect x="30" y="80" width="175" height="145" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="40" y="96" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="5.5" font-weight="600">LIVE ORDERS</text>
+  <!-- Order 1 -->
+  <rect x="40" y="104" width="155" height="30" rx="5" fill="rgba(251,146,60,0.06)" stroke="rgba(251,146,60,0.1)" stroke-width="0.5"/>
+  <text x="48" y="116" fill="#FB923C" font-family="sans-serif" font-size="4.5" font-weight="600">#1047 — Preparing</text>
+  <text x="48" y="128" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">2x Zinger Burger, 1x Fries</text>
+  <!-- Progress bar -->
+  <rect x="48" y="130" width="135" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="48" y="130" width="80" height="3" rx="1.5" fill="#FB923C"/>
+  <!-- Order 2 -->
+  <rect x="40" y="140" width="155" height="30" rx="5" fill="rgba(99,200,255,0.06)" stroke="rgba(99,200,255,0.1)" stroke-width="0.5"/>
+  <text x="48" y="152" fill="#63C8FF" font-family="sans-serif" font-size="4.5" font-weight="600">#1048 — Ready</text>
+  <text x="48" y="164" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">1x Chicken Platter</text>
+  <rect x="48" y="166" width="135" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="48" y="166" width="135" height="3" rx="1.5" fill="#34D399"/>
+  <!-- Order 3 -->
+  <rect x="40" y="176" width="155" height="30" rx="5" fill="rgba(52,211,153,0.06)" stroke="rgba(52,211,153,0.1)" stroke-width="0.5"/>
+  <text x="48" y="188" fill="#34D399" font-family="sans-serif" font-size="4.5" font-weight="600">#1049 — Out for Delivery</text>
+  <text x="48" y="200" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">3x Family Meal Combo</text>
+  <rect x="48" y="202" width="135" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="48" y="202" width="120" height="3" rx="1.5" fill="#34D399"/>
+  <!-- Stats panel -->
+  <rect x="215" y="80" width="155" height="145" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="225" y="96" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="5.5" font-weight="600">TODAY'S STATS</text>
+  <rect x="225" y="104" width="135" height="20" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="232" y="118" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">142</text>
+  <text x="265" y="118" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">orders completed</text>
+  <rect x="225" y="130" width="135" height="20" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="232" y="144" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">PKR 285K</text>
+  <text x="300" y="144" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">revenue</text>
+  <rect x="225" y="156" width="135" height="20" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="232" y="170" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">24 min</text>
+  <text x="280" y="170" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">avg delivery</text>
+  <!-- Rating -->
+  <text x="225" y="194" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">CUSTOMER RATING</text>
+  <text x="225" y="212" fill="#FB923C" font-family="sans-serif" font-size="16" font-weight="700">4.8</text>
+  <text x="258" y="212" fill="#FB923C" font-family="sans-serif" font-size="8">★★★★★</text>
+  <text x="225" y="222" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3.5">Based on 89 reviews today</text>
+</svg>

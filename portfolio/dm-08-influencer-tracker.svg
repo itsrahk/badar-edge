@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#162040"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">INFLUENCER CAMPAIGN TRACKER</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <rect x="30" y="64" width="80" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">12</text>
+  <text x="40" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Active influencers</text>
+  <rect x="120" y="64" width="80" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="80" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">245K</text>
+  <text x="130" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Total reach</text>
+  <rect x="210" y="64" width="80" height="30" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="80" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">4.8%</text>
+  <text x="220" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Engagement rate</text>
+  <rect x="300" y="64" width="70" height="30" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="80" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">PKR 340</text>
+  <text x="310" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">CPE</text>
+  <text x="30" y="112" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TOP PERFORMERS</text>
+  <rect x="30" y="120" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="135" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">@sarah.lifestyle — 85K followers</text>
+  <text x="340" y="135" fill="#34D399" font-family="sans-serif" font-size="3.5">6.2% eng</text>
+  <rect x="30" y="146" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="161" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">@tech.review.pk — 42K followers</text>
+  <text x="340" y="161" fill="#63C8FF" font-family="sans-serif" font-size="3.5">5.8% eng</text>
+  <rect x="30" y="172" width="340" height="22" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="40" y="187" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">@fitness.ahmed — 38K followers</text>
+  <text x="340" y="187" fill="#A855F7" font-family="sans-serif" font-size="3.5">5.1% eng</text>
+  <text x="30" y="212" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">CAMPAIGN ROI</text>
+  <rect x="30" y="220" width="165" height="22" rx="5" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="235" fill="#34D399" font-family="sans-serif" font-size="4">Spent: PKR 480K</text>
+  <rect x="205" y="220" width="165" height="22" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="215" y="235" fill="#63C8FF" font-family="sans-serif" font-size="4">Revenue: PKR 1.8M (3.75x ROI)</text>
+</svg>

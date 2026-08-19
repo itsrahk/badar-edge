@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">ECOMMERCE PLATFORM</text>
+  <!-- Browser -->
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <!-- Header -->
+  <rect x="20" y="56" width="360" height="24" fill="rgba(255,255,255,0.02)"/>
+  <text x="30" y="72" fill="#63C8FF" font-family="sans-serif" font-size="6" font-weight="700">BShop</text>
+  <text x="80" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Home</text>
+  <text x="110" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Shop</text>
+  <text x="140" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Categories</text>
+  <text x="190" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Deals</text>
+  <text x="355" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="5">🛒 3</text>
+  <text x="375" y="72" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="5">👤</text>
+  <!-- Products grid -->
+  <rect x="30" y="88" width="75" height="80" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="67" y="118" fill="rgba(99,200,255,0.3)" font-family="sans-serif" font-size="14" text-anchor="middle">👟</text>
+  <text x="37" y="140" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Running Shoes</text>
+  <text x="37" y="152" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 8,500</text>
+  <rect x="37" y="158" width="60" height="10" rx="5" fill="rgba(99,200,255,0.15)"/>
+  <text x="67" y="166" fill="#63C8FF" font-family="sans-serif" font-size="4" text-anchor="middle">Add to Cart</text>
+  <rect x="117" y="88" width="75" height="80" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="154" y="118" fill="rgba(168,85,247,0.3)" font-family="sans-serif" font-size="14" text-anchor="middle">🎧</text>
+  <text x="124" y="140" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Wireless Headphones</text>
+  <text x="124" y="152" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 12,999</text>
+  <rect x="124" y="158" width="60" height="10" rx="5" fill="rgba(168,85,247,0.15)"/>
+  <text x="154" y="166" fill="#A855F7" font-family="sans-serif" font-size="4" text-anchor="middle">Add to Cart</text>
+  <rect x="204" y="88" width="75" height="80" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="241" y="118" fill="rgba(251,146,60,0.3)" font-family="sans-serif" font-size="14" text-anchor="middle">⌚</text>
+  <text x="211" y="140" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Smart Watch</text>
+  <text x="211" y="152" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 24,999</text>
+  <rect x="211" y="158" width="60" height="10" rx="5" fill="rgba(251,146,60,0.15)"/>
+  <text x="241" y="166" fill="#FB923C" font-family="sans-serif" font-size="4" text-anchor="middle">Add to Cart</text>
+  <rect x="291" y="88" width="75" height="80" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="328" y="118" fill="rgba(52,211,153,0.3)" font-family="sans-serif" font-size="14" text-anchor="middle">🎒</text>
+  <text x="298" y="140" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">Travel Backpack</text>
+  <text x="298" y="152" fill="#34D399" font-family="sans-serif" font-size="5" font-weight="600">PKR 6,999</text>
+  <rect x="298" y="158" width="60" height="10" rx="5" fill="rgba(52,211,153,0.15)"/>
+  <text x="328" y="166" fill="#34D399" font-family="sans-serif" font-size="4" text-anchor="middle">Add to Cart</text>
+  <!-- Stats bar -->
+  <rect x="30" y="180" width="340" height="44" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="45" y="196" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">📦 Orders today:</text>
+  <text x="110" y="196" fill="#63C8FF" font-family="sans-serif" font-size="4.5" font-weight="600">47</text>
+  <text x="155" y="196" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">💰 Revenue:</text>
+  <text x="200" y="196" fill="#34D399" font-family="sans-serif" font-size="4.5" font-weight="600">PKR 2.1M</text>
+  <text x="270" y="196" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4">👁️ Visitors:</text>
+  <text x="315" y="196" fill="#A855F7" font-family="sans-serif" font-size="4.5" font-weight="600">3,842</text>
+  <text x="45" y="216" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="4">Conversion rate: 1.2% · Avg order: PKR 12,500</text>
+</svg>

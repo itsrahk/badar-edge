@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">MOBILE APP DASHBOARD</text>
+  <rect x="130" y="40" width="140" height="200" rx="16" fill="#0d1527" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="130" y="40" width="140" height="16" rx="16" fill="rgba(255,255,255,0.03)"/>
+  <rect x="175" y="46" width="50" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <text x="145" y="72" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="5" font-weight="600">Dashboard</text>
+  <rect x="140" y="80" width="120" height="24" rx="6" fill="rgba(52,211,153,0.08)"/>
+  <text x="150" y="92" fill="#34D399" font-family="sans-serif" font-size="8" font-weight="700">PKR 2.4M</text>
+  <text x="150" y="100" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">Monthly Revenue</text>
+  <rect x="140" y="110" width="55" height="28" rx="5" fill="rgba(99,200,255,0.06)"/>
+  <text x="150" y="122" fill="#63C8FF" font-family="sans-serif" font-size="7" font-weight="700">142</text>
+  <text x="150" y="130" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">Orders</text>
+  <rect x="205" y="110" width="55" height="28" rx="5" fill="rgba(168,85,247,0.06)"/>
+  <text x="215" y="122" fill="#A855F7" font-family="sans-serif" font-size="7" font-weight="700">89%</text>
+  <text x="215" y="130" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="3">Target</text>
+  <text x="145" y="150" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="4" font-weight="500">Recent Activity</text>
+  <rect x="140" y="156" width="120" height="16" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="148" y="167" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">New order #1047 — PKR 12K</text>
+  <rect x="140" y="176" width="120" height="16" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="148" y="187" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">Payment received — PKR 8K</text>
+  <rect x="140" y="196" width="120" height="16" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="148" y="207" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">New customer registered</text>
+  <rect x="140" y="216" width="120" height="16" rx="4" fill="rgba(255,255,255,0.02)"/>
+  <text x="148" y="227" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="3">Shipment delivered #998</text>
+  <text x="30" y="72" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">APP FEATURES</text>
+  <text x="30" y="88" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">• Real-time notifications</text>
+  <text x="30" y="102" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">• Offline sync capability</text>
+  <text x="30" y="116" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">• Push notifications</text>
+  <text x="30" y="130" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">• Biometric login</text>
+  <text x="30" y="144" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">• QR code scanning</text>
+  <text x="285" y="72" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5.5" font-weight="500">TECH STACK</text>
+  <text x="285" y="88" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">React Native</text>
+  <text x="285" y="102" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Node.js Backend</text>
+  <text x="285" y="116" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">PostgreSQL DB</text>
+  <text x="285" y="130" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Redis Cache</text>
+  <text x="285" y="144" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">AWS Deployment</text>
+  <text x="30" y="240" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">iOS + Android • 4.8★ App Store rating • 12K downloads</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <text x="20" y="28" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="6" font-weight="600">SALES PERFORMANCE BI</text>
+  <rect x="20" y="40" width="360" height="195" rx="8" fill="#0d1527" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <rect x="20" y="40" width="360" height="16" rx="8" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="32" cy="48" r="3" fill="#F87171" opacity="0.6"/>
+  <circle cx="42" cy="48" r="3" fill="#FB923C" opacity="0.6"/>
+  <circle cx="52" cy="48" r="3" fill="#34D399" opacity="0.6"/>
+  <rect x="30" y="64" width="80" height="30" rx="6" fill="rgba(52,211,153,0.06)"/>
+  <text x="40" y="80" fill="#34D399" font-family="sans-serif" font-size="12" font-weight="700">PKR 45M</text>
+  <text x="40" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Total Sales</text>
+  <rect x="120" y="64" width="80" height="30" rx="6" fill="rgba(99,200,255,0.06)"/>
+  <text x="130" y="80" fill="#63C8FF" font-family="sans-serif" font-size="12" font-weight="700">342</text>
+  <text x="130" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Deals Closed</text>
+  <rect x="210" y="64" width="80" height="30" rx="6" fill="rgba(168,85,247,0.06)"/>
+  <text x="220" y="80" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">PKR 132K</text>
+  <text x="220" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Avg Deal Size</text>
+  <rect x="300" y="64" width="70" height="30" rx="6" fill="rgba(251,146,60,0.06)"/>
+  <text x="310" y="80" fill="#FB923C" font-family="sans-serif" font-size="12" font-weight="700">18d</text>
+  <text x="310" y="90" fill="rgba(255,255,255,0.25)" font-family="sans-serif" font-size="3.5">Sales Cycle</text>
+  <rect x="30" y="104" width="220" height="125" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="40" y="120" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">MONTHLY TARGETS</text>
+  <text x="40" y="140" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Target: PKR 50M</text>
+  <rect x="40" y="146" width="200" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="40" y="146" width="180" height="8" rx="4" fill="rgba(52,211,153,0.4)"/>
+  <text x="40" y="168" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Achieved: PKR 45M (90%)</text>
+  <text x="40" y="188" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-size="4">Remaining: PKR 5M</text>
+  <text x="40" y="208" fill="rgba(255,255,255,0.3)" font-family="sans-serif" font-rect x="265" y="104" width="105" height="125" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <text x="275" y="120" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-size="5">TEAM LEADERBOARD</text>
+  <text x="275" y="138" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">1. Ahmed — PKR 12M</text>
+  <text x="275" y="152" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">2. Sara — PKR 9.5M</text>
+  <text x="275" y="166" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">3. Bilal — PKR 8.2M</text>
+  <text x="275" y="180" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">4. Fatima — PKR 7.8M</text>
+  <text x="275" y="194" fill="rgba(255,255,255,0.4)" font-family="sans-serif" font-size="4">5. Ali — PKR 6.5M</text>
+  <text x="30" y="240" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="4">Period: Aug 2024 • Data source: CRM + ERP</text>
+</svg>

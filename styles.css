@@ -8731,14 +8731,14 @@ body::after {
 @media (prefers-reduced-motion: reduce) { .footer-payments-track { animation: none; } }
 
 @media (max-width: 900px) {
-    .footer-wrap { flex-direction: column; gap: 32px; }
-    .footer-logo-side { flex: none; }
+    .footer-wrap { gap: 32px; }
+    .footer-logo-side { flex: 0 0 180px; }
     .footer-logo-img { height: 120px; }
     .footer-groups { grid-template-columns: repeat(2, 1fr); }
     .footer-container { padding: 40px 20px 0; }
 }
 @media (max-width: 560px) {
-    .footer-groups { grid-template-columns: 1fr; }
+    .footer-groups { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     .footer-bottom-meta { flex-direction: column; gap: 10px; }
     .footer-bottom-links { gap: 16px; }
@@ -9065,7 +9065,9 @@ body::after {
     .cs-study-hero, .cs-hero-img { height: 220px; }
     .cs-overview-grid { grid-template-columns: 1fr; }
     .cs-results-grid { grid-template-columns: 1fr; }
-    .work-home-grid { grid-template-columns: 1fr; }
+    .work-home-grid { display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 24px 8px; }
+    .work-home-grid::-webkit-scrollbar { display: none; }
+    .work-home-card { min-width: 280px; max-width: 320px; scroll-snap-align: start; flex-shrink: 0; }
     .cs-accordion { padding: 0 20px 20px; }
     .cs-study-header { padding: 24px 20px 16px; }
     .work-project-info { padding: 20px; }

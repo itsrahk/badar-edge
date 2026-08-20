@@ -1391,63 +1391,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })();
 
-    // PORTFOLIO PAGE: Filter functionality
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const portfolioCategories = document.querySelectorAll(".portfolio-category");
+    // CASE STUDIES: Accordion toggle
+    document.querySelectorAll(".cs-accordion-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            const item = toggle.closest(".cs-accordion-item");
+            const wasActive = item.classList.contains("cs-accordion-item--active");
 
-    if (filterBtns.length > 0 && portfolioCategories.length > 0) {
-        filterBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                filterBtns.forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
-                const filter = btn.getAttribute("data-filter");
-
-                portfolioCategories.forEach((cat) => {
-                    if (filter === "all" || cat.getAttribute("data-category") === filter) {
-                        cat.style.display = "";
-                        gsap.fromTo(cat.querySelectorAll(".portfolio-card"),
-                            { opacity: 0, y: 30 },
-                            { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "power3.out" }
-                        );
-                    } else {
-                        cat.style.display = "none";
-                    }
-                });
+            // Close all items in this accordion
+            item.closest(".cs-accordion").querySelectorAll(".cs-accordion-item").forEach((el) => {
+                el.classList.remove("cs-accordion-item--active");
             });
+
+            // Toggle clicked item (open if it was closed)
+            if (!wasActive) {
+                item.classList.add("cs-accordion-item--active");
+            }
         });
+    });
+
+    // WORK PAGE: Scroll animations for project cards
+    const workFeatured = document.querySelector(".work-featured-section");
+    if (workFeatured) {
+        gsap.fromTo(".work-project--featured",
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out",
+                scrollTrigger: { trigger: ".work-featured-section", start: "top 80%", toggleActions: "play none none none" }
+            }
+        );
     }
 
-    // PORTFOLIO PAGE: Scroll animations
-    if (portfolioCategories.length > 0) {
-        gsap.fromTo(".portfolio-metric-card",
+    const workMore = document.querySelector(".work-more-section");
+    if (workMore) {
+        gsap.fromTo(".work-project--compact",
             { opacity: 0, y: 30 },
             {
                 opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
-                scrollTrigger: { trigger: ".portfolio-metrics-grid", start: "top 85%", toggleActions: "play none none none" }
+                scrollTrigger: { trigger: ".work-more-section", start: "top 80%", toggleActions: "play none none none" }
             }
         );
+    }
 
-        gsap.fromTo(".portfolio-filter-bar",
-            { opacity: 0, y: 20 },
-            {
-                opacity: 1, y: 0, duration: 0.6, ease: "power3.out",
-                scrollTrigger: { trigger: ".portfolio-filter-section", start: "top 85%", toggleActions: "play none none none" }
-            }
-        );
-
-        gsap.fromTo(".portfolio-category-header",
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
-                scrollTrigger: { trigger: ".portfolio-grid-section", start: "top 80%", toggleActions: "play none none none" }
-            }
-        );
-
-        gsap.fromTo(".portfolio-card",
+    // CASE STUDIES: Scroll animations
+    const csStudies = document.querySelector(".case-studies-section");
+    if (csStudies) {
+        gsap.fromTo(".cs-study",
             { opacity: 0, y: 40 },
             {
-                opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: "power3.out",
-                scrollTrigger: { trigger: ".portfolio-grid-section", start: "top 75%", toggleActions: "play none none none" }
+                opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power3.out",
+                scrollTrigger: { trigger: ".case-studies-section", start: "top 80%", toggleActions: "play none none none" }
+            }
+        );
+    }
+
+    // HOMEPAGE: Work cards animation
+    const workHomeGrid = document.querySelector(".work-home-grid");
+    if (workHomeGrid) {
+        gsap.fromTo(".work-home-card",
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out",
+                scrollTrigger: { trigger: ".work-home-grid", start: "top 80%", toggleActions: "play none none none" }
             }
         );
     }

@@ -8981,8 +8981,8 @@ body::after {
 
 .case-studies-section { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
 .cs-study { border-radius: 16px; overflow: hidden; margin-bottom: 40px; }
-.cs-study-hero { width: 100%; height: 320px; overflow: hidden; background: #0c1220; }
-.cs-study-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-study-hero, .cs-hero-img { width: 100%; height: 320px; overflow: hidden; background: #0c1220; }
+.cs-study-hero-img, .cs-hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cs-study-header { padding: 32px 32px 24px; }
 .cs-study-meta-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .cs-study-number { font-size: 0.7rem; color: #72829D; text-transform: uppercase; letter-spacing: 0.08em; }
@@ -9062,7 +9062,7 @@ body::after {
 @media (max-width: 768px) {
     .work-section-header { flex-direction: column; align-items: flex-start; }
     .work-more-grid { grid-template-columns: 1fr; }
-    .cs-study-hero { height: 220px; }
+    .cs-study-hero, .cs-hero-img { height: 220px; }
     .cs-overview-grid { grid-template-columns: 1fr; }
     .cs-results-grid { grid-template-columns: 1fr; }
     .work-home-grid { grid-template-columns: 1fr; }
@@ -9075,7 +9075,7 @@ body::after {
 
 @media (max-width: 480px) {
     .work-more-grid { gap: 20px; }
-    .cs-study-hero { height: 180px; }
+    .cs-study-hero, .cs-hero-img { height: 180px; }
     .work-project-visual { min-height: 200px; }
 }
 

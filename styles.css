@@ -8686,7 +8686,6 @@ body::after {
 }
 @media (max-width: 560px) {
     .problems-section, .industries-section, .why-section, .faq-section { padding: 60px 20px; }
-    .industries-grid { grid-template-columns: 1fr; }
 }
 
 /* --- FOOTER V2 --- */
@@ -9052,6 +9051,14 @@ body::after {
    RESPONSIVE — NEW COMPONENTS
    ======================================== */
 
+/* --- SCROLL HINT --- */
+.scroll-hint { display: none; }
+
+/* --- GRID WRAPPERS (for horizontal scroll) --- */
+.work-home-grid-wrap,
+.industries-grid-wrap,
+.testimonial-grid-wrap { position: relative; }
+
 @media (max-width: 1024px) {
     .work-project--featured { grid-template-columns: 1fr; }
     .work-project-visual { min-height: 240px; }
@@ -9065,14 +9072,44 @@ body::after {
     .cs-study-hero, .cs-hero-img { height: 220px; }
     .cs-overview-grid { grid-template-columns: 1fr; }
     .cs-results-grid { grid-template-columns: 1fr; }
-    .work-home-grid { display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 24px 8px; }
-    .work-home-grid::-webkit-scrollbar { display: none; }
-    .work-home-card { min-width: 280px; max-width: 320px; scroll-snap-align: start; flex-shrink: 0; }
     .cs-accordion { padding: 0 20px 20px; }
     .cs-study-header { padding: 24px 20px 16px; }
     .work-project-info { padding: 20px; }
     .work-project-title { font-size: 1.1rem; }
     .cs-study-title { font-size: 1.25rem; }
+
+    /* Scroll hint visible on mobile */
+    .scroll-hint { display: flex; align-items: center; gap: 6px; justify-content: flex-end; padding: 0 24px 12px; font-size: 0.75rem; color: #72829D; letter-spacing: 0.06em; text-transform: uppercase; }
+    .scroll-hint span { font-weight: 600; }
+
+    /* Horizontal scroll grids */
+    .work-home-grid-wrap,
+    .industries-grid-wrap,
+    .testimonial-grid-wrap { overflow: visible; }
+
+    .work-home-grid,
+    .industries-grid,
+    .testimonial-grid.top3 {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 24px 8px;
+    }
+    .work-home-grid::-webkit-scrollbar,
+    .industries-grid::-webkit-scrollbar,
+    .testimonial-grid.top3::-webkit-scrollbar { display: none; }
+
+    .work-home-card,
+    .industry-card,
+    .testimonial-card {
+        min-width: 280px;
+        max-width: 320px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 480px) {

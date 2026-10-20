@@ -3,7 +3,41 @@
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
+    /* --------------------------------------------------------------------------
+       0. REDUCED MOTION
+       --------------------------------------------------------------------------
+       The site runs a continuous neural canvas, an orbiting comet, ambient
+       blobs, two marquees and roughly twenty scroll-triggered GSAP reveals.
+       Only two of those honoured prefers-reduced-motion before this guard.
+
+       When the preference is set we (a) flag <html class="rm"> so CSS can pin
+       everything to its resting state, (b) skip smooth scrolling and
+       ScrollTrigger reveals, and (c) leave the final hero message and CTA
+       fully visible rather than half-animated.
+       -------------------------------------------------------------------------- */
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let prefersReducedMotion = motionQuery.matches;
+    const applyMotionPreference = () => {
+        document.documentElement.classList.toggle("rm", prefersReducedMotion);
+    };
+    applyMotionPreference();
+    motionQuery.addEventListener("change", (e) => {
+        prefersReducedMotion = e.matches;
+        applyMotionPreference();
+        window.dispatchEvent(new Event("be:motionchange"));
+    });
+
+    /* Collapse every GSAP tween rather than guarding each one.
+       The file registers ~40 separate tweens and ScrollTriggers; wrapping each
+       in `if (!prefersReducedMotion)` would be easy to miss one. Setting the
+       global default to a near-zero duration makes every tween - including
+       `from()` ones - resolve to its final state on the first tick, so content
+       that would have faded in simply starts visible. */
+    if (prefersReducedMotion && typeof gsap !== "undefined") {
+        gsap.defaults({ duration: 0.001, ease: "none" });
+    }
+
     // Initialize Lucide Icons (fallback if inline script missed)
     if (typeof lucide !== "undefined") {
         lucide.createIcons();
@@ -18,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
        1. Smooth Scrolling (Lenis) & GSAP ScrollTrigger Integration
        -------------------------------------------------------------------------- */
     let lenis;
-    if (typeof Lenis !== "undefined") {
+    if (typeof Lenis !== "undefined" && !prefersReducedMotion) {
         lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom premium ease-out
@@ -81,7 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.vy = (Math.random() - 0.5) * 0.4;
                 this.baseRadius = Math.random() * 2 + 1.5;
                 this.radius = this.baseRadius;
-                this.color = "rgba(168, 85, 247, 0.45)"; // Soft neon violet nodes
+                // Light-theme retune: node tint moves from neon violet to Ice
+                // Blue. On Off-White a violet dot is invisible; Ice Blue at
+                // 0.55 alpha reads as a deliberate mark instead.
+                this.color = "rgba(56, 189, 248, 0.55)";
             }
 
             update() {
@@ -127,10 +164,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fillStyle = this.color;
                 
-                // Add soft neon aura glow to expanded nodes
+                // Add soft aura to expanded nodes
                 if (this.radius > this.baseRadius + 0.5) {
                     ctx.shadowBlur = 6;
-                    ctx.shadowColor = "rgba(168, 85, 247, 0.8)";
+                    ctx.shadowColor = "rgba(3, 105, 161, 0.45)";
                 }
                 ctx.fill();
                 ctx.shadowBlur = 0; // Reset shadow state for connection rendering
@@ -175,7 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (dist < connectionDistance) {
                         // Blend line opacity based on connection distance
-                        const alpha = (1 - dist / connectionDistance) * 0.18;
+                        // Light-theme retune: 0.18 alpha of a light cyan is
+                        // invisible on Off-White, so the base weight is
+                        // raised and the stroke deepened.
+                        const alpha = (1 - dist / connectionDistance) * 0.30;
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -197,10 +237,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
 
                         if (isGlowing) {
-                            ctx.strokeStyle = `rgba(6, 182, 212, ${alpha * 2})`; // Glowing neon cyan
+                            ctx.strokeStyle = `rgba(3, 105, 161, ${alpha * 2})`; // Deep ice-blue accent
                             ctx.lineWidth = 1.1;
                         } else {
-                            ctx.strokeStyle = `rgba(99, 200, 255, ${alpha})`; // Soft indigo base
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${alpha})`; // Ice-blue base
                             ctx.lineWidth = 0.65;
                         }
                         ctx.stroke();
@@ -214,11 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
 
                     if (mdist < mouse.radius) {
-                        const alpha = (1 - mdist / mouse.radius) * 0.22;
+                        const alpha = (1 - mdist / mouse.radius) * 0.30;
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+                        ctx.strokeStyle = `rgba(3, 105, 161, ${alpha})`;
                         ctx.lineWidth = 1.0;
                         ctx.stroke();
                     }
@@ -515,10 +555,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Hero stat cards — staggered entry + count-up on load
         const heroStatCards = document.querySelectorAll(".hero-stat-card");
         if (heroStatCards.length > 0) {
-            gsap.fromTo(heroStatCards,
-                { opacity: 0, y: 24, scale: 0.9 },
-                { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.15, ease: "power3.out" }
-            );
+            if (prefersReducedMotion) {
+                // No count-up roll: show the final value immediately.
+                heroStatCards.forEach(el => { el.style.opacity = "1"; });
+            } else {
+                gsap.fromTo(heroStatCards,
+                    { opacity: 0, y: 24, scale: 0.9 },
+                    { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.15, ease: "power3.out" }
+                );
+            }
 
             const heroVals = document.querySelectorAll(".hero-stat-card .stat-value");
             const heroData = [];
@@ -532,6 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             heroData.forEach((item, i) => {
+                if (prefersReducedMotion) return;      // value already final
                 const valObj = { val: 0 };
                 gsap.to(valObj, {
                     val: item.target,
@@ -630,26 +676,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
         });
-
-        // Problem section cards entry
-        const problemGrid = document.querySelector(".problem-grid");
-        if (problemGrid) {
-            gsap.fromTo(".problem-card", 
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.2,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: problemGrid,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
 
         // Problem outcome line animation
         const outcomeLine = document.querySelector(".problem-outcome");
@@ -1093,6 +1119,82 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.addEventListener('click', closeSidebar);
             });
         }
+
+        // ------------------------------------------------------------------
+        // NAVBAR DROPDOWNS (Services / Industries)
+        // Click-to-toggle so the menu is keyboard reachable; hover is handled
+        // in CSS via :hover on .nav-item. Escape and outside-click both close.
+        // ------------------------------------------------------------------
+        const navItems = Array.from(document.querySelectorAll('.nav-item.has-sub'));
+
+        function closeAllNavMenus(except) {
+            navItems.forEach(item => {
+                if (item === except) return;
+                item.classList.remove('open');
+                const btn = item.querySelector('.nav-parent');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        navItems.forEach(item => {
+            const btn = item.querySelector('.nav-parent');
+            if (!btn) return;
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const willOpen = !item.classList.contains('open');
+                closeAllNavMenus(item);
+                item.classList.toggle('open', willOpen);
+                btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            });
+
+            // Keyboard: leaving the subtree closes it.
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && item.classList.contains('open')) {
+                    item.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.focus();
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item.has-sub')) closeAllNavMenus(null);
+        });
+
+        // Mark the current page in the navbar.
+        // NOTE: compares resolved paths, NOT basenames. Comparing filenames
+        // alone collides "index.html" (homepage) with "services/index.html"
+        // and would auto-open the Services dropdown on the homepage.
+        (function markActiveNavLink() {
+            const here = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').toLowerCase();
+            function resolveHref(href) {
+                try {
+                    const u = new URL(href, location.href);
+                    return u.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').toLowerCase();
+                } catch (e) {
+                    return href.toLowerCase();
+                }
+            }
+
+            document.querySelectorAll('.nav-links a[href]').forEach(a => {
+                if (resolveHref(a.getAttribute('href')) === here) a.classList.add('active');
+            });
+
+            // Highlight the current page inside its dropdown, but do NOT open
+            // it on load - a menu covering the hero on first paint reads as a
+            // glitch. The parent item is marked so it can show a subtle state.
+            document.querySelectorAll('.nav-item.has-sub').forEach(item => {
+                const hit = Array.from(item.querySelectorAll('.nav-sub a[href]'))
+                    .find(a => resolveHref(a.getAttribute('href')) === here);
+                if (hit) {
+                    hit.classList.add('active');
+                    item.classList.add('has-active');
+                    const btn = item.querySelector('.nav-parent');
+                    if (btn) btn.classList.add('has-active');
+                }
+            });
+        })();
 
         // Expandable sidebar sub-menus (Solutions / Industries)
         document.querySelectorAll('.sidebar-haspop > .sidebar-parent').forEach(btn => {

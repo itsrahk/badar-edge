@@ -1,0 +1,19 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Local env / secrets
+.env
+.env.local
+*.local
+
+# Build output
+dist/
+build/
+.cache/

@@ -31,7 +31,7 @@
     <meta name="twitter:description" content="Book a free Growth Audit with Badar Edge. We respond within 1–2 hours with a clear next step.">
     <meta name="twitter:image" content="https://www.badaredge.com/metadata logo.png">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#F8FAFC">
     <link rel="icon" type="image/png" href="webicon.png">
     <meta name="google-site-verification" content="SqzVAyILZ7Z6uxnX9VeAbgG8auqVOi8GzJKkhMrVYng" />
 
@@ -66,6 +66,8 @@
 </head>
 <body class="cyber-theme">
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     
     <!-- Ambient Neural Grid Background (Canvas-rendered in app.js) -->
     <canvas id="neural-canvas"></canvas>
@@ -77,16 +79,51 @@
 
     <!-- Floating Cyber Navigation Bar -->
     <header class="navbar-container">
-<nav class="navbar" id="floating-dock">
+        <nav class="navbar" id="site-nav" aria-label="Main navigation">
             <a href="index.html" class="nav-brand">
                 <img src="logo.png" alt="Badar Edge" class="nav-logo-img">
             </a>
-            <button id="menu-toggle" class="hamburger" aria-label="Open sidebar">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>    </header>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item has-sub">
+                    <button type="button" class="nav-link nav-parent" aria-expanded="false" aria-controls="nav-sub-services">
+                        <span>Services</span><i data-lucide="chevron-down" class="icon-tiny nav-chevron"></i>
+                    </button>
+                    <ul class="nav-sub" id="nav-sub-services">
+                        <li><a href="services/index.html">All Services</a></li>
+                        <li><a href="services/traditional.html">Traditional Solutions</a></li>
+                        <li><a href="services/custom.html">Custom Solutions</a></li>
+                        <li><a href="services/packages.html">Recommended Solutions</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-sub">
+                    <button type="button" class="nav-link nav-parent" aria-expanded="false" aria-controls="nav-sub-industries">
+                        <span>Industries</span><i data-lucide="chevron-down" class="icon-tiny nav-chevron"></i>
+                    </button>
+                    <ul class="nav-sub" id="nav-sub-industries">
+                        <li><a href="dental-clinics.html">Private Clinics</a></li>
+                        <li><a href="real-estate.html">Real Estate</a></li>
+                        <li><a href="ecommerce.html">Ecommerce</a></li>
+                        <li><a href="startups.html">Startups</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio.html" class="nav-link">Work</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="contact.html" class="btn nav-cta">Book Free Call</a>
+                <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
@@ -116,7 +153,7 @@
         </li>
             <li class="sidebar-haspop">
             <button type="button" class="sidebar-parent"><span>Industries</span><i data-lucide="chevron-down" class="icon-tiny"></i></button>
-            <ul class="sidebar-sub"><li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Dental Clinics</a></li>
+            <ul class="sidebar-sub"><li><a href="dental-clinics.html" class="sidebar-link"><span class="link-dot"></span>Private Clinics</a></li>
             <li><a href="real-estate.html" class="sidebar-link"><span class="link-dot"></span>Real Estate</a></li>
             <li><a href="ecommerce.html" class="sidebar-link"><span class="link-dot"></span>Ecommerce</a></li>
             <li><a href="startups.html" class="sidebar-link"><span class="link-dot"></span>Startups</a></li></ul>
@@ -131,7 +168,7 @@
         <div class="sidebar-social"><a href="https://www.instagram.com/badaredge.pk?igsh=aWh4NXF1MmtsMWxm" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="social icons/instagram.png" alt="Instagram" class="social-img"></a><a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="social icons/linkedin.png" alt="LinkedIn" class="social-img"></a><a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="sidebar-social-icon"><img src="social icons/whatsapp.png" alt="WhatsApp" class="social-img"></a></div>
     </aside>
 
-    <main class="page-container">
+    <main class="page-container" id="main-content">
 
         <!-- HERO -->
         <section id="hero" class="section hero-section vertical-hero">
@@ -155,7 +192,7 @@
                         <i data-lucide="arrow-right" class="icon-small"></i>
                     </a>
                     <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
-                        <span>💬 WhatsApp Us</span>
+                        <span>WhatsApp Us</span>
                         <i data-lucide="message-circle" class="icon-small"></i>
                     </a>
                 </div>
@@ -222,7 +259,7 @@
                                 <label for="client-service" class="form-label">Which industry are you in? <span class="required-star">*</span></label>
                                 <select id="client-service" name="service" class="form-select" required>
                                     <option value="" disabled selected>Select your vertical...</option>
-                                    <option value="Dental Clinics">Dental Clinics</option>
+                                    <option value="Private Clinics">Private Clinics</option>
                                     <option value="Real Estate">Real Estate</option>
                                     <option value="Ecommerce">Ecommerce</option>
                                     <option value="Startups">Startups</option>
@@ -261,7 +298,7 @@
                 </p>
                 <div class="cta-actions">
                     <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge%2C%20I%20want%20to%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow btn-large">
-                        <span>💬 WhatsApp Us Now</span>
+                        <span>WhatsApp Us Now</span>
                         <i data-lucide="arrow-up-right" class="icon-small"></i>
                     </a>
                     <a href="https://pk.linkedin.com/in/raiarslanhussain" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
@@ -309,28 +346,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-payments">
-                <span class="footer-payments-label">We accept</span>
-                <div class="footer-payments-marquee">
-                    <div class="footer-payments-track">
-                        <div class="footer-payments-set">
-                            <span class="payment-badge"><img src="payments/easypaisa.png" alt="Easypaisa"></span>
-                            <span class="payment-badge"><img src="payments/bank-transfer.png" alt="Bank Transfer"></span>
-                            <span class="payment-badge"><img src="payments/binance.png" alt="Binance"></span>
-                            <span class="payment-badge"><img src="payments/nsave.png" alt="Nsave"></span>
-                            <span class="payment-badge"><img src="payments/remitly.png" alt="Remitly"></span>
-                        </div>
-                        <div class="footer-payments-set">
-                            <span class="payment-badge"><img src="payments/easypaisa.png" alt="Easypaisa"></span>
-                            <span class="payment-badge"><img src="payments/bank-transfer.png" alt="Bank Transfer"></span>
-                            <span class="payment-badge"><img src="payments/binance.png" alt="Binance"></span>
-                            <span class="payment-badge"><img src="payments/nsave.png" alt="Nsave"></span>
-                            <span class="payment-badge"><img src="payments/remitly.png" alt="Remitly"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-meta">
+<div class="footer-bottom-meta">
                 <span class="footer-copyright">&copy; 2026 Badar Edge. All rights reserved.</span>
                 <div class="footer-bottom-links">
                     <a href="#">Terms of Service</a>
@@ -349,5 +365,9 @@
 
     <!-- Code script logic -->
     <script src="app.js"></script>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/message/NHDB7Z7POFBSI1?text=Hi%20Badar%20Edge" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat with Badar Edge on WhatsApp">
+        <img src="social icons/whatsapp.png" alt="" class="whatsapp-fab-img" width="34" height="34">
+    </a>
 </body>
 </html>

@@ -5867,8 +5867,10 @@ body::after {
 
 /* hand-drawn curved underline under every section label, on every page.
    A single smooth arc stroked in the brand accent, stretched to the label
-   width so it reads like one curved marker swipe beneath the word. */
-.section-label::after {
+   width so it reads like one curved marker swipe beneath the word.
+   The hero eyebrow uses the same curve so the two read as one family. */
+.section-label::after,
+.hero-eyebrow::after {
     content: "";
     position: absolute;
     left: 0;
@@ -5876,7 +5878,7 @@ body::after {
     bottom: 0;
     height: 9px;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' fill='none'%3E%3Cpath d='M4 11 Q 100 1 196 11' stroke='%2338bdf8' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M4 11 Q 100 1 196 11' stroke='%2338bdf8' stroke-width='3' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -9861,17 +9863,17 @@ a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 /* Apply the fit to every placement of the logo. */
-.navbar .nav-logo-img     { --logo-h: 36px; }
+.navbar .nav-logo-img     { --logo-h: 44px; }
 .sidebar-logo img        { --logo-h: 38px; }
 .footer-logo-img         { --logo-h: 44px; }
 .hero-brand .hero-logo-img { --logo-h: 54px; }
 
-@media (max-width: 1080px) { .navbar .nav-logo-img { --logo-h: 33px; } }
-@media (max-width: 900px)  { .navbar .nav-logo-img { --logo-h: 30px; }
+@media (max-width: 1080px) { .navbar .nav-logo-img { --logo-h: 40px; } }
+@media (max-width: 900px)  { .navbar .nav-logo-img { --logo-h: 36px; }
                               .hero-brand .hero-logo-img { --logo-h: 44px; } }
-@media (max-width: 600px)  { .navbar .nav-logo-img { --logo-h: 28px; }
+@media (max-width: 600px)  { .navbar .nav-logo-img { --logo-h: 33px; }
                               .hero-brand .hero-logo-img { --logo-h: 38px; } }
-@media (max-width: 420px)  { .navbar .nav-logo-img { --logo-h: 26px; } }
+@media (max-width: 420px)  { .navbar .nav-logo-img { --logo-h: 30px; } }
 
 /* The hero plate now hugs the logo instead of the transparent canvas. */
 .hero-brand {
@@ -10894,9 +10896,10 @@ button:focus-visible { outline-color: var(--color-focus); }
         padding: 0 20px;
     }
 
-    /* logo first */
+    /* the mark sits BELOW the copy and the CTAs on mobile: the headline and
+       the actions are what a visitor came for, the mark supports them */
     .hero-right {
-        order: -1;
+        order: 1;
         padding: 8px 0 20px;
         /* the desktop column reserves 460px for the mark. On mobile the ring
            is only ~200px, so that height became ~130px of dead space above
@@ -10904,9 +10907,9 @@ button:focus-visible { outline-color: var(--color-focus); }
         min-height: 0;
     }
     .hero-rings-wrap {
-        width: 210px;
-        height: 210px;
-        --comet-r: 100px;
+        width: 260px;
+        height: 260px;
+        --comet-r: 124px;
     }
 
     .hero-left {
@@ -10947,7 +10950,7 @@ button:focus-visible { outline-color: var(--color-focus); }
 }
 
 @media (max-width: 420px) {
-    .hero-rings-wrap { width: 168px; height: 168px; --comet-r: 80px; }
+    .hero-rings-wrap { width: 210px; height: 210px; --comet-r: 100px; }
     .hero-stats-row { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -12363,24 +12366,29 @@ button:focus-visible { outline-color: var(--color-focus); }
    ========================================================================== */
 
 .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 18px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent-ink);
 }
-.hero-eyebrow-dot {
+.hero-eyebrow::before {
+    content: "";
+    display: inline-block;
     width: 7px;
     height: 7px;
-    flex: 0 0 auto;
+    margin-right: 9px;
     border-radius: 50%;
     background: var(--color-ice-blue);
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-ice-blue) 16%, transparent);
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
 
 /* --- trust line reads as a commitment --- */
@@ -12407,8 +12415,9 @@ button:focus-visible { outline-color: var(--color-focus); }
 /* --- mobile: centre the column, keep the eyebrow aligned with it --- */
 @media (max-width: 860px) {
     .hero-eyebrow {
-        justify-content: center;
-        margin-bottom: 14px;
+        margin-bottom: 20px;
+        font-size: 0.72rem;
+        letter-spacing: 0.13em;
     }
     .hero-trust-line {
         justify-content: center;
@@ -12418,4 +12427,193 @@ button:focus-visible { outline-color: var(--color-focus); }
        column padding and the row gap to close it. */
     .hero-layout { row-gap: 20px; }
     .hero-right { padding: 4px 0 0; }
+}
+
+
+/* ==========================================================================
+   40. WHY CARDS, WORK CARDS, RAILS, MOBILE SIDEBAR
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   40.1 WHY PROBLEM-FIRST CARDS
+   --------------------------------------------------------------------------
+   The comparison was two navy cards that only differed by a text colour and
+   a chip. Now the "us" side carries the original black and white logo on a
+   white plate (the blue logo disappears on a light card), the "them" side
+   carries a muted plate, and each bullet gets a marker that matches its
+   side: a dash for them, a check for us.
+   -------------------------------------------------------------------------- */
+.why-card {
+    padding: 34px 30px 30px;
+    gap: 22px;
+}
+.why-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ice-blue) 14%, transparent);
+}
+.why-card-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    background: var(--color-surface-dark);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 18%, transparent);
+    color: var(--color-muted-on-dark);
+}
+.why-card-mark i { width: 19px; height: 19px; }
+.why-card-kind {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-text-on-dark);
+}
+
+/* the black and white logo needs a white plate to read on a navy card */
+.why-logo-plate {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px -12px rgb(15 23 42 / 0.6);
+}
+.why-logo {
+    display: block;
+    height: 26px;
+    width: auto;
+}
+
+.why-list { gap: 16px; }
+.why-list li { gap: 12px; font-size: 0.9rem; }
+.why-list li i { margin-top: 1px; }
+.why-card--them .why-list li i { color: var(--color-muted-on-dark); }
+.why-card--us .why-list li i { color: var(--color-ice-blue); }
+.why-card--us {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+}
+.why-card--them { opacity: 0.94; }
+
+@media (max-width: 620px) {
+    .why-card { padding: 26px 20px 24px; }
+    .why-logo-plate { padding: 8px 16px; }
+    .why-logo { height: 22px; }
+}
+
+/* --------------------------------------------------------------------------
+   40.2 WORK / PROOF CARDS
+   --------------------------------------------------------------------------
+   The card is an <a>, so the browser was underlining every title, metric and
+   label inside it. text-decoration is propagated from the anchor, so one
+   "none" on the card clears the whole card. The frame also gets a slow
+   zoom on hover and a hairline between the shot and the body.
+   -------------------------------------------------------------------------- */
+.work-home-card,
+.be-system-card,
+.industry-card,
+.testimonial-card {
+    text-decoration: none;
+}
+.work-home-card-visual {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ice-blue) 16%, transparent);
+}
+.work-home-card-img {
+    transition: transform var(--dur-slow) var(--ease-standard);
+}
+.work-home-card:hover .work-home-card-img {
+    transform: scale(1.045);
+}
+.work-home-card:hover {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 38%, transparent);
+}
+.work-home-card-title,
+.work-home-card-services,
+.work-home-card-metric,
+.work-result-num,
+.work-result-label {
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   40.3 HORIZONTAL RAILS WITH A VISIBLE SCROLLBAR
+   --------------------------------------------------------------------------
+   The three homepage rails (work, industries, testimonials) scroll sideways.
+   The scrollbar was hidden, so the rail looked like a row that simply ended.
+   They now scroll at every width and carry a visible, on-brand scrollbar.
+   -------------------------------------------------------------------------- */
+.work-home-grid,
+.industries-grid,
+.testimonial-grid.top3 {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-navy) var(--color-surface-muted);
+    padding: 4px 24px 14px;
+    -webkit-overflow-scrolling: touch;
+}
+.work-home-grid::-webkit-scrollbar,
+.industries-grid::-webkit-scrollbar,
+.testimonial-grid.top3::-webkit-scrollbar {
+    height: 8px;
+}
+.work-home-grid::-webkit-scrollbar-track,
+.industries-grid::-webkit-scrollbar-track,
+.testimonial-grid.top3::-webkit-scrollbar-track {
+    background: var(--color-surface-muted);
+    border-radius: 8px;
+}
+.work-home-grid::-webkit-scrollbar-thumb,
+.industries-grid::-webkit-scrollbar-thumb,
+.testimonial-grid.top3::-webkit-scrollbar-thumb {
+    background: var(--color-navy);
+    border-radius: 8px;
+}
+.work-home-grid::-webkit-scrollbar-thumb:hover,
+.industries-grid::-webkit-scrollbar-thumb:hover,
+.testimonial-grid.top3::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-ink);
+}
+
+/* card widths are set so the rail always overflows a little and the
+   scrollbar is never a dead control */
+.work-home-grid { max-width: 1200px; margin: 0 auto; }
+.work-home-card { flex: 0 0 auto; width: 420px; scroll-snap-align: start; }
+.industries-grid { max-width: 1200px; margin: 8px auto 0; }
+.industry-card { flex: 0 0 auto; width: 300px; scroll-snap-align: start; }
+.testimonial-grid.top3 { max-width: 1200px; margin: 0 auto; }
+.testimonial-grid.top3 .testimonial-card { flex: 0 0 auto; width: 400px; scroll-snap-align: start; }
+
+@media (max-width: 860px) {
+    .work-home-grid,
+    .industries-grid,
+    .testimonial-grid.top3 { gap: 14px; padding: 4px 20px 12px; }
+    .work-home-card { width: 300px; }
+    .industry-card { width: 268px; }
+    .testimonial-grid.top3 .testimonial-card { width: 300px; }
+}
+
+/* --------------------------------------------------------------------------
+   40.4 MOBILE SIDEBAR  --  fewer lines
+   --------------------------------------------------------------------------
+   The sub-menus were open by default, which pushed the social row off the
+   bottom of a phone screen. The JS now collapses them when the drawer opens
+   on a narrow screen (tapping a parent opens just that one), and the row
+   spacing is tightened so the whole list fits without scrolling.
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+    .sidebar-links { gap: 0; padding-left: 8px; }
+    .sidebar-links > li { padding-left: 18px; }
+    .sidebar-links li a { padding: 8px 12px; font-size: 0.86rem; }
+    .sidebar-parent { padding: 9px 12px; font-size: 0.86rem; }
+    .sidebar-sub { margin: 2px 0 2px 12px; gap: 0; }
+    .sidebar-sub li a { padding: 6px 12px; font-size: 0.82rem; }
+    .sidebar-social { margin-top: 12px; }
 }

@@ -1099,6 +1099,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 sidebar.classList.add('open');
                 overlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
+                /* On a phone the open sub-menus pushed the list down and the
+                   social row off the bottom of the screen. Collapse them here;
+                   tapping a parent opens just that one (handler below). */
+                if (window.matchMedia('(max-width: 860px)').matches) {
+                    document.querySelectorAll('.sidebar-haspop.open').forEach(item => {
+                        item.classList.remove('open');
+                    });
+                }
             }
 
             function closeSidebar() {

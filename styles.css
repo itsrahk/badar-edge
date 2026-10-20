@@ -8757,9 +8757,105 @@ body::after {
 .why-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
 .why-section .section-subtitle { max-width: 640px; margin-left: auto; margin-right: auto; }
 .why-grid { margin-top: 8px; }
-.trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 44px; }
-.trust-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; color: var(--color-body); padding: 10px 18px; border-radius: 30px; border: 1px solid color-mix(in srgb, var(--color-ice-blue) 18%, transparent); background: color-mix(in srgb, var(--color-ice-blue) 6%, transparent); }
-.trust-badge i, .trust-badge svg { width: 15px; height: 15px; color: var(--color-button-hover); }
+/* --------------------------------------------------------------------------
+   42. TRUST BADGES  --  two opposing continuous rails
+   --------------------------------------------------------------------------
+   The five badges sat in a wrapping flex row. They are now two rails: the
+   top row scrolls left, the bottom row scrolls right, so the eye reads them
+   as a continuous flow in opposite directions. Each badge is a darker navy
+   card with low transparency (no glass tint), and the set is duplicated
+   once for a seamless loop.
+   -------------------------------------------------------------------------- */
+.trust-badges.trust-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 44px;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 6%,
+        #000 94%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 6%,
+        #000 94%,
+        transparent 100%);
+}
+.trust-row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 14px;
+    will-change: transform;
+}
+.trust-row--left {
+    animation: trust-row-left 40s linear infinite;
+}
+.trust-row--right {
+    animation: trust-row-right 40s linear infinite;
+}
+.trust-badges.trust-rail:hover .trust-row {
+    animation-play-state: paused;
+}
+/* The track scrolls by exactly one set, so the loop is seamless whatever the
+   viewport width. --set-w is measured in app.js. */
+@keyframes trust-row-left {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(calc(-1 * var(--set-w, 400px)), 0, 0); }
+}
+@keyframes trust-row-right {
+    from { transform: translate3d(calc(-1 * var(--set-w, 400px)), 0, 0); }
+    to   { transform: translate3d(0, 0, 0); }
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-on-dark);
+    padding: 11px 20px;
+    border-radius: 30px;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 22%, transparent);
+    background: var(--color-navy);
+    box-shadow: 0 8px 22px -16px rgb(15 23 42 / 0.5);
+    white-space: nowrap;
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out);
+}
+.trust-badge i, .trust-badge svg {
+    width: 15px;
+    height: 15px;
+    color: var(--color-ice-blue);
+}
+.trust-badge:hover {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 50%, transparent);
+    box-shadow: 0 10px 26px -16px rgb(15 23 42 / 0.6);
+}
+
+@media (max-width: 860px) {
+    .trust-badges.trust-rail { gap: 10px; margin-top: 30px; }
+    .trust-row { gap: 10px; }
+    .trust-badge { font-size: 0.78rem; padding: 9px 16px; }
+    .trust-row--left,
+    .trust-row--right { animation-duration: 30s; }
+}
+
+/* --------------------------------------------------------------------------
+   42.1 REDUCED MOTION  --  stop both rails
+   -------------------------------------------------------------------------- */
+.rm .trust-row {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.rm .trust-row .trust-badge[aria-hidden="true"] {
+    display: none;
+}
 
 /* --- FAQ --- */
 .faq-section { padding: 100px 28px; }
@@ -11007,7 +11103,7 @@ button:focus-visible { outline-color: var(--color-focus); }
     }
 
     .hero-headline {
-        font-size: clamp(2.4rem, 4.4vw, 3.7rem);
+        font-size: clamp(2rem, 4.4vw, 3.2rem);
         line-height: 1.06;
         text-wrap: balance;
     }
@@ -12395,10 +12491,14 @@ button:focus-visible { outline-color: var(--color-focus); }
 .hero-trust-line {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-top: 16px;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    line-height: 1.4;
     color: var(--color-muted);
+    text-align: center;
+    white-space: nowrap;
 }
 .hero-trust-line i {
     width: 16px;
@@ -12617,3 +12717,188 @@ button:focus-visible { outline-color: var(--color-focus); }
     .sidebar-sub li a { padding: 6px 12px; font-size: 0.82rem; }
     .sidebar-social { margin-top: 12px; }
 }
+
+
+/* ==========================================================================
+   41. TRUST RAIL, MOBILE LOGO, SIDEBAR LINES, FOOTER
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   41.1 TRUST PROMISES  --  continuous horizontal flow, one at a time
+   --------------------------------------------------------------------------
+   The four promises sat in a static four-across panel. They are now a rail
+   of individual cards that slides past one at a time, with a soft fade at
+   both edges, so each promise gets the reader's full attention. The set is
+   duplicated once so the loop never shows a seam, and the second copy is
+   hidden from assistive tech.
+   -------------------------------------------------------------------------- */
+.hero-trust-rail {
+    grid-column: 1 / -1;
+    /* more air between the hero copy and the promises */
+    margin-top: 34px;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 5%,
+        #000 95%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 5%,
+        #000 95%,
+        transparent 100%);
+}
+
+.hero-stats-row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 18px;
+    padding: 4px 0 10px;
+    margin-top: 0;
+    /* the old panel chrome lived on the row; it now lives on each card */
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    position: static;
+    will-change: transform;
+    animation: trust-scroll 42s linear infinite;
+}
+.hero-stats-row::before { content: none; }
+.hero-trust-rail:hover .hero-stats-row { animation-play-state: paused; }
+
+@keyframes trust-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.hero-stats-row .hero-stat-card {
+    flex: 0 0 auto;
+    width: 330px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px -20px rgb(15 23 42 / 0.45);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out);
+}
+.hero-stats-row .hero-stat-card:first-child {
+    border-left: 1px solid var(--color-border);
+    padding-left: 22px;
+}
+.hero-stats-row .hero-stat-card:last-child {
+    padding-right: 22px;
+}
+.hero-stats-row .hero-stat-card:hover {
+    background: var(--color-surface);
+    border-color: color-mix(in srgb, var(--color-ice-blue) 40%, transparent);
+    box-shadow: 0 16px 34px -20px rgb(15 23 42 / 0.5);
+}
+.hero-stats-row .hero-stat-card:hover .trust-icon {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-ice-blue) 12%, transparent);
+}
+
+@media (max-width: 860px) {
+    .hero-trust-rail { margin-top: 22px; }
+    .hero-stats-row { gap: 12px; }
+    .hero-stats-row .hero-stat-card { width: 268px; padding: 16px 18px; }
+    .hero-stats-row .hero-stat-card:first-child { padding-left: 18px; }
+    .hero-stats-row .hero-stat-card:last-child { padding-right: 18px; }
+    .hero-stats-row { animation-duration: 32s; }
+}
+
+/* --------------------------------------------------------------------------
+   41.2 MOBILE NAV LOGO  --  half again as big
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .navbar .nav-logo-img { --logo-h: 50px; }
+    .navbar { height: 82px; }
+    :root { --bar-h: 82px; }
+}
+@media (max-width: 600px) {
+    .navbar .nav-logo-img { --logo-h: 46px; }
+}
+@media (max-width: 420px) {
+    .navbar .nav-logo-img { --logo-h: 42px; }
+}
+
+/* --------------------------------------------------------------------------
+   41.3 SIDEBAR  --  drop the tree lines behind the buttons
+   --------------------------------------------------------------------------
+   The vertical rule and the little tick were a tree connector from an older
+   navigation. They drew a line behind every button, which read as a stray
+   rule. Removed, and the indent they needed goes with them.
+   -------------------------------------------------------------------------- */
+.sidebar-links { padding-left: 0; }
+.sidebar-links > li { padding-left: 0; }
+.sidebar-links > li::before,
+.sidebar-links > li::after { content: none; }
+
+/* --------------------------------------------------------------------------
+   41.4 FOOTER  --  professional and clean on mobile
+   --------------------------------------------------------------------------
+   The logo block used to sit beside a two column link grid, which left the
+   links squeezed into half the screen width. On a phone the footer now
+   stacks: brand, then the link columns, then the social row, then the
+   bottom bar, with a hairline between the brand and the links.
+   -------------------------------------------------------------------------- */
+@media (max-width: 700px) {
+    .footer-container { padding: 36px 20px 0; }
+    .footer-wrap {
+        flex-direction: column;
+        gap: 26px;
+        padding-bottom: 28px;
+    }
+    .footer-logo-side {
+        flex: 0 0 auto;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid color-mix(in srgb, var(--color-navy) 8%, transparent);
+        width: 100%;
+    }
+    /* the logo is sized with --logo-h, never with a raw height: the fit rule
+       (section 20) owns the box AND the negative margins, and overriding the
+       height alone pulled the wordmark up over the copy */
+    .footer-logo-img { --logo-h: 50px; }
+    .footer-copy {
+        font-size: 0.85rem;
+        line-height: 1.55;
+        max-width: 32ch;
+        text-align: left;
+    }
+    .footer-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 20px;
+        width: 100%;
+        text-align: left;
+    }
+    .footer-group { gap: 8px; text-align: left; align-items: flex-start; }
+    .footer-group-title { font-size: 0.68rem; margin-bottom: 2px; }
+    .footer-group .footer-link { font-size: 0.86rem; padding: 2px 0; }
+    .footer-connect-socials { gap: 12px; justify-content: flex-start; }
+    .footer-bottom {
+        padding: 18px 20px 28px;
+        gap: 12px;
+        text-align: center;
+    }
+    .footer-bottom-meta {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .footer-bottom-links { gap: 18px; }
+}
+
+/* --------------------------------------------------------------------------
+   41.5 HERO EYEBROW  --  drop the leading dot
+   -------------------------------------------------------------------------- */
+.hero-eyebrow::before { content: none; }

@@ -229,34 +229,65 @@
                 </div>
 
                 <!-- Full width: trust strip, four promises, each of which must stay true -->
-                <div class="hero-stats-row">
-                    <div class="hero-stat-card">
-                        <span class="trust-icon"><i data-lucide="search" aria-hidden="true"></i></span>
-                        <span class="trust-copy">
-                            <span class="stat-label">Problem first</span>
-                            <span class="stat-sub">We diagnose before we sell anything.</span>
-                        </span>
-                    </div>
-                    <div class="hero-stat-card">
-                        <span class="trust-icon"><i data-lucide="unlock" aria-hidden="true"></i></span>
-                        <span class="trust-copy">
-                            <span class="stat-label">You own everything</span>
-                            <span class="stat-sub">Your accounts, your data, your assets.</span>
-                        </span>
-                    </div>
-                    <div class="hero-stat-card">
-                        <span class="trust-icon"><i data-lucide="bar-chart-3" aria-hidden="true"></i></span>
-                        <span class="trust-copy">
-                            <span class="stat-label">Honest reporting</span>
-                            <span class="stat-sub">We report outcomes, not activity.</span>
-                        </span>
-                    </div>
-                    <div class="hero-stat-card">
-                        <span class="trust-icon"><i data-lucide="user-check" aria-hidden="true"></i></span>
-                        <span class="trust-copy">
-                            <span class="stat-label">Real people</span>
-                            <span class="stat-sub">A person handles every important conversation.</span>
-                        </span>
+                <div class="hero-trust-rail">
+                    <div class="hero-stats-row">
+                        <div class="hero-stat-card">
+                            <span class="trust-icon"><i data-lucide="search" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Problem first</span>
+                                <span class="stat-sub">We diagnose before we sell anything.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="trust-icon"><i data-lucide="unlock" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">You own everything</span>
+                                <span class="stat-sub">Your accounts, your data, your assets.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="trust-icon"><i data-lucide="bar-chart-3" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Honest reporting</span>
+                                <span class="stat-sub">We report outcomes, not activity.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="trust-icon"><i data-lucide="user-check" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Real people</span>
+                                <span class="stat-sub">A person handles every important conversation.</span>
+                            </span>
+                        </div>
+                        <!-- set B (duplicate for a seamless loop) -->
+                        <div class="hero-stat-card" aria-hidden="true">
+                            <span class="trust-icon"><i data-lucide="search" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Problem first</span>
+                                <span class="stat-sub">We diagnose before we sell anything.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card" aria-hidden="true">
+                            <span class="trust-icon"><i data-lucide="unlock" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">You own everything</span>
+                                <span class="stat-sub">Your accounts, your data, your assets.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card" aria-hidden="true">
+                            <span class="trust-icon"><i data-lucide="bar-chart-3" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Honest reporting</span>
+                                <span class="stat-sub">We report outcomes, not activity.</span>
+                            </span>
+                        </div>
+                        <div class="hero-stat-card" aria-hidden="true">
+                            <span class="trust-icon"><i data-lucide="user-check" aria-hidden="true"></i></span>
+                            <span class="trust-copy">
+                                <span class="stat-label">Real people</span>
+                                <span class="stat-sub">A person handles every important conversation.</span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -464,12 +495,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="trust-badges">
-                <span class="trust-badge">Problem first</span>
-                <span class="trust-badge">You own everything</span>
-                <span class="trust-badge">Honest reporting</span>
-                <span class="trust-badge">AI with a person in charge</span>
-                <span class="trust-badge">No guaranteed results</span>
+            <div class="trust-badges trust-rail">
+                <div class="trust-row trust-row--left">
+                    <span class="trust-badge">Problem first</span>
+                    <span class="trust-badge">You own everything</span>
+                    <span class="trust-badge">Honest reporting</span>
+                </div>
+                <div class="trust-row trust-row--right">
+                    <span class="trust-badge">AI with a person in charge</span>
+                    <span class="trust-badge">No guaranteed results</span>
+                    <span class="trust-badge">Outcome focused</span>
+                </div>
             </div>
         </section>
 

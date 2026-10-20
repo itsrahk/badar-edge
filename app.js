@@ -1222,6 +1222,55 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* ------------------------------------------------------------------
+       TRUST RAILS
+       ------------------------------------------------------------------
+       Two rows of promise badges that scroll in opposite directions. The
+       track is cloned until it is at least twice the rail wide, and the
+       loop distance is set to exactly one set of badges, so the join is
+       invisible at any viewport width.
+       ------------------------------------------------------------------ */
+    (function buildTrustRails() {
+        const rails = document.querySelectorAll('.trust-rail');
+        if (!rails.length) return;
+
+        function layout() {
+            rails.forEach(rail => {
+                const row = rail.querySelector('.trust-row');
+                if (!row) return;
+
+                // reset to the authored set
+                row.querySelectorAll('[data-clone]').forEach(c => c.remove());
+
+                const set = Array.from(row.children);
+                if (!set.length) return;
+
+                // width of one set, including the gap after the last badge
+                const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+                const setWidth = set.reduce((n, el) => n + el.offsetWidth, 0) + gap * set.length;
+                row.style.setProperty('--set-w', setWidth + 'px');
+
+                // repeat until the track covers the rail plus one full set
+                const need = Math.max(2, Math.ceil((rail.clientWidth + setWidth) / setWidth));
+                for (let n = 1; n < need; n++) {
+                    set.forEach(el => {
+                        const clone = el.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        clone.setAttribute('data-clone', '1');
+                        row.appendChild(clone);
+                    });
+                }
+            });
+        }
+
+        layout();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(layout, 200);
+        });
+    })();
+
     // ROI bar width animation on scroll
     const roiBars = document.querySelectorAll(".roi-bar[data-width]");
     if (roiBars.length > 0) {

@@ -13055,6 +13055,72 @@ button:focus-visible { outline-color: var(--color-focus); }
     grid-template-columns: none;
 }
 
+/* --------------------------------------------------------------------------
+   42.3.1 SOLUTION CARD LINK  --  a real pill button, not a 32px icon
+   --------------------------------------------------------------------------
+   The shared `.service-link` is a small square icon button pinned to the
+   bottom-left of a card. The path cards need the full-width label under
+   the copy, so the link is re-declared here for the marquee: it sits in
+   the flow at the bottom of the card and carries its text.
+
+    The three labels have very different lengths ("See Recommended
+   Solutions" against "See All Services"), so each button is stretched to
+   the same width and centred. That keeps the three cards reading as one
+   set rather than three ragged buttons.
+   -------------------------------------------------------------------------- */
+.paths-marquee .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px 28px;
+}
+.paths-marquee .service-card .service-desc {
+    flex: 0 0 auto;
+}
+.paths-marquee .service-link {
+    position: static;
+    /* the card is a column flex box, so the button is stretched to the
+       card's content width rather than sized by its own label */
+    align-self: stretch;
+    width: auto;
+    height: auto;
+    margin-top: auto;
+    padding: 11px 16px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-surface) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 34%, transparent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-ice-blue);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: background-color var(--dur-base) var(--ease-standard),
+                border-color var(--dur-base) var(--ease-standard),
+                color var(--dur-base) var(--ease-standard);
+}
+.paths-marquee .service-link:hover {
+    background: var(--color-ice-blue);
+    border-color: var(--color-ice-blue);
+    color: var(--color-button-primary-text);
+}
+
+@media (max-width: 860px) {
+    .paths-marquee .service-card {
+        padding: 24px 22px;
+    }
+    .paths-marquee .service-link {
+        /* the longest label has to fit the narrowest card */
+        font-size: 0.8rem;
+        padding: 10px 14px;
+        gap: 6px;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
 @media (max-width: 860px) {
     .paths-marquee,
     .systems-marquee {

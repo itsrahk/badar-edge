@@ -6750,23 +6750,11 @@ body::after {
     background: linear-gradient(160deg, color-mix(in srgb, var(--color-ice-blue) 35%, transparent), color-mix(in srgb, var(--color-ice-blue) 35%, transparent) 45%, color-mix(in srgb, var(--color-button-hover) 40%, transparent));
     box-shadow: 0 0 50px -12px color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
 }
-.founder-frame::before {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border-radius: 15px;
-    border: 1px solid color-mix(in srgb, var(--color-surface) 12%, transparent);
-    pointer-events: none;
-}
-
+/* The photo and its borders now live on .founder-plate (section 42.13), so
+   the frame itself no longer draws any rules. */
+.founder-frame::before,
 .founder-frame::after {
-    content: '';
-    position: absolute;
-    inset: -12px;
-    border-radius: 26px;
-    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 14%, transparent);
-    animation: guidePulse var(--dur-loop) var(--ease-standard) infinite;
-    pointer-events: none;
+    content: none;
 }
 
 .founder-frame-img {
@@ -13791,60 +13779,113 @@ button:focus-visible { outline-color: var(--color-focus); }
    --------------------------------------------------------------------------
    The founder photo is now newfounder.jpeg, a 848x1264 portrait, so the
    square frame that matched the old 1080x1079 crop no longer fits it.
-   The frame is now a portrait box and both borders are drawn in Ice Blue:
-   a solid hairline on the image itself, and the pulsing outer rule that
-   was already there but too faint to read as a border.
+
+   The frame is a column now: the ice blue plate wraps ONLY the photograph,
+   and the caption sits below it on the card. Putting the caption inside
+   the plate made it read as a button, and on a phone the plate was
+   wide enough that the two competed.
    -------------------------------------------------------------------------- */
 .founder-frame {
     width: 250px;
     /* the frame must not be squeezed by the flex row it sits in */
     flex: 0 0 auto;
-    padding: 10px 10px 8px;
-    /* the gradient plate behind the image is the outer ice blue border */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* The plate: a thin ice blue border drawn around the photograph. */
+.founder-plate {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border-radius: 16px;
     background: linear-gradient(160deg,
         color-mix(in srgb, var(--color-ice-blue) 55%, transparent),
-        color-mix(in srgb, var(--color-ice-blue) 30%, transparent) 45%,
-        color-mix(in srgb, var(--color-button-hover) 45%, transparent));
-    box-shadow: 0 0 50px -12px color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+        color-mix(in srgb, var(--color-ice-blue) 22%, transparent) 45%,
+        color-mix(in srgb, var(--color-button-hover) 38%, transparent));
+    box-shadow: 0 0 40px -14px color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
 }
 
 /* the hairline that sits directly on the photograph */
-.founder-frame::before {
-    inset: 3px;
-    border-radius: 13px;
-    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 55%, transparent);
+.founder-plate::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+    pointer-events: none;
 }
 
 /* the pulsing outer rule, now bright enough to read as a border */
-.founder-frame::after {
-    inset: -10px;
+.founder-plate::after {
+    content: '';
+    position: absolute;
+    inset: -9px;
     border-radius: 24px;
-    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 42%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 34%, transparent);
+    animation: guidePulse var(--dur-loop) var(--ease-standard) infinite;
+    pointer-events: none;
 }
 
 .founder-frame-img {
+    display: block;
+    width: 100%;
     /* the new source is portrait (848 x 1264), so the frame follows it
        instead of cropping the head and shoulders out of the picture */
     aspect-ratio: 848 / 1264;
     /* the width/height attributes on the tag would otherwise fix the
        height and defeat the aspect ratio above */
     height: auto;
+    object-fit: cover;
     object-position: center top;
-    border-radius: 10px;
+    border-radius: 11px;
     /* the ice blue hairline that frames the image itself */
-    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 70%, transparent);
-    box-shadow: 0 0 24px -10px color-mix(in srgb, var(--color-ice-blue) 60%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 65%, transparent);
 }
 
-/* the caption sits under the plate, so it needs the same left edge */
+/* The caption sits under the plate, on the card, not on the border. */
 .founder-frame figcaption {
-    padding-top: 11px;
-    color: color-mix(in srgb, var(--color-heading) 60%, transparent);
+    padding: 0;
+    text-align: center;
+    color: color-mix(in srgb, var(--color-heading) 58%, transparent);
 }
 
-@media (max-width: 760px) {
+/* --------------------------------------------------------------------------
+   42.13.1 FOUNDER FRAME ON PHONES
+   --------------------------------------------------------------------------
+   On a phone the frame was a tall narrow column with a lot of card
+   showing either side of it, and the plate read as a slab. The frame now
+   takes a share of the column, the crop is tighter on the head and
+   shoulders, and the caption has room to breathe underneath.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
     .founder-frame {
-        width: 216px;
+        /* the plate carries a pulsing ring that reaches past its own edge,
+           so the frame leaves room for the ring as well as for the card */
+        width: min(calc(100% - 32px), 230px);
+    }
+    .founder-plate {
+        padding: 6px;
+        border-radius: 15px;
+    }
+    .founder-plate::before {
+        inset: 2px;
+        border-radius: 11px;
+    }
+    .founder-plate::after {
+        inset: -7px;
+        border-radius: 21px;
+    }
+    .founder-frame figcaption {
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
     }
 }
 

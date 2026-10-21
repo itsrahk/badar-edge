@@ -1277,8 +1277,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------------------------------------------
        CARD STEPPERS
        ------------------------------------------------------------------
-       Three rails on the homepage move on their own: Our Solutions, the
-       Three Systems, and the industry cards.
+       Rails on the site move on their own: the homepage's Our Solutions,
+       Three Systems and industry cards, plus the card groups on the
+       other pages.
 
        They do NOT flow continuously. Each rail advances ONE card at a
        time, holds on that card long enough to read it, then advances to
@@ -1290,21 +1291,24 @@ document.addEventListener("DOMContentLoaded", () => {
        swipe or drag it themselves at any time. The moment they do, the
        stepper stops and hands over; it picks up again a few seconds
        after they stop, continuing from whichever card they left it on.
+
+       A rail opts in with data-rail, and names the cards it carries with
+       data-rail-card. Both are set on the page markup, so a page that
+       does not want a moving rail simply does not use them.
        ------------------------------------------------------------------ */
     (function initCardSteppers() {
-        const DEFS = [
-            { rail: '.paths-marquee', card: '.service-card', dwell: 4200 },
-            { rail: '.systems-marquee', card: '.be-system-card', dwell: 4200 },
-            { rail: '.industries-grid', card: '.industry-card', dwell: 3800 },
-        ];
+        const rails = document.querySelectorAll('[data-rail]');
+        if (!rails.length) return;
+        if (prefersReducedMotion) return;
 
-        DEFS.forEach(({ rail, card, dwell }) => {
-            const container = document.querySelector(rail);
-            if (!container) return;
-            if (prefersReducedMotion) return;
+        rails.forEach(container => {
+            const cardSelector = container.getAttribute('data-rail-card');
+            if (!cardSelector) return;
 
-            const cards = Array.from(container.querySelectorAll(':scope > ' + card));
+            const cards = Array.from(container.querySelectorAll(':scope > ' + cardSelector));
             if (cards.length < 2) return;
+
+            const dwell = parseInt(container.getAttribute('data-rail-dwell'), 10) || 4200;
 
             let index = 0;
             let direction = 1;

@@ -6844,6 +6844,40 @@ body::after {
     flex-shrink: 0;
 }
 
+/* The note. It reads as a quiet trust badge under the credentials rather
+   than another bullet in the list, so it carries the same outlined,
+   low-contrast treatment as the homepage trust badges rather than a green
+   tick. */
+.founder-note {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 9px 16px;
+    border-radius: 30px;
+    border: 1px solid color-mix(in srgb, var(--color-heading) 16%, transparent);
+    background: transparent;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--color-heading) 62%, transparent);
+}
+.founder-note i {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: color-mix(in srgb, var(--color-heading) 52%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   43.14 FOUNDER STATS  --  left aligned
+   --------------------------------------------------------------------------
+   The credentials list was centred, so the four lines of copy started at
+   four different x positions and the block read as a paragraph rather
+   than a list. It is left aligned now, and the note under it follows
+   the same left edge.
+   -------------------------------------------------------------------------- */
 /* ==========================================================================
    V3.0 — FINAL CTA
    ========================================================================== */
@@ -7623,7 +7657,9 @@ body::after {
    ========================================================================== */
 .solution-split {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    /* the right column holds a rail, and a rail's min-content is the whole
+       row, so the track has to be allowed to shrink below that */
+    grid-template-columns: 360px minmax(0, 1fr);
     gap: 28px;
     align-items: start;
     margin-bottom: 56px;
@@ -7640,7 +7676,7 @@ body::after {
 
 @media (max-width: 900px) {
     .solution-split {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
     .solution-split .pricing-tier {
         position: static;
@@ -13826,5 +13862,144 @@ button:focus-visible { outline-color: var(--color-focus); }
 }
 .rm .approach-step-icon {
     animation: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   42.14 FOUNDER STATS  --  left aligned
+   --------------------------------------------------------------------------
+   The credentials list was centred, so the four lines of copy started at
+   four different x positions and the block read as a paragraph rather
+   than a list. It is left aligned now, and the note under it follows the
+   same left edge.
+
+   These rules come last on purpose: an earlier rule centres the whole
+   founder panel on narrow screens, and the stats are meant to stay
+   left aligned there too.
+   -------------------------------------------------------------------------- */
+.founder-credentials {
+    align-items: flex-start;
+}
+.founder-text {
+    text-align: left;
+}
+.founder-note {
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   43. CARD RAILS  --  the shared rail, used on every page
+   --------------------------------------------------------------------------
+   Any row of comparable cards can become a rail by adding the `card-rail`
+   class. The rail replaces the grid: the cards sit in one row that
+   scrolls sideways, each one snaps into place, and the stepper in app.js
+   walks them one at a time and then back again.
+
+   The card width is a variable so each kind of card can have its own
+   measure without a rule of its own.
+   ========================================================================== */
+.card-rail {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 24px 14px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+    scroll-snap-type: x proximity;
+    /* the stepper writes scrollLeft directly; smooth scrolling here
+       would make each write animate and lag behind the loop */
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-navy) var(--color-surface-muted);
+    /* the stepper measures the cards against the rail, so the rail has to
+       be their positioning context */
+    position: relative;
+    /* a flex row's min-content is the whole row, which would push a
+       narrow column open. The rail has to be allowed to shrink. */
+    min-width: 0;
+}
+.card-rail::-webkit-scrollbar { height: 8px; }
+.card-rail::-webkit-scrollbar-track {
+    background: var(--color-surface-muted);
+    border-radius: 8px;
+}
+.card-rail::-webkit-scrollbar-thumb {
+    background: var(--color-navy);
+    border-radius: 8px;
+}
+.card-rail::-webkit-scrollbar-thumb:hover { background: var(--accent-ink); }
+
+.card-rail > * {
+    flex: 0 0 auto;
+    width: var(--rail-card-w, 340px);
+    scroll-snap-align: start;
+}
+
+/* The older grids set their own width, gap and breakpoint. The rail
+   replaces all of that, so those rules are neutralised here. */
+.verticals-grid.card-rail,
+.cat-grid.card-rail,
+.solution-card-grid.card-rail,
+.custom-grid.card-rail,
+.be-systems-grid.card-rail,
+.work-more-grid.card-rail,
+.cs-results-grid.card-rail {
+    grid-template-columns: none;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    gap: 24px;
+}
+@media (max-width: 1024px) {
+    .verticals-grid.card-rail,
+    .cat-grid.card-rail,
+    .solution-card-grid.card-rail,
+    .custom-grid.card-rail,
+    .be-systems-grid.card-rail,
+    .work-more-grid.card-rail,
+    .cs-results-grid.card-rail {
+        max-width: var(--max-width);
+    }
+}
+@media (max-width: 700px) {
+    .verticals-grid.card-rail,
+    .cat-grid.card-rail,
+    .solution-card-grid.card-rail,
+    .custom-grid.card-rail,
+    .be-systems-grid.card-rail,
+    .work-more-grid.card-rail,
+    .cs-results-grid.card-rail {
+        grid-template-columns: none;
+        max-width: var(--max-width);
+    }
+}
+
+/* Each card kind gets the measure that suits how much it holds. A rail
+   shows fewer cards than a grid did, so the cards are a little wider and
+   the text has room to breathe. */
+.verticals-grid.card-rail > * { --rail-card-w: 360px; }
+.cat-grid.card-rail > * { --rail-card-w: 330px; }
+.solution-card-grid.card-rail > * { --rail-card-w: 380px; }
+.custom-grid.card-rail > * { --rail-card-w: 350px; }
+.be-systems-grid.card-rail > * { --rail-card-w: 340px; }
+.work-more-grid.card-rail > * { --rail-card-w: 350px; }
+.cs-results-grid.card-rail > * { --rail-card-w: 210px; }
+
+@media (max-width: 860px) {
+    .card-rail {
+        gap: 14px;
+        padding: 4px 20px 12px;
+    }
+    .verticals-grid.card-rail > * { --rail-card-w: 300px; }
+    .cat-grid.card-rail > * { --rail-card-w: 290px; }
+    .solution-card-grid.card-rail > * { --rail-card-w: 300px; }
+    .custom-grid.card-rail > * { --rail-card-w: 300px; }
+    .be-systems-grid.card-rail > * { --rail-card-w: 290px; }
+    .work-more-grid.card-rail > * { --rail-card-w: 300px; }
+    .cs-results-grid.card-rail > * { --rail-card-w: 180px; }
 }
 

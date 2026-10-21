@@ -6750,7 +6750,6 @@ body::after {
     background: linear-gradient(160deg, color-mix(in srgb, var(--color-ice-blue) 35%, transparent), color-mix(in srgb, var(--color-ice-blue) 35%, transparent) 45%, color-mix(in srgb, var(--color-button-hover) 40%, transparent));
     box-shadow: 0 0 50px -12px color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
 }
-
 .founder-frame::before {
     content: '';
     position: absolute;
@@ -8757,9 +8756,105 @@ body::after {
 .why-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
 .why-section .section-subtitle { max-width: 640px; margin-left: auto; margin-right: auto; }
 .why-grid { margin-top: 8px; }
-.trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 44px; }
-.trust-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; color: var(--color-body); padding: 10px 18px; border-radius: 30px; border: 1px solid color-mix(in srgb, var(--color-ice-blue) 18%, transparent); background: color-mix(in srgb, var(--color-ice-blue) 6%, transparent); }
-.trust-badge i, .trust-badge svg { width: 15px; height: 15px; color: var(--color-button-hover); }
+/* --------------------------------------------------------------------------
+   42. TRUST BADGES  --  two opposing continuous rails
+   --------------------------------------------------------------------------
+   The five badges sat in a wrapping flex row. They are now two rails: the
+   top row scrolls left, the bottom row scrolls right, so the eye reads them
+   as a continuous flow in opposite directions. Each badge is a darker navy
+   card with low transparency (no glass tint), and the set is duplicated
+   once for a seamless loop.
+   -------------------------------------------------------------------------- */
+.trust-badges.trust-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 44px;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 6%,
+        #000 94%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 6%,
+        #000 94%,
+        transparent 100%);
+}
+.trust-row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 14px;
+    will-change: transform;
+}
+.trust-row--left {
+    animation: trust-row-left 40s linear infinite;
+}
+.trust-row--right {
+    animation: trust-row-right 40s linear infinite;
+}
+.trust-badges.trust-rail:hover .trust-row {
+    animation-play-state: paused;
+}
+/* The track scrolls by exactly one set, so the loop is seamless whatever the
+   viewport width. --set-w is measured in app.js. */
+@keyframes trust-row-left {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(calc(-1 * var(--set-w, 400px)), 0, 0); }
+}
+@keyframes trust-row-right {
+    from { transform: translate3d(calc(-1 * var(--set-w, 400px)), 0, 0); }
+    to   { transform: translate3d(0, 0, 0); }
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-on-dark);
+    padding: 11px 20px;
+    border-radius: 30px;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 22%, transparent);
+    background: var(--color-navy);
+    box-shadow: 0 8px 22px -16px rgb(15 23 42 / 0.5);
+    white-space: nowrap;
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out);
+}
+.trust-badge i, .trust-badge svg {
+    width: 15px;
+    height: 15px;
+    color: var(--color-ice-blue);
+}
+.trust-badge:hover {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 50%, transparent);
+    box-shadow: 0 10px 26px -16px rgb(15 23 42 / 0.6);
+}
+
+@media (max-width: 860px) {
+    .trust-badges.trust-rail { gap: 10px; margin-top: 30px; }
+    .trust-row { gap: 10px; }
+    .trust-badge { font-size: 0.78rem; padding: 9px 16px; }
+    .trust-row--left,
+    .trust-row--right { animation-duration: 30s; }
+}
+
+/* --------------------------------------------------------------------------
+   42.1 REDUCED MOTION  --  stop both rails
+   -------------------------------------------------------------------------- */
+.rm .trust-row {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.rm .trust-row .trust-badge[aria-hidden="true"] {
+    display: none;
+}
 
 /* --- FAQ --- */
 .faq-section { padding: 100px 28px; }
@@ -11007,7 +11102,7 @@ button:focus-visible { outline-color: var(--color-focus); }
     }
 
     .hero-headline {
-        font-size: clamp(2.4rem, 4.4vw, 3.7rem);
+        font-size: clamp(2rem, 4.4vw, 3.2rem);
         line-height: 1.06;
         text-wrap: balance;
     }
@@ -12395,10 +12490,14 @@ button:focus-visible { outline-color: var(--color-focus); }
 .hero-trust-line {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-top: 16px;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    line-height: 1.4;
     color: var(--color-muted);
+    text-align: center;
+    white-space: nowrap;
 }
 .hero-trust-line i {
     width: 16px;
@@ -12617,3 +12716,1049 @@ button:focus-visible { outline-color: var(--color-focus); }
     .sidebar-sub li a { padding: 6px 12px; font-size: 0.82rem; }
     .sidebar-social { margin-top: 12px; }
 }
+
+
+/* ==========================================================================
+   41. TRUST RAIL, MOBILE LOGO, SIDEBAR LINES, FOOTER
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   41.1 TRUST PROMISES  --  continuous horizontal flow, one at a time
+   --------------------------------------------------------------------------
+   The four promises sat in a static four-across panel. They are now a rail
+   of individual cards that slides past one at a time, with a soft fade at
+   both edges, so each promise gets the reader's full attention. The set is
+   duplicated once so the loop never shows a seam, and the second copy is
+   hidden from assistive tech.
+   -------------------------------------------------------------------------- */
+.hero-trust-rail {
+    grid-column: 1 / -1;
+    /* more air between the hero copy and the promises */
+    margin-top: 34px;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 5%,
+        #000 95%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%,
+        #000 5%,
+        #000 95%,
+        transparent 100%);
+}
+
+.hero-stats-row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 18px;
+    padding: 4px 0 10px;
+    margin-top: 0;
+    /* the old panel chrome lived on the row; it now lives on each card */
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    position: static;
+    will-change: transform;
+    animation: trust-scroll 42s linear infinite;
+}
+.hero-stats-row::before { content: none; }
+.hero-trust-rail:hover .hero-stats-row { animation-play-state: paused; }
+
+@keyframes trust-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.hero-stats-row .hero-stat-card {
+    flex: 0 0 auto;
+    width: 330px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px -20px rgb(15 23 42 / 0.45);
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out);
+}
+.hero-stats-row .hero-stat-card:first-child {
+    border-left: 1px solid var(--color-border);
+    padding-left: 22px;
+}
+.hero-stats-row .hero-stat-card:last-child {
+    padding-right: 22px;
+}
+.hero-stats-row .hero-stat-card:hover {
+    background: var(--color-surface);
+    border-color: color-mix(in srgb, var(--color-ice-blue) 40%, transparent);
+    box-shadow: 0 16px 34px -20px rgb(15 23 42 / 0.5);
+}
+.hero-stats-row .hero-stat-card:hover .trust-icon {
+    border-color: color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-ice-blue) 12%, transparent);
+}
+
+@media (max-width: 860px) {
+    .hero-trust-rail { margin-top: 22px; }
+    .hero-stats-row { gap: 12px; }
+    .hero-stats-row .hero-stat-card { width: 268px; padding: 16px 18px; }
+    .hero-stats-row .hero-stat-card:first-child { padding-left: 18px; }
+    .hero-stats-row .hero-stat-card:last-child { padding-right: 18px; }
+    .hero-stats-row { animation-duration: 32s; }
+}
+
+/* --------------------------------------------------------------------------
+   41.2 MOBILE NAV LOGO  --  half again as big
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .navbar .nav-logo-img { --logo-h: 50px; }
+    .navbar { height: 82px; }
+    :root { --bar-h: 82px; }
+}
+@media (max-width: 600px) {
+    .navbar .nav-logo-img { --logo-h: 46px; }
+}
+@media (max-width: 420px) {
+    .navbar .nav-logo-img { --logo-h: 42px; }
+}
+
+/* --------------------------------------------------------------------------
+   41.3 SIDEBAR  --  drop the tree lines behind the buttons
+   --------------------------------------------------------------------------
+   The vertical rule and the little tick were a tree connector from an older
+   navigation. They drew a line behind every button, which read as a stray
+   rule. Removed, and the indent they needed goes with them.
+   -------------------------------------------------------------------------- */
+.sidebar-links { padding-left: 0; }
+.sidebar-links > li { padding-left: 0; }
+.sidebar-links > li::before,
+.sidebar-links > li::after { content: none; }
+
+/* --------------------------------------------------------------------------
+   41.4 FOOTER  --  professional and clean on mobile
+   --------------------------------------------------------------------------
+   The logo block used to sit beside a two column link grid, which left the
+   links squeezed into half the screen width. On a phone the footer now
+   stacks: brand, then the link columns, then the social row, then the
+   bottom bar, with a hairline between the brand and the links.
+   -------------------------------------------------------------------------- */
+@media (max-width: 700px) {
+    .footer-container { padding: 36px 20px 0; }
+    .footer-wrap {
+        flex-direction: column;
+        gap: 26px;
+        padding-bottom: 28px;
+    }
+    .footer-logo-side {
+        flex: 0 0 auto;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid color-mix(in srgb, var(--color-navy) 8%, transparent);
+        width: 100%;
+    }
+    /* the logo is sized with --logo-h, never with a raw height: the fit rule
+       (section 20) owns the box AND the negative margins, and overriding the
+       height alone pulled the wordmark up over the copy */
+    .footer-logo-img { --logo-h: 50px; }
+    .footer-copy {
+        font-size: 0.85rem;
+        line-height: 1.55;
+        max-width: 32ch;
+        text-align: left;
+    }
+    .footer-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 20px;
+        width: 100%;
+        text-align: left;
+    }
+    .footer-group { gap: 8px; text-align: left; align-items: flex-start; }
+    .footer-group-title { font-size: 0.68rem; margin-bottom: 2px; }
+    .footer-group .footer-link { font-size: 0.86rem; padding: 2px 0; }
+    .footer-connect-socials { gap: 12px; justify-content: flex-start; }
+    .footer-bottom {
+        padding: 18px 20px 28px;
+        gap: 12px;
+        text-align: center;
+    }
+    .footer-bottom-meta {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .footer-bottom-links { gap: 18px; }
+}
+
+/* --------------------------------------------------------------------------
+   41.5 HERO EYEBROW  --  drop the leading dot
+   -------------------------------------------------------------------------- */
+.hero-eyebrow::before { content: none; }
+
+/* ==========================================================================
+   42. HOMEPAGE POLISH  --  continuous rails, pipeline, mobile scale
+   --------------------------------------------------------------------------
+   Seven changes, all on the homepage:
+
+     42.1  Hero eyebrow + reassurance line scale down on phones.
+     42.2  "60+ Satisfied Clients" badge on the ring's opposite corner.
+     42.3  Our Solutions + Three Systems scroll as continuous rails.
+     42.4  Industry cards auto-scroll but stay user-scrollable.
+     42.5  Trust badges: no navy plate, black text at low transparency.
+     42.6  The process becomes a one-line pipeline with a travelling light.
+     42.7  Reduced-motion parity for every new animation.
+
+   This block sits last in the file on purpose: it overrides the rules above
+   it without needing !important, so the intent stays readable.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   42.1 HERO SCALE ON PHONES
+   --------------------------------------------------------------------------
+   The eyebrow is 28 characters in a 340px column. At the desktop tracking it
+   wrapped onto two lines and pushed the headline down; at the phone tracking
+   it was still too wide. The copy is now scaled so it holds one line, and the
+   reassurance line under the CTAs drops to a size that fits the narrowest
+   common phone (320px) without clipping.
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+    .hero-eyebrow {
+        font-size: 0.62rem;
+        letter-spacing: 0.11em;
+        margin-bottom: 16px;
+    }
+    .hero-trust-line {
+        /* The line is about 27.4x its font size wide, and the column is
+           the viewport less 82px of page padding. This is the size that
+           makes it fit on a single line at every phone width:
+               (viewport - 82) / 27.4  ==  3.55vw - 2.9px
+           The upper bound keeps it from exceeding the desktop size. */
+        font-size: clamp(0.5rem, calc(3.55vw - 2.9px), 0.84rem);
+        line-height: 1.45;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.2 SATISFIED CLIENTS BADGE  --  opposite corner to the rating badge
+   --------------------------------------------------------------------------
+   The 5.0 rating sits on the ring's top-right. The "60+ Satisfied Clients"
+   badge mirrors it on the bottom-left, so the ring carries proof at both
+   corners without either badge covering the mark.
+   -------------------------------------------------------------------------- */
+.hero-clients-badge {
+    position: absolute;
+    bottom: clamp(2%, 4vw, 8%);
+    left: clamp(-14px, -1.5vw, -6px);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    padding: 12px 16px 11px;
+    background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 30%, transparent);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.06),
+                0 14px 32px -18px rgb(15 23 42 / 0.35),
+                0 0 0 1px color-mix(in srgb, var(--color-ice-blue) 8%, transparent);
+    animation: hero-badge-float var(--dur-loop-float, 6s) var(--ease-in-out, ease-in-out) infinite;
+    /* offset from the rating badge's float so the two never move in lockstep */
+    animation-delay: -3s;
+    pointer-events: none;
+}
+
+.hero-clients-badge .hero-rating-score {
+    font-size: 1.2rem;
+}
+.hero-clients-badge .hero-rating-label {
+    font-size: 0.56rem;
+}
+
+@media (max-width: 860px) {
+    .hero-clients-badge {
+        bottom: -4px;
+        left: -8px;
+        padding: 8px 11px 7px;
+        border-radius: 11px;
+    }
+    .hero-clients-badge .hero-rating-score { font-size: 0.95rem; }
+    .hero-clients-badge .hero-rating-stars { font-size: 0.54rem; letter-spacing: 1px; }
+    .hero-clients-badge .hero-rating-label { font-size: 0.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   42.3 SCROLLING RAILS  --  Our Solutions and Three Systems
+   --------------------------------------------------------------------------
+   These two rails are real scroll containers, not a transformed marquee.
+   That is what lets the automatic movement advance ONE card at a time and
+   then turn around, while the visitor can still scroll, swipe or drag
+   them at any moment.
+
+   The padding lives on the CONTAINER, not on the track. The card that is
+   currently parked is flush with the container's content edge, and a
+   spacer (added by app.js) gives the last card the same runway the first
+   one has, so every card can reach that same resting position.
+   -------------------------------------------------------------------------- */
+.paths-marquee,
+.systems-marquee {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 44px;
+    padding: 6px 24px 14px;
+    gap: 24px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-navy) var(--color-surface-muted);
+    /* the JS steps the rail; smooth scrolling here would fight it */
+    scroll-behavior: auto;
+}
+
+/* The cards keep a fixed width so the step distance is stable, and each
+   one snaps into place when the stepper lands on it. The three path cards
+   carry the most copy, so they get the widest box. */
+.paths-marquee .service-card {
+    flex: 0 0 auto;
+    width: 340px;
+    scroll-snap-align: start;
+}
+.systems-marquee .be-system-card {
+    flex: 0 0 auto;
+    width: 320px;
+    scroll-snap-align: start;
+}
+
+/* The old grid class is gone from these cards; the rail owns the layout now.
+   The grid's own rules would otherwise fight the flex track. */
+.paths-marquee .service-card {
+    grid-template-columns: none;
+}
+
+@media (max-width: 860px) {
+    .paths-marquee,
+    .systems-marquee {
+        margin-top: 28px;
+        padding: 4px 20px 12px;
+        gap: 14px;
+    }
+    .paths-marquee .service-card {
+        width: 290px;
+        padding: 24px 22px;
+    }
+    .systems-marquee .be-system-card {
+        width: 268px;
+        padding: 22px 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.4 INDUSTRY CARDS  --  same one-card-at-a-time movement
+   --------------------------------------------------------------------------
+   The industry rail already scrolled sideways (section 40.3). It now joins
+   the same stepper as the two rails above, so all three move the same way.
+   -------------------------------------------------------------------------- */
+.industries-grid {
+    /* the stepper writes scrollLeft directly; smooth scrolling would make
+       each write animate and lag behind the loop */
+    scroll-behavior: auto;
+    scroll-snap-type: x proximity;
+}
+
+/* The spacer is the empty run-out after the last card. It gives that card
+   the same runway the first one has, so every card can be parked flush
+   with the same edge of the rail. It must not shrink: a flex item with the
+   default flex-shrink would collapse to nothing and the rail would stop
+   short. */
+.rail-spacer {
+    flex: 0 0 auto;
+    width: 0;
+    pointer-events: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   42.5 TRUST BADGES  --  no navy plate, black text at low transparency
+   --------------------------------------------------------------------------
+   The badges were dark navy pills floating on the light Why section. They
+   are now quiet outlined labels: black text at low transparency, a hairline
+   border, no fill. The section keeps its rhythm and the badges stop
+   competing with the comparison cards above them.
+   -------------------------------------------------------------------------- */
+.trust-badge {
+    background: transparent;
+    color: color-mix(in srgb, var(--color-heading) 62%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-heading) 16%, transparent);
+    box-shadow: none;
+}
+.trust-badge:hover {
+    color: color-mix(in srgb, var(--color-heading) 88%, transparent);
+    border-color: color-mix(in srgb, var(--color-heading) 32%, transparent);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* The icons inside a badge follow the same low-contrast rule. */
+.trust-badge i,
+.trust-badge svg {
+    color: color-mix(in srgb, var(--color-heading) 52%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   42.6 PROCESS  --  one line, animated like a pipeline
+   --------------------------------------------------------------------------
+   The four steps sat in a 1.4fr column on the right, wrapped into a 2x2
+   block on a phone, and each step was a navy card. They are now a single
+   horizontal pipeline that spans the section: one line on every width, a
+   connector rail behind the markers, and a light that travels along it so
+   the sequence reads as a process rather than a list.
+
+   On a phone the line is still horizontal; it scrolls sideways with the
+   markers pinned in place.
+   -------------------------------------------------------------------------- */
+.approach-section {
+    padding-bottom: 100px;
+}
+
+.approach-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.approach-header .approach-left {
+    flex: 1 1 22rem;
+    min-width: 0;
+}
+.approach-header .section-title {
+    margin-bottom: 20px;
+}
+
+.approach-pipeline {
+    position: relative;
+    margin-top: 56px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The rail the markers sit on. It is drawn behind the icons. It lives
+   inside the steps list so it scrolls with them on a phone. */
+.approach-steps {
+    position: relative;
+}
+.pipeline-track {
+    position: absolute;
+    top: 28px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: color-mix(in srgb, var(--color-heading) 12%, transparent);
+    border-radius: 2px;
+    overflow: hidden;
+    pointer-events: none;
+}
+/* The travelling light: the signal that moves from step to step. */
+.pipeline-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--color-ice-blue) 0%, transparent),
+        var(--color-ice-blue),
+        color-mix(in srgb, var(--color-ice-blue) 0%, transparent));
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-ice-blue) 55%, transparent);
+    animation: pipeline-travel 4.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes pipeline-travel {
+    0%   { width: 0; opacity: 0; }
+    12%  { opacity: 1; }
+    62%  { width: 100%; opacity: 1; }
+    80%  { width: 100%; opacity: 1; }
+    100% { width: 100%; opacity: 0; }
+}
+
+.approach-steps {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    align-items: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.approach-step {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    position: relative;
+    /* the navy plate is gone: the marker and the copy carry the step */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+/* Hover only lifts the marker now. The step has no plate to tint, and the
+   old rule re-asserted the navy fill on hover, which would have put a navy
+   block back under the mouse. */
+.approach-steps .approach-step:hover {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.approach-steps .approach-step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 2px solid color-mix(in srgb, var(--color-ice-blue) 34%, transparent);
+    color: var(--color-link-on-light);
+    position: relative;
+    z-index: 2;
+    transition: transform var(--dur-base) var(--ease-standard),
+                border-color var(--dur-base) var(--ease-standard),
+                box-shadow var(--dur-base) var(--ease-standard);
+}
+/* Each marker lights up as the travelling light reaches it. The delay is
+   one quarter of the pipeline cycle per step, so they fire in order. */
+.approach-step:nth-child(1) .approach-step-icon { animation: marker-light 4.6s ease-in-out infinite; }
+.approach-step:nth-child(2) .approach-step-icon { animation: marker-light 4.6s ease-in-out infinite 1.15s; }
+.approach-step:nth-child(3) .approach-step-icon { animation: marker-light 4.6s ease-in-out infinite 2.3s; }
+.approach-step:nth-child(4) .approach-step-icon { animation: marker-light 4.6s ease-in-out infinite 3.45s; }
+
+@keyframes marker-light {
+    0%, 100% {
+        border-color: color-mix(in srgb, var(--color-ice-blue) 34%, transparent);
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-ice-blue) 0%, transparent);
+        transform: scale(1);
+    }
+    12% {
+        border-color: var(--color-ice-blue);
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-ice-blue) 16%, transparent);
+        transform: scale(1.06);
+    }
+    40% {
+        border-color: color-mix(in srgb, var(--color-ice-blue) 34%, transparent);
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-ice-blue) 0%, transparent);
+        transform: scale(1);
+    }
+}
+
+.approach-steps .approach-step-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-heading);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 8px;
+    max-width: 100%;
+    text-align: center;
+}
+.approach-step-index {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--color-link-on-light);
+    background: color-mix(in srgb, var(--color-ice-blue) 16%, transparent);
+    border-radius: 20px;
+    padding: 3px 8px;
+    line-height: 1;
+}
+.approach-steps .approach-step-desc {
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 210px;
+}
+
+/* The old ::after connector on each step is replaced by the single rail. */
+.approach-steps .approach-step:not(:last-child)::after {
+    content: none;
+}
+
+/* The phone version: still one line, scrolled sideways by the reader. */
+@media (max-width: 900px) {
+    .approach-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+    .approach-header .approach-left {
+        flex: 1 1 auto;
+    }
+    .approach-pipeline {
+        margin-top: 40px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding-left: 24px;
+    }
+    .approach-pipeline::-webkit-scrollbar { display: none; }
+    .approach-steps {
+        width: max-content;
+        min-width: 100%;
+        padding: 0 20px;
+    }
+    .approach-step {
+        flex: 0 0 auto;
+        width: 200px;
+    }
+    /* the rail spans the whole scrollable strip, not the visible window */
+    .pipeline-track {
+        left: 120px;
+        right: 120px;
+    }
+    .approach-step-desc {
+        font-size: 0.76rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .approach-section { padding: 60px 20px; }
+    .approach-step { width: 180px; }
+    .pipeline-track { left: 110px; right: 110px; }
+}
+
+/* The hint under the pipeline only appears on the widths where the
+   pipeline actually scrolls sideways. It sits outside the scroll box so
+   it stays put while the steps move under it. */
+.pipeline-hint {
+    display: none;
+}
+@media (max-width: 900px) {
+    .pipeline-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        max-width: 1200px;
+        margin: 14px auto 0;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+    }
+    .pipeline-hint i { width: 14px; height: 14px; }
+}
+
+/* --------------------------------------------------------------------------
+   42.8 HERO TRUST LINE  --  one straight line on every width
+   --------------------------------------------------------------------------
+   "Free 15-minute strategy call. No cost. No commitment." is 55 characters.
+   At the old tracking it needed 369px, so it wrapped on a 340px phone and
+   pushed the headline down.
+
+   It is now scaled against the viewport so it always holds ONE line: the
+   type shrinks as the column narrows, and the icon rides along at the same
+   scale. The lower clamp keeps it legible on the narrowest common phone.
+   -------------------------------------------------------------------------- */
+.hero-trust-line {
+    white-space: nowrap;
+    max-width: 100%;
+    gap: 0.55em;
+}
+.hero-trust-line i {
+    width: 1.15em;
+    height: 1.15em;
+}
+
+/* --------------------------------------------------------------------------
+   42.9 SATISFIED CLIENTS BADGE  --  a face, not stars
+   --------------------------------------------------------------------------
+   The rating badge above keeps its five stars, because a rating IS stars.
+   "60+ Satisfied Clients" is not a rating, so it gets a smiling face in a
+   circle instead of a row of stars it never earned.
+   -------------------------------------------------------------------------- */
+.hero-clients-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-success) 18%, transparent);
+    color: var(--color-success-text);
+}
+.hero-clients-mark i {
+    width: 13px;
+    height: 13px;
+}
+@media (max-width: 860px) {
+    .hero-clients-mark {
+        width: 17px;
+        height: 17px;
+    }
+    .hero-clients-mark i {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.10 WHY COMPARISON  --  one card, laid out as a table
+   --------------------------------------------------------------------------
+   The two stacked cards (a typical agency on one side, Badar Edge on the
+   other) become a single card with a header row and four comparison rows.
+   Each row lines the two answers up side by side, so the difference is
+   read across rather than down.
+
+   The marks are filled circles: a green disc with a white tick for Badar
+   Edge, a red disc with a white cross for a typical agency.
+   -------------------------------------------------------------------------- */
+.why-compare {
+    margin-top: 44px;
+    padding: 0;
+    overflow: hidden;
+    /* the comparison card sits on the light Why section, so it carries the
+       same navy plate every other card on the page has */
+    background: var(--color-navy);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 14%, transparent);
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.10),
+                0 10px 26px -16px rgb(15 23 42 / 0.45);
+}
+
+.why-compare-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ice-blue) 16%, transparent);
+}
+.why-compare-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-text-on-dark);
+}
+.why-compare-label--us {
+    background: color-mix(in srgb, var(--color-ice-blue) 10%, transparent);
+    color: var(--color-surface);
+}
+.why-compare-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background: var(--color-surface-dark);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 18%, transparent);
+    color: var(--color-muted-on-dark);
+}
+.why-compare-icon i { width: 17px; height: 17px; }
+
+.why-compare-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.why-compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ice-blue) 10%, transparent);
+}
+.why-compare-row:last-child {
+    border-bottom: none;
+}
+.why-compare-cell {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 24px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+.why-compare-cell--them {
+    color: var(--color-text-on-dark);
+}
+.why-compare-cell--us {
+    background: color-mix(in srgb, var(--color-ice-blue) 5%, transparent);
+    color: var(--color-surface);
+}
+
+/* the filled discs: green with a white tick, red with a white cross */
+.why-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    margin-top: 1px;
+    border-radius: 50%;
+}
+.why-dot i {
+    width: 13px;
+    height: 13px;
+    stroke-width: 3;
+}
+.why-dot--yes {
+    background: var(--color-success-text);
+    color: #ffffff;
+}
+.why-dot--no {
+    background: var(--color-error-text);
+    color: #ffffff;
+}
+
+@media (max-width: 760px) {
+    .why-compare {
+        margin-top: 32px;
+    }
+    .why-compare-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 14px;
+        font-size: 0.88rem;
+    }
+    .why-compare-cell {
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 14px;
+        font-size: 0.82rem;
+    }
+    .why-dot {
+        width: 20px;
+        height: 20px;
+    }
+    .why-dot i {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.11 FIFTEEN MINUTES CARD  --  the call itself, then the list
+   --------------------------------------------------------------------------
+   The card used to be a heading and four bullets. It now shows what the
+   call looks like, with the checklist underneath it.
+   -------------------------------------------------------------------------- */
+.call-block--split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 34px;
+    align-items: center;
+    margin-top: 56px;
+}
+.call-block-media {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 18%, transparent);
+    background: var(--color-surface-dark);
+}
+.call-block-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    max-height: 320px;
+    object-fit: cover;
+}
+.call-block-media-tag {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: color-mix(in srgb, var(--color-navy) 82%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 26%, transparent);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-surface);
+}
+.call-block-media-tag i { width: 13px; height: 13px; color: var(--color-ice-blue); }
+
+.call-block-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.call-block-body .call-block-title {
+    margin-bottom: 0;
+}
+
+/* The checklist gets the same filled green disc as the comparison table. */
+.call-block-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-left: 0;
+}
+.call-block-list li::before {
+    content: none;
+}
+.call-block-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: var(--color-success-text);
+    color: #ffffff;
+}
+.call-block-check i {
+    width: 13px;
+    height: 13px;
+    stroke-width: 3;
+}
+
+@media (max-width: 860px) {
+    .call-block--split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+        margin-top: 40px;
+    }
+    .call-block-img {
+        min-height: 200px;
+        max-height: 240px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.12 FAQ  --  closed until the reader asks
+   --------------------------------------------------------------------------
+   Every answer used to be on the page from the start, so the section read
+   as a wall of text and the questions lost their purpose. The answers now
+   start collapsed and open one at a time when a question is clicked.
+   -------------------------------------------------------------------------- */
+.faq-answer {
+    display: none;
+}
+.faq-answer.is-open {
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   42.13 FOUNDER PHOTO  --  new portrait headshot, ice blue borders
+   --------------------------------------------------------------------------
+   The founder photo is now newfounder.jpeg, a 848x1264 portrait, so the
+   square frame that matched the old 1080x1079 crop no longer fits it.
+   The frame is now a portrait box and both borders are drawn in Ice Blue:
+   a solid hairline on the image itself, and the pulsing outer rule that
+   was already there but too faint to read as a border.
+   -------------------------------------------------------------------------- */
+.founder-frame {
+    width: 250px;
+    /* the frame must not be squeezed by the flex row it sits in */
+    flex: 0 0 auto;
+    padding: 10px 10px 8px;
+    /* the gradient plate behind the image is the outer ice blue border */
+    background: linear-gradient(160deg,
+        color-mix(in srgb, var(--color-ice-blue) 55%, transparent),
+        color-mix(in srgb, var(--color-ice-blue) 30%, transparent) 45%,
+        color-mix(in srgb, var(--color-button-hover) 45%, transparent));
+    box-shadow: 0 0 50px -12px color-mix(in srgb, var(--color-ice-blue) 45%, transparent);
+}
+
+/* the hairline that sits directly on the photograph */
+.founder-frame::before {
+    inset: 3px;
+    border-radius: 13px;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 55%, transparent);
+}
+
+/* the pulsing outer rule, now bright enough to read as a border */
+.founder-frame::after {
+    inset: -10px;
+    border-radius: 24px;
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 42%, transparent);
+}
+
+.founder-frame-img {
+    /* the new source is portrait (848 x 1264), so the frame follows it
+       instead of cropping the head and shoulders out of the picture */
+    aspect-ratio: 848 / 1264;
+    /* the width/height attributes on the tag would otherwise fix the
+       height and defeat the aspect ratio above */
+    height: auto;
+    object-position: center top;
+    border-radius: 10px;
+    /* the ice blue hairline that frames the image itself */
+    border: 1px solid color-mix(in srgb, var(--color-ice-blue) 70%, transparent);
+    box-shadow: 0 0 24px -10px color-mix(in srgb, var(--color-ice-blue) 60%, transparent);
+}
+
+/* the caption sits under the plate, so it needs the same left edge */
+.founder-frame figcaption {
+    padding-top: 11px;
+    color: color-mix(in srgb, var(--color-heading) 60%, transparent);
+}
+
+@media (max-width: 760px) {
+    .founder-frame {
+        width: 216px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   42.7 REDUCED MOTION  --  every new animation honours the preference
+   --------------------------------------------------------------------------
+   The pipeline light stops, the markers stop pulsing and the rails stop
+   stepping on their own. The markup underneath is unchanged, so the content
+   is still there, just still. The rails stay scrollable by hand.
+   -------------------------------------------------------------------------- */
+.rm .pipeline-fill {
+    animation: none !important;
+    width: 100%;
+    opacity: 0.35;
+}
+.rm .approach-step-icon {
+    animation: none !important;
+}
+

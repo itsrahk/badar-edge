@@ -1046,23 +1046,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // FAQ accordion toggle
+        // Every answer starts closed. Clicking a question opens that one
+        // and closes the rest, so only one answer is ever on screen.
         const faqItems = document.querySelectorAll(".faq-item");
         faqItems.forEach((item) => {
             const btn = item.querySelector(".faq-question");
             const answer = item.querySelector(".faq-answer");
             if (!btn || !answer) return;
+            // make sure the answer starts closed, whatever the markup says
+            answer.classList.remove("is-open");
             btn.addEventListener("click", () => {
                 const isOpen = btn.getAttribute("aria-expanded") === "true";
                 faqItems.forEach((other) => {
                     const ob = other.querySelector(".faq-question");
                     const oa = other.querySelector(".faq-answer");
                     if (ob) ob.setAttribute("aria-expanded", "false");
-                    if (oa) { oa.style.display = "none"; oa.style.maxHeight = null; }
+                    if (oa) oa.classList.remove("is-open");
                 });
                 if (!isOpen) {
                     btn.setAttribute("aria-expanded", "true");
-                    answer.style.display = "block";
-                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    answer.classList.add("is-open");
                 }
             });
         });
@@ -1222,7 +1225,196 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ROI bar width animation on scroll
+    /* ------------------------------------------------------------------
+       TRUST RAILS
+       ------------------------------------------------------------------
+       Two rows of promise badges that scroll in opposite directions. Each
+       track is cloned until it covers the rail plus one full set, and the
+       loop distance is set to exactly one set of badges, so the join is
+       invisible at any viewport width and the row travels the full width
+       of the rail rather than sitting still.
+       ------------------------------------------------------------------ */
+    (function buildTrustRails() {
+        const rails = document.querySelectorAll('.trust-rail');
+        if (!rails.length) return;
+
+        function layout() {
+            rails.forEach(rail => {
+                rail.querySelectorAll('.trust-row').forEach(row => {
+                    // reset to the authored set
+                    row.querySelectorAll('[data-clone]').forEach(c => c.remove());
+
+                    const set = Array.from(row.children);
+                    if (!set.length) return;
+
+                    // width of one set, including the gap after the last badge
+                    const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+                    const setWidth = set.reduce((n, el) => n + el.offsetWidth, 0) + gap * set.length;
+                    row.style.setProperty('--set-w', setWidth + 'px');
+
+                    // repeat until the track covers the rail plus one full set
+                    const need = Math.max(2, Math.ceil((rail.clientWidth + setWidth) / setWidth));
+                    for (let n = 1; n < need; n++) {
+                        set.forEach(el => {
+                            const clone = el.cloneNode(true);
+                            clone.setAttribute('aria-hidden', 'true');
+                            clone.setAttribute('data-clone', '1');
+                            row.appendChild(clone);
+                        });
+                    }
+                });
+            });
+        }
+
+        layout();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(layout, 200);
+        });
+    })();
+
+    /* ------------------------------------------------------------------
+       CARD STEPPERS
+       ------------------------------------------------------------------
+       Three rails on the homepage move on their own: Our Solutions, the
+       Three Systems, and the industry cards.
+
+       They do NOT flow continuously. Each rail advances ONE card at a
+       time, holds on that card long enough to read it, then advances to
+       the next. When it reaches the end it turns around and walks back
+       through the same cards, so the motion always shows a card moving
+       into place rather than a continuous blur.
+
+       Each rail is a real scroll container, so the visitor can scroll,
+       swipe or drag it themselves at any time. The moment they do, the
+       stepper stops and hands over; it picks up again a few seconds
+       after they stop, continuing from whichever card they left it on.
+       ------------------------------------------------------------------ */
+    (function initCardSteppers() {
+        const DEFS = [
+            { rail: '.paths-marquee', card: '.service-card', dwell: 4200 },
+            { rail: '.systems-marquee', card: '.be-system-card', dwell: 4200 },
+            { rail: '.industries-grid', card: '.industry-card', dwell: 3800 },
+        ];
+
+        DEFS.forEach(({ rail, card, dwell }) => {
+            const container = document.querySelector(rail);
+            if (!container) return;
+            if (prefersReducedMotion) return;
+
+            const cards = Array.from(container.querySelectorAll(':scope > ' + card));
+            if (cards.length < 2) return;
+
+            let index = 0;
+            let direction = 1;
+            let timer = null;
+            let resumeTimer = null;
+            let paused = false;
+
+            // A spacer after the last card gives it the same runway the
+            // first card has, so every card can be parked flush with the
+            // same edge of the rail.
+            const spacer = document.createElement('span');
+            spacer.className = 'rail-spacer';
+            spacer.setAttribute('aria-hidden', 'true');
+            container.appendChild(spacer);
+
+            // scrollLeft that brings each card to the left edge of the rail
+            function targets() {
+                const padLeft = parseFloat(getComputedStyle(container).paddingLeft) || 0;
+                return cards.map(el => Math.max(0, el.offsetLeft - padLeft));
+            }
+
+            // The card the rail is currently resting on
+            function nearestIndex() {
+                const stops = targets();
+                let best = 0;
+                let bestDist = Infinity;
+                stops.forEach((v, i) => {
+                    const d = Math.abs(v - container.scrollLeft);
+                    if (d < bestDist) { bestDist = d; best = i; }
+                });
+                return best;
+            }
+
+            // Keep the spacer wide enough for the last card to reach the
+            // same resting position as the first: the rail has to be able
+            // to travel one full card past the last one.
+            function sizeSpacer() {
+                const stops = targets();
+                const last = stops[stops.length - 1];
+                const cardWidth = cards[cards.length - 1].offsetWidth;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                const needed = last + cardWidth - maxScroll;
+                spacer.style.width = Math.max(0, needed) + 'px';
+            }
+
+            /* The browser's own snap points must agree with the positions
+               the stepper computes, or the snap pulls the rail back to the
+               wrong card after every move. The snapport is inset by the
+               container's own padding, so the two line up exactly. */
+            function alignSnap() {
+                const padLeft = parseFloat(getComputedStyle(container).paddingLeft) || 0;
+                container.style.scrollPaddingInlineStart = padLeft + 'px';
+            }
+
+            function goTo(i) {
+                const stops = targets();
+                const clamped = Math.max(0, Math.min(i, stops.length - 1));
+                container.scrollTo({ left: stops[clamped], behavior: 'smooth' });
+            }
+
+            function step() {
+                if (paused) return;
+                index += direction;
+                if (index >= cards.length) {
+                    // reached the end: turn around and walk back
+                    index = cards.length - 1;
+                    direction = -1;
+                } else if (index < 0) {
+                    index = 0;
+                    direction = 1;
+                }
+                goTo(index);
+                timer = setTimeout(step, dwell);
+            }
+
+            function pause() {
+                paused = true;
+                clearTimeout(timer);
+                clearTimeout(resumeTimer);
+                resumeTimer = setTimeout(resume, 2600);
+            }
+
+            function resume() {
+                // continue from wherever the visitor left the rail
+                index = nearestIndex();
+                paused = false;
+                timer = setTimeout(step, dwell);
+            }
+
+            // any sign of the visitor taking over hands control back
+            ['wheel', 'touchstart', 'pointerdown', 'keydown', 'mousedown'].forEach(evt => {
+                container.addEventListener(evt, pause, { passive: true });
+            });
+
+            // re-measure when the layout changes
+            window.addEventListener('resize', () => {
+                alignSnap();
+                sizeSpacer();
+                index = nearestIndex();
+            });
+
+            alignSnap();
+            sizeSpacer();
+            // start after a short beat so the section is not already moving
+            // when it arrives on screen
+            timer = setTimeout(step, 1200);
+        });
+    })();
+
+
     const roiBars = document.querySelectorAll(".roi-bar[data-width]");
     if (roiBars.length > 0) {
         roiBars.forEach(bar => {
